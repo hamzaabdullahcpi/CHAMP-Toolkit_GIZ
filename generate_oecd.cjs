@@ -1,14 +1,23 @@
 const fs = require('fs');
 const https = require('https');
 
-const fetchJson = (url) => new Promise((resolve, reject) => {
-    https.get(url, { headers: { 'Accept': 'application/vnd.sdmx.data+json; charset=utf-8; version=2.0' }, timeout: 15000 }, (resp) => {
+const fetchJson = (url) => new Promise((resolve) => {
+    const req = https.get(url, { headers: { 'Accept': 'application/vnd.sdmx.data+json; charset=utf-8; version=2.0' }, timeout: 12000 }, (resp) => {
         let data = '';
         resp.on('data', (chunk) => { data += chunk; });
         resp.on('end', () => {
             try { resolve(JSON.parse(data)); } catch (e) { resolve(null); }
         });
-    }).on('error', reject);
+    });
+    req.on('error', (e) => {
+        console.warn(`[OECD Notice] Request error for ${url}:`, e.message);
+        resolve(null);
+    });
+    req.on('timeout', () => {
+        req.destroy();
+        console.warn(`[OECD Notice] Request timed out for ${url}`);
+        resolve(null);
+    });
 });
 
 async function run() {
@@ -72,8 +81,9 @@ async function run() {
         return latestVal;
     };
 
-    for (let i = 0; i < f.refAreaVals.length; i++) {
-        let name = f.refAreaVals[i];
+    const refAreas = f.refAreaVals || [];
+    for (let i = 0; i < refAreas.length; i++) {
+        let name = refAreas[i];
         if (!name) continue;
         const norm = name === "United States" ? "United States of America" : name;
         if (norm.includes("OECD") || norm.includes("Memo")) continue;
@@ -117,8 +127,21 @@ async function run() {
             }
         }
     }
+    const keyCount = Object.keys(out).length;
     fs.mkdirSync('public/api', { recursive: true });
-    fs.writeFileSync('public/api/oecd.json', JSON.stringify(out, null, 2));
-    console.log("Done. Output to public/api/oecd.json. Keys: ", Object.keys(out).length);
+    if (keyCount > 0) {
+      fs.writeFileSync('public/api/oecd.json', JSON.stringify(out, null, 2));
+      console.log("Done. Output to public/api/oecd.json. Keys: ", keyCount);
+    } else if (fs.existsSync('public/api/oecd.json')) {
+      console.log("Retaining existing public/api/oecd.json dataset.");
+    }
 }
-run();
+
+run()
+  .then(() => {
+    process.exit(0);
+  })
+  .catch((err) => {
+    console.warn("[OECD Notice] Proceeding with static dataset:", err.message);
+    process.exit(0);
+  });

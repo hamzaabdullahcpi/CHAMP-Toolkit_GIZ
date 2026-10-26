@@ -1,7 +1,7 @@
 {
   "success": true,
   "source": "airtable_api_build_sync",
-  "lastUpdated": "2026-10-24T00:45:02.441Z",
+  "lastUpdated": "2026-10-26T16:11:27.197Z",
   "formattedActions": [
     {
       "id": 1,
@@ -1643,7 +1643,7 @@
       "modelHeading": "Sweden’s Multilevel Climate Governance and Implementation Model",
       "modelOverview": "Sweden’s experience brings together mechanisms at different stages of maturity. Viable Cities, Climate City Contract 2030, the Coordination Function and System Demonstrators are established components, while Local Climate Investment Structures, the Viability Fund for Cities and stronger aggregated-demand and finance interfaces are being developed. The diagram above shows how these programs form a continuous multilevel implementation system. \n\nBelow sections describe how Sweden has embarked on the 5 Actions as part of its multilevel climate finance and implementation journey.",
       "modelDiagramNote": "The diagram below illustrates how these programs form a continuous multilevel implementation system. Click on the image or the Fullscreen button to zoom and pan.",
-      "diagramImageUrl": "https://v5.airtableusercontent.com/v3/u/58/58/1792814400000/6ajlMebLgNhFeJ2FCWx9HQ/-9tzs9Dz_WbCNrix17IH7rNZWMRIWGmswaz0ogweR2vNzUXy27I43nrACZLJaBAPZCpadaQFPMfMiBtmftel91IuGbO0EjOcRGqW6XaDsG8z26eBm15_VK_jiJyO5gJrOnjegK2kM2yEF5NFQLlZibWyH4vRLJmQQLVaA7Usuhjbjo9r1uousv-f2mtZVlhZ/VjOUqBjX_PNSRKZhMZ9PBLWnsKh7VeBvKjjxrdzEqOA",
+      "diagramImageUrl": "https://v5.airtableusercontent.com/v3/u/58/58/1793044800000/jQLJrRE1auYxpQ2F-5qW9Q/taARlk0lSh8K93mpR7arTPjqCiMRcrcN_MI92VOlxdp8lBNORfSn1g3NoM4Akn89Cwb8bcn-15rN8ZpOymUzbzKewklXRiIC_04vGFg3DbvQxR5a_thXEJIi7Z9iP5QoDwnXgFHUvTTvOE1J4cZ5NAHOI5Lf5dFTapernYH6qCmgK_J7tlauFxFXRrMy0gEF/VMbE3jPrpyLrhSjSAmkeWMTlQegNIy3BeeTLsK3KD-k",
       "diagramImageAlt": "Sweden’s Multilevel Climate Governance and Implementation Architecture",
       "actionsHeading": "Sweden's Journey Across the 5 Actions",
       "actionsSubtitle": "Below sections describe how Sweden has embarked on the 5 Actions as part of its multilevel climate finance and implementation journey.",
