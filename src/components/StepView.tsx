@@ -742,11 +742,11 @@ function PathwayCard({
     const connInfo = getAction5Connection(example.title, example.type);
     const directConn = example.connectionLine || (connInfo ? `${connInfo.prefix} ${connInfo.text}` : '');
     
-    const connPrefix = isTool ? 'Why use this:' : 'Why see this:';
+    const connPrefix = isTool ? 'Why use this:' : 'What you can learn:';
     let connBody = '';
     if (directConn) {
       // Strip any existing prefix variants to prevent duplication
-      connBody = directConn.replace(/^(?:why see this|why use this tool|why use this|when to use this)\s*[:\-]\s*/gi, '').trim();
+      connBody = directConn.replace(/^(?:what you can learn|why see this|why use this tool|why use this|when to use this)\s*[:\-]\s*/gi, '').trim();
     }
     
     // If empty, clean contextual fallback
@@ -1024,10 +1024,10 @@ export function ExampleModal({ example, theme, onClose }: { example: any | null,
                 const isTool = String(example.type || '').toLowerCase().includes('tool') || 
                   /tool|toolkit|calculator|matrix|framework|simulator|portal|index|model|guide/i.test(example.title || '') ||
                   Boolean(example.isTool);
-                const prefix = isTool ? 'Why use this:' : 'Why see this:';
+                const prefix = isTool ? 'Why use this:' : 'What you can learn:';
                 let body = '';
                 if (fullConn) {
-                  body = fullConn.replace(/^(?:why see this|why use this tool|why use this|when to use this)\s*[:\-]\s*/gi, '').trim();
+                  body = fullConn.replace(/^(?:what you can learn|why see this|why use this tool|why use this|when to use this)\s*[:\-]\s*/gi, '').trim();
                 }
                 
                 if (!body) {

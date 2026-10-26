@@ -140,12 +140,38 @@ function formatAirtableData(actionsRecords, pathwaysRecords, guidanceRecords, ex
                 link: (sub.fields['Learn More URL'] || '').trim(),
               }));
 
+            const connectionLine = sanitizeText(
+              e.fields['What you can learn / Why use this'] ||
+              e.fields['What you can learn'] ||
+              e.fields['Why use this'] ||
+              e.fields['Why see this / When to use this'] ||
+              e.fields['When to use this / Why see this'] ||
+              e.fields['Connection Line'] ||
+              e.fields['Contextual Guidance'] ||
+              e.fields['Guidance Note'] ||
+              ''
+            );
+
+            const rawOrder = 
+              e.fields['Order'] ??
+              e.fields['Resource Order'] ??
+              e.fields['Sequence'] ??
+              e.fields['Display Order'] ??
+              e.fields['Sort Order'] ??
+              e.fields['Position'] ??
+              e.fields['Number'];
+            const order = rawOrder !== undefined && rawOrder !== null && rawOrder !== '' && !isNaN(Number(rawOrder))
+              ? Number(rawOrder)
+              : undefined;
+
             return {
               title: sanitizeText(e.fields['Example Title'] || e.fields['Title'] || 'Untitled Example'),
               type: sanitizeText(e.fields['Type'] || e.fields['Resource Type'] || 'Illustrative Example'),
               excerpt: sanitizeText(e.fields['Excerpt'] || ''),
               fullText: sanitizeText(e.fields['Full Text / Concept Explanation'] || e.fields['Full Text'] || ''),
               link: (e.fields['Learn More URL'] || '').trim(),
+              connectionLine: connectionLine || undefined,
+              order,
               subExamples: mySubExamples.length > 0 ? mySubExamples : undefined,
             };
           });

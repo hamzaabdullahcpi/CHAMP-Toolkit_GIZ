@@ -3,7 +3,7 @@ export const ACTION_MENU_TITLES: Record<number, string> = {
   1: "Multilevel commitments & platforms",
   2: "Enabling environments",
   3: "Portfolios and pipelines",
-  4: "Finance",
+  4: "Finance mobilization",
   5: "Capacities & networks",
 };
 

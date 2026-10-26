@@ -374,6 +374,9 @@ async function startServer() {
                 }));
 
                 const connectionLine = sanitizeText(
+                    e.fields["What you can learn / Why use this"] ||
+                    e.fields["What you can learn"] ||
+                    e.fields["Why use this"] ||
                     e.fields["Why see this / When to use this"] ||
                     e.fields["When to use this / Why see this"] ||
                     e.fields["Connection Line"] ||
