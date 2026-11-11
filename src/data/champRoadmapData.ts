@@ -94,7 +94,7 @@ export const defaultChampRoadmapData: RoadmapPillar[] = [
   },
   {
     number: 3,
-    title: "Pillar 3: Scaling up and unlocking subnational climate finance for implementation",
+    title: "Pillar 3: Scaling up and unlocking the means of implementation, including finance and investment, at the subnational level",
     goal: "CHAMP-endorsing countries have established robust pathways to scale up and unlock subnational government access to climate finance, with subnational priorities integrated into national and global investment plans.",
     leadResponsibility: "Steering Group, Secretariat and CHAMP partners, with CHAMP-endorsing countries as primary implementers.",
     overview: "Under this pillar, CHAMP-endorsing countries move from planning to investment mobilisation by translating subnational climate priorities into investable projects, strengthening regulatory and institutional frameworks, and building reliable pathways for public and private finance to reach regional and local governments.",
@@ -114,7 +114,7 @@ export const defaultChampRoadmapData: RoadmapPillar[] = [
           "Convene project preparation providers, national government ministries and finance institutions with a view to developing coordinated national-level approaches to project development [Secretariat and CHAMP partners].",
           "Where partner resources and mandates allow, provide capacity building and technical support for subnational project preparation in CHAMP-endorsing countries to strengthen the pipeline of bankable projects [CHAMP partners]."
         ],
-        actionIds: [4]
+        actionIds: [3, 4]
       },
       {
         code: "3.3",

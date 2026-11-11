@@ -117,31 +117,31 @@ export interface HomePageContent {
 
 export const defaultHowToUseContent: HowToUseContent = {
   title: "How to Use the Toolkit",
-  intro: "The CHAMP Toolkit is designed primarily for national governments, working with cities and subnational authorities, Friends of CHAMP and development partners, to mobilize finance for implementation of urban and subnational climate action.\n\nExplore the 5 Actions — each containing Implementation Pathways, practical guidance, tools and illustrative examples.",
+  intro: "The CHAMP Toolkit is designed primarily for national governments, working with cities and subnational authorities, Friends of CHAMP and development partners, to mobilize finance for implementation of urban and subnational climate action.",
   items: [
     {
       name: "Actions",
       heading: "Start with what needs to happen.",
       description:
-        "Five interconnected areas of action that help national and subnational governments strengthen the governance, investment and implementation systems needed to deliver CHAMP commitments.",
+        "Five interconnected areas of action to help national and subnational governments strengthen governance, investment, and implementation systems to deliver CHAMP commitments on finance.",
     },
     {
       name: "Implementation Pathways",
-      heading: "Choose a way to put the Action into practice.",
+      heading: "Ways to put Action into practice.",
       description:
         "Practical approaches to finance and implementation that national governments and their partners can adapt to their context.",
     },
     {
       name: "Implementation Guidance",
-      heading: "Follow practical guidance for each pathway.",
+      heading: "Practical guidance for each Pathway.",
       description:
-        "Key steps and considerations to help national governments and partners apply the pathways. Implementation guidance will include Illustrative Examples showing real-world applications of each Implementation Pathway and Tools, which are practical frameworks and resources supporting the implementation.",
+        "Key steps and considerations to help national governments and partners apply the pathways. Guidance includes examples of real-world applications of each Implementation Pathway as well as tools such as practical frameworks and resources to support implementation.",
     },
     {
       name: "Country Journeys",
-      heading: "See how the pieces connect.",
+      heading: "How the pieces connect.",
       description:
-        "Deeper country examples showing how multiple Actions and pathways connect across levels of government as part of a wider climate governance, investment and implementation system.",
+        "Country examples showing how multiple Actions and Implementation Pathways connect across levels of government as part of a wider climate governance, investment, and implementation system.",
     },
   ],
 };
@@ -179,15 +179,23 @@ export interface CountryJourneysOverviewContent {
   introP2: string;
   focusNote: string;
   featuredSectionTitle: string;
+  submitTitle?: string;
+  submitText?: string;
+  submitEmail?: string;
+  submitButtonLabel?: string;
 }
 
 export const defaultCountryJourneysOverviewContent: CountryJourneysOverviewContent = {
   badge: "Country Journeys",
   title: "Country Journeys",
-  introP1: "The Country Journeys contain deep dive analysis grounded in real-world contexts, showcasing institutional relationships, learning loops, implementation cycles, accountability mechanisms, and enabling conditions required to implement and scale Implementation Pathways across different countries.",
-  introP2: "Country Journeys are intended not only to document implementation approaches, but also to showcase how cities, regions and national governments have co-developed practical solutions that can inform other CHAMP countries.",
-  focusNote: "Special focus on the interactions between institutions and programs, governance capabilities, intermediary functions, financing and implementation platforms, and feedback loops required to sustain long-term climate investment.",
+  introP1: "The Country Journeys are a component of the CHAMP Toolkit for Multilevel Climate Finance and Implementation, illustrating how national and subnational governments are developing multilevel approaches to mobilize finance and implement urban climate action. Each journey traces the evolution of a country's institutional and financing arrangements and maps relevant policies, programs and initiatives against the Toolkit's guidance, organized into five key Actions. The purpose of Country Journeys is to showcase the progress countries have made in developing multilevel climate finance and implementation approaches and the lessons others can draw. Country Journeys are not intended to evaluate countries' performance or identify gaps. By highlighting countries’ progress, the CHAMP Toolkit aims to inspire peer learning and provide practical ideas that other countries can adapt to their own contexts.",
+  introP2: "",
+  focusNote: "",
   featuredSectionTitle: "Featured Country Journeys",
+  submitTitle: "Submit a Country Journey",
+  submitText: "We welcome contributions from national governments and partners to expand the Country Journeys and showcase diverse approaches to multilevel climate finance and implementation. If you would like to share your country's experience, please contact the CCFLA Secretariat at ccflasecretariat@cpiglobal.org.",
+  submitEmail: "ccflasecretariat@cpiglobal.org",
+  submitButtonLabel: "Contact Secretariat",
 };
 
 export function parseCountryJourneysOverviewRecords(
@@ -222,6 +230,14 @@ export function parseCountryJourneysOverviewRecords(
         result.focusNote = text;
       } else if (key.includes("featured_section_title") || key.includes("featured title") || key.includes("featured section") || key.includes("case studies")) {
         result.featuredSectionTitle = text;
+      } else if (key.includes("submit_title") || key.includes("submit heading") || key.includes("submit title")) {
+        result.submitTitle = text;
+      } else if (key.includes("submit_text") || key.includes("submit description") || key.includes("submit copy") || key.includes("submit content")) {
+        result.submitText = text;
+      } else if (key.includes("submit_email") || key.includes("contact email") || key.includes("secretariat email")) {
+        result.submitEmail = text;
+      } else if (key.includes("submit_button") || key.includes("submit label") || key.includes("button label")) {
+        result.submitButtonLabel = text;
       }
     }
 
@@ -246,6 +262,10 @@ export function parseCountryJourneysOverviewRecords(
       if (f["Featured Countries Section Title"] || f["Featured Section Title"] || f["Featured Title"]) {
         result.featuredSectionTitle = f["Featured Countries Section Title"] || f["Featured Section Title"] || f["Featured Title"];
       }
+      if (f["Submit Title"]) result.submitTitle = f["Submit Title"];
+      if (f["Submit Text"] || f["Submit Description"]) result.submitText = f["Submit Text"] || f["Submit Description"];
+      if (f["Submit Email"] || f["Contact Email"]) result.submitEmail = f["Submit Email"] || f["Contact Email"];
+      if (f["Submit Button Label"] || f["Submit Button"]) result.submitButtonLabel = f["Submit Button Label"] || f["Submit Button"];
     }
   }
 
@@ -262,6 +282,10 @@ export function parseCountryJourneysOverviewRecords(
       if (f["Header Subtitle"] || f["Tagline"]) result.badge = f["Header Subtitle"] || f["Tagline"];
       if (f["Summary"] || f["Header Description"]) result.introP1 = f["Summary"] || f["Header Description"];
       if (f["Actions Heading"]) result.featuredSectionTitle = f["Actions Heading"];
+      if (f["Submit Title"]) result.submitTitle = f["Submit Title"];
+      if (f["Submit Text"] || f["Submit Description"]) result.submitText = f["Submit Text"] || f["Submit Description"];
+      if (f["Submit Email"] || f["Contact Email"]) result.submitEmail = f["Submit Email"] || f["Contact Email"];
+      if (f["Submit Button Label"] || f["Submit Button"]) result.submitButtonLabel = f["Submit Button Label"] || f["Submit Button"];
     }
   }
 
@@ -438,8 +462,12 @@ export function parseCountryJourneyRecords(
 
   for (const cRec of countryRecords) {
     const f = cRec.fields || {};
-    const published = f["Published"] === true || f["Show in Toolkit"] === true;
-    if (!published) continue;
+    const statusRaw = String(f["Status"] || "").trim();
+    const statusLower = statusRaw.toLowerCase();
+    const isExplicitlyUnpublished = ["draft", "unpublished", "hidden", "archived"].includes(statusLower) || f["Published"] === false;
+    const isAvailable = statusLower === "available" || (f["Published"] === true && !isExplicitlyUnpublished);
+    if (!isAvailable) continue;
+    const published = true;
 
     const countryId = String(f["Country ID"] || f["Slug"] || f["Country"] || "").toLowerCase().trim();
     if (!countryId) continue;
@@ -525,7 +553,11 @@ export function parseCountryJourneyRecords(
     
     // Diagram image: check Attachment array or string URL
     let diagramImageUrl = "";
-    if (Array.isArray(f["Diagram Attachment"]) && f["Diagram Attachment"].length > 0) {
+    if (countryId === 'sweden') {
+      diagramImageUrl = "/sweden-model-architecture.svg";
+    } else if (countryId === 'brazil') {
+      diagramImageUrl = "/brazil-model-architecture.svg";
+    } else if (Array.isArray(f["Diagram Attachment"]) && f["Diagram Attachment"].length > 0) {
       diagramImageUrl = f["Diagram Attachment"][0].url;
     } else if (Array.isArray(f["Diagram Image Attachment"]) && f["Diagram Image Attachment"].length > 0) {
       diagramImageUrl = f["Diagram Image Attachment"][0].url;
@@ -534,7 +566,7 @@ export function parseCountryJourneyRecords(
     } else if (f["Diagram Image URL"] || f["Diagram Image"]) {
       diagramImageUrl = f["Diagram Image URL"] || f["Diagram Image"] || "";
     }
-    // If empty, keep hardcoded fallback diagram (e.g. '/sweden-model-architecture.png')
+    // If empty, keep hardcoded fallback diagram (e.g. '/sweden-model-architecture.svg')
     if (!diagramImageUrl && fallback.diagramImageUrl) {
       diagramImageUrl = fallback.diagramImageUrl;
     }
@@ -623,9 +655,16 @@ export function parseCountryJourneyRecords(
           };
         }
 
+        const SHORT_ACTION_TITLES: Record<number, string> = {
+          1: "Commitments and coordination",
+          2: "Enabling environments",
+          3: "Portfolios and pipelines",
+          4: "Finance mobilization",
+          5: "Capacities and networks",
+        };
         return {
           actionNumber,
-          actionThemeTitle: af["Action Theme Tag"] || af["Theme"] || "",
+          actionThemeTitle: SHORT_ACTION_TITLES[actionNumber] || af["Action Theme Tag"] || af["Theme"] || "",
           title: af["Title"] || af["Action Title"] || `Action ${actionNumber}`,
           paragraphs,
           caseStudy,
@@ -692,7 +731,7 @@ export function parseChampRoadmapRecords(roadmapRecords: any[] = []): RoadmapPil
     "2.2": [6],
     "2.3": [6],
     "3.1": [1, 3, 4],
-    "3.2": [4],
+    "3.2": [3, 4],
     "3.3": [2, 5, 6]
   };
 
@@ -804,7 +843,7 @@ export function parseChampPledgeRecords(pledgeRecords: any[] = []): ChampPledge[
   return parsed.length > 0 ? parsed : defaultChampPledgesData;
 }
 
-async function fetchTableClient(tableName: string, baseId: string, token: string): Promise<any[]> {
+export async function fetchTableClient(tableName: string, baseId: string, token: string): Promise<any[]> {
   let allRecords: any[] = [];
   let offset = '';
   do {
@@ -824,7 +863,7 @@ async function fetchTableClient(tableName: string, baseId: string, token: string
   return allRecords;
 }
 
-async function fetchTableClientSafely(tableNameVariants: string[], baseId: string, token: string): Promise<any[]> {
+export async function fetchTableClientSafely(tableNameVariants: string[], baseId: string, token: string): Promise<any[]> {
   for (const name of tableNameVariants) {
     try {
       const records = await fetchTableClient(name, baseId, token);
@@ -985,7 +1024,7 @@ function parseAirtableRecords(
 
             return {
               title: e.fields["Example Title"] || e.fields["Title"] || "Untitled Example",
-              type: e.fields["Type"] || e.fields["Resource Type"] || "Illustrative Example",
+              type: String(e.fields["Type"] || e.fields["Resource Type"] || "").toLowerCase().includes("tool") ? "Tool" : "Peer Learning Example",
               excerpt: e.fields["Excerpt"] || "",
               fullText: e.fields["Full Text / Concept Explanation"] || e.fields["Full Text"] || "",
               link: e.fields["Learn More URL"] || "",
@@ -1070,16 +1109,33 @@ export interface AirtablePayload {
 
 let cachedAirtablePromise: Promise<AirtablePayload> | null = null;
 
-export function fetchAirtableAllContent(): Promise<AirtablePayload> {
-  if (!cachedAirtablePromise) {
-    cachedAirtablePromise = (async () => {
-      const baseId =
-        (typeof process !== "undefined" && process.env?.AIRTABLE_BASE_ID) ||
-        import.meta.env.VITE_AIRTABLE_BASE_ID;
-      const pat =
-        (typeof process !== "undefined" && (process.env?.AIRTABLE_PAT || process.env?.AIRTABLE_API_KEY)) ||
-        import.meta.env.VITE_AIRTABLE_PAT;
+// Airtable can hold more than one record with the same Action Number (Action 4 currently has two,
+// with 4.1 linked to one and 4.2/4.3 to the other). Merge them so each action appears once with all its pathways.
+function mergeDuplicateActions(actions: Action[]): Action[] {
+  const byId = new Map<number, Action>();
+  for (const action of actions) {
+    const existing = byId.get(action.id);
+    if (!existing) {
+      byId.set(action.id, { ...action, pathways: [...(action.pathways || [])] });
+      continue;
+    }
+    existing.pathways = [...(existing.pathways || []), ...(action.pathways || [])];
+    for (const [key, value] of Object.entries(action)) {
+      if (key !== 'pathways' && !(existing as any)[key] && value) (existing as any)[key] = value;
+    }
+  }
+  const pathwayNumber = (p: any) => parseFloat(String(p?.title || '').match(/^\d+(\.\d+)?/)?.[0] || '') || 999;
+  return [...byId.values()]
+    .map((action) => ({
+      ...action,
+      pathways: [...action.pathways].sort((x: any, y: any) => pathwayNumber(x) - pathwayNumber(y)),
+    }))
+    .sort((a, b) => a.id - b.id);
+}
 
+export function fetchAirtableAllContent(forceRefresh = false): Promise<AirtablePayload> {
+  if (!cachedAirtablePromise || forceRefresh) {
+    cachedAirtablePromise = (async () => {
       let loadedActions: Action[] | null = null;
       let loadedHomePage: HomePageContent | null = null;
       let loadedCountryJourneys: CountryJourneyData[] | null = null;
@@ -1087,107 +1143,10 @@ export function fetchAirtableAllContent(): Promise<AirtablePayload> {
       let loadedRoadmapPillars: RoadmapPillar[] | null = null;
       let loadedChampPledges: ChampPledge[] | null = null;
 
-      // Strategy 1: Check if client-side Airtable credentials are available in environment
-      if (baseId && pat) {
-        try {
-          console.log(`[Airtable] Fetching directly from Airtable API (Base: ${baseId})...`);
-          const [
-            actions, 
-            pathways, 
-            guidance, 
-            examples, 
-            subExamples, 
-            conceptBoxes, 
-            resources, 
-            homeRecords,
-            countryRecords,
-            sectionRecords,
-            actionRecords,
-            roadmapRecords,
-            pledgeRecords,
-            overviewRecords
-          ] = await Promise.all([
-            fetchTableClient("Actions", baseId, pat),
-            fetchTableClient("Pathways", baseId, pat),
-            fetchTableClient("Implementation Guidance", baseId, pat),
-            fetchTableClientSafely(["Key Resources", "Illustrative Examples", "Examples"], baseId, pat),
-            fetchTableClient("Sub-Examples", baseId, pat),
-            fetchTableClientSafely(["Concept & Explainer Boxes", "Concept Boxes", "Explainer Boxes"], baseId, pat),
-            fetchTableClientSafely(["Additional Resources", "Further Resources", "Resources"], baseId, pat),
-            fetchTableClientSafely(["Home Page", "Landing Page", "Home Page Content", "Home Content"], baseId, pat),
-            fetchTableClientSafely(["Country Journeys", "Country Deep Dives", "Countries"], baseId, pat),
-            fetchTableClientSafely(["Country Sections", "Country Context Sections", "Journey Sections"], baseId, pat),
-            fetchTableClientSafely(["Country Actions", "Country Journey Actions", "Journey Actions"], baseId, pat),
-            fetchTableClientSafely(["CHAMP Implementation Roadmap", "Roadmap", "CHAMP Roadmap"], baseId, pat),
-            fetchTableClientSafely(["CHAMP Pledges", "Pledges", "CHAMP Pledge"], baseId, pat),
-            fetchTableClientSafely(["Country Journeys Overview", "Country Journeys Page", "Country Journeys Content", "Country Journey Overview"], baseId, pat),
-          ]);
+      // Airtable is read at build time (scripts/sync_airtable_extras.ts + generate_airtable.cjs),
+      // never from the browser, so the access key is never shipped to visitors.
 
-          const formatted = parseAirtableRecords(actions, pathways, guidance, examples, subExamples, conceptBoxes, resources);
-          if (formatted.length > 0) {
-            loadedActions = formatted;
-            console.log(`[Airtable] Successfully loaded ${formatted.length} actions from live Airtable API.`);
-          }
-
-          if (homeRecords && homeRecords.length > 0) {
-            loadedHomePage = parseHomePageRecords(homeRecords);
-            console.log(`[Airtable] Successfully loaded Home Page content from live Airtable API.`);
-          }
-
-          if (countryRecords && countryRecords.length > 0) {
-            loadedCountryJourneys = parseCountryJourneyRecords(countryRecords, sectionRecords, actionRecords);
-            console.log(`[Airtable] Successfully loaded ${loadedCountryJourneys.length} country journeys from live Airtable API.`);
-          }
-
-          // Parse Country Journeys Overview
-          loadedCountryJourneysOverview = parseCountryJourneysOverviewRecords(overviewRecords, countryRecords, homeRecords);
-          console.log(`[Airtable] Successfully loaded Country Journeys Overview content from live Airtable API.`);
-
-          if (roadmapRecords && roadmapRecords.length > 0) {
-            loadedRoadmapPillars = parseChampRoadmapRecords(roadmapRecords);
-            console.log(`[Airtable] Successfully loaded ${loadedRoadmapPillars.length} roadmap pillars from live Airtable API.`);
-          }
-
-          if (pledgeRecords && pledgeRecords.length > 0) {
-            loadedChampPledges = parseChampPledgeRecords(pledgeRecords);
-            console.log(`[Airtable] Successfully loaded ${loadedChampPledges.length} pledges from live Airtable API.`);
-          }
-        } catch (err) {
-          console.warn("[Airtable] Direct client-side fetch failed, trying static/server endpoints:", err);
-        }
-      }
-
-      // Strategy 2: Try static content.json
-      if (!loadedActions || !loadedHomePage || loadedCountryJourneys === null || !loadedCountryJourneysOverview || !loadedRoadmapPillars || !loadedChampPledges) {
-        try {
-          const staticRes = await fetch("/api/content.json");
-          if (staticRes.ok) {
-            const data = await staticRes.json();
-            if (!loadedActions && data?.formattedActions && Array.isArray(data.formattedActions) && data.formattedActions.length > 0) {
-              loadedActions = data.formattedActions;
-            }
-            if (!loadedHomePage && data?.homePageContent) {
-              loadedHomePage = data.homePageContent;
-            }
-            if (loadedCountryJourneys === null && data?.countryJourneys && Array.isArray(data.countryJourneys)) {
-              loadedCountryJourneys = data.countryJourneys;
-            }
-            if (!loadedCountryJourneysOverview && data?.countryJourneysOverview) {
-              loadedCountryJourneysOverview = data.countryJourneysOverview;
-            }
-            if (!loadedRoadmapPillars && data?.roadmapPillars && Array.isArray(data.roadmapPillars)) {
-              loadedRoadmapPillars = data.roadmapPillars;
-            }
-            if (!loadedChampPledges && data?.champPledges && Array.isArray(data.champPledges)) {
-              loadedChampPledges = data.champPledges;
-            }
-          }
-        } catch (err) {
-          // Continue
-        }
-      }
-
-      // Strategy 3: Try Express backend route (/api/content)
+      // Strategy 1: Try Express backend route (/api/content) for real-time Airtable updates
       if (!loadedActions || !loadedHomePage || loadedCountryJourneys === null || !loadedCountryJourneysOverview || !loadedRoadmapPillars || !loadedChampPledges) {
         try {
           const serverRes = await fetch("/api/content", { cache: "no-store" });
@@ -1213,12 +1172,42 @@ export function fetchAirtableAllContent(): Promise<AirtablePayload> {
             }
           }
         } catch (err) {
-          // Continue
+          // Continue to static fallback
+        }
+      }
+
+      // Strategy 2: Fall back to static content.json snapshot
+      if (!loadedActions || !loadedHomePage || loadedCountryJourneys === null || !loadedCountryJourneysOverview || !loadedRoadmapPillars || !loadedChampPledges) {
+        try {
+          const staticRes = await fetch("/api/content.json", { cache: "no-cache" });
+          if (staticRes.ok) {
+            const data = await staticRes.json();
+            if (!loadedActions && data?.formattedActions && Array.isArray(data.formattedActions) && data.formattedActions.length > 0) {
+              loadedActions = data.formattedActions;
+            }
+            if (!loadedHomePage && data?.homePageContent) {
+              loadedHomePage = data.homePageContent;
+            }
+            if (loadedCountryJourneys === null && data?.countryJourneys && Array.isArray(data.countryJourneys)) {
+              loadedCountryJourneys = data.countryJourneys;
+            }
+            if (!loadedCountryJourneysOverview && data?.countryJourneysOverview) {
+              loadedCountryJourneysOverview = data.countryJourneysOverview;
+            }
+            if (!loadedRoadmapPillars && data?.roadmapPillars && Array.isArray(data.roadmapPillars)) {
+              loadedRoadmapPillars = data.roadmapPillars;
+            }
+            if (!loadedChampPledges && data?.champPledges && Array.isArray(data.champPledges)) {
+              loadedChampPledges = data.champPledges;
+            }
+          }
+        } catch (err) {
+          // Continue to hardcoded defaults
         }
       }
 
       return {
-        actions: loadedActions || (actionsData as Action[]),
+        actions: mergeDuplicateActions(loadedActions || (actionsData as Action[])),
         homePage: loadedHomePage || defaultHomePageContent,
         countryJourneys: loadedCountryJourneys !== null ? loadedCountryJourneys : defaultCountryJourneys,
         countryJourneysOverview: loadedCountryJourneysOverview || defaultCountryJourneysOverviewContent,

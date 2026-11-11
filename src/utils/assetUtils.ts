@@ -1,7 +1,8 @@
 import defaultHeroImage from '../assets/hero-city.jpg';
-import defaultArchitectureImage from '../assets/sweden-model-architecture.png';
+import defaultArchitectureImage from '../assets/sweden-model-architecture.svg';
+import brazilArchitectureImage from '../assets/brazil-model-architecture.svg';
 
-export { defaultHeroImage, defaultArchitectureImage };
+export { defaultHeroImage, defaultArchitectureImage, brazilArchitectureImage };
 
 /**
  * Safely resolves asset paths for all deployment environments (including GitHub Pages subpaths).
@@ -27,6 +28,11 @@ export function resolveAssetUrl(url?: string | null, fallbackUrl: string = defau
   // If referencing the Sweden architecture diagram
   if (trimmed.includes('sweden-model-architecture')) {
     return defaultArchitectureImage;
+  }
+
+  // If referencing the Brazil architecture diagram
+  if (trimmed.includes('brazil-model-architecture')) {
+    return brazilArchitectureImage;
   }
 
   // Otherwise, attach Vite's base URL properly

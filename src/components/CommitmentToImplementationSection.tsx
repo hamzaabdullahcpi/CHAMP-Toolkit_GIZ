@@ -13,10 +13,10 @@ interface CommitmentToImplementationSectionProps {
 }
 
 const ACTION_METAS: Record<number, { id: number; title: string; desc: string }> = {
-  1: { id: 1, title: "Shared commitments & platforms", desc: "Build cross-level consensus and shared ownership on climate investment targets." },
+  1: { id: 1, title: "Commitments and coordination", desc: "Build cross-level consensus and shared ownership on climate investment targets." },
   2: { id: 2, title: "Enabling environments", desc: "Strengthen institutional frameworks, regulatory policies, and subnational capacity." },
   3: { id: 3, title: "Portfolios and pipelines", desc: "Plan, prepare, and implement subnational climate investment portfolios." },
-  4: { id: 4, title: "Finance", desc: "Mobilize climate finance, shape markets, and scale project execution." },
+  4: { id: 4, title: "Finance mobilization", desc: "Mobilize climate finance, shape markets, and scale project execution." },
   5: { id: 5, title: "Capacities and networks", desc: "Strengthen capacities, knowledge exchange, peer networks, and scale." }
 };
 
@@ -44,12 +44,16 @@ export default function CommitmentToImplementationSection({
     '2.3': false,
   });
 
-  const pillars = (roadmapPillars && roadmapPillars.length > 0) ? roadmapPillars : defaultChampRoadmapData;
+  const rawPillars = (roadmapPillars && roadmapPillars.length > 0) ? roadmapPillars : defaultChampRoadmapData;
+  const pillars = rawPillars.map(p => ({
+    ...p,
+    activities: [...(p.activities || [])].sort((a, b) => (parseFloat(a.code) || 0) - (parseFloat(b.code) || 0))
+  }));
   const pledges = (champPledges && champPledges.length > 0) ? champPledges : defaultChampPledgesData;
 
   // Grab live activity titles for Card 3 from Pillar 3 if available
   const pillar3 = pillars.find(p => p.number === 3);
-  const pillar3Title = pillar3?.title || "Pillar 3: Mobilizing Finance for Subnational Climate Action";
+  const pillar3Title = pillar3?.title || "Pillar 3: Scaling up and unlocking the means of implementation, including finance and investment, at the subnational level";
   const act31Title = pillar3?.activities.find(a => a.code === '3.1')?.title || "Integrate subnational priorities into national climate finance strategies and investment plans";
   const act32Title = pillar3?.activities.find(a => a.code === '3.2')?.title || "Enable a coordinated approach to project preparation across national and subnational levels";
   const act33Title = pillar3?.activities.find(a => a.code === '3.3')?.title || "Advocate for reform of finance institutions and climate funds to ease subnational access";

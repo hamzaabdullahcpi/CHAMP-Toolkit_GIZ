@@ -12,10 +12,14 @@ export default function ActionsOverview({ actionsData, onNavigateToStep, heroIma
   return (
     <div className="w-full">
       <SplitHero title="Actions" imageUrl={heroImage} imageAlt="Aerial view of a city">
-        <p className="body-text-md text-ink-muted">
-          Click "Explore" on any action to see its implementation pathways and key resources below, or click (→) to open the action page.
-          Use the filter to show only the pathways led by a specific actor.
-        </p>
+        <div className="space-y-3 body-text-md text-ink-muted">
+          <p>
+            The Toolkit’s guidance is organized into five Actions that national and subnational governments can take to mobilize finance and deliver urban climate action together.
+          </p>
+          <p>
+            Click “Explore” on any Action to see its Implementation Pathways and key resources below, or click (→) to open the Action page.
+          </p>
+        </div>
       </SplitHero>
 
       <motion.div

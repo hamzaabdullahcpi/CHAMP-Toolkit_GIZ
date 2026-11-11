@@ -1,10 +1,10 @@
 // Short action titles shared by the sidebar menu and the homepage action cards.
 export const ACTION_MENU_TITLES: Record<number, string> = {
-  1: "Multilevel commitments & platforms",
+  1: "Commitments and coordination",
   2: "Enabling environments",
   3: "Portfolios and pipelines",
   4: "Finance mobilization",
-  5: "Capacities & networks",
+  5: "Capacities and networks",
 };
 
 // "Mobilize Finance and Shape Markets" -> "Mobilize finance and shape markets".

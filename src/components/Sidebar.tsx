@@ -1,7 +1,9 @@
+import { useState, useRef, useEffect } from "react";
 import { 
   Home, 
   X, 
-  Compass
+  Compass,
+  Search
 } from "lucide-react";
 import { CountryJourneyData } from "../types/countryJourney";
 import { ACTION_MENU_TITLES } from "../data/actionMenuTitles";
@@ -14,6 +16,7 @@ interface SidebarProps {
   isOpen: boolean;
   toggleSidebar: () => void;
   countryJourneys?: CountryJourneyData[];
+  onOpenSearch?: (query?: string) => void;
 }
 
 export default function Sidebar({ 
@@ -21,8 +24,14 @@ export default function Sidebar({
   setCurrentStep, 
   isOpen, 
   toggleSidebar,
-  countryJourneys = defaultCountryJourneys
+  countryJourneys = defaultCountryJourneys,
+  onOpenSearch
 }: SidebarProps) {
+  const isMac = typeof navigator !== "undefined" && /Mac|iPhone|iPad/.test(navigator.platform);
+  const [isSearchExpanded, setIsSearchExpanded] = useState(false);
+  const [searchDraft, setSearchDraft] = useState("");
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  useEffect(() => { if (isSearchExpanded) searchInputRef.current?.focus(); }, [isSearchExpanded]);
 
   const navItemsGeneral: { id: number | string, label: string }[] = [
     { id: 0, label: "Home" },
@@ -33,10 +42,12 @@ export default function Sidebar({
   ];
 
   const navItemsCountryJourneys: { id: number | string, label: string }[] = [
-    ...countryJourneys.map(j => ({
-      id: j.countryId,
-      label: j.countryName
-    }))
+    ...countryJourneys
+      .filter(j => j.published !== false && !["draft", "unpublished", "hidden", "archived"].includes(String(j.status || "").toLowerCase().trim()))
+      .map(j => ({
+        id: j.countryId,
+        label: `• ${j.countryName}`
+      }))
   ];
 
   const handleNavClick = (id: number | string) => {
@@ -51,10 +62,10 @@ export default function Sidebar({
         key={item.id}
         onClick={() => handleNavClick(item.id)}
         aria-current={isActive ? "page" : undefined}
-        className={`w-full text-left px-6 py-2 border-l-2 text-xs font-bold uppercase tracking-wider cursor-pointer transition-colors ${
+        className={`w-full text-left pl-5 pr-6 py-2 border-l-4 text-xs uppercase tracking-wider cursor-pointer transition-colors ${
           isActive
-            ? "bg-[#E5E7EB] border-accent text-ink"
-            : "border-transparent text-ink-muted hover:bg-[#E5E7EB]/50 hover:border-accent/50 hover:text-ink"
+            ? "border-accent text-ink font-bold"
+            : "border-transparent text-ink-muted font-semibold hover:text-ink hover:font-bold"
         }`}
       >
         {item.label}
@@ -69,10 +80,10 @@ export default function Sidebar({
       <button
         onClick={() => handleNavClick(pageId)}
         aria-current={isActive ? "page" : undefined}
-        className={`w-full text-left mb-1 px-6 py-2 border-l-2 text-xs font-bold uppercase tracking-wider cursor-pointer transition-colors ${
+        className={`w-full text-left mb-1 pl-5 pr-6 py-2 border-l-4 text-xs uppercase tracking-wider cursor-pointer transition-colors ${
           isActive
-            ? "bg-[#E5E7EB] border-accent text-ink"
-            : "border-transparent text-ink-muted hover:bg-[#E5E7EB]/50 hover:border-accent/50 hover:text-ink"
+            ? "border-accent text-ink font-bold"
+            : "border-transparent text-ink-muted font-semibold hover:text-ink hover:font-bold"
         }`}
       >
         {label}
@@ -89,10 +100,10 @@ export default function Sidebar({
           onClick={() => handleNavClick(item.id)}
           // Core actions use their own page colour for the side bar
           style={typeof item.id === 'number' ? actionAccentStyle(item.id) : undefined}
-          className={`group w-full flex items-center justify-between px-6 py-1.5 text-sm transition-all duration-200 border-l-2 ${
+          className={`group w-full flex items-center justify-between pl-5 pr-6 py-1.5 text-sm cursor-pointer transition-all duration-200 border-l-4 ${
             isActive
-              ? "bg-[#E5E7EB] border-accent text-ink font-semibold"
-              : "border-transparent text-ink-muted hover:bg-[#E5E7EB]/50 hover:border-accent/50 hover:text-ink font-medium"
+              ? "border-accent text-ink font-bold"
+              : "border-transparent text-ink-muted hover:text-ink font-medium hover:font-bold"
           }`}
         >
           <span className="text-left tracking-tight">{item.label}</span>
@@ -146,6 +157,56 @@ export default function Sidebar({
           {renderSectionHeader("Country Journeys", "journeys")}
           {renderNavItems(navItemsCountryJourneys)}
         </div>
+
+        {onOpenSearch && (
+          <div className="px-5 mt-5">
+            {/* Just a magnifying glass until clicked; then it slides open into a field.
+                Typing in the field opens the full search pop-up with the results. */}
+            <div
+              className={`flex items-center h-9 border transition-all duration-300 ease-out overflow-hidden ${
+                isSearchExpanded ? "w-full border-line bg-paper" : "w-full border-transparent"
+              }`}
+            >
+              <button
+                type="button"
+                onClick={() => (isSearchExpanded ? onOpenSearch(searchDraft) : setIsSearchExpanded(true))}
+                className={`h-9 shrink-0 flex items-center text-ink-muted hover:text-accent transition-colors cursor-pointer ${isSearchExpanded ? "w-9 justify-center" : "gap-2.5 pl-2 pr-3 text-sm"}`}
+                aria-label="Search the toolkit"
+                aria-expanded={isSearchExpanded}
+                title={`Search (${isMac ? "⌘" : "Ctrl"}+K)`}
+              >
+                <Search size={17} className="stroke-[1.75]" />
+                {!isSearchExpanded && <span>Search…</span>}
+              </button>
+              {isSearchExpanded && (
+                <input
+                  ref={searchInputRef}
+                  value={searchDraft}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    if (value.trim()) {
+                      onOpenSearch(value);
+                      setSearchDraft("");
+                      setIsSearchExpanded(false);
+                    } else {
+                      setSearchDraft(value);
+                    }
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Escape") { setSearchDraft(""); setIsSearchExpanded(false); }
+                    if (e.key === "Enter") onOpenSearch(searchDraft);
+                  }}
+                  onBlur={() => { if (!searchDraft.trim()) setIsSearchExpanded(false); }}
+                  placeholder="Search…"
+                  aria-label="Search the toolkit"
+                  className="flex-1 min-w-0 pr-3 bg-transparent text-sm text-ink placeholder:text-ink-muted/70 outline-none"
+                  autoComplete="off"
+                  spellCheck={false}
+                />
+              )}
+            </div>
+          </div>
+        )}
       </nav>
     </div>
   );

@@ -11,4 +11,7 @@ CHAMP-Tool-main2/
 *.zip
 *.bundle
 .aistudio/
+.claude/
+action1_parsed.json
 .build_done
+public/assets/aistudio/image_ae17b45f.png

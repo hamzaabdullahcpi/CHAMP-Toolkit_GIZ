@@ -2,292 +2,453 @@ export const actionsData = [
   {
     "id": 1,
     "title": "Establish Multilevel Commitments and Platforms for Climate Investment",
-    "description": "This Action helps national governments align national climate commitments with city and subnational priorities and establish platforms for coordinated implementation and investment. It supports governments to translate NDCs and other national commitments into shared priorities, clarify responsibilities and connect local investment needs with national and international support.",
-    "systemsLogic": "Climate investment requires shared priorities and sustained coordination across government levels. Joint commitments can connect NDCs and other national goals with local priorities, responsibilities and investment needs. National coordination mechanisms can sustain coordination between governments and wider implementation actors. Country platforms can then connect urban priorities with national investment strategies and finance partners. Together, these mechanisms create the institutional foundations for investment planning, finance mobilization and implementation.",
+    "description": "This action helps national governments align national climate commitments with city and subnational priorities and establish platforms for coordinated implementation and investment. It supports governments to translate NDCs and other national commitments into shared priorities, clarify responsibilities, and connect local investment needs with national and international support.",
+    "systemsLogic": "Climate investment requires shared priorities and sustained coordination across government levels. Joint commitments can connect NDCs and other national goals with local priorities, responsibilities, and investment needs. National coordination mechanisms can facilitate ongoing collaboration between governments and wider implementation actors. Country platforms can then connect urban priorities with national investment strategies and finance partners. Together, these mechanisms create the institutional foundations for investment planning, finance mobilization, and implementation.",
     "pathways": [
       {
         "title": "1.1 Multilevel Climate Commitments",
-        "overview": "Multilevel climate commitments align national, subnational and city governments around shared climate priorities and responsibilities. They can help translate NDCs, NAPs and national climate strategies into locally relevant priorities, investment needs and implementation responsibilities. This creates a clearer link between national climate commitments, local action and climate finance.",
+        "overview": "Multilevel climate commitments align national, subnational, and city governments around shared climate priorities, responsibilities and financing needs. These commitments can be embedded in existing NDCs, NAPs, and national climate strategies, or established through complementary agreements and processes. They help connect national climate goals with local priorities, investment needs, and implementation responsibilities, creating a clearer basis for coordinating climate finance and action across government levels.",
+        "whatItIs": "",
+        "whyItIsNeeded": "",
         "potentialNationalLead": [
-          "Climate / Environment Ministry"
+          "Climate/Environment Ministry",
+          "Urban Development Ministry"
         ],
         "keyActors": [
           "Planning Ministry",
           "Finance Ministry",
-          "City / Subnational Planning Department",
-          "City / Subnational Finance Department",
-          "City Networks",
-          "National Funds"
+          "Sector Ministries",
+          "City and Subnational Governments",
+          "City Networks"
         ],
+        "transferabilityTitle": "Adapting this pathway to your context",
         "transferability": [
-          "Adapting commitments to the context: Countries can embed multilevel commitments within NDCs, NAPs or national climate strategies. A separate multilevel commitment process may be useful where existing processes are insufficient.",
-          "Setting common principles while allowing differentiated commitments: Establish a small set of core commitments for participating governments, while allowing cities to add more ambitious or more detailed commitments based on their climate priorities, institutional capacity and readiness.",
-          "Ensuring broad and representative participation: Countries can involve cities directly, through subnational associations or through phased participation, depending on governance arrangements and institutional capacity.",
-          "Aligning commitments with NDC review cycles: Where possible, countries should review commitments alongside NDC review periods so that those become part of routine decision-making."
+          "Embed multilevel commitments within NDCs, NAPs or national climate strategies, or establish new agreements where existing processes are insufficient.",
+          "Consider setting a small set of core commitments for participating governments, while allowing them to make additional or more ambitious commitments based on their priorities, capacities, and readiness.",
+          "Consider whether to engage cities directly, through subnational government associations or through phased participation, depending on your country's governance arrangements and local capacities.",
+          "Consider whether a dedicated urban climate investment and implementation strategy is needed, or whether existing national, sectoral, and subnational plans can provide a sufficient framework for implementation."
         ],
+        "enablingConditions": [],
         "order": 1,
         "implementationGuidance": [
           {
-            "title": "Align national and subnational climate priorities",
-            "content": "Connect NDCs, NAPs and national climate priorities with subnational plans and priorities. Identify where local action contributes to national commitments."
+            "title": "Assess existing national commitments",
+            "content": "Review NDCs, NAPs, national urban policies, and relevant sectoral strategies to identify existing existing climate targets, investment priorities and financing commitments involving cities and subnational governments, as well as gaps in their inclusion."
+          },
+          {
+            "title": "Facilitate subnational commitments",
+            "content": "Support cities and subnational governments in developing climate commitments and investment strategies where these are absent, building on their existing climate priorities and plans, assessed investment needs, and institutional capacities."
           },
           {
             "title": "Define complementary commitments and responsibilities",
-            "content": "Agree what national and subnational governments will finance, regulate, coordinate, enable or implement. Identify where responsibilities are shared."
+            "content": "Work with subnational governments to establish complementary climate and investment targets, milestones and financing responsibilities. Clarify institutional responsibilities for mobilizing resources and leading delivery across government levels."
           },
           {
-            "title": "Connect commitments with investment",
-            "content": "Link agreed priorities to investment plans, budgets and portfolios. Identify financing needs and where national programmes or external finance can support implementation."
+            "title": "Connect commitments to investment planning",
+            "content": "Translate shared commitments into actionable investment priorities, portfolios, and pipelines, and integrate these into national and subnational budgeting (see Pathways 3.1 and 3.2).",
+            "relatedPathways": [
+              {
+                "id": "recG7wIxVJgnhPW6M",
+                "title": "3.1 Local Climate Budgeting and Investment Planning",
+                "actionId": 3,
+                "pathwayIndex": 0,
+                "number": "3.1"
+              },
+              {
+                "id": "rec3uo1IBCauiEimf",
+                "title": "3.2 Climate Portfolios and Project Pipelines",
+                "actionId": 3,
+                "pathwayIndex": 1,
+                "number": "3.2"
+              }
+            ]
           },
           {
-            "title": "Review progress and update commitments",
-            "content": "Regularly assess progress, financing needs and implementation barriers. Use findings to update commitments and inform subsequent national and subnational planning."
+            "title": "Review and update commitments",
+            "content": "Regularly assess progress, financing needs, and implementation barriers. Use findings to update commitments and inform subsequent national and subnational planning, including future NDC revision and implementation cycles."
           }
         ],
         "illustrativeExamples": [
           {
             "title": "Chile – 2025 Nationally Determined Contribution (NDC)",
             "type": "Peer Learning Example",
-            "excerpt": "Chile shows how multilevel climate and investment commitments can be embedded within an NDC. Its 2025 NDC includes specific subnational commitments covering regional and municipal climate plans, institutional capacity and climate finance...",
-            "fullText": "Chile shows how multilevel climate and investment commitments can be embedded within an NDC. Its 2025 NDC includes specific subnational commitments covering regional and municipal climate plans, institutional capacity and climate finance. Notably, Chile commits to establishing a national network to identify, mobilize and deploy subnational climate finance, with active participation from subnational governments. The NDC assigns responsibilities and deadlines for these commitments across government levels, creating a framework to link national ambition with local planning, finance and implementation.",
-            "connectionLine": "What you can learn: See how an NDC can connect subnational climate commitments with institutional responsibilities and actions for mobilizing finance.",
+            "excerpt": "",
+            "fullText": "Chile’s 2025 NDC includes specific subnational commitments covering regional and municipal climate plans, institutional capacity, and climate finance. Notably, the country commits to establishing a national network to identify, mobilize, and deploy subnational climate finance, with active participation from subnational governments. The NDC assigns responsibilities and deadlines for these commitments across government levels, creating a framework to link national ambition with local planning, finance, and implementation.",
+            "link": "https://reporteclimatico.mma.gob.cl/ndc?",
+            "connectionLine": "Chile shows how multilevel climate and investment commitments can be embedded within an NDC.",
             "order": 1
           },
           {
             "title": "Sweden – Climate City Contract 2030",
             "type": "Peer Learning Example",
-            "excerpt": "Sweden shows how a multilevel process can help national governments to establish and renew complementary climate commitments...",
-            "fullText": "Sweden shows how a multilevel process can help national governments to establish and renew complementary climate commitments. As part of the Climate City Contracts, Swedish municipalities, national government agencies and Viable Cities make commitments around a shared climate-neutrality mission and review them annually. The contracts connect climate goals with portfolios of projects and investment planning. The process has expanded from nine municipalities in 2019 to 48 municipalities.",
-            "connectionLine": "What you can learn: See how an iterative multilevel commitment process can link shared climate and investment goals across national and subnational governments.",
-            "link": "https://viablecities.se/klimatkontrakt-2030",
+            "excerpt": "",
+            "fullText": "As part of the Climate City Contracts, Swedish municipalities, national government agencies, and Viable Cities make commitments around a shared climate-neutrality mission and review them annually. The contracts connect climate goals with portfolios of projects and investment planning. The process has expanded from nine municipalities in 2019 to 48 municipalities.",
+            "link": "https://viablecities.se/en/klimatneutrala-stader-2030/klimatkontrakt/",
+            "connectionLine": "Sweden shows how an iterative multilevel commitment process can link shared climate and investment goals across national and subnational governments.",
             "order": 2
           },
           {
-            "title": "Rwanda – Nationally Determined Contribution (NDC) 3.0",
+            "title": "Rwanda – Nationally Determined Contribution 3.0",
             "type": "Peer Learning Example",
-            "excerpt": "Rwanda's NDC 3.0 commits to developing climate investment plans that can be implemented across all 30 districts...",
-            "fullText": "Rwanda's NDC 3.0 commits to developing climate investment plans that can be implemented across all 30 districts. The Rwanda Green Fund (RGF) and district authorities are among the institutions responsible for financing and implementing this commitment. RGF already mobilizes climate finance and manages facilities that can finance national and local public-sector climate investments. This creates an institutional bridge between national climate commitments, district investment planning and Rwanda's wider climate-finance architecture.",
-            "connectionLine": "What you can learn: See how an NDC can connect national climate commitments with subnational investment planning and a national institution for mobilizing and deploying climate finance.",
+            "excerpt": "",
+            "fullText": "Rwanda's nationally determined contribution (NDC) 3.0 commits to developing climate investment plans that can be implemented across all of the country’s 30 districts. The Rwanda Green Fund (RGF) and district authorities are among the institutions responsible for financing and implementing this commitment. The RGF already mobilizes climate finance and manages facilities that can finance national and local public-sector climate investments. This creates an institutional bridge between national climate commitments, district investment planning, and Rwanda's wider climate-finance architecture.",
+            "link": "https://www.unfccc.int/sites/default/files/2025-12/Rwanda%20NDC3.0%20Final.pdf",
+            "connectionLine": "Rwanda shows how an NDC can connect national climate commitments with subnational investment planning and a national institution to mobilize and deploy climate finance.",
             "order": 3
           },
           {
-            "title": "Climate Action Aggregation Tool (CAAT)",
-            "type": "Tool",
-            "excerpt": "Developed by the Initiative for Climate Action Transparency, CAAT showcases a step-by-step process for national governments to quantify and quantify the aggregate GHG impact of climate actions by cities, regions and other non-state actors...",
-            "fullText": "Developed by the Initiative for Climate Action Transparency, CAAT showcases a step-by-step process for national governments to quantify and quantify the aggregate GHG impact of climate actions by cities, regions and other non-state actors. It also accounts for overlaps between actions and national policies. National governments can use CAAT to incorporate subnational action into national climate targets, NDC development and investment planning.",
-            "connectionLine": "Why use this: Assess how subnational climate commitments could contribute to national targets and incorporate them into NDC and investment planning.",
+            "title": "Global – Sustainable Urban Resilience for the Next Generation (SURGe) Initiative",
+            "type": "Peer Learning Example",
+            "excerpt": "",
+            "fullText": "Launched at COP27 under the Egyptian Presidency, in collaboration with UN-Habitat and facilitated by ICLEI, SURGe brings together national and local governments, city networks and other partners to accelerate urban climate action. Through its Global Alliance and five sectoral tracks covering buildings and housing, urban energy, waste, mobility and water, the initiative aims to strengthen the recognition of local climate commitments in NDCs and support coordinated implementation. Its objectives also include working with national governments to develop context-specific financing mechanisms, connecting cities with development banks and climate funds, and supporting urban project pipelines. SURGe therefore illustrates how international partnerships can connect national climate ambition with local commitments, sectoral priorities and financing opportunities.",
+            "link": "https://unhabitat.org/cop27-presidency-sustainable-urban-resilience-for-the-next-generation-surge",
+            "connectionLine": "SURGe shows how international initiatives can support multilevel climate commitments, sectoral collaboration and access to finance for urban climate action.",
             "order": 4
+          },
+          {
+            "title": "UN-Habitat – Seizing the Urban Opportunity: A 3-Step Guide for Strengthening NDCs 3.0",
+            "type": "Tool",
+            "excerpt": "",
+            "fullText": "Co-developed by UN-Habitat and SDU Resilience, this guide provides a three-step methodology to assess, prepare and co-design NDCs with stronger urban climate commitments. It helps governments review existing NDCs and national and subnational policies, identify financing opportunities, and strengthen multilevel governance arrangements. It also supports engagement with sector ministries and local stakeholders to align priorities and clarify institutional responsibilities. The co-design process helps governments identify urban mitigation and adaptation actions across sectors and incorporate the finance, technology and capacity-building support needed for implementation into national commitments. The guide can also inform NDC implementation planning and future revisions by helping governments identify relevant urban commitments, responsible actors and remaining gaps.",
+            "link": "https://unhabitat.org/seizing-the-urban-opportunity-a-3-step-guide-for-strengthening-nationally-determined-contributions",
+            "connectionLine": "Strengthen national climate commitments by integrating urban priorities, subnational contributions and implementation needs into NDCs through multilevel and cross-sectoral collaboration.",
+            "order": 5
+          },
+          {
+            "title": "UN-Habitat – Urban Content in NDC 3.0: Cities at the Centre",
+            "type": "Tool",
+            "excerpt": "",
+            "fullText": "UN-Habitat's analysis examines the urban content of third-generation NDCs. It assesses how national climate plans address cities across mitigation and adaptation sectors, multilevel governance, financing, and implementation. It also examines changes across NDC revision cycles, providing an evidence base for governments seeking to strengthen urban climate commitments.",
+            "link": "https://unhabitat.org/urban-content-in-ndc-30-cities-at-the-centre",
+            "connectionLine": "Understand how urban priorities, sectoral commitments, and implementation arrangements are reflected in NDCs and identify opportunities for improvement.",
+            "order": 6
+          },
+          {
+            "title": "ICAT – Climate Action Aggregation Tool",
+            "type": "Tool",
+            "excerpt": "",
+            "fullText": "Developed by the Initiative for Climate Action Transparency, the Climate Action Aggregation Tool (CAAT) outlines a step-by-step process for national governments to quantify the aggregate GHG impact of climate actions by cities, regions, and other non-state actors. It also accounts for overlaps between actions and national policies. National governments can use CAAT to incorporate subnational action into national climate targets, NDC development, and investment planning.",
+            "link": "https://climateactiontransparency.org/icat-toolbox/caat",
+            "connectionLine": "This tool shows how subnational climate commitments could contribute to national targets and incorporate them into NDC and investment planning.",
+            "order": 7
           }
         ]
       },
       {
         "title": "1.2 National Coordination Mechanisms",
-        "overview": "National coordination mechanisms provide a structure for national and subnational governments to coordinate climate investment and implementation. They connect local priorities with national policies, programmes, finance and technical support. They can also enable whole-of-society engagement, bringing in businesses, finance institutions, academia, civil society and communities where needed. To sustain this coordination, mechanisms can include dedicated capacity to convene actors day-to-day, follow up on financing and implementation needs, and bring local feedback into national decision-making.",
+        "overview": "National coordination mechanisms provide a structure for national and subnational governments to coordinate climate investment and implementation. They connect local priorities with national policies, programs, finance, and technical support. They can also enable whole-of-society engagement, bringing in businesses, financial institutions, academia, civil society and communities where needed. To sustain this coordination, mechanisms can include dedicated capacity to convene actors day-to-day, follow up on financing and implementation needs, and bring local feedback into national decision-making.",
+        "whatItIs": "",
+        "whyItIsNeeded": "",
         "potentialNationalLead": [
-          "Climate / Environment Ministry",
-          "Urban / Local Government Ministry"
+          "Climate/Environment Ministry",
+          "Urban Development Ministry"
         ],
         "keyActors": [
           "Planning Ministry",
           "Finance Ministry",
-          "Municipal / Subnational Planning Department",
-          "Municipal / Subnational Finance Department",
+          "Sector Ministries",
+          "City and Subnational Governments",
           "National Development Bank",
           "City Networks",
-          "Private Sector",
-          "Civil Society",
-          "Academia"
+          "Businesses",
+          "Universities",
+          "Research Institutions",
+          "Civil Society Organizations",
+          "Community Organizations"
         ],
+        "transferabilityTitle": "Adapting this pathway to your context",
         "transferability": [
-          "Adapting the form of coordination to national context: Countries can use a national coordination platform; recurring dialogue series, funder coordination mechanisms, or other arrangements suited to their priorities, governance system and institutional capacity.",
-          "Assigning coordination responsibilities reflecting the governance system: In centralized systems, a national ministry may lead coordination. In decentralized systems, responsibilities may be shared across national, regional or state governments working with cities.",
-          "Accounting for differences in local capacity: Where cities have different levels of capacity, coordination mechanisms may need to provide additional technical support to help lower-capacity cities participate effectively.",
-          "Involving actors based on the issues being addressed: Financing barriers may require the leadership of finance ministries and financial institutions, while sector-specific challenges may also require coordinating relevant ministries or technical partners."
+          "Establish the coordination mechanism suited to the governance system and institutional capacities – this could be a national coordination platform, recurring dialogue series, or other arrangements.",
+          "Depending on institutional mandates and coordination capacities, you can lead coordination nationally, share leadership across government levels or engage intermediaries such as city networks to facilitate the process.",
+          "Where cities have different levels of technical and institutional capacity, consider providing additional support to ensure that lower-capacity municipalities can participate effectively in coordination and investment discussions.",
+          "Involve different national institutions and external partners depending on the issues being addressed. Financing challenges may require finance ministries, development banks, and investors, while sector-specific barriers may also require sector ministries."
         ],
+        "enablingConditions": [],
         "order": 2,
         "implementationGuidance": [
           {
-            "title": "Build the coordination mechanism on existing processes",
-            "content": "Identify where climate, planning, budgeting and financing decisions already take place. Strengthen these processes rather than creating additional arrangements."
+            "title": "Build on existing processes",
+            "content": "Identify where climate planning, budgeting, and financing decisions already take place. Strengthen related existing processes rather than creating additional coordination mechanisms."
           },
           {
-            "title": "Clarify roles across government levels",
-            "content": "Define which institutions are responsible for financing, regulating and implementing priority actions. Identify where responsibilities are shared and require national–subnational coordination."
+            "title": "Clarify institutional roles",
+            "content": "Define which national ministries and subnational institutions are responsible for financing, regulating, and implementing priority climate actions. Identify shared responsibilities and coordination needs across government levels and sectors."
           },
           {
             "title": "Engage actors beyond government",
-            "content": "Identify businesses, finance institutions, academia, civil society and community actors that influence climate action. Bring them into the coordination process to contribute finance, expertise, assets and implementation capacity."
+            "content": "Identify businesses, financial institutions, academia, civil society, and community actors that influence climate action. Bring them into the coordination process to contribute finance, expertise, assets, and implementation capacity."
           },
           {
             "title": "Connect coordination to investment decisions",
-            "content": "Use coordination mechanisms to identify investment needs, and coordinate finance, technical assistance or policy support needed to move climate priorities forward."
+            "content": "Use coordination mechanisms to identify investment needs, and mobilize investors, technical assistance providers, and decision-makers for implementation (see Pathways 1.3, 3.1 and 3.2).",
+            "relatedPathways": [
+              {
+                "id": "rec9uVdifwHMNd1Aa",
+                "title": "1.3 Urban-Inclusive Country Platforms",
+                "actionId": 1,
+                "pathwayIndex": 2,
+                "number": "1.3"
+              },
+              {
+                "id": "recG7wIxVJgnhPW6M",
+                "title": "3.1 Local Climate Budgeting and Investment Planning",
+                "actionId": 3,
+                "pathwayIndex": 0,
+                "number": "3.1"
+              },
+              {
+                "id": "rec3uo1IBCauiEimf",
+                "title": "3.2 Climate Portfolios and Project Pipelines",
+                "actionId": 3,
+                "pathwayIndex": 1,
+                "number": "3.2"
+              }
+            ]
           },
           {
-            "title": "Provide capacity to sustain coordination",
-            "content": "Identify a team or institution to convene actors, track local needs and agreed actions, and facilitate follow-up across national and subnational governments."
+            "title": "Sustain coordination",
+            "content": "Identify a team or institution to convene actors, track local needs, and agreed actions, and facilitate follow-up across national and subnational governments."
           },
           {
-            "title": "Review progress and improve national support",
-            "content": "Regularly review implementation and financing barriers with subnational governments. Feed lessons into policies, programmes, funding decisions and subsequent coordination cycles."
+            "title": "Review progress and improve",
+            "content": "Regularly review implementation and financing barriers with subnational governments. Where needed, adjust shared commitments based on the reviews and feed lessons into policy or institutional reforms, program designs, funding decisions, and subsequent coordination cycles (see Pathway 1.1, 2.1 and 2.2).",
+            "relatedPathways": [
+              {
+                "id": "recWGEx5x7YpvT9ZP",
+                "title": "1.1 Multilevel Climate Commitments",
+                "actionId": 1,
+                "pathwayIndex": 0,
+                "number": "1.1"
+              },
+              {
+                "id": "recYHYmT0t2O6FowD",
+                "title": "2.1 Enabling Framework Conditions Assessments",
+                "actionId": 2,
+                "pathwayIndex": 0,
+                "number": "2.1"
+              },
+              {
+                "id": "recEU7spqUr33oM9S",
+                "title": "2.2 Reform Roadmaps for Urban Climate Investment",
+                "actionId": 2,
+                "pathwayIndex": 1,
+                "number": "2.2"
+              }
+            ]
           }
         ],
         "illustrativeExamples": [
           {
-            "title": "Sweden – Viable Cities",
+            "title": "Sweden – Viability Fund for Cities",
             "type": "Peer Learning Example",
-            "excerpt": "Sweden shows how a national coordination mechanism can connect local climate implementation with national priorities and investment support...",
-            "fullText": "Sweden shows how a national coordination mechanism can connect local climate implementation with national priorities and investment support. Launched in 2017, Viable Cities coordinates 48 municipalities, six national government agencies and wider societal actors around a shared climate-neutrality mission. Within Viable Cities, Climate City Contract (CCC) 2030 provides a core multilevel coordination process. National agencies and municipalities participate in annual cycles linking local climate action and investment needs with national support. Cities also connect transition priorities with investment planning, budgets and procurement, helping identify where additional financing or national action is needed. Within CCCs, Transition Arenas extend coordination to businesses, academia and civil society, with Viable Cities providing methods, tools and peer learning for these local collaborations. Viable Cities also has a dedicated Coordination Function that analyses CCCs to identify local and regional needs, facilitates collaboration between cities and national agencies, and aligns CCC processes with national and EU initiatives. The evolution of Viable Cities has also helped to shape the national coordination approaches under the EU Cities Mission.",
-            "connectionLine": "What you can learn: See how a national coordination mechanism can enable multilevel coordination around climate action planning, investment and implementation.",
-            "link": "https://viablecities.se",
+            "excerpt": "",
+            "fullText": "The Viability Fund for Cities is an emerging mechanism to coordinate funding from different public and private funders toward urban climate investment portfolios. Building on Sweden's Viable Cities experience, it is being developed around three interconnected functions: ALIGN, bringing funders and implementation partners around shared climate transition portfolios and place-based interventions; CO-FINANCE, mobilizing catalytic capital and coordinating contributions from different financing partners toward local investments; and DEMAND, aggregating purchasing demand to shape markets and support deployment of climate solutions. The initiative aims to mobilize EUR 10 billion in co-financing and EUR 10 billion in aggregated demand by 2030, through partnerships across national, subnational, and international levels. Its institutional and financing arrangements remain under development and are intended to be adapted to different country contexts.",
+            "link": "https://viabilityfund.org/",
+            "connectionLine": "Sweden shows how a multilevel coordination mechanism is being developed to align different funding sources for urban climate investment portfolios and connect financing with market demand.",
             "order": 1
-          },
-          {
-            "title": "Brazil, Kazakhstan and Uzbekistan – CCFLA Local Hubs",
-            "type": "Peer Learning Example",
-            "excerpt": "CCFLA Local Hubs illustrate how intermediary platforms can bring together national and local governments, development partners and finance institutions around urban climate investment priorities...",
-            "fullText": "CCFLA Local Hubs illustrate how intermediary platforms can bring together national and local governments, development partners and finance institutions around urban climate investment priorities. In Central Asia, the Hub convened 25 local governments, 10 national agencies and project preparation partners, including the Gap Fund and FELICITY II, to identify building-decarbonisation projects and connect cities with technical support. In Brazil, the Local Hub brings together over 50 local, national and international partners, supporting coordination through a community of practice and the Green and Resilient Cities Programme (PCVR) Project Bank. These arrangements help strengthen connections between municipal investment needs, national institutions and potential financing partners.",
-            "connectionLine": "What you can learn: See how intermediary platforms can support multilevel coordination and connect municipal climate investment priorities with project preparation and financing partners.",
-            "link": "https://citiesclimatefinance.org",
-            "order": 2
           },
           {
             "title": "Croatia – National Multilevel Climate and Energy Dialogue",
             "type": "Peer Learning Example",
-            "excerpt": "Croatia shows how multilevel coordination can help national governments to identify subnational financing barriers and translate them into new institutional responses...",
-            "fullText": "Croatia shows how multilevel coordination can help national governments to identify subnational financing barriers and translate them into new institutional responses. Between 2022 and 2025, Croatia’s North-West Croatia Regional Energy and Climate Agency (REGEA) facilitated six multilevel climate and energy dialogues involving cities and regions, nine national ministries, businesses, academia and civil society. Initially focused on Croatia's National Energy and Climate Plan, the dialogues evolved to address practical barriers to local implementation, including access to finance. A dedicated dialogue on financing brought municipalities together with the Ministry of Finance and financial-sector actors to discuss how local climate plans could be funded. These discussions led to the creation of the Platform for Sustainable Finance and Energy Transition, providing a dedicated space to connect local financing needs with national and financial-sector actors. Croatia is now working to institutionalise the multilevel dialogue through an inter-ministerial structure involving national and municipal representatives.",
-            "connectionLine": "What you can learn: See how national–local dialogue can surface local financing barriers and lead to the creation of platforms that connect cities with finance.",
+            "excerpt": "",
+            "fullText": "Between 2022 and 2025, Croatia’s North-West Croatia Regional Energy and Climate Agency (REGEA) facilitated six multilevel climate and energy dialogues involving cities and regions, nine national ministries, businesses, academia, and civil society. Initially focused on Croatia's National Energy and Climate Plan, the dialogues evolved to address practical barriers to local implementation, including access to finance. A dedicated dialogue on financing brought municipalities together with the Ministry of Finance and financial-sector actors to discuss how local climate plans could be funded. These discussions led to the creation of the Platform for Sustainable Finance and Energy Transition, providing a space to connect local financing needs with national and financial-sector actors. Croatia is working to institutionalize the multilevel dialogue through an inter-ministerial structure involving national and municipal representatives.",
+            "link": "https://eu-mayors.ec.europa.eu/en/The-Covenant-of-Mayors-at-the-heart-of-multilevel-governance-in-Croatia",
+            "connectionLine": "Croatia shows how multilevel coordination can help national governments to identify subnational financing barriers and translate them into new institutional responses.",
+            "order": 2
+          },
+          {
+            "title": "Brazil, Kazakhstan and Uzbekistan – CCFLA Local Hubs",
+            "type": "Peer Learning Example",
+            "excerpt": "",
+            "fullText": "CCFLA Local Hub for Kazakhstan and Uzbekistan convened 25 local governments, 10 national agencies, and project preparation partners, including the Gap Fund and FELICITY II, to identify building-decarbonization projects and connect cities with technical support. In Brazil, the Local Hub brings together over 50 local, national and international partners, supporting coordination through a community of practice and the Green and Resilient Cities Programme (PCVR) Project Bank. These arrangements help strengthen connections between municipal investment needs, national institutions, and potential financing partners.",
+            "link": "https://citiesclimatefinance.org/the-local-hubs",
+            "connectionLine": "CCFLA Local Hubs show how intermediary platforms can support multilevel coordination and connect municipal climate investment priorities with project preparation and financing partners.",
             "order": 3
-          },
-          {
-            "title": "Morocco – 4C Maroc",
-            "type": "Peer Learning Example",
-            "excerpt": "Morocco shows how a national coordination mechanism can connect national and local governments with wider actors around climate investment and implementation...",
-            "fullText": "Morocco shows how a national coordination mechanism can connect national and local governments with wider actors around climate investment and implementation. The Climate Change Competence Centre of Morocco (4C Maroc) is a national platform for climate dialogue and capacity building. It supports Morocco’s climate protection policy and the national green investment plan. The platform brings together more than 15 national ministries, public institutions and associations representing local and regional governments to strengthen coordination between national and subnational climate action. 4C Maroc also brings businesses, civil society, research and training organisations into its governance through dedicated stakeholder groups. Alongside coordination, it supports NDC implementation, decision-making, capacity building and access to climate finance. The platforms has trained more than 800 local actors on subnational climate integration and climate finance and supported projects seeking climate finance under Morocco's NDC.",
-            "connectionLine": "What you can learn: See how a national coordination mechanism can link national and subnational governments with whole-of-society participation, technical capacity and climate-finance support.",
-            "link": "https://4cmaroc.org",
-            "order": 4
-          },
-          {
-            "title": "Sweden – Viability Fund for Cities",
-            "type": "Peer Learning Example",
-            "excerpt": "The Viability Fund for Cities is an emerging mechanism to coordinate funding from different public and private funders towards urban climate investment portfolios...",
-            "fullText": "The Viability Fund for Cities is an emerging mechanism to coordinate funding from different public and private funders towards urban climate investment portfolios. Building on Sweden's Viable Cities experience, it is being developed around three interconnected functions: ALIGN, bringing funders and implementation partners around shared climate transition portfolios and place-based interventions; CO-FINANCE, mobilising catalytic capital and coordinating contributions from different financing partners towards local investments; and DEMAND, aggregating purchasing demand to shape markets and support deployment of climate solutions. The initiative aims to mobilise EUR 10 billion in co-financing and EUR 10 billion in aggregated demand by 2030, through partnerships across national, subnational and international levels. Its institutional and financing arrangements remain under development and are intended to be adapted to different country contexts.",
-            "connectionLine": "What you can learn: See how multilevel coordination mechanisms is being developed to align different funding sources around urban climate investment portfolios and connect financing with market demand.",
-            "order": 5
           }
         ]
       },
       {
         "title": "1.3 Urban-Inclusive Country Platforms",
-        "overview": "Urban-inclusive country platforms bring city and subnational priorities into nationally led processes for mobilizing climate and development finance. Country platforms align governments and development partners around a shared mission, such as climate action, Cities and subnational governments, however, are often not systematically represented in these platforms, despite their important role in climate action. Urban-inclusive platforms can address this gap by integrating urban and subnational priorities into platform governance, investment planning and financing. This can align national and local climate plans, strengthen urban investment pipelines, and mobilize public, development and private finance for local climate action.",
+        "overview": "Urban-inclusive country platforms bring city and subnational priorities into nationally led processes for mobilizing climate and development finance. Country platforms align governments and development partners around shared missions, such as climate action. Cities and subnational governments, however, are often not systematically represented in these platforms, despite their important roles in climate action. Urban-inclusive platforms can address this gap by integrating urban and subnational priorities into platform governance, investment planning, and financing. This can align national and local climate plans, strengthen urban project pipelines, and mobilize public, development, and private finance for local climate action. Participation in country platforms can also bring cities and subnational governments closer to global climate finance platforms and international partners, creating opportunities to access technical assistance, partnerships and financing support.",
+        "whatItIs": "",
+        "whyItIsNeeded": "",
         "potentialNationalLead": [
-          "Finance Ministry",
-          "Planning Ministry"
+          "Finance Ministry"
         ],
         "keyActors": [
-          "Ministry of Climate / Environment",
-          "Urban / Local Government Ministry",
-          "Sectoral Ministries (e.g., energy, transport)",
-          "National Development Banks",
-          "Multilateral Development Banks",
-          "City / Subnational Governments",
-          "Bilateral Agencies",
-          "City / Subnational Coalitions"
+          "Climate/Environment Ministry",
+          "Urban Development Ministry",
+          "Sector Ministries",
+          "City and Subnational Governments",
+          "National Development Bank",
+          "MDBs/DFIs",
+          "Bilateral Development Agencies",
+          "Project Preparation Facilities",
+          "City Networks",
+          "Private Investors"
         ],
+        "transferabilityTitle": "Adapting this pathway to your context",
         "transferability": [
-          "Aligning leadership with institutional responsibilities: Country platforms may be led by finance or planning ministries or coordinated through central government institutions. Leadership should reflect existing responsibilities for investment planning and finance mobilization.",
-          "Considering the governance system: Depending on the degree of decentralization and number of jurisdictions, cities may participate directly or through regional governments, municipal associations or other representative bodies.",
-          "Accounting for differences in investment readiness: Smaller cities and those with limited technical or financial capacity may require additional project preparation support, financial intermediation or project aggregation to participate effectively.",
-          "Adapting the platform's scope and financing arrangements: Countries can begin with investment portfolios in priority sectors and expand over time. Financing arrangements should reflect local borrowing powers, creditworthiness and access to capital."
+          "Assign leadership to finance or planning ministries or other national government institutions, depending on national responsibilities for investment planning and finance mobilization.",
+          "Consider whether cities should participate directly or through regional governments, or city coalitions, depending on your country's governance system and number of jurisdictions.",
+          "Consider whether small cities and those with limited technical or financial capacities may need additional project preparation support or financial intermediation to participate effectively.",
+          "Begin with investment portfolios in priority sectors and expand over time. Financing arrangements should reflect local borrowing powers, creditworthiness, and access to capital."
         ],
+        "enablingConditions": [],
         "order": 3,
         "implementationGuidance": [
           {
             "title": "Establish national ownership and mandate",
-            "content": "Identify the national institution or group responsible for leading the platform. Define its purpose, responsibilities and relationship with existing government processes."
+            "content": "Identify the national institution or group responsible for leading the platform. Define its purpose, responsibilities, and relationship with existing government processes."
           },
           {
-            "title": "Create clear entry points for cities",
+            "title": "Create entry points for cities",
             "content": "Establish institutional arrangements for cities and subnational governments to bring finance and implementation needs into national discussions."
           },
           {
-            "title": "Align national and local investment priorities",
-            "content": "Connect national climate and development objectives with city plans, investment portfolios and project pipelines."
+            "title": "Align investment priorities",
+            "content": "Connect national climate and development objectives with city plans, investment portfolios, and project pipelines (see Pathways 1.1, 3.1, 3.2).",
+            "relatedPathways": [
+              {
+                "id": "recWGEx5x7YpvT9ZP",
+                "title": "1.1 Multilevel Climate Commitments",
+                "actionId": 1,
+                "pathwayIndex": 0,
+                "number": "1.1"
+              },
+              {
+                "id": "recG7wIxVJgnhPW6M",
+                "title": "3.1 Local Climate Budgeting and Investment Planning",
+                "actionId": 3,
+                "pathwayIndex": 0,
+                "number": "3.1"
+              },
+              {
+                "id": "rec3uo1IBCauiEimf",
+                "title": "3.2 Climate Portfolios and Project Pipelines",
+                "actionId": 3,
+                "pathwayIndex": 1,
+                "number": "3.2"
+              }
+            ]
           },
           {
             "title": "Coordinate project preparation support",
-            "content": "Engage project preparation facilities and development partners to strengthen urban pipelines and explore aggregation of smaller projects."
+            "content": "Engage project preparation facilities and development partners to strengthen urban pipelines and explore aggregation of smaller projects (see Pathway 3.3).",
+            "relatedPathways": [
+              {
+                "id": "recRTFUoxTWXKiQFA",
+                "title": "3.3 Project Preparation",
+                "actionId": 3,
+                "pathwayIndex": 2,
+                "number": "3.3"
+              }
+            ]
           },
           {
-            "title": "Bring finance partners into the process",
-            "content": "Engage national and multilateral development banks, climate funds and private financiers around urban investment needs. Identify suitable public, concessional and private financing instruments."
+            "title": "Engage financing partners",
+            "content": "Bring national and multilateral development banks, climate funds, and private financiers around urban investment needs. Identify suitable public, concessional, and private financing instruments (see Pathway 4.2).",
+            "relatedPathways": [
+              {
+                "id": "rechG5sx4ide7Zsxo",
+                "title": "4.2 Financial Instruments and Mechanisms",
+                "actionId": 4,
+                "pathwayIndex": 1,
+                "number": "4.2"
+              }
+            ]
           },
           {
             "title": "Monitor progress and adapt support",
-            "content": "Track the implementation of urban or subnational portfolios. Use findings to adjust financing arrangements, technical assistance and national support."
+            "content": "Track the implementation of urban or subnational portfolios. Use findings to adjust national support arrangements."
           }
         ],
         "illustrativeExamples": [
           {
             "title": "Cameroon – Finance Your Cities Country Platform for Localizing Finance",
             "type": "Peer Learning Example",
-            "excerpt": "Cameroon shows how a country platform can be designed around urban investment and finance priorities from the outset...",
-            "fullText": "Cameroon shows how a country platform can be designed around urban investment and finance priorities from the outset. Announced at COP30, the platform brings national ministries, local and regional governments and the Special Council Support Fund for Mutual Assistance (FEICOM), Cameroon’s municipal financing institution, around a shared pipeline of climate and development projects. The platform aims to align national policies and investment plans with local climate priorities and connect local projects with national and international finance. FEICOM acts as a financial intermediary between cities and finance providers, aiming to connect local projects with private and international capital, as part of a portfolio approach.",
-            "connectionLine": "What you can learn: See how a country platform can integrate urban investment priorities into the national financial architecture, supported by a domestic financial intermediary.",
+            "excerpt": "",
+            "fullText": "Announced at COP30, Cameroon’s country platform brings national ministries, local and regional governments and the Special Council Support Fund for Mutual Assistance (FEICOM), Cameroon’s municipal financing institution, around a shared pipeline of climate and development projects. The platform aims to align national policies and investment plans with local climate priorities. FEICOM acts as a financial intermediary between cities and finance providers, aiming to connect local projects with private and international capital, as part of a portfolio approach.",
+            "link": "https://www.financeyourcities.org/country-platforms/",
+            "connectionLine": "Cameroon shows how a country platform can integrate urban investment priorities into the national financial architecture, supported by a domestic financial intermediary.",
             "order": 1
           },
           {
             "title": "South Africa – Just Energy Transition Partnership (JET-P)",
             "type": "Peer Learning Example",
-            "excerpt": "South Africa shows how a country platform can create energy-related investment pathways for municipalities...",
-            "fullText": "South Africa shows how a country platform can create energy-related investment pathways for municipalities. South Africa’s Just Energy Transition Partnership mobilizes international support around the country’s transition, guided by its Just Energy Transition Investment and Implementation Plans. Municipalities have a dedicated portfolio within the platform, reflecting their major role in electricity distribution, energy access and local infrastructure. A JET Municipal Council, led by the South African Local Government Association (SALGA), provides a route for municipal participation in the country platform. It brings together municipal representatives, national ministries, the National Treasury, the Development Bank of Southern Africa (DBSA) and other energy-sector institutions. Through three workstreams covering municipal capability, financing and energy access, the Council identifies investment priorities, develops project pipelines and explores financing options for municipal infrastructure. Dedicated programmes within the municipal portfolio also support municipalities with project preparation and access to concessional and private finance.",
-            "connectionLine": "What you can learn: See how a country platform can integrate municipalities in national investment coordination and support portfolio development, project preparation and finance.",
+            "excerpt": "",
+            "fullText": "South Africa’s Just Energy Transition Partnership mobilizes international support around the country’s transition, guided by its Just Energy Transition Investment and Implementation Plans. Municipalities have a dedicated portfolio within the platform, reflecting their major role in electricity distribution, energy access and local infrastructure. A JET Municipal Council, led by the South African Local Government Association, provides a route for municipal participation in the country platform. It brings together municipal representatives, national ministries, the National Treasury, the Development Bank of Southern Africa (DBSA) and other energy-sector institutions. Through three workstreams covering municipal capability, financing and energy access, the council identifies investment priorities, develops project pipelines and explores financing options for municipal infrastructure. Dedicated programs within the municipal portfolio also support municipalities with project preparation and access to concessional and private finance.",
+            "link": "https://justenergytransition.co.za/wp-content/uploads/2026/06/JET-IP-2026-Q1-Progress-Report-final.pdf",
+            "connectionLine": "South Africa shows how a country platform can integrate municipalities into national investment coordination and support portfolios, project preparation and financing.",
             "order": 2
           },
           {
-            "title": "CCFLA’s Urban-Inclusive Country Platforms Framework",
-            "type": "Tool",
-            "excerpt": "The framework provides guidance on how a country platform can be designed to systematically integrate cities and subnational priorities into country-platform governance, investment planning and financing...",
-            "fullText": "The framework provides guidance on how a country platform can be designed to systematically integrate cities and subnational priorities into country-platform governance, investment planning and financing. It addresses common barriers, including misalignment between national and local priorities, weak urban project pipelines, limited fiscal capacity and creditworthiness, and a lack of city-focused financial instruments The framework provides a phased roadmap that covers whole-of-government engagement, programme readiness, investment programming, financing and implementation. It identifies practical approaches for engaging cities and subnational governments, strengthening urban investment pipelines, aggregating smaller projects and connecting them with appropriate financing instruments through national and local financial institutions.",
-            "connectionLine": "Why use this: Identify a practical roadmap to integrate urban and subnational priorities, investment pipelines and financing needs into country platforms.",
-            "link": "https://citiesclimatefinance.org",
+            "title": "Sweden – Viable Cities",
+            "type": "Peer Learning Example",
+            "excerpt": "",
+            "fullText": "Launched in 2017, Viable Cities serves as Sweden's mission-oriented country platform, connecting 48 municipalities, six national government agencies and wider societal actors around the mission of climate-neutral cities by 2030. The agencies are the Swedish Energy Agency, Vinnova, Formas, the Swedish Agency for Economic and Regional Growth, the Swedish Transport Administration and the Swedish Environmental Protection Agency.\nAt its core, Climate City Contract 2030 (CCC) provides an annual process for renewing complementary national–local commitments and connecting municipal climate priorities and investment needs with opportunities for national support. Municipalities work to integrate climate priorities into planning, budgeting and procurement, while Transition Arenas engage businesses, academia and civil society in local transitions.\nViable Cities supports these processes through research and innovation funding, tools, methods and peer learning, while cities contribute staff and municipal resources. Its Coordination Function identifies municipal and regional needs, facilitates multilevel collaboration and helps align national and European initiatives. Building on this established capacity, Viable Cities is developing stronger links to investment preparation, financing and market demand, including through the emerging Viability Fund for Cities and Local Investment Structures, which remain under development and do not imply finance already mobilized at scale. These will aim to complement existing financing mechanisms, such as Kommuninvest's direct lending to eligible municipal borrowers. Notably, Viable Cities facilitates coordination, while investment and financing decisions remain with the responsible actors and appropriately mandated financial institutions. \nViable Cities' experience has also informed knowledge exchange and related national platform development under the EU Cities Mission.",
+            "link": "https://viablecities.se/en/",
+            "connectionLine": "Sweden shows how a mission-oriented country platform can enable multilevel coordination around climate action planning, investment, and implementation.",
             "order": 3
+          },
+          {
+            "title": "CCFLA and Global SDSN Commission – Urban-Inclusive Country Platforms Framework",
+            "type": "Tool",
+            "excerpt": "",
+            "fullText": "CCFLA’s framework provides guidance on how a country platform can be designed to systematically integrate cities and subnational priorities into country-platform governance, investment planning, and financing. It addresses common barriers, including misalignment between national and local priorities, weak urban project pipelines, limited fiscal capacity and creditworthiness, and a lack of city-focused financial instruments. The framework’s phased roadmap covers whole-of-government engagement, program readiness, investment programming, financing, and implementation. It identifies practical approaches for engaging cities and subnational governments, strengthening urban investment pipelines, aggregating smaller projects, and connecting them with appropriate financing instruments through national and local financial institutions.",
+            "link": "https://citiesclimatefinance.org/publications/integrating-urban-and-subnational-priorities-into-country-platforms",
+            "connectionLine": "This framework identifies a practical roadmap for integrating urban and subnational priorities, investment pipelines, and financing needs into country platforms.",
+            "order": 4
+          },
+          {
+            "title": "Viability Fund for Cities – Country Platform Functions",
+            "type": "Tool",
+            "excerpt": "",
+            "fullText": "This guide supports the [CHAMP Implementation Roadmap 2026–2028](https://www.champ-climate.org/champ-implementation-roadmap-2026-2028) through country platforms that coordinate locally owned portfolios. Drawing on Viable Cities and Climate City Contract 2030, it connects recurring commitments, coordination and learning with demonstrators, local investment structures and demand programmes. Platforms can coordinate preparation and national investment portfolios, connect domestic and international finance, and address institutional barriers. Receiving and channelling funding requires appropriate mandates and financial arrangements. The approach links implementation evidence with policy, support and country-led review.",
+            "link": "https://viabilityfund.org/models/country-platform-functions/",
+            "connectionLine": "Connect locally owned climate portfolios with national priorities, preparation support, finance and delivery.",
+            "order": 5
           }
         ]
       }
     ]
   },
-      {
+  {
     "id": 2,
     "title": "Strengthen Enabling Environments for Climate Investment",
-    "description": "This Action helps national governments identify and address barriers to urban climate investment and implementation. These may include policy, fiscal, institutional, financing, data and coordination barriers. Governments can use these findings to prioritise reforms that improve investment conditions for cities and subnational governments.",
-    "systemsLogic": "Climate finance depends on more than the availability of capital. Policies, institutions and fiscal systems determine whether climate priorities can become financeable portfolios. National governments can address barriers that cities cannot resolve alone, including borrowing rules and financial frameworks. Stronger enabling environments can therefore improve project preparation, access to finance and implementation across cities.",
+    "description": "This Action helps national governments to identify and address barriers to urban climate finance and implementation. These may include policy, financing, data and coordination barriers. Governments can use these findings to prioritize reforms that improve investment conditions for cities.",
+    "systemsLogic": "Mobilizing urban climate finance requires more than the availability of capital. Policies, institutions, fiscal frameworks, and regulatory conditions influence whether cities can prepare, finance, and implement climate projects. National governments can address systemic barriers that cities cannot resolve alone, including borrowing restrictions, regulatory constraints, and gaps in financial frameworks. Assessing these barriers and implementing targeted reforms can improve cities’ investment readiness, access to finance, and capacity to implement climate projects.",
     "pathways": [
       {
-        "title": "2.1. Enabling Framework Conditions Assessments",
-        "overview": "Enabling environment assessments identify the conditions that support or constrain urban climate investment. These assessments can be conducted across national and subnational governance levels. Governments often know that climate investment is not progressing but may lack a systematic way to identify where the challenges lie and which reforms should be prioritised. An enabling environment assessment helps make these challenges visible and determine areas of coordinated reforms.",
+        "title": "2.1 Enabling Framework Conditions Assessments",
+        "overview": "Enabling framework conditions assessments help national and subnational governments to systematically identify barriers to urban climate investment. Through evidence collection and stakeholder engagement, they reveal how existing conditions across data, finance, and governance affect investment and implementation across government levels. Findings can help governments identify reform priorities requiring coordinated national and subnational action.",
+        "whatItIs": "",
+        "whyItIsNeeded": "",
         "potentialNationalLead": [
-          "Planning Ministry",
-          "Urban / Local Government Ministry"
+          "Urban Development Ministry"
         ],
         "keyActors": [
           "Finance Ministry",
-          "Climate / Environment Ministry",
-          "City / Subnational Coalitions",
-          "Municipal / Subnational Finance Department",
-          "Municipal / Subnational Planning Department",
-          "Implementation Partner Organizations"
+          "Climate/Environment Ministry",
+          "City and Subnational Governments",
+          "National Development Bank",
+          "City Networks",
+          "Universities",
+          "Research Institutions",
+          "Technical Assistance Providers"
         ],
+        "transferabilityTitle": "Adapting this pathway to your context",
         "transferability": [
-          "Considering differences in institutional capacity: The scope and depth of assessments may vary depending on government capacity, data and available expertise.",
-          "Accounting for data availability: Where climate, fiscal or investment data are limited, assessments may need to draw more heavily on stakeholder consultations and qualitative evidence.",
-          "Linking assessments to the right institutions and reform opportunities: Findings are more likely to inform action when relevant institutions have the mandate, political support and capacity to pursue identified reforms."
+          "Match the scope and depth of the assessment to available institutional capacity. Where capacities are limited, begin with priority sectors or investment barriers and expand over time.",
+          "Adapt the assessment to available data. Where climate, fiscal, or investment data are limited, use stakeholder consultations and qualitative evidence.",
+          "Involve national and subnational institutions with the mandate, political support, and capacity to act on the findings so that assessments can inform reforms in investment conditions."
         ],
+        "enablingConditions": [],
         "order": 1,
         "implementationGuidance": [
           {
-            "title": "Define the purpose and scope of the assessment",
-            "content": "Identify the investment challenges the assessment should examine. Determine which institutions, government levels and financing systems should be included."
+            "title": "Define the scope of the assessment",
+            "content": "Identify the investment challenges the assessment should examine. Determine which institutions, government levels, and financing systems should be included."
           },
           {
             "title": "Engage subnational governments early",
@@ -295,19 +456,37 @@ export const actionsData = [
           },
           {
             "title": "Assess existing conditions",
-            "content": "Review relevant policies, regulations, fiscal systems, financing frameworks, institutional arrangements and data. Consult stakeholders to understand how these work in practice."
+            "content": "Review relevant policies, fiscal systems, financing frameworks, institutional arrangements, and data, including alignment between NDCs, national urban policies, and relevant sectoral strategies. Validate findings through stakeholder consultations."
           },
           {
-            "title": "Identify barriers to investment",
-            "content": "Determine which policy, fiscal, institutional, financing or data constraints are limiting urban climate investment. Distinguish national barriers from those that can be addressed locally."
+            "title": "Identify investment barriers",
+            "content": "Determine which policy, fiscal, institutional, financing, or data constraints are limiting urban climate investment. Distinguish national barriers from those that can be addressed locally."
           },
           {
             "title": "Validate findings across government levels",
-            "content": "Discuss findings with cities, subnational governments and relevant national institutions. Use this process to confirm priorities and identify areas requiring joint action."
+            "content": "Discuss findings with cities, subnational governments, and relevant national institutions. Use this process to confirm reform priorities, identify areas requiring joint action, and inform updates to shared climate commitments where relevant (see Pathway 1.1).",
+            "relatedPathways": [
+              {
+                "id": "recWGEx5x7YpvT9ZP",
+                "title": "1.1 Multilevel Climate Commitments",
+                "actionId": 1,
+                "pathwayIndex": 0,
+                "number": "1.1"
+              }
+            ]
           },
           {
-            "title": "Prioritise areas for reforms",
-            "content": "Identify which barriers have the greatest effect on investment and implementation. Use the findings to inform reform priorities, technical assistance and financing support."
+            "title": "Prioritize areas for reform",
+            "content": "Identify which barriers have the greatest effect on investment and implementation. Use the findings to inform reform priorities, technical assistance, and financing support (see Pathway 2.2).",
+            "relatedPathways": [
+              {
+                "id": "recEU7spqUr33oM9S",
+                "title": "2.2 Reform Roadmaps for Urban Climate Investment",
+                "actionId": 2,
+                "pathwayIndex": 1,
+                "number": "2.2"
+              }
+            ]
           },
           {
             "title": "Repeat the assessment when needed",
@@ -316,1248 +495,1317 @@ export const actionsData = [
         ],
         "illustrativeExamples": [
           {
-            "title": "National Enabling Framework Conditions (EFC) Tool",
-            "type": "Tool",
-            "excerpt": "The tool assesses national enabling conditions for urban climate finance across four categories: policy, budget and finance, climate data, and vertical and horizontal coordination...",
-            "fullText": "The tool assesses national enabling conditions for urban climate finance across four categories: policy, budget and finance, climate data, and vertical and horizontal coordination. These cover 16 subcategories and 64 assessment dimensions. Through evidence collection, stakeholder consultations and analysis, the tool helps national governments understand existing enabling conditions, identify barriers to urban climate investment and prioritise areas for reform.",
-            "connectionLine": "Why use this: Assess national policy, fiscal and institutional barriers to urban climate finance and identify reform priorities requiring national action.",
-            "link": "https://citiis.niua.in/",
-            "order": 1
-          },
-          {
-            "title": "Subnational Enabling Framework Conditions (EFC) Tool",
-            "type": "Tool",
-            "excerpt": "The tool is designed primarily for subnational and municipal governments. It assesses enabling conditions for urban climate finance at the city, metropolitan, state or regional level...",
-            "fullText": "The tool is designed primarily for subnational and municipal governments. It assesses enabling conditions for urban climate finance at the city, metropolitan, state or regional level. It covers 49 assessment dimensions across four categories and 13 subcategories. Through evidence collection, stakeholder consultations and analysis, it helps subnational governments identify strengths, investment barriers and areas for improvement. Used alongside the National EFC Tool, it helps identify barriers requiring action at different government levels.",
-            "connectionLine": "Why use this: Assess local conditions affecting access to climate finance and identify improvements requiring subnational action.",
-            "link": "https://www.climatepolicyinitiative.org/wp-content/uploads/2024/08/Subnational-Assessment-tool.pdf",
-            "order": 2
-          },
-          {
             "title": "India – National Enabling Framework Conditions Assessment",
             "type": "Peer Learning Example",
-            "excerpt": "The India assessment illustrates how the national EFC tool works in practice through multi-ministry roundtables and policy review...",
-            "fullText": "The India assessment illustrates how the national EFC tool works in practice. The pilot was led by GIZ, alongside the Indian Ministry of Housing and Urban Affairs, the National Institute of Urban Affairs and The Energy Research Institute. It included a desk review with seven stakeholder interviews and two roundtables in New Delhi attended by more than 80 participants. The findings on the four dimensions included gaps in local institutional mandates, own-source revenues and borrowings, city-level climate data and coordination between state and local governments. Each gap points to a specific reform — broadening grants from the national finance commission to support climate action, for instance, or issuing city climate action plan guidelines under national missions.",
-            "connectionLine": "What you can learn: See how a national assessment can diagnose enabling environments related to national policy, data, finance and institutional coordination and make recommendations for reforms.",
-            "link": "https://citiis.niua.in/",
-            "order": 3
+            "excerpt": "",
+            "fullText": "The National Enabling Framework Conditions assessment was piloted by GIZ in collaboration with India's Ministry of Housing and Urban Affairs, the National Institute of Urban Affairs, and the Energy and Resources Institute. It included a desk review with seven stakeholder interviews and two roundtables in New Delhi attended by more than 80 participants. The assessment identified gaps across four dimensions, including local institutional mandates, own-source revenues and borrowings, city-level climate data, and coordination between state and local governments. Each gap points to a specific reform — broadening grants from the national finance commission to support climate action, for instance, or issuing city climate action plan guidelines under national missions.",
+            "link": "https://citiesclimatefinance.org/publications/assessing-enabling-framework-conditions-for-urban-climate-finance",
+            "connectionLine": "Key takeaway: India shows how a national assessment can identify policy, fiscal, data, and institutional barriers to urban climate finance and inform reform priorities.",
+            "order": 1
           },
           {
             "title": "Indonesia – Subnational Enabling Framework Conditions Assessment",
             "type": "Peer Learning Example",
-            "excerpt": "Indonesia shows how a subnational assessment can identify strengths, gaps and opportunities to improve enabling conditions for urban climate finance...",
-            "fullText": "Indonesia shows how a subnational assessment can identify strengths, gaps and opportunities to improve enabling conditions for urban climate finance. Conducted under the Urban-Act project, the assessment covered Medan City, Binjai City and Deli Serdang Regency (Mebidang) in North Sumatra. It found progress in integrating climate priorities into local development plans and using intergovernmental transfers for climate action. However, gaps remain in municipal climate budgeting, access to private and innovative finance, climate data and coordination across government levels. The assessment recommended extending climate budget tagging to municipalities, strengthening local revenue and financing options, and establishing a coordination team led by North Sumatra's Development Planning Agency. These recommendations aim to strengthen local financing conditions and align climate planning and implementation across government levels.",
-            "connectionLine": "What you can learn: See how a subnational assessment can identify existing strengths and gaps and inform recommendations to improve climate finance and multilevel governance.",
-            "link": "",
+            "excerpt": "",
+            "fullText": "Conducted under the Urban-Act project, the subnational National Enabling Framework Conditions assessment covered Medan City, Binjai City, and Deli Serdang Regency (Mebidang) in North Sumatra, Indonesia. It identified progress in integrating climate priorities into local development plans and using intergovernmental transfers for climate action. However, gaps remain in municipal climate budgeting, access to private and innovative finance, climate data, and coordination across government levels. The assessment recommended extending climate budget tagging to municipalities, strengthening local revenue and financing options, and establishing a coordination team led by North Sumatra's Development Planning Agency. These recommendations aim to strengthen local financing conditions and align climate planning and implementation across government levels.",
+            "link": "https://repository.unescap.org/items/62396393-9771-4e91-9626-d0d4995034ce",
+            "connectionLine": "Key takeaway: Indonesia shows how a subnational assessment can identify progress and gaps in policy, financing, and coordination and recommend improvements through multilevel action.",
+            "order": 2
+          },
+          {
+            "title": "India – Subnational Enabling Framework Conditions Assessment",
+            "type": "Peer Learning Example",
+            "excerpt": "",
+            "fullText": "Conducted in Coimbatore, Tamil Nadu, the subnational National Enabling Framework Conditions assessment examined climate policy, budgeting and finance, climate data, and multilevel coordination. It identified existing strengths, including Tamil Nadu's climate policies and financing institutions, and Coimbatore's Climate Resilient City Action Plan. However, gaps remain in city-level climate budgeting, access to finance, climate data, and alignment between state and municipal planning. The assessment recommended strengthening climate budgeting, expanding state support for municipal climate investment, and improving coordination between state and city institutions.",
+            "link": "https://repository.unescap.org/items/9e498d2b-8cec-477d-b045-85547cab3b17",
+            "connectionLine": "Key takeaway: India shows how a city-level assessment can identify barriers and opportunities for strengthening climate finance and coordination between state and municipal institutions.",
+            "order": 3
+          },
+          {
+            "title": "CCFLA – National Enabling Framework Conditions Tool",
+            "type": "Tool",
+            "excerpt": "",
+            "fullText": "The tool assesses national enabling conditions for urban climate finance across four categories: policy, budget and finance, climate data, and vertical and horizontal coordination. Through evidence collection, stakeholder consultations, and analysis, the tool helps national governments understand existing enabling conditions, identify barriers to urban climate investment, and prioritize areas for reform.",
+            "link": "https://citiesclimatefinance.org/wp-content/uploads/2024/07/National-Assessment-Tool.pdf",
+            "connectionLine": "Why use this tool: Assess national policy, fiscal, and institutional barriers to urban climate finance and identify reform priorities requiring national action.",
             "order": 4
           },
           {
-            "title": "India – Subnational Enabling Framework Conditions Assessment (Coimbatore)",
-            "type": "Peer Learning Example",
-            "excerpt": "India shows how a subnational assessment can identify strengths, gaps and opportunities to improve urban climate finance across city and state governments...",
-            "fullText": "India shows how a subnational assessment can identify strengths, gaps and opportunities to improve urban climate finance across city and state governments. Conducted in Coimbatore, Tamil Nadu, the assessment examined climate policy, budgeting and finance, climate data and multilevel coordination. It found that Tamil Nadu state has established climate policies and financing institutions, while Coimbatore city has developed a Climate Resilient City Action Plan and mobilized finance through government programmes and other sources. However, gaps remain in city-level climate budgeting, access to finance, climate data and alignment between state and municipal planning. The assessment recommended strengthening climate budgeting, expanding state support for municipal climate investment and improving coordination between state and city institutions.",
-            "connectionLine": "What you can learn: See how a city-level assessment can identify existing strengths and gaps, and inform improvements to state and municipal policies, financing systems and coordination.",
-            "link": "",
+            "title": "CCFLA – Subnational Enabling Framework Conditions Tool",
+            "type": "Tool",
+            "excerpt": "",
+            "fullText": "The tool is designed primarily for subnational and municipal governments. It assesses enabling conditions for urban climate finance at the city, metropolitan, state, or regional level. Through evidence collection, stakeholder consultations, and analysis, it helps subnational governments identify strengths, investment barriers and areas for improvement. Used alongside the National EFC Tool, it helps identify barriers requiring action at different government levels.",
+            "link": "https://citiesclimatefinance.org/wp-content/uploads/2024/07/Subnational-Assessment-tool.pdf",
+            "connectionLine": "Why use this tool: Assess local conditions affecting access to climate finance and identify improvements requiring subnational action.",
             "order": 5
-          }
-        ],
-        "resources": [
-          {
-            "title": "The Landscape of Project Preparation 2024",
-            "type": "Report",
-            "publisher": "CCFLA",
-            "link": "https://citiesclimatefinance.org/publications/the-landscape-of-project-preparation-2024",
-            "description": "",
-            "order": 1
-          },
-          {
-            "title": "Subnational Climate Finance & Multi-level Governance Frameworks",
-            "type": "Report",
-            "publisher": "OECD",
-            "link": "https://www.oecd.org/environment/",
-            "description": "Analytical framework evaluating legal, regulatory, and fiscal barriers to municipal climate investment.",
-            "order": 1
-          },
-          {
-            "title": "Enabling Frameworks for Subnational Climate Finance",
-            "type": "Report",
-            "publisher": "CCFLA",
-            "link": "https://citiesclimatefinance.org/",
-            "description": "Diagnosing national-local policy gaps and regulatory bottlenecks preventing capital flow to cities.",
-            "order": 2
-          },
-          {
-            "title": "Daring Cities 2025: Compendium of Good Practices and Resources",
-            "type": "Guide",
-            "publisher": "ICLEI",
-            "link": "https://iclei.org/e-library/daring-cities-2025-compendium-of-good-practices-and-resources/",
-            "description": "",
-            "order": 2
-          },
-          {
-            "title": "Thematic Call on LT-LEDS and NDC Alignment",
-            "type": "Guide",
-            "publisher": "NDC Partnership",
-            "link": "https://ndcpartnership.org/",
-            "description": "Framework for assessing alignment between long-term low-emission development strategies and municipal action.",
-            "order": 3
-          },
-          {
-            "title": "From Incentivizing to Enabling: A practitioner's guide to equitable climate action in cities",
-            "type": "Guide",
-            "publisher": "ICLEI",
-            "link": "https://iclei.org/e-library/from-incentivizing-to-enabling-a-practitioners-guide-to-equitable-climate-action-in-cities/",
-            "description": "",
-            "order": 3
           }
         ]
       },
       {
-        "title": "2.2. Enabling Reforms for Urban Climate Investment",
-        "overview": "Enabling reforms help governments address regulatory, fiscal and institutional barriers that constrain urban climate investment. Building on enabling-environment assessments, national and subnational governments can develop reform roadmaps that identify priority actions, institutional responsibilities, resources and implementation milestones. They can also help to sequence reforms across government institutions and establish milestones for tracking progress. This provides a shared basis for national and subnational governments, development partners and finance institutions to coordinate support around agreed priorities.",
+        "title": "2.2 Reform Roadmaps for Urban Climate Investment",
+        "overview": "Enabling reforms help governments to address policy, regulatory and institutional barriers that constrain urban climate finance and implementation. Building on enabling framework conditions assessments (Pathway 2.1), national and subnational governments can develop reform roadmaps that identify priority actions, institutional responsibilities, resources and implementation milestones. These roadmaps can help to sequence reforms across government institutions and coordinate financial and technical support for implementation.",
+        "whatItIs": "",
+        "whyItIsNeeded": "",
         "potentialNationalLead": [
           "Finance Ministry",
-          "Planning Ministry",
-          "Urban / Local Government Ministry"
+          "Urban Development Ministry"
         ],
         "keyActors": [
-          "Relevant Sectoral Ministries",
-          "Municipal / Subnational Finance Department",
-          "Municipal / Subnational Planning Department",
+          "Planning Ministry",
+          "Climate/Environment Ministry",
+          "Sector Ministries",
+          "City and Subnational Governments",
+          "National Regulatory Authorities",
           "National Development Bank",
-          "MDB / DFI",
+          "MDBs/DFIs",
           "Technical Assistance Providers"
         ],
+        "transferabilityTitle": "Adapting this pathway to your context",
         "transferability": [
-          "Reflecting political and legislative requirements: Some reforms require parliamentary approval, changes to legislation or agreement across government institutions. Roadmaps should account for these processes and realistic timelines.",
-          "Considering institutional responsibilities across government levels: In centralised systems, national institutions may lead reforms, while decentralised systems may require greater subnational ownership and coordination.",
-          "Accounting for fiscal space and financing arrangements: The availability of national grants, development finance and performance-linked incentives will affect how governments can support municipal reforms.",
-          "Recognising differences in cities’ capacity: Cities with limited financial or technical capacity may need phased reforms, targeted technical assistance and additional support to implement improvement plans."
+          "Account for any parliamentary approvals, legislative changes, and intergovernmental agreements that may be needed to implement reforms.",
+          "Adapt reform responsibilities to the country's governance structure. Centralized structures may require stronger national leadership, while decentralized structures may require greater subnational ownership and coordination.",
+          "Consider fiscal space and municipal capacities. The availability of national grants, development finance and performance-linked incentives could catalyze municipal reforms. Municipalities with limited capacities may require phased reforms, technical assistance, and additional implementation support."
         ],
+        "enablingConditions": [],
         "order": 2,
         "implementationGuidance": [
           {
-            "title": "Prioritise reforms based on impact and feasibility",
-            "content": "Identify barriers with the greatest effect on urban climate investment. Consider their urgency, political feasibility and potential benefits."
+            "title": "Prioritize feasible reforms",
+            "content": "Identify barriers with the greatest effect on urban climate investment, then prioritize reforms to address them based on urgency, political feasibility, and potential benefits (see Pathway 2.1).",
+            "relatedPathways": [
+              {
+                "id": "recYHYmT0t2O6FowD",
+                "title": "2.1 Enabling Framework Conditions Assessments",
+                "actionId": 2,
+                "pathwayIndex": 0,
+                "number": "2.1"
+              }
+            ]
           },
           {
-            "title": "For each priority, define the intended actions",
-            "content": "Specify the actions required for each reform and identify the responsible institutions. Define milestones, resources and technical support where needed."
+            "title": "Define priority actions",
+            "content": "Specify the actions required for each reform and identify the responsible national and subnational institutions. Define milestones, resources, and technical support where needed."
           },
           {
-            "title": "Identify dependencies across government levels",
-            "content": "Determine which reforms require national action and which can be implemented locally. Sequence connected reforms so that progress in one area enables another."
+            "title": "Identify dependencies",
+            "content": "Determine which reforms require national action and which can be implemented locally. Sequence connected reforms and use national coordination mechanisms to address institutional dependencies (see Pathway 1.2).",
+            "relatedPathways": [
+              {
+                "id": "rec8KPHGxRyncsXYg",
+                "title": "1.2 National Coordination Mechanisms",
+                "actionId": 1,
+                "pathwayIndex": 1,
+                "number": "1.2"
+              }
+            ]
           },
           {
-            "title": "Connect reforms with finance and technical support",
-            "content": "Identify where public funding, development finance, technical assistance or performance-based incentives can support implementation."
+            "title": "Connect reforms with finance",
+            "content": "Identify where public funding, development finance, technical assistance, or performance-based incentives can support implementation."
           },
           {
-            "title": "Track progress and revise the roadmap",
-            "content": "Establish clear milestones and review progress periodically. Update priorities when reforms advance or new barriers emerge."
+            "title": "Track progress and revise",
+            "content": "Establish clear milestones and review progress periodically. Update priorities when reforms advance, or new barriers emerge."
           }
         ],
         "illustrativeExamples": [
           {
-            "title": "Climate Finance Reform Compass (CPI)",
-            "type": "Tool",
-            "excerpt": "The Climate Finance Reform Compass helps align government, civil society, and the private sector on the full range of financial architecture reforms...",
-            "fullText": "The Climate Finance Reform Compass helps align government, civil society, and the private sector on the full range of financial architecture reforms needed to maximize climate finance opportunities. It provides an action-oriented framework for translating climate finance commitments and identified gaps into prioritized reform areas, milestones, and institutional actions. The Global Compass tracks progress across nine thematic areas for the international community to understand where progress is being made, where gaps persist, and how reforms can reinforce each other.",
-            "connectionLine": "Why use this: Identify climate-finance reform priorities, track progress and support coordination among institutions responsible for implementing reforms.",
-            "link": "https://www.climatepolicyinitiative.org/",
+            "title": "South Africa – Metro Trading Services Reform Program",
+            "type": "Peer Learning Example",
+            "excerpt": "",
+            "fullText": "The Metro Trading Services Reform Program, led by South Africa’s National Treasury in collaboration with relevant national departments, targets the country’s eight metropolitan municipalities. It provides performance-based conditional grants to incentivize improvements in water supply and sanitation, electricity and energy, and solid waste management. Participating municipalities develop Trading Services Reform Strategies, which include institutional roadmaps and business and investment plans that identify institutional changes, financing needs, and service delivery priorities. These strategies must be approved by the municipal council and also include city-level Performance Improvement Action Plans with measurable reform targets, against which progress is independently verified. A six-year ZAR 54 billion performance-linked grant provides incentives to participating municipalities, with funding tied to progress against agreed targets. By strengthening municipal governance, revenue management, and financial sustainability, the program aims to increase investment in essential urban infrastructure, including climate-relevant services.",
+            "link": "https://csp.treasury.gov.za/news-events/south-african-government-launches-metro-trading-services-reform-to-strengthen-city-infrastructure-wednesday-18-march-2026?type=news",
+            "connectionLine": "Key takeaway: South Africa shows how national governments can connect municipal reform roadmaps with performance-linked financing to improve infrastructure investment conditions.",
             "order": 1
-          },
-          {
-            "title": "The Brazil Climate Finance Reform Compass",
-            "type": "Tool",
-            "excerpt": "The Brazil Climate Finance Reform Compass adapts the global framework to national context, identifying gaps and reform priorities...",
-            "fullText": "The Brazil Climate Finance Reform Compass adapts the global framework to national context, identifying gaps and reform priorities across the same nine thematic areas and mapping the institutions, actors and milestones needed to advance them. Both are designed as living tools that can be updated as policies, evidence and stakeholder priorities evolve, helping governments and other stakeholders coordinate reforms, track progress and strengthen alignment between climate finance and broader development priorities.",
-            "connectionLine": "Why use this: See how a climate-finance reform framework can be tailored to national institutions, priorities and decision-making processes.",
-            "link": "https://www.climatepolicyinitiative.org/",
-            "order": 2
           },
           {
             "title": "Uganda – Support to Municipal Infrastructure Development (USMID)",
             "type": "Peer Learning Example",
-            "excerpt": "Uganda shows how national governments can support municipal reform planning through institutional assessments and performance-linked financing...",
-            "fullText": "Uganda shows how national governments can support municipal reform planning through institutional assessments and performance-linked financing. Led by the Ministry of Lands, Housing and Urban Development, the programme began in 2013 with 14 municipalities. Technical, financial and institutional assessments informed a Programme Action Plan, outlining corrective actions, institutional responsibilities and implementation timelines. Municipalities also developed capacity-building plans addressing weaknesses in planning, revenue management, procurement and infrastructure delivery. Annual performance assessments linked infrastructure grants to improvements in municipal revenue collection, financial management, budgeting, procurement and service delivery. The programme closed in 2024 with a satisfactory outcome rating. Building on its achievements, Uganda secured approval in 2026 for the USD 540 million Uganda Cities and Municipalities Infrastructure Development (UCMID) programme, expanding support for municipal institutions and climate-smart infrastructure.",
-            "connectionLine": "What you can learn: See how national governments can connect institutional assessments, municipal reform plans and performance-linked financing to strengthen urban investment conditions.",
-            "link": "",
-            "order": 3
-          },
-          {
-            "title": "South Africa – Metro Trading Services Reform Programme",
-            "type": "Peer Learning Example",
-            "excerpt": "South Africa shows how national government can lead reform programs that build on municipal reform strategies...",
-            "fullText": "South Africa shows how national government can lead reform programs that build on municipal reform strategies. Led by the National Treasury, the programme aims to strengthen municipal finances and attract additional infrastructural investment. It responds to the declining financial and operational performance in water, sanitation, electricity and waste services across eight metropolitan municipalities. Participating municipalities have adopted reform strategies, institutional roadmaps, and business and investment plans. These set out institutional changes and investment priorities, while performance improvement plans establish measurable targets. A six-year, ZAR 54 billion (~USD 3.85 billion) performance-linked grant incentivises reforms, with funding tied to progress on the reforms against agreed targets.",
-            "connectionLine": "What you can learn: See how national governments can support municipal reform roadmaps through institutional coordination and performance-linked financing.",
-            "link": "",
-            "order": 4
-          }
-        ],
-        "resources": [
-          {
-            "title": "The Landscape of Project Preparation 2024",
-            "type": "Report",
-            "publisher": "CCFLA",
-            "link": "https://citiesclimatefinance.org/publications/the-landscape-of-project-preparation-2024",
-            "description": "",
-            "order": 1
-          },
-          {
-            "title": "Subnational Climate Finance & Multi-level Governance Frameworks",
-            "type": "Report",
-            "publisher": "OECD",
-            "link": "https://www.oecd.org/environment/",
-            "description": "Analytical framework evaluating legal, regulatory, and fiscal barriers to municipal climate investment.",
-            "order": 1
-          },
-          {
-            "title": "Enabling Frameworks for Subnational Climate Finance",
-            "type": "Report",
-            "publisher": "CCFLA",
-            "link": "https://citiesclimatefinance.org/",
-            "description": "Diagnosing national-local policy gaps and regulatory bottlenecks preventing capital flow to cities.",
+            "excerpt": "",
+            "fullText": "Led by the Ministry of Lands, Housing, and Urban Development, USMID began in 2013 with 14 municipalities and later expanded to additional local governments. As part of USMID, technical, financial, and institutional assessments in local governments informed a Programme Action Plan, outlining corrective actions, institutional responsibilities, and implementation timelines. Municipalities also developed capacity-building plans addressing weaknesses in planning, revenue management, procurement, and infrastructure delivery. Annual performance assessments linked municipal infrastructure grants to improvements in institutional performance and implementation. USMID closed in 2024 with a satisfactory outcome rating. Building on this experience, Uganda secured USD 540 million in World Bank financing in 2026 for the successor Uganda Cities and Municipalities Infrastructure Development program, expanding support for municipal institutions and climate-smart infrastructure.",
+            "link": "https://documents1.worldbank.org/curated/en/099121724101528052/pdf/BOSIB1b7203d7507e1a5e21f0720f8cefe3.pdf",
+            "connectionLine": "Key takeaway: Uganda shows how national governments can use institutional assessments, municipal improvement plans, and performance-linked financing to strengthen urban investment conditions.",
             "order": 2
           },
           {
-            "title": "Daring Cities 2025: Compendium of Good Practices and Resources",
-            "type": "Guide",
-            "publisher": "ICLEI",
-            "link": "https://iclei.org/e-library/daring-cities-2025-compendium-of-good-practices-and-resources/",
-            "description": "",
-            "order": 2
-          },
-          {
-            "title": "Thematic Call on LT-LEDS and NDC Alignment",
-            "type": "Guide",
-            "publisher": "NDC Partnership",
-            "link": "https://ndcpartnership.org/",
-            "description": "Framework for assessing alignment between long-term low-emission development strategies and municipal action.",
-            "order": 3
-          },
-          {
-            "title": "From Incentivizing to Enabling: A practitioner's guide to equitable climate action in cities",
-            "type": "Guide",
-            "publisher": "ICLEI",
-            "link": "https://iclei.org/e-library/from-incentivizing-to-enabling-a-practitioners-guide-to-equitable-climate-action-in-cities/",
-            "description": "",
+            "title": "Climate Policy Initiative – The Brazil Climate Finance Reform Compass",
+            "type": "Tool",
+            "excerpt": "",
+            "fullText": "The Brazil Climate Finance Reform Compass: The Compass adapts the global framework to the national context, identifying gaps and reform priorities across the same nine thematic areas and mapping the institutions, actors, and milestones needed to advance them. Both are designed as living tools that can be updated as policies, evidence, and stakeholder priorities evolve, helping governments and other stakeholders coordinate reforms, track progress, and strengthen alignment between climate finance and broader development priorities.",
+            "link": "https://compass-brazil.climatepolicyinitiative.org/",
+            "connectionLine": "Why use this tool: See how a climate-finance reform framework can be tailored to national institutions, priorities, and decision-making processes.",
             "order": 3
           }
         ]
       }
     ]
   },
-    {
+  {
     "id": 3,
     "title": "Plan, Prepare and Implement Climate Investment Portfolios",
-    "description": "This Action helps national governments work with cities and subnational governments to plan, prepare and implement urban climate investment portfolios. It covers climate budgeting, investment planning, portfolio development, project preparation and collaborative implementation environments. These approaches connect shared climate priorities with financing opportunities and coordinated implementation.",
+    "description": "This Action helps national governments to work with cities and subnational governments to translate shared climate priorities into coordinated project portfolios, finance-ready project pipelines and implementation. It covers climate budgeting and investment planning, portfolio and pipeline development, project preparation, and place-based environments for implementing project portfolios.",
     "systemsLogic": "Climate priorities need to become clear investment opportunities before finance can be mobilized. To this end, investment planning and budgeting identify investment needs, responsibilities and available resources. Portfolio development combines projects with the policy, governance and other interventions needed for delivery, while identifying investment opportunities that can form project pipelines. Project preparation helps suitable investments to become finance-ready, while collaborative implementation environments bring actors together to address systemic barriers, test solutions and advance interconnected interventions. These processes reinforce one another as portfolios evolve.",
     "pathways": [
       {
-        "title": "3.1. Local Climate Budgeting and Investment Planning",
-        "overview": "Local climate budgeting and investment planning help cities integrate climate priorities into public spending and investment decisions. Climate action plans do not always identify investment costs, financing responsibilities or links to government budgets, making implementation difficult. Climate budgeting helps to integrate local climate targets into municipal and subnational budget planning, allocations, implementation and expenditure monitoring. It can be informed by multiyear financial and capital investment planning, which identifies future investment needs, costs and available resources. National governments can enable these processes by working with subnational governments to develop common green budget taxonomies, supportive public-finance regulations and reporting standards, alongside technical assistance.",
+        "title": "3.1 Local Climate Budgeting and Investment Planning",
+        "overview": "Local climate budgeting and investment planning help cities to integrate climate priorities into public spending and investment decisions. Climate action plans do not always identify investment costs, financing responsibilities, or links to government budgets, making implementation difficult. Climate budgeting helps to integrate local climate targets into municipal and subnational budget planning, allocations, implementation, and expenditure monitoring. It can be informed by multiyear capital investment planning, which identifies future investment needs, costs, and available resources. National governments can enable these processes by working with subnational governments to develop common budget taxonomies, supportive public-finance regulations, and reporting standards, alongside technical assistance.",
+        "whatItIs": "",
+        "whyItIsNeeded": "",
         "potentialNationalLead": [
           "Finance Ministry",
-          "Urban / Local Government Ministry",
-          "Planning Ministry"
+          "Urban Development Ministry"
         ],
         "keyActors": [
-          "Municipal / Subnational Finance Department",
-          "Municipal / Subnational Planning Department",
-          "National Development Banks",
-          "Technical Assistance Providers",
-          "City Networks"
+          "Planning Ministry",
+          "Climate/Environment Ministry",
+          "City and Subnational Governments",
+          "City Networks",
+          "Technical Assistance Providers"
         ],
+        "transferabilityTitle": "Adapting this pathway to your context",
         "transferability": [
-          "Considering flexibility in local budgeting systems: Where municipalities can modify budget classifications and reporting practices, climate budgeting may be easier to introduce. Where national regulations govern budgeting processes, local climate budget adoption may depend on changes or guidance from national authorities.",
-          "Starting with simpler approaches and expanding over time: Countries where cities have limited technical capacity or climate data can begin with expenditure tagging and basic investment-cost estimates. More comprehensive climate budgeting and multiyear capital investment planning can follow as capacities improve."
+          "Adapt climate budgeting approaches to local fiscal autonomy and national public-finance requirements.",
+          "Promote municipal budget tagging and basic investment-cost estimates where municipal capacities are limited, using findings to inform national technical assistance and capacity building."
         ],
+        "enablingConditions": [],
         "order": 1,
         "implementationGuidance": [
           {
-            "title": "Establish common climate budgeting guidance and standards",
-            "content": "Work with subnational governments to develop and adopt taxonomies, budgeting methodologies and reporting standards that can be integrated into existing municipal budget systems."
+            "title": "Establish enabling frameworks for local climate budgeting",
+            "content": "Work with subnational governments to develop common climate budget taxonomies, methodologies, and reporting standards. Where needed, align national accounting rules, budget formats, and fiscal regulations to enable their integration into municipal budgeting and capital investment planning (see Pathway 1.2).",
+            "relatedPathways": [
+              {
+                "id": "rec8KPHGxRyncsXYg",
+                "title": "1.2 National Coordination Mechanisms",
+                "actionId": 1,
+                "pathwayIndex": 1,
+                "number": "1.2"
+              }
+            ]
           },
           {
-            "title": "Align public-finance regulations with local climate budgeting",
-            "content": "Review national accounting standards, budget formats and fiscal regulations to support the integration of climate priorities into local budgets and capital investment plans."
+            "title": "Support climate-informed investment planning",
+            "content": "Provide guidance and technical assistance to help cities estimate climate investment costs, assess available resources and funding gaps, and prioritize investments in multiyear financial and capital investment plans. Identify where national funding, fiscal transfers, or additional financing may be required."
           },
           {
-            "title": "Support climate-informed financial and investment planning",
-            "content": "Provide guidance and technical assistance to help cities estimate climate investment costs, assess available resources and funding gaps, and prioritise investments within multiyear financial and capital investment plans. Identify where national funding, fiscal transfers or additional financing may be required."
-          },
-          {
-            "title": "Strengthen municipal capacities",
-            "content": "Support municipal finance, planning and climate departments through training, technical assistance and peer learning. Encourage coordination across departments throughout the budget cycle."
+            "title": "Connect investment planning with portfolios and pipelines",
+            "content": "Use local budgets and investment plans to inform the development of coordinated climate portfolios and project pipelines (see Pathway 3.2)",
+            "relatedPathways": [
+              {
+                "id": "rec3uo1IBCauiEimf",
+                "title": "3.2 Climate Portfolios and Project Pipelines",
+                "actionId": 3,
+                "pathwayIndex": 1,
+                "number": "3.2"
+              }
+            ]
           },
           {
             "title": "Support monitoring and improvement",
-            "content": "Encourage consistent reporting on climate-related budget allocations, expenditure and results. Use findings to improve national guidance and municipal budgeting practices over time."
+            "content": "Encourage consistent reporting on climate-related budget allocations, expenditure, and results. Use findings to improve national guidance and municipal budgeting practices over time."
           }
         ],
         "illustrativeExamples": [
           {
-            "title": "India – CapaCITIES Programme",
+            "title": "India – CapaCITIES Program",
             "type": "Peer Learning Example",
-            "excerpt": "India illustrates how national government institutions and development partners can support local climate investment planning and budgeting through the CapaCITIES Programme.",
-            "fullText": "India illustrates how national government institutions and development partners can support local climate investment planning and budgeting. Launched in 2016 with Swiss funding, CapaCITIES supported cities in developing Net-Zero Climate Resilient City Action Plans, identifying priority investments and strengthening municipal capacities. The National Institute of Urban Affairs (NIUA), an autonomous institution under the Ministry of Housing and Urban Affairs, partnered with the programme to ensure alignment of methodologies with national standards, facilitate engagement with municipal governments, adapt program tools for national use and connect project learnings with national policies and programmes. Across participating cities, the plans identified INR 7,142 billion (~USD 73 billion) in climate investment needs. A notable example is of Tirunelveli city’s Net Zero Climate-Resilient Cities Action Plan, supported by NIUA, under CapaCITIES, which identifies priority investments, indicative costs, potential financing sources and implementation responsibilities.",
-            "connectionLine": "What you can learn: See how national institutions can support local climate investment planning through coordination support, knowledge management and links to national programmes.",
+            "excerpt": "",
+            "fullText": "Launched in 2016 with Swiss funding, CapaCITIES supported cities in developing Net-Zero Climate Resilient City Action Plans, identifying priority investments and strengthening municipal capacities. The National Institute of Urban Affairs (NIUA), an autonomous institution under the Ministry of Housing and Urban Affairs, partnered with the program to ensure alignment of methodologies with national standards, facilitate engagement with municipal governments, adapt program tools for national use and connect project learnings with national policies and programs. Across participating cities, the plans identified INR 7,142 billion (around USD 73 billion) in climate investment needs. A notable example is Tirunelveli city’s Net Zero Climate-Resilient Cities Action Plan, supported by NIUA under CapaCITIES, which identifies priority investments, indicative costs, potential financing sources and implementation responsibilities.",
+            "link": "https://capacitiesindia.org/",
+            "connectionLine": "Key takeaway: India shows how national institutions and development partners can support local climate investment planning and connect it with national programs.",
             "order": 1
           },
           {
             "title": "Philippines – Local Climate Change Expenditure Tagging",
             "type": "Peer Learning Example",
-            "excerpt": "The Philippines illustrates how national governments can institutionalise local climate budgeting and strengthen investment planning through common regulations, methodologies and technical support.",
-            "fullText": "The Philippines illustrates how national governments can institutionalise local climate budgeting and strengthen investment planning through common regulations, methodologies and technical support. In 2015, the Climate Change Commission (CCC), Department of Budget and Management (DBM), and Department of the Interior and Local Government (DILG) issued joint guidelines for tagging climate-related expenditure in local Annual Investment Programs (AIPs), which identify planned local projects, activities, costs and funding sources for annual budgeting. The guidelines introduced common climate expenditure classifications, revised investment programme forms and reporting procedures. To support their adoption, the DBM incorporates tagging into local budget guidance, the CCC guides local governments in classifying climate-related expenditure and reviews the accuracy of these classifications, while the DILG facilitates implementation across local governments. Using these guidelines, provinces, cities and municipalities identify climate-related allocations and funding sources through their AIPs and prepare investment briefs to support prioritisation, expenditure monitoring and identification of financing needs.",
-            "connectionLine": "What you can learn: See how national regulations, common methodologies and technical support can connect local climate budgeting with investment planning and reporting.",
+            "excerpt": "",
+            "fullText": "The Philippines institutionalized local climate expenditure tagging through joint national guidelines that linked climate priorities with local investment programs and annual budgets. In 2015, the Climate Change Commission (CCC), Department of Budget and Management (DBM), and Department of the Interior and Local Government (DILG) issued joint guidelines for tagging climate-related expenditure in local Annual Investment Programs (AIPs), which identify planned local projects, activities, costs and funding sources for annual budgeting. The guidelines introduced common climate expenditure classifications, revised investment program forms and reporting procedures. To support their adoption, the DBM incorporates tagging into local budget guidance, the CCC guides local governments in classifying climate-related expenditure and reviews the accuracy of these classifications. At the same time, the DILG facilitates implementation across local governments. Using these guidelines, provinces, cities, and municipalities identify climate-related allocations and funding sources through their AIPs and prepare investment briefs to support prioritization, expenditure monitoring, and identification of financing needs.",
+            "link": "https://climate.gov.ph/files/CCET%20LGU%20Final.pdf",
+            "connectionLine": "Key takeaway: The Philippines shows how national regulations, common methodologies, and technical support can integrate climate priorities into local investment planning and budgeting.",
             "order": 2
           },
           {
             "title": "Sweden – Stockholm's Climate Budgeting and Investment Planning",
             "type": "Peer Learning Example",
-            "excerpt": "Stockholm illustrates how cities can connect climate goals with municipal budgets and investment planning, with support from national agencies and programs.",
-            "fullText": "Stockholm illustrates how cities can connect climate goals with municipal budgets and investment planning, with support from national agencies and programs. Its climate targets and implementation assignments are incorporated into the city's annual financial budget and monitored through its management system. Municipal departments and companies can also access a dedicated climate investment fund to support priority measures. As part of its Climate City Contract under the EU Cities Mission, Stockholm prepared a 2030 Climate Neutrality Investment Plan outlining how the city's transition could be financed, including investment responsibilities beyond the municipality. This planning takes place within Sweden's broader Climate City Contract process, coordinated through Viable Cities in partnership with national government agencies. The process provides a framework for national–local collaboration on climate priorities, investment needs and financing arrangements.",
-            "connectionLine": "What you can learn: See how national–local coordination can support municipal climate action and investment planning.",
+            "excerpt": "",
+            "fullText": "Stockholm incorporates climate targets and implementation responsibilities into its annual financial budget, with progress monitored through the city's management system. Municipal departments and companies can also access a dedicated climate investment fund to support priority measures. As part of its Climate City Contract (CCC) under the EU Cities Mission, Stockholm prepared a 2030 Climate Neutrality Investment Plan outlining how the city's transition could be financed, including investment responsibilities beyond the municipality. This planning takes place within Sweden's broader CCC process, coordinated through Viable Cities in partnership with national government agencies. The process provides a framework for national–local collaboration on climate priorities, investment needs and financing arrangements.",
+            "link": "https://netzerocities.app/_content/files/knowledge/4060/stockholm_nzc_ccc.pdf",
+            "connectionLine": "Key takeaway: Stockholm shows how municipal climate budgeting and investment planning can connect with national–local coordination processes.",
             "order": 3
           },
           {
-            "title": "C40 Climate Budgeting Framework (CBF)",
+            "title": "C40 – Climate Budgeting Framework",
             "type": "Tool",
-            "excerpt": "The framework helps cities establish credible climate budgeting processes that connect climate targets with annual or multiyear budget decisions.",
-            "fullText": "The framework helps cities establish credible climate budgeting processes that connect climate targets with annual or multiyear budget decisions. It covers operating and capital budgets, emphasises leadership by municipal finance departments and coordination across departments, and integrates implementation responsibilities, monitoring and learning into regular budget cycles. C40's accompanying guidance also highlights how cities can use climate budgets to engage national governments on financing priority climate investments. National governments can further support adoption through compatible public-finance regulations, common budgeting guidance and technical assistance.",
-            "connectionLine": "Why use this: Help cities integrate climate priorities into regular budgeting processes and identify opportunities for national support, including financing and enabling regulations.",
+            "excerpt": "",
+            "fullText": "The C40 Climate Budgeting Framework (CBF) helps cities to establish climate budgeting processes that connect climate targets with annual or multiyear budget decisions. It covers operating and capital budgets, emphasizes leadership by municipal finance departments and coordination across departments and integrates implementation responsibilities, monitoring, and learning into regular budget cycles. C40's accompanying guidance highlights how cities can use climate budgets to engage national governments on financing priority climate investments. National governments can further support adoption through compatible public-finance regulations, common budgeting guidance, and technical assistance.",
+            "link": "https://www.c40knowledgehub.org/s/article/Climate-budgeting-framework?language=en_US",
+            "connectionLine": "Why use this tool: This framework helps cities integrate climate priorities into their budgeting and identify opportunities for national support, including financing and enabling regulations.",
             "order": 4
-          }
-        ],
-        "resources": [
-          {
-            "title": "Climate Budgeting Programme",
-            "type": "Research Tool",
-            "publisher": "C40",
-            "link": "https://www.c40.org/what-we-do/raising-climate-ambition/climate-budgeting-programme/",
-            "description": "",
-            "order": 1
           },
           {
-            "title": "State of Cities Climate Finance 2024 Report",
-            "type": "Report",
-            "publisher": "CCFLA",
-            "link": "https://citiesclimatefinance.org/publications/2024-state-of-cities-climate-finance",
-            "description": "Authoritative benchmark tracking global urban climate finance flows against the USD 4.3T annual target.",
-            "order": 1
+            "title": "NDC Partnership and Green Climate Fund – Climate Investment Planning and Mobilization Framework",
+            "type": "Tool",
+            "excerpt": "",
+            "fullText": "Developed by the NDC Partnership and Green Climate Fund, this framework guides governments through climate investment planning and finance mobilization. It helps to translate NDCs, adaptation plans, and long-term climate strategies into investment priorities and finance mobilization approaches. The framework recommends engaging subnational authorities, aligning national investment planning with existing subnational investment frameworks, and reviewing financing needs and gaps across government levels. It also supports incorporating existing subnational investment priorities and pipelines into country-level planning.",
+            "link": "https://climateinvestment.ndcpartnership.org/",
+            "connectionLine": "Why use this tool: Structure national climate investment planning, including coordination among relevant government institutions and stakeholders.",
+            "order": 5
           },
           {
-            "title": "City Climate Investment Planning Guide",
-            "type": "Guide",
-            "publisher": "EIB & GCoM",
-            "link": "https://www.eib.org/",
-            "description": "Step-by-step roadmap for translating municipal climate targets into bankable investment plans and capital budgets.",
-            "order": 2
-          },
-          {
-            "title": "NDC Investment Planning Guide and Checklist",
-            "type": "Guide",
-            "publisher": "NDC",
-            "link": "https://ndcpartnership.org/knowledge-portal/climate-toolbox/ndc-investment-planning-guide-and-checklist",
-            "description": "",
-            "order": 4
+            "title": "CDP – Adaptation and Action Explorer",
+            "type": "Tool",
+            "excerpt": "",
+            "fullText": "The Adaptation and Action Explorer is an AI-powered platform that combines climate and nature hazard data with information reported by more than 1,000 cities, states and regions. It helps subnational governments assess physical climate risks, connect these with existing adaptation actions and projects, identify adaptation pathways, prioritise investments, and communicate their needs and readiness to funders and partners.",
+            "link": "https://www.cdp.net/en/cdp-adaptation-and-action-explorer",
+            "connectionLine": "Understand local climate risks, identify adaptation priorities and strengthen the visibility of projects seeking finance.",
+            "order": 6
           }
         ]
       },
       {
-        "title": "3.2. Climate Portfolios and Project Pipelines",
-        "overview": "Climate portfolios and pipelines bring together different types of projects and interventions around shared climate priorities. These may include infrastructure investments, policy and regulatory reforms, governance improvements, capacity building and other measures needed for implementation. By combining these interventions within a portfolio, governments can address systemic barriers that individual projects cannot resolve alone. As portfolios develop, suitable projects can be integrated into investment pipelines for further preparation and financing. National governments can support this process by coordinating national and subnational investment priorities, facilitating access to project preparation support and identifying opportunities to aggregate similar municipal projects into larger investment pipelines. This can improve investment readiness and help attract financing for projects that may be difficult to finance individually.",
+        "title": "3.2 Climate Portfolios and Project Pipelines",
+        "overview": "Climate portfolios bring together different projects and interventions around shared climate priorities. These may include infrastructure investments, policy and regulatory reforms, governance improvements, capacity building and other measures for implementation. By combining these interventions in a portfolio, governments can address governance and finance barriers that individual projects cannot resolve alone. As portfolios develop, suitable projects can be integrated into project pipelines for further preparation and financing. National governments can support this process by coordinating national and subnational investment priorities, facilitating access to project preparation support, and identifying opportunities to aggregate similar municipal projects into project pipelines. This can improve investment readiness and help attract financing for projects that may be difficult to finance individually.",
+        "whatItIs": "",
+        "whyItIsNeeded": "",
         "potentialNationalLead": [
           "Planning Ministry",
-          "Climate / Environment Ministry",
-          "Urban / Local Government Ministry",
-          "National Development Bank"
+          "Urban Development Ministry"
         ],
         "keyActors": [
+          "Climate/Environment Ministry",
           "Finance Ministry",
-          "Relevant Sectoral Ministries",
-          "Municipal / Subnational Planning Department",
-          "Municipal / Subnational Finance Department",
-          "National Infrastructure / Investment Agency",
-          "MDB / DFI",
-          "Technical Assistance Providers",
-          "City Networks"
+          "Sector Ministries",
+          "City and Subnational Governments",
+          "National Development Bank",
+          "National Investment Agency",
+          "MDBs/DFIs",
+          "Project Preparation Facilities",
+          "Technical Assistance Providers"
         ],
+        "transferabilityTitle": "Adapting this pathway to your context",
         "transferability": [
-          "Adapting to institutional context: Portfolio development may be led by national agencies, regional authorities or cities, depending on their mandates and capacities.",
-          "Accounting for differences in local capacity: Cities with limited technical expertise and capacities may need additional support to identify projects, assess investment needs and develop coordinated portfolios.",
-          "Considering the maturity of investment opportunities: Some countries may already have investable municipal project pipelines, while others may need to identify investment opportunities. The level of technical assistance needed will vary accordingly.",
-          "Assessing opportunities for project aggregation: Project aggregation may be relevant where municipalities have similar investment needs, but individual projects are too small to attract financing."
+          "Adapt portfolio development to institutional context. It may be led by national agencies, country platforms, subnational government associations, or municipal authorities.",
+          "Account for differences in local capacities. Cities with limited capacities may need additional technical support for pipeline development and aggregation.",
+          "Consider the maturity of project pipelines. Some cities may already have advanced pipelines, while others require support from concept identification."
         ],
+        "enablingConditions": [],
         "order": 2,
         "implementationGuidance": [
           {
-            "title": "Support the development of coordinated portfolios",
-            "content": "Convene relevant national and subnational institutions to identify complementary projects and interventions around shared climate priorities. These may include infrastructure, policy, regulatory and capacity-building measures, with clear responsibilities and sequencing."
+            "title": "Support portfolio development",
+            "content": "Convene relevant national and subnational institutions to identify complementary projects and interventions around shared climate priorities. These may include infrastructure, policy, regulatory and capacity-building measures, with clear responsibilities and sequencing. Ensure that the portfolios remained aligned with NDC commitments (see Pathway 1.1).",
+            "relatedPathways": [
+              {
+                "id": "recWGEx5x7YpvT9ZP",
+                "title": "1.1 Multilevel Climate Commitments",
+                "actionId": 1,
+                "pathwayIndex": 0,
+                "number": "1.1"
+              }
+            ]
           },
           {
-            "title": "Identify emerging project pipelines",
-            "content": "Assess which projects within portfolios have potential for financing and further preparation. Consider their climate impact, investment requirements and current readiness."
+            "title": "Identify project pipelines",
+            "content": "Assess which projects within portfolios have potential for further preparation and financing. Consider their climate impact, investment requirements, and current readiness."
           },
           {
-            "title": "Identify opportunities for project aggregation",
-            "content": "Where cities have similar investment needs, explore coordinated project pipelines or common investment programmes to achieve scale and improve access to finance."
+            "title": "Explore financing pathways",
+            "content": "Identify projects requiring additional development finance or borrowing or having potential for private investment. Flag projects requiring further risk reduction (see Pathway 4.2).",
+            "relatedPathways": [
+              {
+                "id": "rechG5sx4ide7Zsxo",
+                "title": "4.2 Financial Instruments and Mechanisms",
+                "actionId": 4,
+                "pathwayIndex": 1,
+                "number": "4.2"
+              }
+            ]
           },
           {
-            "title": "Match projects with financing pathways",
-            "content": "Identify projects requiring additional development finance or borrowing or having potential for private investment. Flag projects requiring further risk reduction."
+            "title": "Explore project aggregation",
+            "content": "Where cities have similar investment needs, explore coordinated project pipelines or common investment programs to achieve scale and improve access to finance (see Pathway 4.3).",
+            "relatedPathways": [
+              {
+                "id": "recHLUhrtlsbUNkCb",
+                "title": "4.3 Financial Aggregation and Market Shaping",
+                "actionId": 4,
+                "pathwayIndex": 2,
+                "number": "4.3"
+              }
+            ]
           },
           {
-            "title": "Connect pipelines with financiers",
-            "content": "Present prepared projects and portfolios to relevant national banks, MDBs, climate funds and private investors."
-          },
-          {
-            "title": "Establish arrangements for portfolio coordination",
-            "content": "Assign responsibility for maintaining portfolios, coordinating institutions and tracking progress across projects and other interventions."
+            "title": "Establish portfolio coordination arrangements",
+            "content": "Assign responsibility for maintaining portfolios, coordinating institutions and tracking progress across projects and other interventions (see Pathway 1.3).",
+            "relatedPathways": [
+              {
+                "id": "rec9uVdifwHMNd1Aa",
+                "title": "1.3 Urban-Inclusive Country Platforms",
+                "actionId": 1,
+                "pathwayIndex": 2,
+                "number": "1.3"
+              }
+            ]
           }
         ],
         "illustrativeExamples": [
           {
             "title": "European Union – Mission for Climate-Neutral and Smart Cities",
             "type": "Peer Learning Example",
-            "excerpt": "The EU Cities Mission illustrates how a supranational programme can support cities in developing coordinated climate transition portfolios.",
-            "fullText": "The EU Cities Mission illustrates how a supranational programme can support cities in developing coordinated climate transition portfolios. Through NetZeroCities, 112 selected Mission Cities receive technical guidance, advisory support and peer learning to develop Climate City Contracts. These include Climate Neutrality Action Plans that bring together infrastructure, policy, governance and other interventions into coordinated portfolios. Cities also develop complementary Climate Neutrality Investment Plans that assess the capital needed to deliver these portfolios and identify potential public and private financing sources. The portfolio approach helps cities to move beyond individual projects and organise interventions around a shared climate mission, while involving local, regional and national stakeholders.",
-            "connectionLine": "What you can learn: See how a common framework, technical assistance and multilevel collaboration can support cities in developing integrated climate investment portfolios.",
+            "excerpt": "",
+            "fullText": "The EU Cities Mission supports 112 selected cities in developing Climate City Contracts through the NetZeroCities platform. These contracts include Climate Neutrality Action Plans that bring together infrastructure, policy, governance, and other interventions into coordinated portfolios. Cities also develop complementary Climate Neutrality Investment Plans that assess the capital needed to deliver these portfolios and identify potential public and private financing sources. The portfolio approach helps cities to move beyond individual projects and organize interventions around a shared climate mission, while involving local, regional, and national stakeholders.",
+            "link": "https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe/eu-missions-horizon-europe/climate-neutral-and-smart-cities_en",
+            "connectionLine": "Key takeaway: The EU Cities Mission shows how common frameworks, technical assistance, and multilevel collaboration can support cities in developing coordinated climate investment portfolios.",
             "order": 1
           },
           {
-            "title": "EBRD Green Cities – Green City Action Plans",
+            "title": "Egypt – EBRD Green Cities Green City Action Plans",
             "type": "Peer Learning Example",
-            "excerpt": "EBRD Green Cities illustrates how multilateral development banks and national institutions can support cities in developing integrated portfolios of climate projects and policy interventions.",
-            "fullText": "EBRD Green Cities illustrates how multilateral development banks and national institutions can support cities in developing integrated portfolios of climate projects and policy interventions. Through Green City Action Plans (GCAPs), participating cities assess environmental challenges, identify priorities and develop pipelines of infrastructure investments, along with policy reforms and institutional measures. The plans identify expected benefits, indicative costs, financing options and implementation responsibilities. EBRD supports the process through technical assistance, policy dialogue and infrastructure financing.\n\nIn Egypt, the Green City Action Plan for 6th of October City was developed with the involvement of the New Urban Communities Authority (NUCA), a national government authority, and the city administration. Together, they engaged stakeholders to identify environmental priorities and develop a coordinated portfolio.",
-            "connectionLine": "What you can learn: See how development banks and national urban institutions can support city-level portfolio development, combining infrastructure investments with policy and institutional measures.",
+            "excerpt": "",
+            "fullText": "EBRD Green Cities illustrates how multilateral development banks and national institutions can support cities in developing integrated portfolios of climate projects and policy interventions. Participating cities use Green City Action Plans to assess environmental challenges, identify priorities, and develop pipelines of infrastructure investments, along with policy reforms and institutional measures. The plans identify expected benefits and costs, financing options, and implementation responsibilities. The EBRD supports the process through technical assistance, policy dialogue and infrastructure financing. In Egypt, the Green City Action Plan for 6th of October City was developed with the involvement of the New Urban Communities Authority (NUCA), a national government authority, and the city administration. Together, they engaged stakeholders to identify environmental priorities and develop a coordinated portfolio.",
+            "link": "https://www.ebrdgreencities.com/",
+            "connectionLine": "Key takeaway: These plans show how development banks and national urban institutions can support city-level portfolio development, combining infrastructure investments with policy and institutional measures.",
             "order": 2
           },
           {
             "title": "Brazil – Green and Resilient Cities Programme (PCVR) Project Bank",
             "type": "Peer Learning Example",
-            "excerpt": "Brazil illustrates how a national programme can identify and coordinate urban climate investment pipelines through the PCVR Project Bank.",
-            "fullText": "Brazil illustrates how a national programme can identify and coordinate urban climate investment pipelines. Developed through a partnership involving the Ministry of the Environment and Climate Change, CCFLA and the University of Brasília, the PCVR Project Bank consolidates information on climate-related projects submitted by municipalities, states and public enterprises. The Bank has received 733 project submissions, including 487 submitted by municipal governments. The projects that reported estimated costs together require approximately BRL 14.1 billion (USD 2.6 billion) in financing. By mapping projects across sectors and stages of development, the Bank provides an overview of local investment needs and opportunities for project preparation. This can help development banks, technical assistance providers and financing partners identify opportunities to support municipal investment pipelines in Brazil.",
-            "connectionLine": "What you can learn: See how national programmes can consolidate municipal climate project proposals and identify investment needs.",
-            "order": 3
-          }
-        ],
-        "resources": [
-          {
-            "title": "Climate Action Planning Framework & Resource Center",
-            "type": "Website",
-            "publisher": "C40 Cities",
-            "link": "https://www.c40.org/",
-            "description": "Tools and project preparation facilities for developing bundled, cross-sector municipal project portfolios.",
-            "order": 1
-          },
-          {
-            "title": "Portfolio Development & Management",
-            "type": "Report",
-            "publisher": "UNDP",
-            "link": "https://innovation.eurasia.undp.org/portfolio-development/",
-            "description": "",
-            "order": 2
-          },
-          {
-            "title": "Under Pressure, Overdue: The Portfolio Approach and Financing Cities for Resilience",
-            "type": "Report",
-            "publisher": "Resilient Cities Network",
-            "link": "https://resilientcitiesnetwork.org/under-pressure-overdue-the-portfolio-approach-and-financing-cities-for-resilience/",
-            "description": "",
+            "excerpt": "",
+            "fullText": "Brazil illustrates how a national program can identify and coordinate urban climate investment pipelines. Developed through a partnership involving the Ministry of the Environment and Climate Change, CCFLA, and the University of Brasília, the PCVR Project Bank consolidates information on climate-related projects submitted by municipalities, states and public enterprises. The bank has received 733 project submissions, including 487 submitted by municipal governments. The projects that reported estimated costs together require approximately BRL 14.1 billion (USD 2.6 billion) in financing. By mapping projects across sectors and stages of development, the bank provides an overview of local investment needs and opportunities for project preparation. This can help development banks, technical assistance providers, and financing partners identify opportunities to support municipal investment pipelines in Brazil.",
+            "link": "https://citiesclimatefinance.org/pcvr-project-bank",
+            "connectionLine": "Key takeaway: Brazil shows how national programs can consolidate municipal climate project proposals and identify investment needs.",
             "order": 3
           }
         ]
       },
       {
-        "title": "3.3. Project Preparation",
-        "overview": "Project preparation is the process of developing climate investment concepts into bankable projects that can secure financing from public or private sources. It can help to develop a pipeline of bankable projects from investment opportunities in project portfolios. Project preparation typically involves four stages: concept development, pre-feasibility, feasibility, and financial structuring and transactions. These stages help assess technical, financial, environmental, social and regulatory risks, and develop projects that meet financiers' requirements. However, cities often lack the technical expertise, institutional capacity and upfront resources needed for thorough project preparation. National governments can address these barriers by establishing or strengthening project preparation facilities (PPFs), facilitating project aggregation, and connecting municipal project pipelines with multilateral or national development banks and other financing partners.",
+        "title": "3.3 Project Preparation",
+        "overview": "Project preparation is the process of developing climate action concepts into bankable projects that can secure financing from public or private sources. It can help develop a pipeline of bankable projects from investment opportunities in project portfolios. Project preparation typically involves four stages: concept development, pre-feasibility, feasibility, and financial structuring and transactions. These stages help assess technical, financial, environmental, social, and regulatory risks, and develop projects that meet financiers' requirements. However, cities often lack the technical expertise, institutional capacity and upfront resources for thorough project preparation. National governments can address these barriers by establishing or strengthening project preparation facilities, facilitating project aggregation, and connecting municipal project pipelines with multilateral or national development banks and other financing partners.",
+        "whatItIs": "",
+        "whyItIsNeeded": "",
         "potentialNationalLead": [
           "National Development Bank",
-          "Climate / Environment Ministry",
-          "Urban / Local Government Ministry",
-          "Planning Ministry"
+          "Urban Development Ministry"
         ],
         "keyActors": [
           "Finance Ministry",
-          "Relevant Sectoral Ministries",
-          "Municipal / Subnational Planning Department",
-          "Municipal / Subnational Finance Department",
-          "National Infrastructure / Investment Agency",
-          "MDB / DFI",
+          "Sector Ministries",
+          "City and Subnational Governments",
+          "National Investment Agency",
+          "Project Preparation Facilities",
+          "MDBs/DFIs",
           "Technical Assistance Providers",
-          "City Networks"
+          "Commercial Banks"
         ],
+        "transferabilityTitle": "Adapting this pathway to your context",
         "transferability": [
-          "Adapting to existing institutional arrangements: Project preparation support can be provided through national development banks, national PPFs or government agencies. The appropriate model depends on institutional mandates, technical capacities and available resources.",
-          "Considering differences in municipal capacity to develop projects: Cities with limited technical and financial expertise may require more intensive support from early concept development. More capable municipalities may only need specialised assistance for feasibility studies, financial structuring or transactions.",
-          "Ensuring sustained funding for project preparation: Preparation can be costly and may not lead to financing for every project. National programmes may consider dedicated grants, revolving preparation funds or development-partner support to cover preparation costs."
+          "Build on existing institutions with project preparation mandates and expertise. National development banks, government agencies, or dedicated PPFs may provide support, depending on institutional arrangements.",
+          "Consider differences in capacities. Cities with limited technical and financial expertise may require more intensive support from early concept development. More capable municipalities may only need specialized assistance for feasibility studies, financial structuring, or transactions.",
+          "Ensure sustained funding for project preparation, recognizing that not all prepared projects will secure financing. Consider dedicated grants, revolving preparation funds, or development-partner support."
         ],
+        "enablingConditions": [],
         "order": 3,
-        "conceptBoxes": [
-          {
-            "title": "What are Project Preparation Facilities?",
-            "category": "Core Concept",
-            "section": "Overview",
-            "excerpt": "Project Preparation Facilities (PPFs) are organizations, initiatives, or institutions that support cities in developing bankable, investment-ready projects, typically from a project’s concept, design, or scoping stage up to the financial close.",
-            "fullText": "Project Preparation Facilities (PPFs) are organizations, initiatives, or institutions that support cities in developing bankable, investment-ready projects, typically from a project’s concept, design, or scoping stage up to the financial close. A PPF may provide technical and/or financial support. PPFs can provide a wide range of support depending on a project’s stage and sector. The overarching goal of PPFs is preparing bankable, or investment-ready, projects. A project is bankable, whether from public or private sources, when its risk-return profile meets investors’ criteria. Key criteria include the probability of success, sufficient estimated cash flows to cover costs and produce returns that meet investor expectations, and whether the project will be implemented by a creditworthy entity.",
-            "order": 1
-          }
-        ],
         "implementationGuidance": [
           {
-            "title": "Strengthen subnational access to project preparation support",
+            "title": "Strengthen subnational access to project preparation",
             "content": "Establish or strengthen national project preparation facilities (PPFs) or connect municipal pipelines with existing national and international PPFs. Provide funding and technical assistance where needed."
           },
           {
             "title": "Engage financing partners early",
-            "content": "Involve national development banks, MDBs, climate funds and other potential financiers to understand their investment requirements. Use their inputs to guide urban and subnational project preparation."
+            "content": "Involve national development banks, multilateral development banks, climate funds and other potential financiers to understand their investment requirements. Use their inputs to guide urban and subnational project preparation."
           },
           {
-            "title": "Coordinate preparation support across cities",
-            "content": "Identify similar project preparation needs across municipalities. Explore shared technical assistance, standardised approaches or pooled preparation resources to reduce preparation costs and improve efficiency."
+            "title": "Coordinate preparation support",
+            "content": "Identify similar project preparation needs across municipalities. Explore shared technical assistance, standardized approaches, or pooled preparation resources to reduce preparation costs and improve efficiency. Leverage a country platform where available (see Pathway 1.3).",
+            "relatedPathways": [
+              {
+                "id": "rec9uVdifwHMNd1Aa",
+                "title": "1.3 Urban-Inclusive Country Platforms",
+                "actionId": 1,
+                "pathwayIndex": 2,
+                "number": "1.3"
+              }
+            ]
           },
           {
             "title": "Track project preparation outcomes",
-            "content": "Monitor progress from concept development through feasibility and financial structuring. Address delays and connect sufficiently prepared projects with national and international financing opportunities."
+            "content": "Monitor progress from concept development through feasibility and financial structuring. Use findings to refine project pipelines and identify additional interventions or preparation needs. Address delays and connect sufficiently prepared projects with national and international financing opportunities (see Pathways 1.3, 3.2, 4.2).",
+            "relatedPathways": [
+              {
+                "id": "rec9uVdifwHMNd1Aa",
+                "title": "1.3 Urban-Inclusive Country Platforms",
+                "actionId": 1,
+                "pathwayIndex": 2,
+                "number": "1.3"
+              },
+              {
+                "id": "rec3uo1IBCauiEimf",
+                "title": "3.2 Climate Portfolios and Project Pipelines",
+                "actionId": 3,
+                "pathwayIndex": 1,
+                "number": "3.2"
+              },
+              {
+                "id": "rechG5sx4ide7Zsxo",
+                "title": "4.2 Financial Instruments and Mechanisms",
+                "actionId": 4,
+                "pathwayIndex": 1,
+                "number": "4.2"
+              }
+            ]
           }
         ],
         "illustrativeExamples": [
           {
             "title": "South Africa – DBSA Municipal Project Preparation",
             "type": "Peer Learning Example",
-            "excerpt": "South Africa illustrates how a national development bank can provide dedicated project preparation support to municipalities.",
-            "fullText": "South Africa illustrates how a national development bank can provide dedicated project preparation support to municipalities. The Development Bank of Southern Africa (DBSA) manages ZAR 50 million (~USD 3 million) in project preparation funding through the national Infrastructure Fund for six municipalities, including Vhembe, Ugu and Sol Plaatje. The programme supports water, sanitation and electricity infrastructure projects through technical, financial, economic, environmental and socioeconomic feasibility studies. DBSA also helps municipalities assess implementation models, structure project financing and explore blended finance and private-sector participation. The programme aims to develop bankable municipal infrastructure projects and attract public and private investment.",
-            "connectionLine": "What you can learn: See how a national development bank can pool project preparation resources and expertise to help municipalities develop bankable infrastructure projects.",
+            "excerpt": "",
+            "fullText": "The Development Bank of Southern Africa (DBSA) manages ZAR 50 million (around USD 3 million) in project preparation funding through the national Infrastructure Fund for six municipalities, including Vhembe, Ugu, and Sol Plaatje. The program supports water, sanitation, and electricity infrastructure projects through technical, financial, economic, environmental, and socioeconomic feasibility studies. DBSA also helps municipalities to utilize implementation models, structure project financing, and explore blended finance and private-sector participation. The program aims to develop bankable municipal infrastructure projects and attract public and private investment.",
+            "link": "https://www.dbsa.org/projects/six-municipalities-project-preparation",
+            "connectionLine": "Key takeaway: South Africa’s national development bank pools project preparation resources and expertise to support municipal infrastructure investment.",
             "order": 1
           },
           {
-            "title": "Indonesia – Project Development Facility (PDF), Regional Infrastructure Development Fund",
+            "title": "Indonesia – Project Development Facility, Regional Infrastructure Development Fund",
             "type": "Peer Learning Example",
-            "excerpt": "Indonesia illustrates how a national development finance institution can support subnational governments in preparing infrastructure projects for investment.",
-            "fullText": "Indonesia illustrates how a national development finance institution can support subnational governments in preparing infrastructure projects for investment. PT Sarana Multi Infrastruktur (PT SMI), a state-owned institution under the Ministry of Finance, implemented the Regional Infrastructure Development Fund (RIDF), supported by the World Bank and Asian Infrastructure Investment Bank. Alongside infrastructure lending, RIDF established a Project Development Facility to help subnational governments to identify and prepare projects through feasibility studies, detailed engineering designs, environmental and social assessments, and procurement support. The facility was supported by a USD 3 million grant for technical assistance, complementing the fund's infrastructure lending. This helped address municipal project preparation gaps and connect local infrastructure proposals with financing opportunities.",
-            "connectionLine": "What you can learn: See how national development finance institutions can combine dedicated project preparation support with infrastructure lending to strengthen subnational investment pipelines.",
+            "excerpt": "",
+            "fullText": "Indonesia illustrates how a national development finance institution can support subnational governments in preparing infrastructure projects for investment. PT Sarana Multi Infrastruktur (PT SMI), a state-owned institution under the Ministry of Finance, implemented the Regional Infrastructure Development Fund (RIDF), supported by the World Bank and Asian Infrastructure Investment Bank. Alongside infrastructure lending, RIDF established a Project Development Facility to help subnational governments identify and prepare projects through feasibility studies, detailed engineering designs, environmental and social assessments, and procurement support. The facility was supported by a USD 3 million grant for technical assistance, complementing the fund's infrastructure lending. This helped address municipal project preparation gaps and connect local infrastructure proposals with financing opportunities.",
+            "link": "https://ftp.ptsmi.co.id/ridf-en",
+            "connectionLine": "Key takeaway: Indonesia shows how national development finance institutions can combine dedicated project preparation support with infrastructure lending to strengthen subnational investment pipelines.",
             "order": 2
           },
           {
             "title": "CCFLA – Project Preparation Resource Directory",
             "type": "Tool",
-            "excerpt": "The Directory helps subnational governments and stakeholders identify project preparation facilities that can support them in developing green and resilient infrastructure.",
-            "fullText": "The Directory helps subnational governments and stakeholders identify project preparation facilities that can support them in developing green and resilient infrastructure, including implementing more efficient heating and cooling systems, building renewable energy, setting up sustainable transit, or climate-proofing resilient infrastructure. Users can filter information by region, country, sector, project stage etc. to find the right PPFs for their project needs.",
-            "connectionLine": "Why use this: Identify suitable PPFs that can provide technical and financial support for preparing urban climate projects.",
+            "excerpt": "",
+            "fullText": "The Directory helps subnational governments and stakeholders identify project preparation facilities (PPFs) that can support them in developing green and resilient infrastructure, including implementing more efficient heating and cooling systems, building renewable energy, setting up sustainable transit, or climate-proofing resilient infrastructure. Users can filter information by region, country, sector, project stage, etc., to find PPFs for their project needs.",
+            "link": "https://citiesclimatefinance.org/project-preparation-resource-directory",
+            "connectionLine": "Why use this tool: Identify suitable project preparation facilities that can provide technical and financial support for preparing urban climate projects.",
             "order": 3
           },
           {
-            "title": "NDC Partnership - Project Preparation Support Database",
+            "title": "NDC Partnership – Project Preparation Support Database",
             "type": "Tool",
-            "excerpt": "A searchable database of international, regional, national, and sub-national Project Preparation Facilities (PPFs) focused on supporting the preparation of climate-aligned projects.",
-            "fullText": "It is a searchable database of international, regional, national, and sub-national Project Preparation Facilities (PPFs) focused on supporting the preparation of climate-aligned projects, as well as incubators and accelerators focused on supporting climate-aligned businesses.",
-            "connectionLine": "Why use this: Find project preparation facilities and support programmes that match climate investment priorities and project development needs.",
+            "excerpt": "",
+            "fullText": "This searchable database of international, regional, national, and subnational project preparation facilities is focused on supporting the preparation of climate-aligned projects, as well as incubators and accelerators supporting climate-aligned businesses.",
+            "link": "https://ndcpartnership.org/knowledge-portal/project-preparation-support-database/about",
+            "connectionLine": "Why use this tool: Find project preparation facilities and support programs that match climate investment priorities and project development needs.",
             "order": 4
           },
           {
-            "title": "ICLEI and Gap Fund - Capacity Development Toolkit for Early-Stage Project Preparation",
+            "title": "ICLEI and Gap Fund – Capacity Development Toolkit for Early-Stage Project Preparation",
             "type": "Tool",
-            "excerpt": "The toolkit provides 12 practical tools and templates developed through the Gap Fund Step-Up Project with cities in Africa and South America.",
-            "fullText": "The toolkit provides 12 practical tools and templates developed through the Gap Fund Step-Up Project with cities in Africa and South America. It helps city officials and technical partners to assess technical capacity and data gaps, map stakeholders and risks, develop basic financial models and evaluate financing options. Each tool includes practical guidance and adaptable templates to strengthen early-stage project preparation.",
-            "connectionLine": "Why use this: Strengthen municipal capacities to assess project feasibility, address preparation gaps and improve investment readiness.",
+            "excerpt": "",
+            "fullText": "The toolkit provides 12 practical tools and templates developed through the Gap Fund Step-Up Project with cities in Africa and South America. It helps city officials and technical partners assess technical capacity and data gaps, map stakeholders and risks, develop basic financial models, and evaluate financing options. Each tool includes practical guidance and adaptable templates to strengthen early-stage project preparation.",
+            "link": "https://iclei.org/e-library/a-capacity-development-toolkit-for-early-stage-project-preparation/",
+            "connectionLine": "Why use this tool: A toolkit for strengthening municipal capacities to assess project feasibility, address preparation gaps, and improve investment readiness.",
             "order": 5
           },
           {
-            "title": "Urban-Act - Early-Stage City Climate Project Bankability Diagnostic Tool",
+            "title": "Urban-Act – Early-Stage City Climate Project Bankability Diagnostic Tool",
             "type": "Tool",
-            "excerpt": "The tool is designed to support cities during the early stages of project preparation, from concept to pre-feasibility by applying a project finance lens to improve project viability and financeability.",
+            "excerpt": "",
             "fullText": "The tool is designed to support cities during the early stages of project preparation, from concept to pre-feasibility by applying a project finance lens to improve project viability and financeability. It offers tailored checklists across six thematic investment areas to identify bankability gaps and finance-readiness issues, along with practical sector-specific recommendations to strengthen project design, financial viability, and access to climate finance.",
-            "connectionLine": "Why use this: Identify bankability gaps in early-stage climate projects and determine the technical and financial preparation needed to address them.",
+            "link": "https://repository.unescap.org/items/6268f5a1-9051-4007-ab6d-5c174bec64a5",
+            "connectionLine": "Why use this tool: Identify bankability gaps in early-stage climate projects and determine the technical and financial preparation needed to address them.",
             "order": 6
           },
           {
             "title": "SOURCE – Sustainable Infrastructure Project Preparation Platform",
             "type": "Tool",
-            "excerpt": "SOURCE is a digital project preparation and management platform providing standardised templates to define, prepare and manage sustainable infrastructure.",
-            "fullText": "SOURCE is a digital project preparation and management platform developed through a multilateral development bank initiative and coordinated by the Sustainable Infrastructure Foundation. It provides standardised, sector-specific templates to help governments define, prepare and manage sustainable infrastructure projects throughout their lifecycle. Its features include project monitoring, document management, preparation guidance and tools for connecting projects with preparation facilities and potential financiers. SOURCE is used in more than 50 countries.",
-            "connectionLine": "Why use this: Standardise infrastructure project preparation across government institutions and improve project quality, transparency and investment readiness.",
+            "excerpt": "",
+            "fullText": "SOURCE is a digital project preparation and management platform developed through a multilateral development bank initiative and coordinated by the Sustainable Infrastructure Foundation. It provides standardized, sector-specific templates to help governments define, prepare, and manage sustainable infrastructure projects throughout their lifecycle. Its features include project monitoring, document management, preparation guidance and tools for connecting projects with preparation facilities and potential financiers. SOURCE is used in more than 50 countries.",
+            "link": "https://www.greenfinanceplatform.org/organization/sustainable-infrastructure-foundation-sif-source",
+            "connectionLine": "Why use this tool: Standardize infrastructure project preparation across government institutions and improve project quality, transparency, and investment readiness.",
             "order": 7
           }
         ],
-        "resources": [
+        "conceptBoxes": [
           {
-            "title": "GAP Fund: Unlocking Early-Stage Urban Climate Project Preparation",
-            "type": "Guide",
-            "publisher": "World Bank & EIB",
-            "link": "https://www.cityclimategapfund.org/",
-            "description": "Technical assistance and financial advisory for early-stage project origination and pipeline structuring.",
+            "title": "What are Project Preparation Facilities?",
+            "category": "Core Concept",
+            "excerpt": "Project Preparation Facilities (PPFs) are organizations, initiatives, or institutions that support cities in developing bankable, investment-ready projects, typically from a project’s concept, design, or scoping stage up to the financial close.",
+            "fullText": "Project Preparation Facilities (PPFs) are organizations, initiatives, or institutions that support cities in developing bankable, investment-ready projects, typically from a project’s concept, design, or scoping stage up to the financial close. A PPF may provide technical and/or financial support. PPFs can provide a wide range of support depending on a project’s stage and sector. The overarching goal of PPFs is preparing bankable, or investment-ready, projects. A project is bankable, whether from public or private sources, when its risk-return profile meets investors’ criteria. Key criteria include the probability of success, sufficient estimated cash flows to cover costs and produce returns that meet investor expectations, and whether the project will be implemented by a creditworthy entity.",
+            "section": "Overview",
+            "link": "",
             "order": 1
-          },
-          {
-            "title": "A Capacity Development Toolkit for Early-Stage Project Preparation",
-            "type": "Guide",
-            "publisher": "ICLEI",
-            "link": "https://iclei.org/",
-            "description": "",
-            "order": 2
-          }
-        ]
-      },
-      {
-        "title": "3.4. Portfolio Implementation Environments",
-        "overview": "Portfolio implementation environments are place-based settings where public, private and civic actors can deliver, test and adapt interconnected climate interventions. Building on portfolio development, these environments can enable the implementation of different interventions across infrastructure, regulation, finance, procurement, technology and behaviour. They can address implementation barriers, test new solutions and business models, and generate evidence on what works under real-world conditions. This can reduce investment risks, improve delivery approaches and create opportunities to scale successful interventions. National governments can support these environments through implementation funding, technical assistance, regulatory flexibility and links to national investment programmes and financing partners.",
-        "potentialNationalLead": [
-          "Climate Ministry",
-          "Urban / Local Government Ministry",
-          "Relevant Sector Ministries",
-          "National Innovation / Research Agency"
-        ],
-        "keyActors": [
-          "City / Subnational Government",
-          "Municipal Planning Department",
-          "National Development Bank",
-          "National Regulator",
-          "Utilities",
-          "Infrastructure Agencies",
-          "MDB / DFI",
-          "Technical Assistance Provider",
-          "Commercial Lender",
-          "Private Sector / Solution Providers",
-          "Academia / Research Institutions",
-          "Civil Society / Community Organisations",
-          "City Network"
-        ],
-        "transferability": [
-          "Adapting institutional arrangements while retaining core functions: Implementation environments should retain a shared mission, place-based focus, coordinated portfolio, feedback loops and learning processes. The institutions responsible for these functions can vary according to governance arrangements.",
-          "Ensuring local ownership and institutional capacity: Local actors need sufficient authority, relationships and capacity to lead implementation. Where these are limited, national institutions or external partners may provide additional support.",
-          "Considering funding and partnership arrangements: Funding models may combine grants, funded consortium roles, in-kind contributions and voluntary commitments. The appropriate mix depends on fiscal contexts, partner responsibilities and the resources needed for implementation.",
-          "Adapting to different levels of implementation readiness: Less mature environments may require initial investment in institutional capacity, stakeholder engagement and portfolio development."
-        ],
-        "order": 4,
-        "implementationGuidance": [
-          {
-            "title": "Support locally led implementation environments",
-            "content": "Enable cities and local partners to define implementation challenges, intended outcomes and suitable testbeds. Build on existing institutions and provide support for implementing interconnected interventions across infrastructure, regulation, finance, procurement and technology."
-          },
-          {
-            "title": "Engage actors responsible for implementation",
-            "content": "Bring together relevant government agencies, utilities, businesses, financiers, communities and other implementation partners. Clarify their roles, contributions and responsibilities for delivering different interventions within the portfolio."
-          },
-          {
-            "title": "Provide flexible implementation support",
-            "content": "Connect local implementation environments with national funding programmes, grants, technical assistance and other resources. Allow flexibility to adapt activities and resource allocations as implementation progresses."
-          },
-          {
-            "title": "Strengthen implementation management and orchestration",
-            "content": "Support dedicated teams or intermediaries to manage implementation, resolve operational and institutional barriers, and maintain progress across interconnected interventions."
-          },
-          {
-            "title": "Generate evidence to inform decisions",
-            "content": "Support real-world testing and monitoring of costs, performance, business models and financing requirements. Use the findings to improve implementation approaches and inform future investment decisions."
-          },
-          {
-            "title": "Support financing and wider adoption",
-            "content": "Connect relevant interventions with project preparation facilities, financing partners, procurement programmes and national initiatives. Use implementation experience to support replication or expansion across other cities where appropriate."
-          }
-        ],
-        "illustrativeExamples": [
-          {
-            "title": "System Demonstrators",
-            "type": "Peer Learning Example",
-            "excerpt": "System Demonstrators provide place-based environments where public, private and civic actors implement, test and adapt interconnected climate interventions around a shared mission.",
-            "fullText": "System Demonstrators provide place-based environments where public, private and civic actors implement, test and adapt interconnected climate interventions. Rather than delivering isolated projects, they bring together infrastructure, regulation, finance, procurement, technology and behavioural interventions around a shared mission. Continuous implementation, monitoring and learning help identify barriers, test solutions and develop pathways for wider investment and scale. National governments and development partners can support these environments through funding, technical assistance, regulatory support and connections to wider investment programmes.",
-            "connectionLine": "What you can learn: See how nationally supported, place-based implementation environments can test interconnected climate interventions, overcome delivery barriers and create opportunities for investment and scale.",
-            "order": 1,
-            "subExamples": [
-              {
-                "title": "CoAction Lund",
-                "excerpt": "CoAction Lund shows how a city-led system demonstrator can orchestrate a complex implementation ecosystem around a shared mission of climate neutrality by 2030.",
-                "fullText": "CoAction Lund shows how a city-led system demonstrator can orchestrate a complex implementation ecosystem around a shared mission of climate neutrality by 2030. In Brunnshög, the municipality brought together infrastructure providers, employers, property owners, universities and solution providers to deliver more than 40 coordinated activities across mobility and energy, with funding kept flexible so that resources can shift toward the most promising models as learning emerges. One major “game changer” is EnergyNet, a decentralised local electricity network that enables buildings, vehicles and local energy resources to share renewable electricity.  By testing EnergyNet on ground, CoAction Lund has surfaced regulatory and market barriers around grid codes, data-sharing and local markets, helping inform the adjustments needed for scale and mainstream distributed energy systems in cities facing increasing electrification demands and grid constraints. Finally, a shared evaluation plan, based on agreed indicators, tracks both activities and system‑level outcomes, feeding into regular reflection and learning cycles. EnergyNet’s wider deployment is being explored through emerging local investment approaches."
-              },
-              {
-                "title": "Bristol Thriving Places",
-                "excerpt": "Bristol Thriving Places demonstrates how a system demonstrator can overcome a regulatory bottleneck into to implement infrastructure and scale through multilevel collaboration.",
-                "fullText": "Bristol Thriving Places demonstrates how a system demonstrator can overcome a regulatory bottleneck into to implement infrastructure and scale through multilevel collaboration, including with the national government. In Bristol, the challenge was affordable, zero-carbon housing on small brownfield sites that conventional development treated as unviable; the city, working through Bristol City Council and the Bristol Housing Festival, convened a consortium led by social housing developer EDAROTH, together with housing associations, regeneration developer Igloo, energy, and digital infrastructure providers, government agencies, a private ‘gov-tech’ firm and research partners to deliver a portfolio of net-zero social homes, a multi-capital value toolkit, a policy and regulation discovery stream and a digital twin. The demonstrator’s key move was site aggregation: by treating many small council-owned sites as one programme, Bristol created the scale needed for delivery, prompted the council to review its treasury strategy to enable programme-level appraisal, and secured a development agreement of around £10 million through an existing national procurement framework. The model informed the UK government’s Small Sites Aggregator, a national programme launched by the Ministry of Housing, Communities and Local Government with private and public partners and an ambition of enabling 10,000 social rent homes a year."
-              },
-              {
-                "title": "Green Routes, Bogotá",
-                "excerpt": "Green Routes, Bogotá demonstrates how a system demonstrator can build a collaborative implementation environment around a shared evidence base.",
-                "fullText": "Green Routes, Bogotá demonstrates how a system demonstrator can build a collaborative implementation environment around a shared evidence base. In Bogotá, the challenge was to coordinate thousands of freight operators in a citywide logistics system, so the demonstrator brought freight operators, shippers and public agencies together through the Urban Logistics Network, led by the city’s Secretariat of Mobility and working with the Secretariat of Environment. As part of the implementation, Green Routes, a consortium of four technology companies, developed a real-time routing platform, which is part of an interconnected portfolio or related actions, including emissions labelling, circulation rules, loading and unloading investments, sustainable driving guidelines and a proposed district freight fund. The platform’s key contribution is the negotiated data-sharing arrangement, which would give the city the evidence it needs to plan freight more effectively, while also helping operators optimise routes and costs. The next steps for this systems demonstrator are to develop business models and sustainable revenue streams."
-              },
-              {
-                "title": "Stockholm’s STOLT system demonstrator",
-                "excerpt": "Stockholm’s STOLT system demonstrator is advancing the city’s ambition for an emission-free inner city by 2030 through transport-system transformation.",
-                "fullText": "Stockholm’s STOLT system demonstrator is advancing the city’s ambition for an emission-free inner city by 2030 by using the introduction of a Class 3 Environmental Zone and the Urban Environment Zone in Gamla Stan as strategic windows of opportunity for wider transport-system transformation. Rather than testing a single solution, STOLT coordinates a broad ecosystem of city departments, businesses, research and innovation actors, infrastructure stakeholders and civil society around a portfolio that includes stakeholder dialogue, fossil-free transport procurement, electrified construction, off-peak logistics and emerging concepts such as co-loading hubs. This coordination is particularly significant in Stockholm’s complex institutional setting – the demonstrator has succeeded in working across municipal departments and external stakeholders through recurring coordination, shared portfolio oversight and continuous adaptation. The result is not only a set of demonstrations, but an implementation environment that helps maintain a common direction, surface regulatory and operational bottlenecks, and connect learning across activities so that successful approaches can be institutionalized and replicated beyond the original testbeds."
-              },
-              {
-                "title": "Makindye Ssabagabo’s Green Community Cities demonstrator",
-                "excerpt": "Makindye Ssabagabo’s Green Community Cities demonstrator brings together municipal, UN-Habitat, Viable Cities and international partners to address affordable housing.",
-                "fullText": "Makindye Ssabagabo’s Green Community Cities demonstrator brings together the municipality, UN-Habitat, Viable Cities and an international consortium working across urban planning, low-carbon construction, recycled building materials, organic-waste processing, water systems and finance to address affordable housing as a wider urban system. The model combined modular and incremental housing, circular-economy enterprises, renewable energy, water-saving technologies, skills development and local employment, supported through a proposed blend of grants, concessional capital, private investment, microfinance and cross-subsidisation between market-rate and affordable housing.  Experience from the Climate Smart Cities Challenge also surfaced an important implementation challenge – internationally assembled solution teams were more effective where they were strongly anchored in local actors and institutions, and that weaker local collaboration and national-local connections made implementation and scaling more difficult in cases such as Makindye than in more institutionally mature settings. The example therefore shows both the value of bringing diverse capabilities into a shared implementation portfolio and the importance of ensuring that orchestration is rooted in institutions with sufficient local mandate, relationships and capacity."
-              },
-              {
-                "title": "System Demonstrators Grant Calls",
-                "excerpt": "Sweden's Viable Cities programme has established grant calls to support the design and implementation of System Demonstrators.",
-                "fullText": "Sweden's Viable Cities programme has established grant calls to support the design and implementation of System Demonstrators. These follow a phased approach, with an initial design stage supporting cities and consortia to develop their proposed interventions, followed by implementation funding for proposals meeting the relevant requirements. Building on this Swedish experience, the Viability Fund for Cities is exploring internationally coordinated grant calls, including common principles, eligibility criteria and funding arrangements across regions."
-              }
-            ]
-          },
-          {
-            "title": "India – City Investments to Innovate, Integrate and Sustain (CITIIS 2.0)",
-            "type": "Peer Learning Example",
-            "excerpt": "India illustrates how a national programme can support municipal climate project implementation through financing, technical assistance and institutional oversight via CITIIS 2.0.",
-            "fullText": "India illustrates how a national programme can support municipal climate project implementation through financing, technical assistance and institutional oversight. Led by the Ministry of Housing and Urban Affairs in partnership with NIUA, AFD, KfW and the European Union, CITIIS 2.0 supports up to 18 competitively selected city projects focused on circular economy and integrated waste management. A national Project Management Unit at NIUA coordinates programme delivery, monitoring and technical support. Selected cities receive assistance from domestic experts and international mentors on project management, environmental and social safeguards, and implementation challenges. The programme also supports state-level climate action and national institutional strengthening, helping connect municipal project delivery with wider government priorities.",
-            "connectionLine": "What you can learn: See how national governments can combine financing, technical assistance and institutional oversight to support the implementation of municipal climate projects.",
-            "order": 2
-          }
-        ],
-        "resources": [
-          {
-            "title": "System Demonstrators for Urban Transformations",
-            "type": "Report",
-            "publisher": "Viable Cities",
-            "link": "https://viablecities.se/",
-            "description": "",
-            "order": 1
-          },
-          {
-            "title": "A Guide to Collaborative Multi-level Governance for Climate Resilient Development",
-            "type": "Guide",
-            "publisher": "WRI",
-            "link": "https://www.wri.org/",
-            "description": "",
-            "order": 2
           }
         ]
       }
     ]
   },
-    {
+  {
     "id": 4,
     "title": "Mobilize Finance and Shape Markets",
-    "description": "This Action helps national governments to mobilize finance for implementing urban climate investment portfolios. It covers local climate funds and financing structures, financial instruments, and market-shaping approaches such as aggregated procurement. These approaches help cities to access capital, address financing barriers and create market conditions that support climate investment at scale.",
-    "systemsLogic": "Investment-ready portfolios need appropriate financing arrangements. Local climate investment structures can manage and channel capital towards municipal investment portfolios. Financial instruments, including guarantees, concessional finance and insurance, can address specific risks and improve access to public and private investment. Aggregation approaches can create demand for climate solutions and support wider deployment. National governments can enable these approaches through funding, regulatory support, national development banks and partnerships with subnational governments and financing institutions.",
+    "description": "This Action helps national governments to work with cities, subnational governments, and financing partners to mobilize capital and strengthen markets for urban climate solutions. It covers local climate funds, financial instruments and mechanisms, and aggregation approaches that improve financing access, address investment risks, shape markets, and support implementation at scale.",
+    "systemsLogic": "Climate investment portfolios require financing arrangements suited to their needs and risks. Local climate funds can mobilize and channel resources toward priority investments, while financial instruments and mechanisms can help to improve financing terms and manage risks. Aggregation can achieve scale by pooling financing needs, risks, or purchasing demand, strengthening access to capital and markets for climate solutions. These approaches can complement one another.",
     "pathways": [
       {
-        "title": "4.1. Local Climate Funds",
-        "overview": "Local climate funds and financing structures mobilize and channel resources towards local climate priorities by connecting climate portfolios with suitable financing and implementation arrangements available at the city level. These funds can be capitalized through municipal or subnational budgets, national transfers, grants, philanthropic contributions and private capital, depending on their design. They can support investments that are difficult to finance through conventional municipal budgets or commercial sources alone. Local climate funds may take different forms, including municipal funds, community investment funds and devolved climate funds. National governments can support their establishment and operation through legal and fiscal frameworks, funding, technical assistance and partnerships with development banks and other financing institutions.",
+        "title": "4.1 Local Climate Funds",
+        "overview": "Local climate funds mobilize and channel financial resources toward locally identified climate investments. They can draw on municipal budgets, national transfers, international grants, philanthropic contributions, and private capital, depending on their design. Funds may take different forms, including municipal, community-based or devolved climate funds and can support investments that are difficult to finance through conventional municipal budgets or commercial sources alone. National governments can enable local climate funds through supportive legal and fiscal frameworks, funding, and partnerships with financial institutions.",
+        "whatItIs": "",
+        "whyItIsNeeded": "",
         "potentialNationalLead": [
           "Finance Ministry",
-          "Urban / Local Government Ministry"
+          "Urban Development Ministry"
         ],
         "keyActors": [
-          "Municipal / Subnational Finance Department",
-          "National Development Banks",
-          "MDB / DFI",
-          "Technical Assistance Providers",
-          "Philanthropic Actors",
-          "Private Sector",
-          "Community Stakeholders"
+          "City and Subnational Governments",
+          "National Climate Fund",
+          "National Development Bank",
+          "MDBs/DFIs",
+          "Philanthropic Organizations",
+          "Private Investors",
+          "Businesses",
+          "Community Organizations",
+          "Technical Assistance Providers"
         ],
+        "transferabilityTitle": "Adapting this pathway to your context",
         "transferability": [
-          "Adapting to governance arrangements: Local climate funds may be established and managed by national or subnational governments or intermediaries, depending on institutional mandates, fiscal space, and fund management capacities.",
-          "Ensuring local ownership: Fund structures should allow local governments and communities to identify investment priorities, even where national institutions or external partners provide financing and oversight.",
-          "Considering funding sources and sustainability: Funds may draw on public budgets, national transfers, private contributions or international grants. Long-term sustainability may depend on reliable domestic resource mobilization."
+          "Consider the types of investments local funds need to support. Grant-based arrangements may suit adaptation and public-good projects, often without revenue streams, while repayable finance may be appropriate for revenue-generating projects.",
+          "Consider differences in local access to finance. Where municipalities face borrowing restrictions or limited access to financial markets, local funds may rely more heavily on fiscal transfers, grants, or financing channelled through national institutions."
         ],
+        "enablingConditions": [],
         "order": 1,
         "implementationGuidance": [
           {
             "title": "Identify local financing needs and investment gaps",
-            "content": "Start from city investment plans and portfolios. Assess project ownership, readiness, financing needs and potential revenue sources."
+            "content": "Start from city investment plans and portfolios. Assess project ownership, readiness, financing needs, and potential revenue sources (see Pathways 3.1 and 3.2).",
+            "relatedPathways": [
+              {
+                "id": "recG7wIxVJgnhPW6M",
+                "title": "3.1 Local Climate Budgeting and Investment Planning",
+                "actionId": 3,
+                "pathwayIndex": 0,
+                "number": "3.1"
+              },
+              {
+                "id": "rec3uo1IBCauiEimf",
+                "title": "3.2 Climate Portfolios and Project Pipelines",
+                "actionId": 3,
+                "pathwayIndex": 1,
+                "number": "3.2"
+              }
+            ]
           },
           {
             "title": "Support the establishment of local climate funds",
-            "content": "Help local or subnational governments to establish suitable fund arrangements, considering enabling legal frameworks, fiscal responsibilities and institutional capacities."
+            "content": "Help local or subnational governments to establish suitable fund arrangements, considering enabling legal frameworks, fiscal responsibilities, and institutional capacities (see Pathway 2.2).",
+            "relatedPathways": [
+              {
+                "id": "recEU7spqUr33oM9S",
+                "title": "2.2 Reform Roadmaps for Urban Climate Investment",
+                "actionId": 2,
+                "pathwayIndex": 1,
+                "number": "2.2"
+              }
+            ]
           },
           {
             "title": "Clarify governance arrangements",
-            "content": "Agree on responsibilities for fund management, resource allocation and accountability. Ensure local governments retain ownership of investment priorities, with national oversight where appropriate."
+            "content": "Agree on responsibilities for fund management, resource allocation, and oversight. Ensure local governments retain ownership of investment priorities, with national oversight where appropriate."
           },
           {
-            "title": "Mobilise resources for local funds",
-            "content": "Connect funds with national funding programmes, fiscal transfers and development partners. Facilitate contributions from philanthropic organisations, businesses and other financing partners."
+            "title": "Mobilize sustained finance",
+            "content": "Connect funds with long-term national funding programs, fiscal transfers, and development partners. Facilitate contributions from philanthropic organizations, businesses, and other financing partners, including through country platforms where relevant (see Pathway 1.3).",
+            "relatedPathways": [
+              {
+                "id": "rec9uVdifwHMNd1Aa",
+                "title": "1.3 Urban-Inclusive Country Platforms",
+                "actionId": 1,
+                "pathwayIndex": 2,
+                "number": "1.3"
+              }
+            ]
           },
           {
-            "title": "Facilitate access to fund management expertise",
-            "content": "Connect local governments with technical assistance providers and intermediaries to strengthen financial management, investment appraisal and performance monitoring."
+            "title": "Strengthen fund management",
+            "content": "Facilitate cities’ access to financial management and investment appraisal expertise. Establish reporting and monitoring arrangements to track resource allocation, investment outcomes, and fund performance."
           }
         ],
         "illustrativeExamples": [
           {
-            "title": "Kenya – County Climate Change Funds (CCCFs)",
+            "title": "Kenya – County Climate Change Funds",
             "type": "Peer Learning Example",
-            "excerpt": "Kenya demonstrates how devolved climate finance can enable locally led adaptation while remaining anchored in national policy.",
-            "fullText": "Kenya demonstrate how devolved climate finance can enable locally led adaptation while remaining anchored in national policy. CCCFs were piloted in Isiolo in 2011–12 and later expanded to Garissa, Kitui, Makueni, Wajir and beyond. These funds identify, prioritize and finance local adaptation investments through county planning and budgeting systems, with county and ward committees steering decisions and local knowledge and climate information built into planning and monitoring. They are designed to blend resources from international climate finance, multilateral development banks, the private sector, national government transfers and counties’ own-source revenues. Several counties have legislated commitments of 1–2 per cent of development budgets to capitalise CCCFs. These commitments helped to attract external finance, including seed funding from the UK and Sweden. CCCFs are aligned with Kenya’s National Adaptation Plan (NAP), the National Climate Change Action Plan, and the Climate Change Act. The success of pilots helped to pave the way for national scale-up. By 2023 all 47 Kenyan counties had CCCFs in place, creating the basis for a new Financing Locally Led Climate Action Program funded by the World Bank and the governments of Denmark and Sweden, and led by the National Treasury.",
-            "connectionLine": "What you can learn: See how national governments can support local climate funds that combine local decision-making, domestic resources and external climate finance.",
+            "excerpt": "",
+            "fullText": "First piloted in Isiolo in 2011–12, County Climate Change Funds (CCCFs) enable Kenyan counties to identify, prioritize, and finance local adaptation projects through county planning and budgeting systems. County and ward committees guide investment decisions, drawing on local knowledge and climate information. Several counties have committed 1–2% of their development budgets to these funds. These commitments helped to attract external finance, including seed funding from the UK and Sweden. CCCFs are aligned with Kenya’s National Adaptation Plan (NAP), the National Climate Change Action Plan, and the Climate Change Act. The success of pilots helped to pave the way for national scale-up. By 2023, all 47 Kenyan counties had CCCFs in place, creating the basis for a new Financing Locally Led Climate Action Program funded by the World Bank and the governments of Denmark and Sweden, and led by the National Treasury.",
+            "link": "https://ndcpartnership.org/knowledge-portal/good-practice-database/kenyas-county-climate-change-funds",
+            "connectionLine": "Key takeaway: Kenya shows how national governments can scale locally led climate finance through devolved funding arrangements that include local decision-making and combine domestic resources with international climate finance.",
             "order": 1
           },
           {
             "title": "Italy – ForestaMi Fund, Milan",
             "type": "Peer Learning Example",
-            "excerpt": "Milan illustrates how municipal and subnational governments can work with philanthropic institutions to establish dedicated funds for local climate action.",
-            "fullText": "Milan illustrates how municipal and subnational governments can work with philanthropic institutions to establish dedicated funds for local climate action. Launched in 2019, Forestami brings together the Municipality and Metropolitan City of Milan, Lombardy Region, universities, foundations and other local institutions to support urban forestry and climate resilience. A local fund was established within Fondazione di Comunità Milano to mobilise contributions from businesses and citizens towards the goal of planting three million trees by 2030. In April 2025, the initiative transitioned into Fondazione Forestami, an independent nonprofit foundation responsible for expanding its activities across the metropolitan area and beyond. The city of Lund in Sweden is also planning to replicate this model to accelerate municipal tree planting, which will not only improve local climatic conditions but also provide additional economic value to businesses through place-based improvements.",
-            "connectionLine": "What you can learn: See how governments can partner with philanthropic institutions to establish and manage local climate funds.",
+            "excerpt": "",
+            "fullText": "Launched in 2019, Forestami brings together the Municipality and Metropolitan City of Milan, Lombardy Region, universities, foundations and other local institutions to support urban forestry and climate resilience. A local fund was established within Fondazione di Comunità Milano to mobilize contributions from businesses and citizens toward the goal of planting three million trees by 2030. In April 2025, the initiative transitioned into Fondazione Forestami, an independent nonprofit foundation responsible for expanding its activities across the metropolitan area and beyond.",
+            "link": "https://forestami.org/en/chi-siamo/il-progetto/",
+            "connectionLine": "Key takeaway: Milan shows how municipal and regional governments can partner with philanthropic institutions and businesses to mobilize dedicated funding for local climate action.",
             "order": 2
           },
           {
-            "title": "United Kingdom – Bristol's Local Climate Investment Funds",
+            "title": "UK – Bristol's Local Climate Investment Funds",
             "type": "Peer Learning Example",
-            "excerpt": "Bristol shows how municipalities can mobilize community and private capital for climate action through local funds.",
-            "fullText": "Bristol shows how municipalities can mobilize community and private capital for climate action through local funds. Through its Climate Action Investment initiative, developed under the EU NetZeroCities Pilot Cities Programme, Bristol City Council enables residents and businesses to invest as little as GBP 5 in energy-efficiency and renewable-energy improvements to council-owned buildings. The initiative raised over GBP 500,000 in its first five weeks towards an initial GBP 1 million target, offering investors a five-year loan with 4.2% annual interest. Separately, the Bristol City Leap Community Energy Fund provides GBP 1.5 million in grants and loans for community-led energy projects, funded equally by private partners Ameresco and Vattenfall. The Bristol City Leap model also informed the UK government's Local Net Zero Accelerator programme, which supported a pilot in York and North Yorkshire to explore replicating its approach to mobilising private investment for local net-zero projects.",
-            "connectionLine": "What you can learn: See how cities can mobilize community and private capital through local funds, and how national governments can support the replication of successful models.",
+            "excerpt": "",
+            "fullText": "Through its Climate Action Investment initiative, developed under the EU NetZeroCities Pilot Cities Programme, Bristol City Council enables residents and businesses to invest as little as GBP 5 in energy-efficiency and renewable-energy improvements to council-owned buildings. The initiative raised over GBP 500,000 in its first five weeks toward an initial GBP 1 million target, offering investors a five-year loan with 4.2% annual interest. Separately, the Bristol City Leap Community Energy Fund provides GBP 1.5 million in grants and loans for community-led energy projects, funded equally by private partners Ameresco and Vattenfall. The Bristol City Leap model also informed the UK government's Local Net Zero Accelerator program, which supported a pilot in York and North Yorkshire to explore replicating its approach to mobilizing private investment for local net-zero projects.",
+            "link": "https://www.abundanceinvestment.com/council/bristol",
+            "connectionLine": "Key takeaway: Bristol shows how cities can mobilize community and private capital through local funds, and how national governments can support the replication of successful models.",
             "order": 3
           },
           {
             "title": "Bhutan – Local Climate Adaptive Living Facility (LoCAL)",
             "type": "Peer Learning Example",
-            "excerpt": "Bhutan illustrates how national governments can channel climate finance to local authorities through existing fiscal transfer systems.",
-            "fullText": "Bhutan illustrates how national governments can channel climate finance to local authorities through existing fiscal transfer systems. Introduced in 2011 through a partnership between the Royal Government of Bhutan and UNCDF, LoCAL uses performance-based climate resilience grants and technical assistance to finance locally identified adaptation investments. The programme expanded to over 100 local governments, financing more than 350 adaptation investments by 2023. Building on this experience, Bhutan has integrated LoCAL into its national local government financing system and planned to mobilize domestic resources through the same grant mechanism. This would allow the government to sustain and expand local adaptation financing beyond the initial international support. Accordingly, Bhutan has incorporated performance-based grants into its central budgeting system and included climate vulnerability in the formula for allocating resources to local governments.",
-            "connectionLine": "What you can learn: See how national governments can use international climate finance to establish local funding mechanisms and transition towards domestic financing and ownership.",
+            "excerpt": "",
+            "fullText": "Introduced in 2011 through a partnership between the Royal Government of Bhutan and UNCDF, LoCAL uses performance-based climate resilience grants and technical assistance to finance locally identified adaptation investments. The program expanded to over 100 local governments, financing more than 350 adaptation investments by 2023. Building on this experience, Bhutan has integrated LoCAL into its national local government financing system and planned to mobilize domestic resources through the same grant mechanism. This would allow the government to sustain and expand local adaptation financing beyond the initial international support. Accordingly, Bhutan has incorporated performance-based grants into its central budgeting system and included climate vulnerability in the formula for allocating resources to local governments.",
+            "link": "https://www.uncdf.org/article/8737/water-ingenuity-and-community-with-local-in-bhutan",
+            "connectionLine": "Key takeaway: Bhutan shows how national governments can use existing fiscal transfer systems to channel climate finance to local authorities and strengthen domestic financing arrangements.",
             "order": 4
-          }
-        ],
-        "resources": [
-          {
-            "title": "Catalytic Capital & De-Risking Instruments for Cities",
-            "type": "Report",
-            "publisher": "CCFLA",
-            "link": "https://citiesclimatefinance.org/",
-            "description": "",
-            "order": 1
           },
           {
-            "title": "Subnational Green Bonds & Blended Finance Guidebook",
-            "type": "Guide",
-            "publisher": "FMDV",
-            "link": "https://fmdv.net/",
-            "description": "",
-            "order": 2
+            "title": "Viable Cities – Local Investment Structures – design considerations",
+            "type": "Tool",
+            "excerpt": "",
+            "fullText": "Developed through Viable Cities and the Viability Fund for Cities, this working model is intended for local governments, investment owners, country platforms and finance partners. It describes common functions for coordinating a local investment portfolio, identifying owners and preparation needs, matching investments with suitable capital and supporting implementation and reinvestment. Institutional arrangements can vary with local mandates, revenue models and legal conditions. National coordination can connect several local portfolios with larger programmes and domestic and international finance, complemented where appropriate by philanthropic and private capital. The model supports the CHAMP Implementation Roadmap 2026–2028 and identifies questions requiring further validation.",
+            "link": "https://viabilityfund.org/models/local-investment-structures/",
+            "connectionLine": "Develop locally anchored investment arrangements when several owners and capital providers need to coordinate preparation, financing and implementation of a climate transition portfolio.",
+            "order": 5
           }
         ]
       },
       {
-        "title": "4.2. Financial Instruments and Mechanisms",
-        "overview": "Financial instruments and risk-sharing mechanisms help to mobilize climate finance by improving financing conditions, reducing risks and attracting additional capital. These include green bonds, concessional finance, guarantees, insurance and other instruments that address specific financing barriers. They can also be used within blended finance arrangements to mobilize private investment alongside public or concessional resources. The choice of instruments depends on project risks, financing needs, local market conditions and the fiscal or financial capacities of governments. National governments can facilitate cities or subnational governments’ access to these instruments through national development banks, public finance, regulatory frameworks and partnerships with MDBs, DFIs and private financiers. This can help cities and subnational governments to access suitable financing for implementing their climate investment portfolios.",
+        "title": "4.2 Financial Instruments and Mechanisms",
+        "overview": "National governments can work with development banks and financing partners to deploy financial instruments and mechanisms that help cities access capital for climate projects. These include concessional loans, guarantees, insurance, green bonds, and other risk-sharing mechanisms that address specific financing barriers. Public and concessional resources can also be combined with commercial finance through blended finance arrangements to mobilize additional investment. The choice of instruments depends on project financing needs, risks, local market conditions, and municipal financial capacities.",
+        "whatItIs": "",
+        "whyItIsNeeded": "",
         "potentialNationalLead": [
           "Finance Ministry",
-          "National Development Bank",
-          "Climate / Environment Ministry"
+          "National Development Bank"
         ],
         "keyActors": [
-          "City / Subnational Government",
-          "Relevant Sector Ministries",
-          "MDB / DFI",
-          "Commercial Lenders",
+          "National Climate Fund",
+          "Sector Ministries",
+          "City and Subnational Governments",
+          "MDBs/DFIs",
+          "Commercial Banks",
           "Institutional Investors",
           "Insurers",
           "Guarantee Providers",
           "Technical Assistance Providers"
         ],
+        "transferabilityTitle": "Adapting this pathway to your context",
         "transferability": [
-          "Accounting for fiscal and regulatory conditions: Municipal borrowing limits, guarantee regulations and financial market regulations may determine which instruments subnational governments can access.",
-          "Considering domestic financial market maturity: Access to commercial lenders, institutional investors and insurers varies across countries. Less developed markets may require additional public support or international financing partners.",
-          "Assessing institutional and financial capacities: Instruments such as green bonds and guarantees require specialised expertise, creditworthiness and financial management capacities that may not be available across all municipalities."
+          "Consider municipal borrowing powers and financial regulations when selecting instruments. Where direct borrowing or bond issuance is restricted, national institutions may need to channel financing through intermediaries, such as utilities, public enterprises or public banks.",
+          "Consider differences in municipal creditworthiness and financial management capacities. Cities with limited financial capacity may require concessional finance, credit enhancement, or additional support before accessing commercial instruments."
         ],
+        "enablingConditions": [],
         "order": 2,
+        "implementationGuidance": [
+          {
+            "title": "Identify project financing needs and risk profiles",
+            "content": "Work with cities, development banks and financing partners to assess project revenue streams, creditworthiness, and financing barriers across municipal pipelines (see Pathways 2.1 and 3.2).",
+            "relatedPathways": [
+              {
+                "id": "rec3uo1IBCauiEimf",
+                "title": "3.2 Climate Portfolios and Project Pipelines",
+                "actionId": 3,
+                "pathwayIndex": 1,
+                "number": "3.2"
+              }
+            ]
+          },
+          {
+            "title": "Select appropriate financial instruments",
+            "content": "Match financial mechanisms to project requirements and municipal financial capacities. Use concessional loans for projects with limited revenue potential, guarantees to address credit risks, and green bonds or commercial debt for revenue-generating infrastructure."
+          },
+          {
+            "title": "Deploy risk mitigation and blended finance",
+            "content": "Engage national development banks, multilateral institutions and international climate funds to provide guarantees, insurance, and other risk mitigation mechanisms. Where appropriate, use national public finance to help mobilize private investment, as part of a blended finance approach."
+          },
+          {
+            "title": "Monitor financing outcomes",
+            "content": "Track financing mobilized, financing costs, risk reduction, and investment outcomes. Use findings to improve the effectiveness of financial instruments over time."
+          }
+        ],
+        "illustrativeExamples": [
+          {
+            "title": "Nigeria – InfraCredit",
+            "type": "Peer Learning Example",
+            "excerpt": "",
+            "fullText": "InfraCredit was established in 2017 through a partnership between the Nigeria Sovereign Investment Authority and the Private Infrastructure Development Group's GuarantCo. It provides local currency guarantees that improve the credit quality of infrastructure bonds and attract long-term investment from domestic pension funds, insurers, and banks. By the end of 2024, it had guaranteed 24 transactions, mobilizing over NGN 200 billion in private investment and supporting nearly NGN 150 billion in bond issuances. These include North South Power's NGN 8.5 billion green bond, Nigeria's first certified corporate green bond. Its approach has informed similar credit-enhancement facilities in Pakistan and Kenya, demonstrating how nationally supported guarantees can expand domestic infrastructure financing.",
+            "link": "https://www.oecd.org/en/publications/blended-finance-case-studies_2fb90b9a-en/infracredit-making-infrastructure-projects-in-nigeria-more-bankable-through-credit-enhancement_bdb679c6-en.html",
+            "connectionLine": "Key takeaway: Nigeria shows how national institutions can partner with development finance organizations to reduce credit risks and mobilize long-term domestic capital for climate-related infrastructure.",
+            "order": 1
+          },
+          {
+            "title": "Brazil – BNDES Climate Fund (Fundo Clima)",
+            "type": "Peer Learning Example",
+            "excerpt": "",
+            "fullText": "Fundo Clima provides climate financing on preferential terms to municipalities, including extended repayment and grace periods. It is coordinated by the Ministry of the Environment and Climate Change and operated by the national development bank BNDES. In May 2026, BNDES announced BRL 500 million in financing for Belo Horizonte's municipal climate-resilience investment plan, including BRL 480 million from Fundo Clima. The financing will support flood and landslide prevention, green infrastructure, and restoration of rivers and water sources.",
+            "link": "https://www.bndes.gov.br/SiteBNDES/bndes/bndes_en/Institucional/Social_and_Environmental_Responsibility/climate_fund_program.html",
+            "connectionLine": "Key takeaway: Brazil shows how national governments can leverage national development banks to provide preferential, long-term financing for municipal climate investments.",
+            "order": 2
+          },
+          {
+            "title": "Greece – EIB Sustainable Urban Development Framework Loans",
+            "type": "Peer Learning Example",
+            "excerpt": "",
+            "fullText": "Framework loans from the European Investment Bank (EIB) provide long-term financing for multiple smaller projects under multiyear investment programs, allowing eligible investments to be financed over time without requiring separate loans for each project. In Greece, the EIB signed EUR 1 billion (around USD 1.1 billion) in framework loans to support the Antonis Tritsis national public investment program, led by the Ministry of Interior. Financing in the program is channeled through the Consignment Deposits and Loans Fund for municipal investments in flood protection, sustainable water and waste management, energy-efficient public buildings, and e-mobility.",
+            "link": "https://www.eib.org/en/projects/all/20200177",
+            "connectionLine": "Key takeaway: Greece shows how national ministries can work with multilateral development banks to finance smaller municipal climate projects through flexible, long-term financing arrangements.",
+            "order": 3
+          },
+          {
+            "title": "CCFLA – Financial Instruments Toolkit",
+            "type": "Tool",
+            "excerpt": "",
+            "fullText": "The Financial Instruments Toolkit is an interactive resource that helps practitioners explore financial instruments for urban climate projects, including how different instruments work and the contexts in which they may be relevant. It provides structured guidance on navigating the spectrum of urban climate finance instruments—from debt, equity, and guarantees to results-based financing and blended capital structures—helping project developers and municipal leaders match the right financial mechanisms to their specific infrastructure and resilience needs.",
+            "link": "https://citiesclimatefinance.org/financial-instruments",
+            "connectionLine": "Why use this tool: Identify financial instruments suited to specific urban climate investment needs, financing barriers and local market conditions.",
+            "order": 4
+          },
+          {
+            "title": "ICLEI – Climate Finance Decision-Making Tree",
+            "type": "Tool",
+            "excerpt": "",
+            "fullText": "Developed by ICLEI, this tool guides local and regional governments through a series of questions to identify suitable financing options for climate investments. It considers factors such as available municipal resources and assets, borrowing eligibility, project revenue potential, private-sector participation and access to public funding. The decision tree covers financing options including grants, loans, municipal green bonds, public-private partnerships, blended finance and risk mitigation instruments. Each option is accompanied by guidance on its advantages, limitations and relevant case studies, helping governments compare potential financing approaches. National governments can also use the tool to understand municipal financing constraints and identify where public financing, guarantees or regulatory support may be needed to expand access to financing.",
+            "link": "https://e-library.iclei.org/uploads/Finance_tree_ENG_100621.pdf",
+            "connectionLine": "Why use this tool: Compare financing options and identify instruments appropriate to local government capacities, investment requirements, and financing conditions.",
+            "order": 5
+          }
+        ],
         "conceptBoxes": [
           {
             "title": "What is Blended Finance?",
             "category": "Financial Mechanism",
-            "section": "Overview",
             "excerpt": "Blended finance is the strategic use of a limited amount of concessional public or philanthropic capital to mobilize additional finance, primarily from commercial and private sources — toward sustainable development and climate goals.",
             "fullText": "Blended finance is the strategic use of a limited amount of concessional public or philanthropic capital to mobilize additional finance, primarily from commercial and private sources — toward sustainable development and climate goals. Rather than a single financial instrument, it is a structuring approach: public actors (donors, development agencies, philanthropies, and development finance institutions) absorb or share risks that would otherwise deter private investors, improving a project's risk-return profile enough to attract market-rate capital. The concessional capital at the core of a blended structure can take several forms, including grants, concessional debt or equity, guarantees, and other risk-sharing facilities. These de-risking mechanisms matter most in emerging markets and developing economies, where country-specific risk accounts for between 60 and 90 percent of investors' risk considerations, and where about 80–90 percent of climate mitigation investment is expected to come from the private sector. The overarching goal is to crowd in private money that would not have been invested otherwise, deploying only as much public subsidy as is needed to make a project viable.",
+            "section": "Overview",
+            "link": "",
             "order": 1
           }
+        ]
+      },
+      {
+        "title": "4.3 Financial Aggregation and Market Shaping",
+        "overview": "Financial aggregation helps cities and other actors combine financial resources or coordinate demand to improve access to finance, reduce costs, and strengthen markets for climate solutions. On the supply side, it can involve pooling capital from multiple financiers. On the demand side, it can involve aggregating municipal borrowing needs, pooling insurance risks, or coordinating public and private purchasing demand. These approaches can improve access to finance, reduce costs, and shape markets by creating larger investment opportunities, strengthening insurance markets, or signaling demand for low-carbon solutions. National governments can support aggregation through enabling regulations, pooled financing and insurance facilities, national development banks, and coordinated procurement programs.",
+        "whatItIs": "",
+        "whyItIsNeeded": "",
+        "potentialNationalLead": [
+          "Finance Ministry",
+          "National Development Bank"
         ],
+        "keyActors": [
+          "National Procurement Agency",
+          "Urban Development Ministry",
+          "City and Subnational Governments",
+          "MDBs/DFIs",
+          "Commercial Banks",
+          "Institutional Investors",
+          "Insurers",
+          "Businesses",
+          "Solution Providers",
+          "City Networks"
+        ],
+        "transferabilityTitle": "Adapting this pathway to your context",
+        "transferability": [
+          "Consider the scale and similarity of financing or purchasing needs. Aggregation may offer limited benefits where participation from cities is low or borrowing, insurance, and purchasing requirements differ substantially across municipalities.",
+          "Consider existing institutional mandates and capacities. National agencies, municipal financial intermediaries, or intermunicipal partnerships may manage aggregation, depending on their legal authority and ability to coordinate participants.",
+          "Account for differences in financial and supplier markets. Where domestic lenders, insurers or low-carbon suppliers are limited, national governments may need to engage international partners or provide credit enhancement for pooled borrowing."
+        ],
+        "enablingConditions": [],
+        "order": 3,
         "implementationGuidance": [
           {
-            "title": "Identify financing barriers",
-            "content": "Work with cities, subnational governments and financing partners to assess risks, financing needs and barriers that affect priority urban climate investments."
+            "title": "Identify opportunities for aggregation",
+            "content": "Work with cities, financing institutions, and partners to identify common borrowing, insurance, or purchasing needs, including those emerging from municipal portfolios and pipelines. Assess whether aggregation could improve financing access, reduce costs, or strengthen demand for climate solutions (see Pathway 3.2).",
+            "relatedPathways": [
+              {
+                "id": "rec3uo1IBCauiEimf",
+                "title": "3.2 Climate Portfolios and Project Pipelines",
+                "actionId": 3,
+                "pathwayIndex": 1,
+                "number": "3.2"
+              }
+            ]
           },
           {
-            "title": "Match financial instruments to financing needs and capacities",
-            "content": "Identify where guarantees, concessional loans, insurance, green bonds, local-currency financing or other instruments could address specific barriers and improve financing conditions."
+            "title": "Select suitable aggregation approaches",
+            "content": "Explore pooled financing facilities, joint borrowing arrangements, collective insurance or coordinated purchasing, depending on local needs and market conditions. Clarify participating institutions, responsibilities, and financing or purchasing commitments."
           },
           {
-            "title": "Use public finance strategically",
-            "content": "Deploy national or concessional resources to reduce investment risks and mobilise additional capital. Consider blended finance arrangements where appropriate."
+            "title": "Establish supportive enabling arrangements",
+            "content": "Provide clear legal frameworks, standardized procedures, and technical assistance to support aggregation. Where needed, establish credit-enhancement mechanisms or guarantee facilities to lower borrowing costs for pooled financing (see Pathway 2.2).",
+            "relatedPathways": [
+              {
+                "id": "recEU7spqUr33oM9S",
+                "title": "2.2 Reform Roadmaps for Urban Climate Investment",
+                "actionId": 2,
+                "pathwayIndex": 1,
+                "number": "2.2"
+              }
+            ]
           },
           {
-            "title": "Mobilise financial and technical partners",
-            "content": "Engage development banks, insurers, investors and technical assistance providers to design aggregation arrangements, manage risks and support municipal participation."
+            "title": "Engage market actors",
+            "content": "Work with institutional investors, commercial lenders, insurers, manufacturers, and solution providers to communicate aggregated demand, establish common specifications, and structure investment or procurement opportunities."
           },
           {
-            "title": "Align financial instruments with national programmes",
-            "content": "Integrate them into existing funding programmes or investment structures where possible."
-          },
-          {
-            "title": "Monitor financing outcomes",
-            "content": "Track capital mobilised, financing costs, risk reduction and investment outcomes. Use findings to improve the effectiveness of financial instruments over time."
+            "title": "Manage implementation and scale",
+            "content": "Monitor implementation, evaluate cost savings and risk reduction, and refine aggregation models. Use successful pilots to expand participation across cities and sectors over time."
           }
         ],
         "illustrativeExamples": [
           {
             "title": "India – Tamil Nadu Water and Sanitation Pooled Fund",
             "type": "Peer Learning Example",
-            "excerpt": "India illustrates how state and national governments can use credit enhancement to help smaller municipalities access long-term infrastructure finance.",
+            "excerpt": "",
             "fullText": "India illustrates how state and national governments can use credit enhancement to help smaller municipalities access long-term infrastructure finance. Established by the Government of Tamil Nadu in 2002, the Water and Sanitation Pooled Fund pooled the borrowing needs of 13 municipalities and issued a USD 6.2 million bond for water and sanitation investments. To reduce investor risks, the state government established reserve funds and escrow accounts to intercept fiscal transfers if repayments fell short, while a USAID partial guarantee provided additional protection. This blended finance arrangement helped to secure an AA credit rating and 15-year financing for municipalities that would otherwise struggle to access capital markets independently. Building on pooled financing experiences in Tamil Nadu and other states, India's national government established the Pooled Finance Development Fund in 2006 to support state-level financing entities through credit enhancement and project preparation assistance.",
-            "connectionLine": "What you can learn: See how state and national governments can use blended finance, guarantees and credit enhancement to improve smaller municipalities' access to long-term infrastructure finance.",
+            "link": "https://tnuifsl.com/wspf.asp",
+            "connectionLine": "Key takeaway: India shows how state and national governments can use blended finance, guarantees and credit enhancement to improve smaller municipalities' access to long-term infrastructure finance",
             "order": 1
           },
-          {
-            "title": "Nigeria – InfraCredit",
-            "type": "Peer Learning Example",
-            "excerpt": "Nigeria shows how a nationally backed credit-enhancement facility can mobilise domestic capital for climate-related infrastructure.",
-            "fullText": "Nigeria shows how a nationally backed credit-enhancement facility can mobilise domestic capital for climate-related infrastructure. Established in 2017 through a partnership between the Nigeria Sovereign Investment Authority and PIDG's GuarantCo, InfraCredit provides local-currency guarantees that improve the credit quality of infrastructure bonds and attract long-term investment from domestic pension funds, insurers and banks. By the end of 2024, it had guaranteed 24 transactions, mobilising over NGN 200 billion in private investment and supporting nearly NGN 150 billion in bond issuances. These include North South Power's NGN 8.5 billion green bond, Nigeria's first certified corporate green bond. Its approach has informed similar credit-enhancement facilities in Pakistan and Kenya, demonstrating how nationally supported guarantees can expand domestic infrastructure financing.",
-            "connectionLine": "What you can learn: See how national institutions can partner with development finance organisations to reduce credit risks and mobilize long-term domestic capital for green infrastructure investments.",
-            "order": 2
-          },
-          {
-            "title": "Brazil – BNDES Climate Fund (Fundo Clima)",
-            "type": "Peer Learning Example",
-            "excerpt": "Brazil illustrates how national governments can provide preferential long-term lending for municipal climate investments.",
-            "fullText": "Brazil illustrates how national governments can provide preferential long-term lending for municipal climate investments. Coordinated by the Ministry of the Environment and Climate Change and operated by national development bank BNDES, Fundo Clima enables municipalities and other subnational borrowers to access climate financing on preferential terms, including extended repayment periods and grace periods. In May 2026, BNDES announced BRL 500 million in financing for Belo Horizonte's municipal climate-resilience investment plan, including BRL 480 million from Fundo Clima. The financing will support flood and landslide prevention, green infrastructure and restoration of rivers and water sources.",
-            "connectionLine": "What you can learn: See how national governments can leverage national development banks to offer preferential, long-term climate lending for municipal infrastructure investments.",
-            "order": 3
-          },
-          {
-            "title": "CCFLA Financial Instruments Toolkit",
-            "type": "Tool",
-            "excerpt": "An interactive resource that helps practitioners explore financial instruments for urban climate projects, including how different instruments work and the contexts in which they may be relevant.",
-            "fullText": "The CCFLA Financial Instruments Toolkit is an interactive resource that helps practitioners explore financial instruments for urban climate projects, including how different instruments work and the contexts in which they may be relevant. It provides structured guidance on navigating the spectrum of urban climate finance instruments—from debt, equity, and guarantees to results-based financing and blended capital structures—helping project developers and municipal leaders match the right financial mechanisms to their specific infrastructure and resilience needs.",
-            "connectionLine": "Why use this: Identify financial instruments suited to specific urban climate investment needs, financing barriers and local market conditions.",
-            "order": 4
-          },
-          {
-            "title": "ICLEI Climate Finance Decision-Making Tree",
-            "type": "Tool",
-            "excerpt": "Helps local and regional governments navigate different financing options through a series of guiding questions.",
-            "fullText": "ICLEI climate finance decision-making tree helps local and regional governments navigate different financing options through a series of guiding questions. It provides an overview of each financing tool, including its advantages, disadvantages, and relevant case studies. An overview of the decision-making tree and available financing tools is provided below.",
-            "connectionLine": "Why use this: Compare financing options and identify instruments appropriate to local government capacities, investment requirements and financing conditions.",
-            "order": 5
-          }
-        ],
-        "resources": [
-          {
-            "title": "Climate Policy Initiative: Mobilizing Private Capital for Subnational Resilience",
-            "type": "Report",
-            "publisher": "CPI",
-            "link": "https://www.climatepolicyinitiative.org/",
-            "description": "",
-            "order": 1
-          },
-          {
-            "title": "Investing in Cities: Strengthening Urban Resilience Finance",
-            "type": "Report",
-            "publisher": "World Bank",
-            "link": "https://www.worldbank.org/",
-            "description": "",
-            "order": 2
-          }
-        ]
-      },
-      {
-        "title": "4.3. Financial Aggregation and Market Shaping",
-        "overview": "Financial aggregation brings together multiple investments, financing providers, borrowers or buyers to improve access to finance and achieve scale for urban climate investments. Supply-side aggregation combines capital from different financing providers to support larger or more diversified investment portfolios. Demand-side aggregation pools the borrowing or purchasing power of cities and other actors to improve financing terms, reduce costs and strengthen market demand. This can include pooled municipal borrowing, collective insurance arrangements and aggregated procurement of climate-aligned goods and services. National governments can enable aggregation through financial intermediaries, risk-sharing mechanisms, procurement frameworks and partnerships across cities, helping overcome financing barriers and create stronger market signals for climate solutions.",
-        "potentialNationalLead": [
-          "Finance Ministry",
-          "National Development Bank",
-          "Urban / Local Government Ministry",
-          "National Procurement Authority"
-        ],
-        "keyActors": [
-          "Relevant Sector Ministries",
-          "Municipal / Subnational Finance Department",
-          "Municipal / Subnational Procurement Department",
-          "Municipal / Subnational Planning Department",
-          "MDB / DFI",
-          "Commercial Lenders",
-          "Institutional Investors",
-          "Insurers",
-          "Private Sector",
-          "City Networks"
-        ],
-        "transferability": [
-          "Considering market size and participation: Aggregation requires sufficient participation from cities, borrowers, lenders or buyers to achieve economies of scale. Benefits depend on the volume and similarity of their financing or purchasing needs.",
-          "Adapting to institutional arrangements: Aggregation may be managed by national agencies, municipally owned intermediaries or intermunicipal partnerships, depending on governance structures and institutional capacities.",
-          "Accounting for legal and regulatory conditions: Municipal borrowing powers, insurance regulations and procurement policies will affect which aggregation approaches are feasible across countries."
-        ],
-        "order": 3,
-        "implementationGuidance": [
-          {
-            "title": "Identify opportunities for aggregation",
-            "content": "Work with cities, subnational governments and financing partners to identify common borrowing, insurance or purchasing needs that could benefit from aggregation."
-          },
-          {
-            "title": "Select suitable aggregation approaches",
-            "content": "Assess whether pooling financing sources, municipal borrowing, insurance risks or purchasing demand could improve access to finance, reduce costs or strengthen market demand."
-          },
-          {
-            "title": "Address regulatory and institutional barriers",
-            "content": "Review municipal borrowing powers, procurement policies and financial regulations that may restrict aggregation. Support reforms or enabling arrangements where feasible."
-          },
-          {
-            "title": "Mobilise financial and technical partners",
-            "content": "Engage development banks, insurers, investors and technical assistance providers to structure aggregation mechanisms, share risks and support municipal participation."
-          },
-          {
-            "title": "Support aggregated purchasing and market development",
-            "content": "Help public and private buyers coordinate purchasing demand and engage suppliers around common specifications, investment needs and deployment opportunities."
-          },
-          {
-            "title": "Track aggregation outcomes and support scale",
-            "content": "Assess whether aggregation improves financing access, reduces costs or strengthens market demand. Use findings to expand successful approaches across municipalities."
-          }
-        ],
-        "illustrativeExamples": [
           {
             "title": "Sweden – Kommuninvest",
             "type": "Peer Learning Example",
-            "excerpt": "Sweden illustrates how municipalities and regions can aggregate borrowing demand to access long-term financing on more favourable terms.",
-            "fullText": "Sweden illustrates how municipalities and regions can aggregate borrowing demand to access long-term financing on more favourable terms. Kommuninvest is a municipally owned financial institution that raises capital from financial markets and lends to its members. Backed by joint guarantees from its 282 municipal and 15 regional members, the model reduces borrowing costs and improves access to capital for local infrastructure investments, including climate-related projects. In 2025, Kommuninvest's total lending reached SEK 563.9 billion, demonstrating the scale of pooled municipal financing. Sweden's legal framework for municipal borrowing enables this model, and Kommuninvest operates under the supervision of the Swedish Financial Supervisory Authority. Kommuninvest provides long-term debt financing but does not generally cover early-stage project preparation, risk capital or climate portfolio orchestration. While Kommuninvest provides long-term debt financing, there are avenues to enhance its offerings to municipalities in the form of early-stage project preparation, risk capital or coordination of climate investment portfolios.",
-            "connectionLine": "What you can learn: See how municipalities can jointly establish a financial intermediary to aggregate borrowing needs, reduce financing costs and access capital markets for local investments, with national regulatory oversight.",
-            "order": 1
+            "excerpt": "",
+            "fullText": "Kommuninvest is a municipally owned financial institution that raises capital from financial markets and lends to its municipal and regional members. Backed by joint guarantees from 282 municipalities and 15 regions in Sweden, it aggregates borrowing needs to improve access to capital and reduce financing costs for local infrastructure, including climate-related investments. In 2025, its total lending reached SEK 563.9 billion (approximately USD 56.8 billion), demonstrating the scale of pooled municipal financing. Sweden's legal framework for municipal borrowing enables this model, while the Swedish Financial Supervisory Authority provides regulatory oversight. While Kommuninvest provides long-term debt financing, there are avenues to enhance its offerings to municipalities in the form of early-stage project preparation, risk capital or coordination of climate investment portfolios.",
+            "link": "https://kommuninvest.se/eng/home-page.html",
+            "connectionLine": "Key takeaway: Sweden shows how national legal and regulatory frameworks can enable municipalities to jointly establish financial institutions that pool borrowing needs and improve access to long-term capital.",
+            "order": 2
           },
           {
             "title": "Argentina – RAMCC Trust Fund",
             "type": "Peer Learning Example",
-            "excerpt": "Argentina shows how municipalities can jointly aggregate purchasing demand to reduce costs and finance local climate investments.",
-            "fullText": "Argentina shows how municipalities can jointly aggregate purchasing demand to reduce costs and finance local climate investments. Established in 2018 by the Argentine Network of Municipalities against Climate Change (RAMCC), the Trust Fund enables participating municipalities to pool resources and procure climate-smart technologies collectively. Its governance includes an Assembly of Mayors representing participating municipalities, an elected executive committee and a technical secretariat supporting project development and financing. The Fund has supported joint procurement of LED streetlighting, helping municipalities to achieve economies of scale, reduce procurement costs and improve energy efficiency. The model demonstrates how intermunicipal cooperation can strengthen purchasing power and support implementation of local climate action plans.",
-            "connectionLine": "What you can learn: See how municipalities can establish a shared financing and procurement mechanism to aggregate demand, reduce costs and implement climate investments.",
-            "order": 2
+            "excerpt": "",
+            "fullText": "Established in 2018 by the Argentine Network of Municipalities against Climate Change (RAMCC), the Trust Fund enables participating municipalities to pool resources and collectively procure climate-smart technologies. Its governance includes an Assembly of Mayors representing participating municipalities, an elected executive committee, and a technical secretariat supporting project development and financing. The fund has supported joint procurement of LED streetlighting, helping municipalities to achieve economies of scale, reduce procurement costs, and improve energy efficiency. The model demonstrates how intermunicipal cooperation can strengthen purchasing power and support implementation of local climate action plans.",
+            "link": "https://citiesclimatefinance.org/publications/financial-aggregation-blueprints-for-urban-climate-infrastructure",
+            "connectionLine": "Key takeaway: Argentina’s intermunicipal aggregation mechanism helps to establish shared financing and procurement to aggregate demand, reduce costs, and implement climate investments.",
+            "order": 3
           },
           {
             "title": "India – Grand Challenge for Electric Buses",
             "type": "Peer Learning Example",
-            "excerpt": "India shows how national governments can aggregate municipal purchasing demand to reduce costs and accelerate the deployment of low-carbon transport.",
-            "fullText": "India shows how national governments can aggregate municipal purchasing demand to reduce costs and accelerate the deployment of low-carbon transport. Led by Convergence Energy Services Limited (CESL), a subsidiary of the Ministry of Power's Energy Efficiency Services Limited (EESL), the Grand Challenge pooled demand for electric buses across multiple cities through a single procurement process. CESL worked with participating cities to assess fleet requirements, routes and charging infrastructure, while engaging manufacturers to develop standardised tender specifications. Supported by national subsidies and some state contributions, the programme used gross-cost contracts under which private operators finance, own and operate buses and charging infrastructure for 12 years, reducing upfront capital requirements for municipalities. This approach helped to achieve economies of scale, lower procurement costs and support wider adoption of electric buses.",
-            "connectionLine": "What you can learn: See how national institutions can aggregate purchasing demand across cities, coordinate procurement and use public support to reduce costs and accelerate low-carbon infrastructure deployment.",
-            "order": 3
-          },
-          {
-            "title": "Philippines – City Disaster Insurance Pool (PCDIP)",
-            "type": "Peer Learning Example",
-            "excerpt": "The Philippines illustrates how national governments can help cities pool insurance demand and disaster risks to access more affordable climate-risk protection.",
-            "fullText": "The Philippines illustrates how national governments can help cities pool insurance demand and disaster risks to access more affordable climate-risk protection. Led by the Department of Finance with technical support from the Asian Development Bank (ADB), the proposed PCDIP was designed around ten participating cities, including Quezon City, Davao City, Iloilo City and Marikina City. The model envisaged pooling municipal insurance demand through the Government Service Insurance System (GSIS), with risks transferred to international reinsurance markets. By aggregating demand and diversifying risks across cities, the proposed mechanism aimed to reduce insurance costs and improve coverage against typhoons and earthquakes. Parametric insurance was designed to enable payouts within 15 business days of qualifying disasters, helping cities access funds for early recovery.",
-            "connectionLine": "What you can learn: See how national governments can help cities to aggregate insurance demand, pool disaster risks and access more affordable climate-risk protection.",
+            "excerpt": "",
+            "fullText": "Led by Convergence Energy Services Limited (CESL), a subsidiary of the Ministry of Power's Energy Efficiency Services Limited, the Grand Challenge pooled demand for electric buses across multiple cities through a single procurement process. CESL worked with participating cities to assess fleet requirements, routes and charging infrastructure, while engaging manufacturers to develop standardized tender specifications. Supported by national subsidies and some state contributions, the program used gross-cost contracts under which private operators finance, own and operate buses and charging infrastructure for 12 years, reducing upfront capital requirements for municipalities. This approach helped to achieve economies of scale, lower procurement costs and support wider adoption of electric buses.",
+            "link": "https://www.convergence.co.in/public/images/electric_bus/Grand-Challenge-Case-Study-Final-Web-Version.pdf",
+            "connectionLine": "Key takeaway: India shows how national institutions can aggregate municipal purchasing demand and coordinate procurement to reduce costs and accelerate low-carbon transport deployment.",
             "order": 4
           },
           {
-            "title": "First Mover Cities Cohort",
+            "title": "The Philippines – City Disaster Insurance Pool (PCDIP)",
             "type": "Peer Learning Example",
-            "excerpt": "The First Mover Cities Cohort brings together city representatives, private actors, and partners to discuss green procurement governance and tender design.",
-            "fullText": "First Mover Cities Cohort is a dialogue series hosted by the First Movers Coalition, World Economic Forum. The cohort will bring together city representatives, private actors, and other partners to discuss green procurement governance, tender design, and how to turn fragmented demand into clearer market signals. The cohort is engaging cities such as Seattle and San Francisco.",
-            "connectionLine": "What you can learn: See how cities and private partners can coordinate procurement governance and turn fragmented demand into clearer market signals for green solutions.",
+            "excerpt": "",
+            "fullText": "Developed under the leadership of the Department of Finance with technical assistance from the Asian Development Bank, the Philippine City Disaster Insurance Pool aims to provide affordable parametric insurance against typhoons and earthquakes. Ten cities were identified and agreed to participate in the design process, which included disaster exposure mapping and capacity building. The proposed model will pool municipal insurance demand through the Government Service Insurance System and transfer risks to domestic and international reinsurance markets. This arrangement is expected to reduce insurance costs and provide payouts within 15 business days of qualifying disasters to support early recovery.",
+            "link": "https://www.adb.org/publications/philippine-city-disaster-insurance-pool",
+            "connectionLine": "Key takeaway: The Philippines shows how national governments can design insurance arrangements to pool municipal disaster risks and improve cities’ access to climate-risk protection.",
             "order": 5
           },
           {
-            "title": "C40 Clean Construction Accelerator",
-            "type": "Peer Learning Example",
-            "excerpt": "Shows how city action can move beyond municipal projects and help reshape the wider construction market.",
-            "fullText": "C40 Clean Construction Accelerator shows how city action can move beyond municipal projects and help reshape the wider construction market. It is an initiative that brings together eight cities to help transform the building and construction industry. In the accelerator, mayors commit to reusing and retrofitting existing buildings first, leading by example through municipal procurement, demanding transparency through whole-life carbon assessments, building joint roadmaps with stakeholders, approving at least one net-zero flagship project, assessing resilience impacts, and advocating for action at national and higher levels. These commitments translating into practice – cities are using procurement to push whole-life cycle assessments and low-carbon materials, coordinating across departments, working with private-sector partners such as the North American Electric Construction Coalition, and pressing national governments to remove policy barriers.",
-            "connectionLine": "What you can learn: See how cities can use municipal procurement commitments to reshape private construction markets and push low-carbon standards.",
+            "title": "Viability Fund for Cities – Aggregated Purchasing Power Framework",
+            "type": "Tool",
+            "excerpt": "",
+            "fullText": "Published by the Viability Fund for Cities and drawing on Viable Cities’ work with cities and partners, this framework helps local governments, public and private buyers, country platforms and finance partners coordinate demand for low-carbon solutions across construction, retrofitting, energy, logistics and other locally relevant purchasing areas. It explains how to make purchasing needs, budgets and timing visible, engage suppliers and use demonstrator evidence to inform procurement. Buyers retain their own budgets, contracts and decision rights, while shared requirements and credible demand signals can strengthen investment cases. The framework connects local purchasing opportunities with wider markets and investment portfolios, including through First Mover Cities, supporting the CHAMP Implementation Roadmap 2026–2028.",
+            "link": "https://viabilityfund.org/models/aggregated-purchasing-power/",
+            "connectionLine": "Coordinate public and private purchasing when fragmented demand limits market confidence and the investment needed to scale low-carbon solutions.",
             "order": 6
           },
           {
-            "title": "Intra-City Aggregated Procurement Models",
+            "title": "CCFLA – Financial Aggregation Blueprints for Urban Climate Infrastructure",
             "type": "Tool",
-            "excerpt": "Framework identifying four approaches cities can use to coordinate public and private demand for low-carbon solutions.",
-            "fullText": "Intra-City Aggregated Procurement Models: This framework identifies four approaches cities can use to coordinate public and private demand for low-carbon solutions: market facilitation, material-based mandates, performance-based mandates and tender-based incentives. It explains how cities can use procurement and regulatory powers to create stronger market signals, while national governments can support adoption through enabling regulations, common standards, financing and technical assistance. Developed for green cement and concrete, the approaches can be adapted to other sectors based on local procurement powers and market conditions.",
-            "connectionLine": "Why use this: Identify suitable approaches for coordinating city-wide purchasing demand and shaping markets for low-carbon solutions.",
+            "excerpt": "",
+            "fullText": "Developed by CCFLA, this report provides practical guidance through eight blueprints covering three types of financial aggregation: municipal pooled procurement, municipal green bonds and municipal insurance pooling. Drawing on examples from different geographies and institutional contexts, it examines how these instruments can be structured and implemented, including their benefits, challenges and enabling conditions.",
+            "link": "https://citiesclimatefinance.org/publications/financial-aggregation-blueprints-for-urban-climate-infrastructure",
+            "connectionLine": "Explore how cities can bundle smaller investment needs or investors to achieve economies of scale, reduce costs and improve access to finance for urban climate infrastructure.",
             "order": 7
-          }
-        ],
-        "resources": [
-          {
-            "title": "Aggregated and Green Public Procurement Playbook",
-            "type": "Guide",
-            "publisher": "OECD",
-            "link": "https://www.oecd.org/",
-            "description": "",
-            "order": 1
-          },
-          {
-            "title": "Accelerating sustainable urban futures: a practical guide for challenge-driven innovation in cities",
-            "type": "Guide",
-            "publisher": "Viable Cities",
-            "link": "https://viablecities.se/",
-            "description": "",
-            "order": 2
           }
         ]
       }
     ]
   },
-    {
+  {
     "id": 5,
-    "title": "Strengthen Capacities and Networks",
-    "description": "This Action helps national governments to support subnational and municipal governments in strengthening capacities and partnerships needed to scale urban climate investment. It covers practical capacity development, engagement with international networks and access to specialised expertise, financing partners and implementation support.",
-    "systemsLogic": "Scaling urban climate investment beyond individual cities or regions requires technical capabilities and long-term access to expertise and resources. To this end, targeted capacity development can strengthen local skills in investment planning, financing and implementation. International networks and partnerships can help to connect national and subnational governments with specialised expertise, financing partners and opportunities for collective action. These approaches can help to overcome technical capacity gaps, strengthen financing outcomes and enhance implementation capabilities.",
+    "title": "Learn, Strengthen Capacities and Scale Implementation",
+    "description": "This Action helps national governments to strengthen institutional capacities, learn from implementation, and support the scaling of urban climate investments through national and international partnerships. It covers systematic capacity building, real-world experimentation through System Demonstrators and international networks that facilitate knowledge exchange, access to expertise, financing partnerships, and implementation of effective approaches at scale.",
+    "systemsLogic": "Sustained climate investment requires local capacities that improve through practical experience and learning. Institutional capacity building helps municipal institutions to plan, finance, and implement climate projects, while system demonstrators provide them with opportunities to apply and strengthen capabilities through real-world experimentation. Learnings from implementation can inform future investment decisions, institutional practices and policy improvements. International networks help to cross-pollinate these learnings across cities, connect governments with expertise and financing partners, and support the adaptation and scaling of effective climate finance and implementation approaches.",
     "pathways": [
       {
-        "title": "5.1. Capacity Building for Urban Climate Investment",
-        "overview": "Cities and subnational governments often lack the technical, financial and institutional capacities needed to plan, finance and implement climate investments. Targeted capacity development can strengthen practical skills in investment planning, project preparation, financial management and implementation. National governments can identify common capacity gaps across cities and mobilize training, technical assistance and peer-to-peer exchanges to address them. This can reduce dependence on external support and improve the impact of climate finance.",
+        "title": "5.1 Institutional Capacity Building",
+        "overview": "Cities and subnational governments often lack the institutional capacities needed to plan, finance and implement climate investments consistently. While project-specific technical assistance can address immediate gaps, systematic capacity building strengthens the skills, processes, and institutional knowledge needed for sustained investment. National governments can establish institutional capacity development programs, working with training institutions, development banks and other partners to address common municipal needs. These programs can help cities to apply new skills, strengthen internal systems and reduce dependence on external technical assistance.",
+        "whatItIs": "",
+        "whyItIsNeeded": "",
         "potentialNationalLead": [
-          "Urban / Local Government Ministry",
-          "Planning Ministry"
+          "Urban Development Ministry",
+          "National Development Bank"
         ],
         "keyActors": [
-          "Climate / Environment Ministry",
-          "Relevant Sector Ministries",
-          "Municipal / Subnational Finance Department",
-          "Municipal / Subnational Planning Department",
-          "National Development Banks",
+          "Climate/Environment Ministry",
+          "Planning Ministry",
+          "City and Subnational Governments",
+          "Universities",
+          "Training Institutions",
           "Technical Assistance Providers",
-          "MDB / DFI",
           "City Networks",
-          "Academia / Research"
+          "MDBs/DFIs"
         ],
+        "transferabilityTitle": "Adapting this pathway to your context",
         "transferability": [
-          "Adapting training to local needs and capacities: Training content should reflect municipal responsibilities, existing technical skills and investment priorities. Standardised modules can be adapted to different institutional contexts.",
-          "Considering delivery models and institutional capacity: National institutions, city networks, development banks, universities or international partners can deliver training, depending on available expertise and resources.",
-          "Making support accessible across different contexts: Adapt the language, formats and delivery approaches of capacity-building programs to local needs. Provide additional support for cities with limited financial or institutional capacity."
+          "Consider existing institutional arrangements and expertise when designing national programs. Training may be delivered through government institutions, development banks, universities or specialist partners, depending on their mandates and capacities.",
+          "Ensure programs are accessible to municipalities with different capacities and resources. Consider local languages, practical training formats, and additional support for smaller cities with limited staff and funding."
         ],
+        "enablingConditions": [],
         "order": 1,
         "implementationGuidance": [
           {
-            "title": "Identify technical capacity gaps",
-            "content": "Work with cities and subnational governments to assess gaps in investment planning, financial management, project preparation and implementation skills."
+            "title": "Identify institutional capacity gaps",
+            "content": "Work with cities to assess recurring gaps in investment planning, financial management, project preparation, and implementation. Identify priorities for sustained capacity development across municipalities (see Pathway 2.1).",
+            "relatedPathways": [
+              {
+                "id": "recYHYmT0t2O6FowD",
+                "title": "2.1 Enabling Framework Conditions Assessments",
+                "actionId": 2,
+                "pathwayIndex": 0,
+                "number": "2.1"
+              }
+            ]
           },
           {
-            "title": "Develop targeted capacity-building programmes",
-            "content": "Design training programmes around identified needs, with practical modules on climate investment planning, financing instruments, business models and infrastructure delivery."
+            "title": "Develop capacity building programs",
+            "content": "Develop training, mentoring, and institutional development programs around identified needs. Include practical skills in climate action and investment planning, financial instruments, business models, and infrastructure delivery."
           },
           {
-            "title": "Mobilise technical expertise and training partners",
-            "content": "Engage national development banks, training institutions, international organisations and technical assistance providers to deliver specialised training and mentoring."
+            "title": "Mobilize training partners",
+            "content": "Engage national development banks, universities, training institutions, and development partners to deliver programs. Build on existing national training systems where possible (see Pathway 5.3).",
+            "relatedPathways": [
+              {
+                "id": "recJeXSiMwUcVcTFg",
+                "title": "5.3 International Networks and Partnerships",
+                "actionId": 5,
+                "pathwayIndex": 2,
+                "number": "5.3"
+              }
+            ]
           },
           {
-            "title": "Combine training with practical application",
-            "content": "Link capacity-building activities to ongoing municipal investment priorities and projects. Use workshops, exercises and hands-on support to help officials apply new skills."
+            "title": "Connect learning with practical application",
+            "content": "Link capacity-building activities to ongoing municipal investment priorities and projects. Use workshops, exercises, and hands-on support to help officials apply new skills."
           },
           {
             "title": "Institutionalize capacities and track progress",
-            "content": "Embed acquired skills into municipal processes, guidance and staff development programmes. Assess improvements in financial management, investment readiness and implementation capabilities."
+            "content": "Embed acquired skills into municipal processes, guidance, and staff development programs. Monitor improvements in financial management, investment readiness, and implementation capabilities."
           }
         ],
         "illustrativeExamples": [
           {
             "title": "South Africa – DBSA Municipal Capacity Development Programme",
             "type": "Peer Learning Example",
-            "excerpt": "South Africa illustrates how a national development bank can partner with the private sector to strengthen municipal technical and financial capacities.",
-            "fullText": "South Africa illustrates how a national development bank can partner with the private sector to strengthen municipal technical and financial capacities. The Development Bank of Southern Africa (DBSA), in partnership with Anglo American, implemented a three-year programme across municipalities, investing over ZAR 120 million. The programme included hands-on training with support for infrastructure planning, revenue collection, financial management and service delivery. It trained 500 municipal officials and supported the development of 26 infrastructure master plans. Participating municipalities achieved an average 11.6% improvement in revenue collection.",
-            "connectionLine": "What you can learn: See how national development banks can partner with private actors to strengthen municipal financial management and infrastructure delivery capacities.",
+            "excerpt": "",
+            "fullText": "The Development Bank of Southern Africa (DBSA) illustrates how a national development bank can partner with the private sector to strengthen municipal technical and financial capacities. The DBSA, in partnership with Anglo American, implemented a three-year program across municipalities, investing over ZAR 120 million to train 500 municipal officials and support the development of 26 infrastructure master plans. The program included hands-on training with support for infrastructure planning, revenue collection, financial management, and service delivery. Participating municipalities achieved an average 11.6% improvement in revenue collection.",
+            "link": "https://www.dbsa.org/case-studies/anglo-american-municipal-capacity-development-programme",
+            "connectionLine": "Key takeaway: South Africa shows how a national development bank can partner with the private sector to strengthen municipal financial management and infrastructure delivery capabilities.",
             "order": 1
           },
           {
-            "title": "C40 Cities Finance Facility – City Academy on Finance and Equity (CAFE)",
+            "title": "Morocco – Climate Change Competence Centre",
             "type": "Peer Learning Example",
-            "excerpt": "CAFE shows how international technical assistance programmes can strengthen municipal capacities for financing equitable climate infrastructure.",
-            "fullText": "CAFE shows how international technical assistance programmes can strengthen municipal capacities for financing equitable climate infrastructure. Developed by the C40 Cities Finance Facility, the Academy provides structured training for mid- and senior-level officials from Global South cities. Through workshops and practical exercises, participants learn to assess financing instruments, develop project business models and integrate equity considerations into infrastructure planning and implementation. An accompanying workbook helps city teams apply these skills to their own investment priorities.",
-            "connectionLine": "What you can learn: See how technical training can strengthen municipal financial skills and support the development of equitable, investment-ready climate projects.",
+            "excerpt": "",
+            "fullText": "The Climate Change Competence Centre of Morocco (4C Maroc) supports training and knowledge exchange across national and local governments, businesses, civil society, and research institutions. The platform has trained over 800 local actors, working with more than 15 national ministries, public institutions, and associations representing regional and local governments. Its activities strengthen capacities to integrate climate priorities into subnational planning and improve local access to climate finance.",
+            "link": "https://4c.ma/qui-sommes-nous/",
+            "connectionLine": "Key takeaway: Morocco shows how a national institution can provide capacity development support for local climate finance and implementation.",
             "order": 2
           },
           {
-            "title": "UrbanShift – City Academies",
+            "title": "Sierra Leone – UrbanShift Climate Finance Capacity Building",
             "type": "Peer Learning Example",
-            "excerpt": "UrbanShift Academies offer a peer-learning platform for cities working on integrated urban development.",
-            "fullText": "UrbanShift Academies offer a peer-learning platform for cities working on integrated urban development. UrbanShift is a “one-stop” platform bringing together global, national and local champions, while offering a suite of capacity-building activities that includes finance academies and dialogues with the national government. The platform combines these learning activities with on-the-ground local projects, so cities can exchange experience, build strategic planning skills, and apply what they learn to integrated solutions in areas such as transport, housing, green infrastructure and waste.",
-            "connectionLine": "What you can learn: See how international capacity-building programmes can strengthen municipal technical skills and support their application to local climate investments.",
+            "excerpt": "",
+            "fullText": "UrbanShift, a Global Environment Facility-funded program (concluded in 2025), provided systematic capacity-building support to strengthen urban climate investment capabilities. In Sierra Leone, the Ministry of Finance coordinated UrbanShift activities with Freetown City Council and identified government officials for training. Following participation in a Climate Finance City Academy in 2024, ministry officials recognized gaps in their draft fiscal decentralization policy and incorporated climate considerations into its implementation planning. UrbanShift also facilitated a peer exchange involving national and municipal officials to explore a proposed cable-car transport system for Freetown. This helped secure technical assistance from the C40 Cities Finance Facility for a feasibility study, demonstrating how capacity building and national–local collaboration can support municipal investment preparation.",
+            "link": "https://www.shiftcities.org/post/building-equitable-climate-resilient-future-freetown",
+            "connectionLine": "Key takeaway: Sierra Leone shows how national governments can leverage international capacity-building programs to strengthen climate finance policies and support municipal access to investment preparation.",
             "order": 3
-          }
-        ],
-        "resources": [
+          },
           {
-            "title": "CCFLA Capacity Development Directory",
+            "title": "India – City Investments to Innovate, Integrate and Sustain (CITIIS 2.0)",
+            "type": "Peer Learning Example",
+            "excerpt": "",
+            "fullText": "India’s national City Investments to Innovate, Integrate and Sustain (CITIIS 2.0) program can support municipal climate project implementation through financing, technical assistance, and institutional oversight. Led by the Ministry of Housing and Urban Affairs in partnership with NIUA, AFD, KfW and the European Union, CITIIS 2.0 supports up to 18 competitively selected city projects focused on circular economy and integrated waste management. A national Project Management Unit at NIUA coordinates program delivery, monitoring, and technical support. Selected cities receive assistance from domestic experts and international mentors on project management, environmental and social safeguards, and implementation challenges.",
+            "link": "https://citiis.niua.in/",
+            "connectionLine": "Key takeaway: CITIIS 2.0 shows how national governments can combine financing, technical assistance, and institutional oversight to support the implementation of municipal climate projects.",
+            "order": 4
+          },
+          {
+            "title": "C40 Cities Finance Facility – City Academy on Finance and Equity (CAFE) Workbook",
             "type": "Tool",
-            "publisher": "CCFLA",
-            "link": "https://citiesclimatefinance.org",
-            "description": "",
-            "order": 1
+            "excerpt": "",
+            "fullText": "Developed by the C40 Cities Finance Facility, the CAFE workbook provides practical exercises to help city officials in developing countries enhance their understanding of climate finance instruments, assess project business models and integrate equity considerations into infrastructure investment decisions. The workbook contains case studies, knowledge, and tools to support municipal finance and planning teams in applying these concepts to their projects and programs.",
+            "link": "https://c40cff.org/tools/city-academy-on-finance-and-equity-workbook/",
+            "connectionLine": "Why use this tool: Support practical training on climate financing options, project business models and equitable investment planning.",
+            "order": 5
           }
         ]
       },
       {
-        "title": "5.2. International Engagements and Networking",
-        "overview": "International networks and partnerships can help national and subnational governments to access specialised expertise, financing partners and opportunities for collective action on urban climate investment. These initiatives connect governments with international organisations, city networks, development institutions and private-sector actors to exchange practical experience, mobilize support and advance shared finance and implementation priorities. National governments can facilitate cities' participation in relevant international initiatives and help translate these connections into concrete opportunities for technical assistance, financing and initiatives that address common urban climate challenges.",
+        "title": "5.2 System Demonstrators",
+        "overview": "System Demonstrators are real-world initiatives that test how multiple interconnected interventions across infrastructure, policy, governance, procurement, and capacity development can work together in practice to deliver urban climate transitions. They help cities and national governments identify and address practical implementation barriers, refine institutional and financial arrangements, and test new business models and procurement approaches in real-world contexts. Learnings from system demonstrators can inform policy and regulatory improvements, build institutional confidence, and create opportunities for investment and scaling.",
+        "whatItIs": "",
+        "whyItIsNeeded": "",
         "potentialNationalLead": [
-          "Climate / Environment Ministry",
-          "Urban / Local Government Ministry"
+          "Urban Development Ministry"
         ],
         "keyActors": [
-          "Relevant Sector Ministries",
-          "Municipal / Subnational Planning Department",
-          "Municipal / Subnational Finance Department",
-          "National Development Banks",
-          "MDB / DFI",
-          "City Networks",
-          "Technical Assistance Providers",
-          "Private Sector",
-          "Philanthropic Actors"
+          "Climate/Environment Ministry",
+          "Sector Ministries",
+          "City and Subnational Governments",
+          "National Regulatory Authorities",
+          "National Development Bank",
+          "Utilities",
+          "Infrastructure Agencies",
+          "Businesses",
+          "Solution Providers",
+          "Universities",
+          "Research Institutions",
+          "Civil Society Organizations",
+          "Community Organizations",
+          "Technical Assistance Providers"
         ],
+        "transferabilityTitle": "Adapting this pathway to your context",
         "transferability": [
-          "Aligning international engagement with domestic priorities: The relevance of international networks depends on how closely their thematic focus and support offerings match national and subnational climate investment needs.",
-          "Considering access and participation barriers: Smaller cities may lack the resources, staff or international connections to participate effectively. National institutions or city associations can help to broaden access.",
-          "Recognising different partnership models: International initiatives vary in their offerings, from knowledge exchange and technical assistance to financing and implementation support. Not all partnerships provide direct access to funding.",
-          "Ensuring continuity beyond individual initiatives: International programmes may be time-bound or evolve over time. Lasting benefits depend on whether knowledge, relationships and capacities are retained within domestic institutions."
+          "Define the scope and boundaries of the system demonstrator according to local priorities and capabilities. A demonstrator may focus on a specific sector, neighbourhood, or city-wide transition, provided it addresses interconnected interventions and governance arrangements.",
+          "Align governance and funding arrangements to support experimentation. Ensure participating institutions have the mandate and flexibility to test new approaches, adapt interventions based on early findings, and share learnings.",
+          "Plan for evaluation and scaling from the outset. Design evaluation frameworks that capture governance, regulatory, and market learnings alongside technical and financial outcomes, ensuring findings inform national policy, institutional practices, and future investment decisions."
         ],
+        "enablingConditions": [],
         "order": 2,
         "implementationGuidance": [
           {
-            "title": "Identify opportunities for international engagement",
-            "content": "Assess where cities could benefit from international expertise, financing partnerships, market connections or collective action on shared climate challenges. Connect cities with relevant international initiatives."
+            "title": "Identify system demonstrator opportunities",
+            "content": "Identify urban systems or transition challenges where interconnected interventions are required to achieve climate goals. Select demonstration sites and sectors based on city commitment, strategic importance and potential for learning and scale (see Pathways 1.1 and 3.2).",
+            "relatedPathways": [
+              {
+                "id": "recWGEx5x7YpvT9ZP",
+                "title": "1.1 Multilevel Climate Commitments",
+                "actionId": 1,
+                "pathwayIndex": 0,
+                "number": "1.1"
+              },
+              {
+                "id": "rec3uo1IBCauiEimf",
+                "title": "3.2 Climate Portfolios and Project Pipelines",
+                "actionId": 3,
+                "pathwayIndex": 1,
+                "number": "3.2"
+              }
+            ]
           },
           {
-            "title": "Support cities and subnationals through intermediation",
-            "content": "Use intermediaries to help cities to navigate international programmes, eligibility requirements and funding opportunities, particularly where local capacities are limited."
+            "title": "Support locally led system demonstrators",
+            "content": "Enable cities and local partners to define implementation portfolios, governance arrangements, and partnership structures. Provide grant funding, technical assistance, and national-level facilitation to support orchestration and execution."
           },
           {
-            "title": "Mobilise finance partners around investment portfolios",
-            "content": "Engage MDBs, DFIs, climate funds and private financiers around urban investment portfolios and identify opportunities for technical and financial support."
+            "title": "Engage actors responsible for implementation",
+            "content": "Bring together relevant government agencies, utilities, businesses, financiers, communities and other implementation partners. Clarify their roles, contributions and responsibilities for delivering different interventions within the portfolio."
           },
           {
-            "title": "Track partnership outcomes and remaining gaps",
-            "content": "Monitor technical assistance, financing opportunities and implementation support mobilised through partnerships. Use findings to strengthen future engagement."
+            "title": "Test financial, regulatory and market innovations",
+            "content": "Use system demonstrators to test new business models, financial instruments, procurement approaches and regulatory adaptations in real-world contexts. Identify institutional and regulatory barriers that require national-level resolution (see Pathways 2.2, 4.2 and 4.3).",
+            "relatedPathways": [
+              {
+                "id": "rechG5sx4ide7Zsxo",
+                "title": "4.2 Financial Instruments and Mechanisms",
+                "actionId": 4,
+                "pathwayIndex": 1,
+                "number": "4.2"
+              },
+              {
+                "id": "recHLUhrtlsbUNkCb",
+                "title": "4.3 Financial Aggregation and Market Shaping",
+                "actionId": 4,
+                "pathwayIndex": 2,
+                "number": "4.3"
+              }
+            ]
+          },
+          {
+            "title": "Establish shared evaluation and learning frameworks",
+            "content": "Track implementation progress, system-wide impacts, and practical learnings across interventions. Use iterative planning and evaluation cycles to adjust activities and capture insights for national policies and programs."
+          },
+          {
+            "title": "Connect learning with policy, investment and scaling",
+            "content": "Use evidence from system demonstrators to inform policy, regulatory, and procurement reforms, refine investment planning, and connect prepared project portfolios with national funding and development finance partners (see Pathways 1.3 and 3.2).",
+            "relatedPathways": [
+              {
+                "id": "rec9uVdifwHMNd1Aa",
+                "title": "1.3 Urban-Inclusive Country Platforms",
+                "actionId": 1,
+                "pathwayIndex": 2,
+                "number": "1.3"
+              },
+              {
+                "id": "rec3uo1IBCauiEimf",
+                "title": "3.2 Climate Portfolios and Project Pipelines",
+                "actionId": 3,
+                "pathwayIndex": 1,
+                "number": "3.2"
+              }
+            ]
           }
         ],
         "illustrativeExamples": [
           {
-            "title": "The Cities Climate Finance Leadership Alliance (CCFLA)",
+            "title": "Sweden – CoAction Lund",
             "type": "Peer Learning Example",
-            "excerpt": "The Cities Climate Finance Leadership Alliance (CCFLA) provides a multi-level, multi-stakeholder space for practitioners to connect...",
-            "fullText": "The Cities Climate Finance Leadership Alliance (CCFLA) provides a multi-level, multi-stakeholder space for practitioners to connect, exchange experience and build networks around urban climate finance. Through its thematic Action Groups, CCFLA members can convene around priority topics such as project preparation, adaptation finance, enabling environments, private finance and other emerging financing challenges, sharing practical approaches and identifying opportunities for collaboration. Participation is open across CCFLA’s diverse membership, including national governments, city networks and subnational actors, demand- and supply-side finance organizations, and expert and technical organizations, helping to connect perspectives across levels of government and across the climate finance ecosystem.",
-            "connectionLine": "What you can learn: See how international networks can help national and subnational governments to access specialised climate finance expertise, exchange practical experience and develop partnerships to address investment barriers.",
+            "excerpt": "",
+            "fullText": "CoAction Lund, supported through Sweden’s System Demonstrator program, brings together 36 organizations, including infrastructure providers, employers, property owners, universities and solution providers, around more than 40 activities in energy and mobility in Brunnshög, Lund. Led by Lund municipality, the demonstrator tests solutions alongside changes in governance, behavior and business models. CoAction Lund’s funding was kept flexible to allow for resources to shift toward promising solutions, such as EnergyNet – a decentralized electricity network enabling buildings and local energy resources to share renewable electricity. Testing EnergyNet has helped identify regulatory and market barriers related to grid codes, data sharing, and local energy markets, informing its further development and potential expansion. CoAction Lund also uses a shared evaluation framework to track progress across interventions and assess their wider effects on the urban system, helping partners to refine their approaches and share lessons for future implementation.",
+            "link": "https://viablecities.se/en/satsningar/coaction/",
+            "connectionLine": "Key takeaway: Sweden shows how nationally funded system demonstrators can help cities to test interconnected climate interventions, identify implementation barriers, and evaluate outcomes.",
             "order": 1
           },
           {
-            "title": "First Mover Cities Cohort",
+            "title": "United Kingdom – Bristol Thriving Places",
             "type": "Peer Learning Example",
-            "excerpt": "First Mover Cities is an emerging city cohort being developed within the World Economic Forum's First Movers Coalition...",
-            "fullText": "First Mover Cities is an emerging city cohort being developed within the World Economic Forum's First Movers Coalition to explore approaches to intra-city aggregated purchasing power. It aims to bring together city governments, businesses across the supply and demand sides of the construction value chain, finance institutions and other partners to strengthen demand for low-carbon solutions. Initial work focuses on cement and concrete, using multistakeholder dialogues to exchange practical experience on green procurement governance, tender design, supplier engagement and coordination of public and private demand within cities. Through these exchanges, the cohort aims to help cities develop approaches that could eventually enable aggregated purchasing and create stronger market signals for low-carbon solutions. San Francisco, Boston, Oslo and Stockholm are the initial First Mover Cities, with ambitions to expand participation globally and potentially extend the approach to other urban sectors.",
-            "connectionLine": "What you can learn: See how international collaboration can help cities explore intra-city demand aggregation and strengthen their ability to shape markets for low-carbon solutions.",
+            "excerpt": "",
+            "fullText": "Bristol Thriving Places addressed the challenge of delivering affordable, zero-carbon housing on small brownfield sites previously considered unviable. Bristol City Council and the Bristol Housing Festival worked with a consortium led by social housing developer EDAROTH, alongside housing associations, infrastructure providers, government agencies, and research partners. The demonstrator developed an integrated approach involving housing delivery, financial appraisal, regulatory analysis and digital modeling. By aggregating small council-owned sites into one program, Bristol created sufficient scale for development, prompted a review of the council's treasury strategy and secured a development agreement of approximately GBP 10 million (around USD 13 million) through an existing national procurement framework. The approach subsequently informed the UK government's Small Sites Aggregator program, which aims to enable the contruction of 10,000 social rent homes annually.",
+            "link": "https://www.housingfestival.org.uk/projects/cities-challenge",
+            "connectionLine": "Key takeaway: Bristol shows how system demonstrators can test new financial appraisal and procurement approaches to overcome infrastructure delivery barriers and inform national programs.",
             "order": 2
           },
           {
-            "title": "Global Platform for Sustainable Cities (GPSC)",
+            "title": "Sweden – Stockholm STOLT",
             "type": "Peer Learning Example",
-            "excerpt": "GPSC shows how international partnerships can connect national and subnational governments with technical expertise...",
-            "fullText": "GPSC shows how international partnerships can connect national and subnational governments with technical expertise, investment planning support and development-finance partners. Led by the World Bank and supported by the Global Environment Facility (GEF), GPSC provides knowledge exchange, capacity building and practical tools to help cities develop integrated urban investment approaches. It supports the wider GEF Sustainable Cities Programme, which includes a global knowledge platform with country-led, city-level projects financed through GEF resources and co-financing from development partners. This helps to connect national and local urban priorities with international expertise and financing opportunities for sustainable urban development.",
-            "connectionLine": "What you can learn: See how international partnerships can connect national and subnational governments with technical expertise, practical tools and implementation support for urban climate investments.",
+            "excerpt": "",
+            "fullText": "Supported through Sweden's national system demonstrator program, STOLT advances Stockholm's ambition for an emission-free inner city by 2030. It brings together municipal departments, businesses, researchers, and civil society around interventions including environmental zones, fossil-free transport procurement, electrified construction and off-peak logistics. The demonstrator addresses challenges such as limited municipal enforcement powers and the absence of electrification requirements in construction procurement and investment appraisal. Through quarterly planning, evaluation, and adjustment cycles, participating actors test approaches, address implementation barriers, and generate learning to improve procurement practices and inform transport-system transformation.",
+            "link": "https://viablecities.se/en/satsningar/snabbsam/",
+            "connectionLine": "Key takeaway: Stockholm shows how nationally supported system demonstrators can identify regulatory and procurement barriers, test implementation approaches, and inform future investment decisions.",
             "order": 3
           },
           {
-            "title": "UN-Habitat – RISE UP",
+            "title": "Uganda – Makindye Ssabagabo’s Green Community Cities",
             "type": "Peer Learning Example",
-            "excerpt": "RISE UP shows how international partnerships can mobilise finance and technical support for locally led climate adaptation.",
-            "fullText": "RISE UP shows how international partnerships can mobilise finance and technical support for locally led climate adaptation. Established by UN-Habitat, the initiative has worked with national and local governments through its global, regional and country offices to connect urban resilience priorities with international financing partners. Through partnerships with the Adaptation Fund, Green Climate Fund and bilateral agencies, including Sweden's Sida, RISE UP reports mobilising over USD 150 million for urban climate resilience initiatives across nearly 30 countries. Although its flagship programme concluded in 2025, the RISE UP portfolio continues supporting cities with financing readiness, institutional capacity and implementation of resilience investments.",
-            "connectionLine": "What you can learn: See how international partnerships can connect national and local governments with climate funds, technical expertise and financing opportunities for urban adaptation.",
+            "excerpt": "",
+            "fullText": "Developed through the Climate Smart Cities Challenge, Green Community Cities brought together Makindye Ssabagabo municipality, UN-Habitat, Viable Cities, and an international consortium to address affordable, low-carbon housing as part of a wider urban system. Its proposed portfolio integrated modular and incremental housing, recycled building materials, renewable energy, waste management, water-saving technologies, and local employment. To make housing delivery financially viable and affordable, it also explored a public-private partnership involving municipal support, private landowners, developers, housing cooperatives and investors, alongside concessional finance and affordable housing loans. The initiative has secured approximately USD 380,000 in grant funding, established a recycling operation processing 62 tonnes of plastic monthly and created over 70 jobs. However, the experience also highlighted challenges in translating internationally developed solutions into local implementation, particularly where local institutional relationships and national–local coordination were weaker.",
+            "link": "https://challengeworks.org/challenge-prizes/makindye-ssabagabo-climate-smart-cities-challenge/",
+            "connectionLine": "Key takeaway: Makindye Ssabagabo highlights the importance of locally anchored partnerships and institutional capacity for accessing finance, and implementing and scaling system demonstrators.",
             "order": 4
+          },
+          {
+            "title": "Viable Cities and Dark Matter Labs – A blueprint for designing and funding urban system demonstrator programmes",
+            "type": "Tool",
+            "excerpt": "",
+            "fullText": "Developed by Viable Cities and Dark Matter Labs, with contributions from CCFLA, Nesta, UNEP, UN-Habitat, the World Economic Forum and WRI, the blueprint is a guide for funders, national governments, city networks and international organisations designing system demonstrator programmes. A system demonstrator is a portfolio of mutually reinforcing interventions in a defined urban system, designed with the actors who have the mandate to change it. Drawing on Sweden’s system demonstrator programme and the Climate Smart Cities Challenge, the blueprint presents the method, three city cases, a programme model that works as a checklist for a concept note, sample selection criteria and a readiness ladder. For multilevel climate finance, it shows how to anchor demonstrators in national frameworks such as CHAMP-aligned country platforms, separate grant funding for orchestration from capital for implementation, connect portfolios to local climate investment structures and use aggregated demand to create credible markets.",
+            "link": "https://viabilityfund.org/models/system-demonstrators/",
+            "connectionLine": "Useful for anyone setting up a system demonstrator programme, from defining the mission and selecting cities to preparing portfolios for investment and procurement.",
+            "order": 7
+          }
+        ]
+      },
+      {
+        "title": "5.3 International Networks and Partnerships",
+        "overview": "International networks and partnerships can help national and subnational governments access specialized expertise, financing partners and opportunities for collaboration on urban climate investment. They enable governments to exchange practical experience, address shared investment challenges and develop partnerships that support financing, implementation and scaling. National governments can facilitate cities' participation in relevant international initiatives and help to translate these connections into technical assistance and financing opportunities.",
+        "whatItIs": "",
+        "whyItIsNeeded": "",
+        "potentialNationalLead": [
+          "Climate/Environment Ministry",
+          "Urban Development Ministry"
+        ],
+        "keyActors": [
+          "Foreign Affairs Ministry",
+          "Finance Ministry",
+          "Sector Ministries",
+          "City and Subnational Governments",
+          "National Development Bank",
+          "MDBs/DFIs",
+          "Bilateral Development Agencies",
+          "International Organizations",
+          "City Networks",
+          "Technical Assistance Providers",
+          "Businesses"
+        ],
+        "transferabilityTitle": "Adapting this pathway to your context",
+        "transferability": [
+          "Prioritize international initiatives according to national and subnational investment needs. Initiatives may differ in their focus and support, from peer learning and capacity building to financing and implementation partnerships.",
+          "Consider participation barriers for smaller cities – these may lack the staff, funding, or international connections to engage in global networks. National governments can facilitate introductions, fund participation, or work through city networks to broaden access via local events and forums.",
+          "Account for the duration and continuity of international initiatives. International programs may be time-bound or evolve over time. Lasting benefits depend on whether knowledge, relationships, and capacities are retained within domestic institutions."
+        ],
+        "enablingConditions": [],
+        "order": 3,
+        "implementationGuidance": [
+          {
+            "title": "Identify opportunities for international engagement",
+            "content": "Assess where cities could benefit from international expertise, financing partnerships, or collective action on shared climate investment challenges. Identify relevant networks, initiatives and global policy forums, such as the Ministerial Meeting on Urbanization and Climate Change at UNFCCC COPs, where subnational perspectives can inform international discussions and partnerships."
+          },
+          {
+            "title": "Facilitate city participation",
+            "content": "Help cities navigate international programs, eligibility requirements, and partnership opportunities. Work with city associations or intermediaries to broaden participation, particularly where smaller municipalities lack resources or international connections."
+          },
+          {
+            "title": "Mobilize finance partners",
+            "content": "Engage international organizations, development banks, climate funds, and private-sector partners around shared national and subnational investment priorities, including through country platforms where relevant. Explore opportunities for technical assistance, financing, and coordinated implementation support (see Pathway 1.3).",
+            "relatedPathways": [
+              {
+                "id": "rec9uVdifwHMNd1Aa",
+                "title": "1.3 Urban-Inclusive Country Platforms",
+                "actionId": 1,
+                "pathwayIndex": 2,
+                "number": "1.3"
+              }
+            ]
+          },
+          {
+            "title": "Track engagement outcomes",
+            "content": "Monitor financing opportunities or implementation support emerging from international engagement. Integrate learning, expertise, and relationships into national and subnational institutions and capacity-building programs to sustain benefits beyond individual initiatives (see Pathway 5.1).",
+            "relatedPathways": [
+              {
+                "id": "recMbKrCtaKwa3C8t",
+                "title": "5.1 Institutional Capacity Building",
+                "actionId": 5,
+                "pathwayIndex": 0,
+                "number": "5.1"
+              }
+            ]
           }
         ],
-        "resources": [
+        "illustrativeExamples": [
           {
-            "title": "CHAMP Initiative: Coalition for High Ambition Multilevel Partnerships",
-            "type": "Report",
-            "publisher": "COP28 Presidency / High-Level Champions",
-            "link": "https://www.cop28.com/en/cop28-uae-coalition-for-high-ambition-multilevel-partnerships-for-climate-action",
-            "description": "Official declaration and operational roadmap for 77+ signatory countries and institutional partner coalitions.",
+            "title": "Cities Climate Finance Leadership Alliance (CCFLA)",
+            "type": "Peer Learning Example",
+            "excerpt": "",
+            "fullText": "CCFA brings together national governments, development partners, city networks, financial institutions, organizations, and technical experts to address barriers to urban climate investment. Through thematic Action Groups, members exchange practical experience on project preparation, adaptation finance, enabling environments, private finance, and other emerging challenges. These groups provide opportunities to connect actors across government levels and the climate finance ecosystem, identify common investment barriers, and develop collaborative responses. CCFLA also supports local and regional engagement through its Local Hubs (see Action 1), helping to connect international expertise with local climate finance priorities.",
+            "link": "https://citiesclimatefinance.org/the-local-hubs",
+            "connectionLine": "Key takeaway: CCFLA shows how international networks can connect national and subnational governments with specialized climate finance expertise and opportunities for collaboration.",
             "order": 1
+          },
+          {
+            "title": "World Economic Forum – First Mover Cities Cohort",
+            "type": "Peer Learning Example",
+            "excerpt": "",
+            "fullText": "First Mover Cities is an emerging city cohort being developed within by the World Economic Forum, drawing on its First Movers Coalition, to explore approaches to intra-city aggregated purchasing power. It aims to bring together city governments, businesses across the supply and demand sides of the construction value chain, finance institutions and other partners to strengthen demand for low-carbon solutions. Initial work focuses on the built environment, with a particular focus on cement and concrete, using multistakeholder dialogues to exchange practical experience on green procurement approaches, governance, tender design and supplier engagement. These exchanges will also explore how cities can develop credible demand packages by coordinating public and private purchasing needs and commitments. Over time, this could inform approaches to intra-city aggregated purchasing and strengthen cities' ability to shape markets for low-carbon solutions. San Francisco, Boston, Oslo, Stockholm and Belém are the initial First Mover Cities, with ambitions to expand participation globally and potentially extend the approach to other urban value chains, such as mobility solutions.",
+            "link": "https://citiesclimatefinance.org/wp-content/uploads/2026/11/First-Mover-Cities-2-Pager.pdf",
+            "connectionLine": "Key takeaway: First Mover Cities shows how international public-private collaboration can help cities to explore intra-city aggregated purchasing power and strengthen their ability to shape markets for low-carbon solutions.",
+            "order": 2
+          },
+          {
+            "title": "World Bank – Global Platform for Sustainable Cities (GPSC)",
+            "type": "Peer Learning Example",
+            "excerpt": "",
+            "fullText": "Led by the World Bank and supported by the Global Environment Facility (GEF), GPSC provides knowledge exchange, capacity building, and practical tools to support integrated urban sustainability planning and investment. It supports the wider GEF Sustainable Cities Programme, which links a global knowledge platform with country-led, city-level projects financed through GEF resources and development-partner co-financing. This structure connects national and local urban priorities with international expertise, financing partners, and implementation support.",
+            "link": "https://www.thegpsc.org/about",
+            "connectionLine": "Key takeaway: GPSC shows how international partnerships can connect national and subnational governments with technical expertise, investment planning support, and development finance.",
+            "order": 3
+          },
+          {
+            "title": "UN-Habitat – RISE-UP",
+            "type": "Peer Learning Example",
+            "excerpt": "",
+            "fullText": "Established by UN-Habitat, RISE-UP has worked with national and local governments through its global, regional, and country offices to connect urban resilience priorities with international financing partners. Through partnerships with the Adaptation Fund, Green Climate Fund, and bilateral agencies, including Sweden's Sida, RISE UP reports mobilizing over USD 150 million for urban climate resilience initiatives across nearly 30 countries. Although its flagship program concluded in 2025, the RISE UP portfolio continues supporting cities with financing readiness, institutional capacity, and implementation of resilience investments.",
+            "link": "https://unhabitat.org/programme/riseup",
+            "connectionLine": "Key takeaway: RISE-UP shows how international partnerships can connect national and local governments with climate finance and technical support for urban adaptation.",
+            "order": 4
+          },
+          {
+            "title": "AFD/IDFC – NDBs Urban Climate Action (NUCA)",
+            "type": "Peer Learning Example",
+            "excerpt": "",
+            "fullText": "Developed by the International Development Finance Club (IDFC) Facility, with financial and technical support from the IKI International Climate Initiative and the Agence Française de Développement (AFD), the NUCA Programme (2024–2028) supports partnerships between development banks and cities across five countries. With a €20 million budget and 10 implementation partners, the programme aims to strengthen development banks' technical and institutional capacities, integrate climate considerations into urban financing frameworks, develop pipelines of bankable urban climate projects and mobilise investment for low-carbon, climate-resilient infrastructure. It also supports knowledge development and exchange among cities, development banks and other stakeholders, with a focus on more than 100 secondary cities.",
+            "link": "https://nuca.idfc.org/",
+            "connectionLine": "NUCA demonstrates how international partnerships can strengthen national and regional development banks' capacity to finance urban climate action and connect municipal investment needs with financing institutions.",
+            "order": 5
           }
         ]
       }

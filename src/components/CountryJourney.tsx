@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown, ArrowRight } from 'lucide-react';
+import { ChevronDown, ArrowRight, ArrowUpRight, Table } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
-import { toSentenceCase } from '../data/actionMenuTitles';
-import { actionAccentStyle } from '../utils/actionThemes';
+import { ACTION_MENU_TITLES, toSentenceCase } from '../data/actionMenuTitles';
+import { actionAccentStyle, getActionTheme } from '../utils/actionThemes';
 import SwedenArchitectureDiagram from './SwedenArchitectureDiagram';
 import { CountryJourneyData } from '../types/countryJourney';
 import { swedenJourneyDefaultData } from '../data/countryJourneysData';
+
+// Clean up common markdown quirks from editors (e.g. accidental space between [text] and (url))
+function normalizeMarkdown(text?: string): string {
+  if (!text) return '';
+  return text.replace(/\[([^\]]+)\]\s+\((https?:\/\/[^\s\)]+)\)/g, '[$1]($2)');
+}
 
 interface CountryJourneyProps {
   countryData?: CountryJourneyData;
@@ -23,6 +29,7 @@ export default function CountryJourney({
 }: CountryJourneyProps) {
   const [activeTab, setActiveTab] = useState<'context' | 'model'>(() => targetActionId ? 'model' : 'context');
   const [highlightedActionId, setHighlightedActionId] = useState<number | null>(targetActionId || null);
+  const [isSummaryTableOpen, setIsSummaryTableOpen] = useState(true);
 
   // Collapsible states for Action 1 to 6 (all collapsed by default)
   const [openActions, setOpenActions] = useState<Record<number, boolean>>({
@@ -95,8 +102,11 @@ export default function CountryJourney({
     setOpenActions({ 1: false, 2: false, 3: false, 4: false, 5: false, 6: false });
   };
 
-  // If the country is not ready or has no content
-  if (!countryData.isReady && (!countryData.contextSections || countryData.contextSections.length === 0)) {
+  // If the country is unpublished or not ready
+  const isUnpublished = countryData.published === false || 
+    ["draft", "unpublished", "hidden", "archived"].includes(String(countryData.status || "").toLowerCase().trim());
+
+  if (isUnpublished || (!countryData.isReady && (!countryData.contextSections || countryData.contextSections.length === 0))) {
     return (
       <div className="max-w-6xl mx-auto pb-36">
         <div className="mb-10">
@@ -159,7 +169,7 @@ export default function CountryJourney({
           }`}
         >
           <span className="block text-[11px] font-bold uppercase tracking-wider mb-1">
-            A · {countryData.tabATitle || 'The Context'}
+            A. {countryData.countryName}’s Context
           </span>
           <span className="block body-text-md font-bold leading-snug text-inherit">
             {countryData.tabASubtitle || 'An Evolving Mission-Oriented Approach to Urban Climate Transition'}
@@ -177,10 +187,10 @@ export default function CountryJourney({
           }`}
         >
           <span className="block text-[11px] font-bold uppercase tracking-wider mb-1">
-            B · {countryData.tabBTitle || 'The Multilevel Model'}
+            B. {countryData.countryName}’s Multilevel Model
           </span>
           <span className="block body-text-md font-bold leading-snug text-inherit">
-            {countryData.tabBSubtitle || 'Architecture Diagram & 6 Multilevel Governance Actions'}
+            {countryData.tabBSubtitle || 'Architecture Diagram & Multilevel Governance Actions'}
           </span>
         </button>
       </div>
@@ -244,10 +254,20 @@ export default function CountryJourney({
                     <ReactMarkdown
                       components={{
                         strong: ({ children }) => <strong className="text-ink font-medium">{children}</strong>,
-                        p: ({ children }) => <span>{children}</span>
+                        p: ({ children }) => <span>{children}</span>,
+                        a: ({ href, children }) => (
+                          <a
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-accent underline decoration-accent/40 underline-offset-2 hover:decoration-accent transition-colors"
+                          >
+                            {children}
+                          </a>
+                        ),
                       }}
                     >
-                      {p}
+                      {normalizeMarkdown(p)}
                     </ReactMarkdown>
                   </div>
                 ))}
@@ -274,7 +294,13 @@ export default function CountryJourney({
                 Proceed to explore the architecture diagram and implementation pathways.
               </span>
               <button
-                onClick={() => setActiveTab('model')}
+                onClick={() => {
+                  setActiveTab('model');
+                  // Jump back to the top of the page so the model tab starts from its header
+                  const mainEl = document.querySelector('main');
+                  if (mainEl) mainEl.scrollTop = 0;
+                  window.scrollTo({ top: 0 });
+                }}
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white text-sm font-semibold uppercase tracking-wider rounded-none hover:bg-ink transition-colors cursor-pointer"
               >
                 View the multilevel model <ArrowRight size={16} strokeWidth={2.5} />
@@ -303,7 +329,17 @@ export default function CountryJourney({
                   <ReactMarkdown
                     components={{
                       strong: ({ children }) => <strong className="text-ink font-medium">{children}</strong>,
-                      p: ({ children }) => <p className="mb-2">{children}</p>
+                      p: ({ children }) => <p className="mb-2">{children}</p>,
+                      a: ({ href, children }) => (
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-accent underline decoration-accent/40 underline-offset-2 hover:decoration-accent transition-colors"
+                        >
+                          {children}
+                        </a>
+                      ),
                     }}
                   >
                     {countryData.modelOverview}
@@ -319,10 +355,136 @@ export default function CountryJourney({
               {/* Minimal Clean Image Diagram Container with Fullscreen & Zoom */}
               {/* If countryData provides custom diagram image url, it passes down, else defaults to local sweden blueprint */}
               <SwedenArchitectureDiagram 
-                customImageUrl={countryData.diagramImageUrl}
+                customImageUrl={
+                  countryData.countryId === 'sweden' 
+                    ? '/sweden-model-architecture.svg' 
+                    : countryData.countryId === 'brazil' 
+                    ? '/brazil-model-architecture.svg' 
+                    : countryData.diagramImageUrl
+                }
                 customTitle={`${countryData.countryName}’s Multilevel Climate Governance Architecture`}
               />
             </div>
+
+            {/* Compact, Action-Themed Summary Table (After Diagram, Before the 5 Actions) */}
+            {countryData.summaryTableRows && countryData.summaryTableRows.length > 0 && (
+              <div className="border border-line bg-surface shadow-xs overflow-hidden">
+                {/* Main Title Row: Toolkit Primary Green (#207B6A / --color-accent) */}
+                <button
+                  type="button"
+                  onClick={() => setIsSummaryTableOpen(prev => !prev)}
+                  className="w-full px-4 sm:px-6 py-3.5 bg-[#207B6A] hover:bg-[#1a6658] transition-colors flex items-center justify-between gap-4 text-left cursor-pointer text-white"
+                >
+                  <div className="flex items-center gap-3 min-w-0">
+                    <Table size={16} className="text-white/85 shrink-0" />
+                    <span className="text-xs sm:text-[13px] font-bold uppercase tracking-wider text-white truncate">
+                      {countryData.summaryTableTitle || `Mapping ${countryData.countryName}’s Initiatives to the CHAMP Toolkit Actions`}
+                    </span>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 bg-white/15 hover:bg-white/25 text-white shrink-0 transition-colors">
+                    <span>{isSummaryTableOpen ? 'Collapse table' : 'Expand table'}</span>
+                    <ChevronDown size={14} className={`transition-transform duration-200 ${isSummaryTableOpen ? 'rotate-180' : ''}`} />
+                  </span>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isSummaryTableOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: 'easeInOut' }}
+                      className="overflow-hidden border-t border-[#207B6A]/30"
+                    >
+                      <div className="overflow-x-auto">
+                        <table className="w-full border-collapse text-left text-xs sm:text-[13px] leading-relaxed">
+                          <thead>
+                            <tr className="bg-[#207B6A]/10 border-b border-[#207B6A]/20 text-[11px] font-bold uppercase tracking-wider text-[#163331]">
+                              <th className="py-2.5 px-4 sm:px-5 w-2/5 font-bold">
+                                {countryData.summaryTableColumn1 || 'Implementation Pathway'}
+                              </th>
+                              <th className="py-2.5 px-4 sm:px-5 w-3/5 font-bold border-l border-[#207B6A]/20">
+                                {countryData.summaryTableColumn2 || `${countryData.countryName} Programmes and Initiatives`}
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {countryData.summaryTableRows.map((row, idx) => {
+                              const prevGroup = idx > 0 ? countryData.summaryTableRows![idx - 1].actionGroup : null;
+                              const showGroupHeader = Boolean(row.actionGroup && row.actionGroup !== prevGroup);
+                              const actionNum = Number(row.actionGroup?.match(/Action\s+(\d+)/i)?.[1] || 1);
+                              const theme = getActionTheme(actionNum);
+
+                              return (
+                                <React.Fragment key={idx}>
+                                  {showGroupHeader && (
+                                    <tr 
+                                      style={{ 
+                                        backgroundColor: theme.bgMedium,
+                                        borderLeft: `4px solid ${theme.hex}`
+                                      }}
+                                      className="border-y border-line/60"
+                                    >
+                                      <td
+                                        colSpan={2}
+                                        className="py-2.5 px-4 sm:px-5"
+                                      >
+                                        <div className="flex items-center gap-2.5 flex-wrap">
+                                          <span 
+                                            className="inline-flex items-center px-2 py-0.5 text-[10.5px] font-bold uppercase tracking-wider text-white shadow-xs"
+                                            style={{ backgroundColor: theme.hex }}
+                                          >
+                                            Action {actionNum}
+                                          </span>
+                                          <span 
+                                            className="text-xs sm:text-[13px] font-bold tracking-wide"
+                                            style={{ color: theme.darkHex }}
+                                          >
+                                            {row.actionGroup?.replace(/^Action\s+\d+\.?\s*/i, '')}
+                                          </span>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  )}
+                                  <tr 
+                                    style={{ 
+                                      borderLeft: `4px solid ${theme.hex}`,
+                                      backgroundColor: idx % 2 === 0 ? theme.bgSubtle : 'transparent'
+                                    }}
+                                    className="hover:bg-paper/40 transition-colors border-b border-line/40"
+                                  >
+                                    <td className="py-2.5 px-4 sm:px-5 align-top font-semibold text-ink text-xs sm:text-[13px]">
+                                      <div className="flex items-start gap-2">
+                                        <span 
+                                          className="w-1.5 h-1.5 rounded-full mt-1.5 shrink-0" 
+                                          style={{ backgroundColor: theme.hex }}
+                                        />
+                                        <span>{row.pathway}</span>
+                                      </div>
+                                    </td>
+                                    <td 
+                                      className="py-2.5 px-4 sm:px-5 align-top text-ink-muted text-xs sm:text-[13px] border-l"
+                                      style={{ borderColor: theme.borderSubtle }}
+                                    >
+                                      {row.programmes}
+                                    </td>
+                                  </tr>
+                                </React.Fragment>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </div>
+
+                      {/* Concise, non-dominant disclaimer note towards the end of the summary table */}
+                      <div className="px-4 sm:px-6 py-2.5 bg-paper/50 border-t border-line/60 text-[11.5px] sm:text-xs text-ink-muted italic leading-relaxed">
+                        {countryData.summaryTableNote || "This table provides a selective, non-exhaustive mapping of country experiences against the Toolkit’s pathways."}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            )}
 
             {/* The Actions Header & Expand Controls */}
             {countryData.actions && countryData.actions.length > 0 && (
@@ -330,10 +492,10 @@ export default function CountryJourney({
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 border-t border-line">
                   <div>
                     <h3 className="title-h2">
-                      {countryData.actionsHeading || `${countryData.countryName}'s Journey Across the 6 Implementation Pathways`}
+                      {countryData.actionsHeading || `${countryData.countryName}'s Journey Across the 5 Actions`}
                     </h3>
                     <p className="body-text-md text-ink-muted mt-2">
-                      {countryData.actionsSubtitle || `How the ${countryData.countryName} mission model maps into the Toolkit's 6 core multilevel climate governance actions.`}
+                      {countryData.actionsSubtitle || `How the ${countryData.countryName} model maps into the Toolkit's 5 core multilevel climate governance actions.`}
                     </p>
                   </div>
 
@@ -359,8 +521,18 @@ export default function CountryJourney({
                 {countryData.actions.map((act) => {
                   const actionNum = act.actionNumber;
                   const isOpen = openActions[actionNum];
-
                   const isHighlighted = highlightedActionId === actionNum;
+                  const cleanedActionTitle = (act.title || '').replace(/^Action\s+\d+[\.\:\-]?\s*/i, '');
+
+                  let enabledLabel = 'What this has enabled';
+                  let enabledBody = act.enabledSummary || '';
+                  if (/^what this is enabling\s*:/i.test(enabledBody)) {
+                    enabledLabel = 'What this is enabling';
+                    enabledBody = enabledBody.replace(/^what this is enabling\s*:\s*/i, '');
+                  } else if (/^what this has enabled\s*:/i.test(enabledBody)) {
+                    enabledLabel = 'What this has enabled';
+                    enabledBody = enabledBody.replace(/^what this has enabled\s*:\s*/i, '');
+                  }
 
                   return (
                     <div 
@@ -382,10 +554,10 @@ export default function CountryJourney({
                             <span className="font-bold tracking-[0.15em] uppercase text-xs text-accent">
                               Action {actionNum}
                             </span>
-                            <span className="body-text-sm text-ink-muted">{toSentenceCase((act.actionThemeTitle || '').replace(/^[•\s]+/, ''))}</span>
+                            <span className="body-text-sm text-ink-muted">{ACTION_MENU_TITLES[actionNum] || toSentenceCase((act.actionThemeTitle || '').replace(/^[•\s]+/, ''))}</span>
                           </div>
                           <h4 className="body-text font-bold leading-snug">
-                            {toSentenceCase(act.title || '')}
+                            {toSentenceCase(cleanedActionTitle)}
                           </h4>
                         </div>
 
@@ -413,9 +585,19 @@ export default function CountryJourney({
                                         ol: ({ children }) => <ol className="list-decimal pl-5 space-y-2 mt-2">{children}</ol>,
                                         ul: ({ children }) => <ul className="list-disc pl-5 space-y-2 mt-2">{children}</ul>,
                                         li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+                                        a: ({ href, children }) => (
+                                          <a
+                                            href={href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-accent underline decoration-accent/40 underline-offset-2 hover:decoration-accent transition-colors"
+                                          >
+                                            {children}
+                                          </a>
+                                        ),
                                       }}
                                     >
-                                      {p}
+                                      {normalizeMarkdown(p)}
                                     </ReactMarkdown>
                                   </div>
                                 ))}
@@ -437,9 +619,19 @@ export default function CountryJourney({
                                             components={{
                                               strong: ({ children }) => <strong className="text-ink font-medium">{children}</strong>,
                                               p: ({ children }) => <p className="mb-2 leading-relaxed">{children}</p>,
+                                              a: ({ href, children }) => (
+                                                <a
+                                                  href={href}
+                                                  target="_blank"
+                                                  rel="noopener noreferrer"
+                                                  className="text-accent underline decoration-accent/40 underline-offset-2 hover:decoration-accent transition-colors"
+                                                >
+                                                  {children}
+                                                </a>
+                                              ),
                                             }}
                                           >
-                                            {cp}
+                                            {normalizeMarkdown(cp)}
                                           </ReactMarkdown>
                                         </div>
                                       ))}
@@ -449,15 +641,32 @@ export default function CountryJourney({
                               )}
 
                               {/* What this has enabled */}
-                              {act.enabledSummary && (
+                              {enabledBody && (
                                 <div className={act.caseStudy && (act.caseStudy.title || (act.caseStudy.paragraphs && act.caseStudy.paragraphs.length > 0)) ? "mt-8 pt-6 border-t border-line/60" : "mt-8"}>
                                   <div className="p-5 sm:p-6 bg-paper space-y-2">
                                     <div className="text-[11px] font-bold uppercase tracking-wider text-accent">
-                                      What this has enabled
+                                      {enabledLabel}
                                     </div>
-                                    <p className="body-text-md leading-relaxed">
-                                      {act.enabledSummary}
-                                    </p>
+                                    <div className="body-text-md leading-relaxed">
+                                      <ReactMarkdown
+                                        components={{
+                                          strong: ({ children }) => <strong className="text-ink font-medium">{children}</strong>,
+                                          p: ({ children }) => <span>{children}</span>,
+                                          a: ({ href, children }) => (
+                                            <a
+                                              href={href}
+                                              target="_blank"
+                                              rel="noopener noreferrer"
+                                              className="text-accent underline decoration-accent/40 underline-offset-2 hover:decoration-accent transition-colors"
+                                            >
+                                              {children}
+                                            </a>
+                                          ),
+                                        }}
+                                      >
+                                        {normalizeMarkdown(enabledBody)}
+                                      </ReactMarkdown>
+                                    </div>
                                   </div>
                                 </div>
                               )}
@@ -465,13 +674,15 @@ export default function CountryJourney({
                               {/* Seamless Action Guidance Link in Footer */}
                               {onNavigateToCoreAction && (
                                 <div className="pt-4 border-t border-line/60 flex justify-end">
-                                  <button
-                                    type="button"
-                                    onClick={() => onNavigateToCoreAction(actionNum)}
+                                  {/* Opens the action page in a new tab, so readers keep their place in the journey */}
+                                  <a
+                                    href={`/?page=${actionNum}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="inline-flex items-center gap-1.5 px-3 py-2 bg-accent text-white text-xs font-semibold rounded-none hover:bg-ink transition-colors cursor-pointer"
                                   >
-                                    See related toolkit guidance <ArrowRight size={14} strokeWidth={2.5} />
-                                  </button>
+                                    See related toolkit guidance <ArrowUpRight size={14} strokeWidth={2.5} />
+                                  </a>
                                 </div>
                               )}
                             </div>
@@ -482,6 +693,47 @@ export default function CountryJourney({
                   );
                 })}
               </>
+            )}
+
+            {/* Further Resources Section (if present, e.g., Sweden) */}
+            {(countryData.furtherResourcesIntro || (countryData.furtherResourcesLinks && countryData.furtherResourcesLinks.length > 0)) && (
+              <div className="pt-8 border-t border-line space-y-4">
+                <h3 className="title-h2">
+                  {countryData.furtherResourcesHeading || 'Further Resources'}
+                </h3>
+                {countryData.furtherResourcesIntro && (
+                  <p className="body-text-md leading-relaxed text-ink/90">
+                    {countryData.furtherResourcesIntro}
+                  </p>
+                )}
+                {countryData.furtherResourcesLinks && countryData.furtherResourcesLinks.length > 0 && (
+                  <ul className="space-y-2 pl-2 pt-1">
+                    {countryData.furtherResourcesLinks.map((item, idx) => (
+                      <li key={idx} className="body-text-md flex items-start gap-3">
+                        <span className="w-1.5 h-1.5 bg-accent mt-2.5 shrink-0" />
+                        <ReactMarkdown
+                          components={{
+                            p: ({ children }) => <span>{children}</span>,
+                            a: ({ href, children }) => (
+                              <a
+                                href={href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1 text-accent underline decoration-accent/40 underline-offset-2 hover:decoration-accent font-medium transition-colors"
+                              >
+                                {children}
+                                <ArrowUpRight size={14} className="inline shrink-0" />
+                              </a>
+                            ),
+                          }}
+                        >
+                          {item}
+                        </ReactMarkdown>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             )}
           </motion.div>
         )}

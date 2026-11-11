@@ -1,0 +1,310 @@
+<?xml version="1.0" standalone="no"?>
+<svg id="brazil-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1290" width="100%" height="100%" style="background-color: #ffffff; font-family: 'Proxima Nova', 'ProximaNova', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+                <defs>
+                    <style type="text/css">
+                        svg, text, tspan {
+                            font-family: 'Proxima Nova', 'ProximaNova', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+                        }
+                    </style>
+                    <!-- Reference Arrowhead: Indigo-Blue (#365399) for Governance / Implementation -->
+                    <marker id="arrow-blue" viewBox="0 0 10 8" refX="8.6" refY="4" markerWidth="7" markerHeight="6" orient="auto-start-reverse">
+                        <path d="M 0 0.6 L 9.6 4 L 0 7.4 L 2.2 4 Z" fill="#365399"/>
+                    </marker>
+                    <!-- Reference Arrowhead: Coral-Red (#D95F52) for Finance Relationships -->
+                    <marker id="arrow-coral" viewBox="0 0 10 8" refX="8.6" refY="4" markerWidth="7" markerHeight="6" orient="auto-start-reverse">
+                        <path d="M 0 0.6 L 9.6 4 L 0 7.4 L 2.2 4 Z" fill="#D95F52"/>
+                    </marker>
+                </defs>
+
+                <!-- ========================================================================= -->
+                <!-- TOP LAYER: MULTILEVEL CLIMATE GOVERNANCE AND COORDINATION                 -->
+                <!-- ========================================================================= -->
+
+                <!-- Left Outer Container: Key Federal Government Ministries (x=36..676, y=28..272) -->
+                <rect x="36" y="28" width="640" height="244" fill="#FDF6EF" stroke="#E68033" stroke-width="2"/>
+                <text x="50" y="51" font-size="13.5" font-weight="700" fill="#B85612" letter-spacing="0.5">KEY FEDERAL GOVERNMENT MINISTRIES</text>
+
+                <!-- 2x2 Grid of Ministries — Stakeholder Orange (#E68033) -->
+                <!-- Ministry 1: MMA (x=50..348, y=62..156) -->
+                <rect x="50" y="62" width="298" height="94" fill="#E68033"/>
+                <text x="64" y="85" font-size="14.5" font-weight="700" fill="#ffffff">Ministry of Environment &amp;</text>
+                <text x="64" y="104" font-size="14.5" font-weight="700" fill="#ffffff">Climate Change (MMA)</text>
+                <text x="64" y="126" font-size="13.5" fill="#FFF8F3">Supports CIM · Leads PCVR ·</text>
+                <text x="64" y="144" font-size="13.5" fill="#FFF8F3">Coordinates Fundo Clima</text>
+
+                <!-- Ministry 2: Ministry of Cities (x=362..662, y=62..156) -->
+                <rect x="362" y="62" width="300" height="94" fill="#E68033"/>
+                <text x="376" y="88" font-size="14.5" font-weight="700" fill="#ffffff">Ministry of Cities</text>
+                <text x="376" y="113" font-size="13.5" fill="#FFF8F3">Urban programmes (Novo PAC,</text>
+                <text x="376" y="131" font-size="13.5" fill="#FFF8F3">Pró-Cidades) · Co-governs PCVR</text>
+
+                <!-- Ministry 3: MCTI (x=50..348, y=166..258) -->
+                <rect x="50" y="166" width="298" height="92" fill="#E68033"/>
+                <text x="64" y="189" font-size="14.5" font-weight="700" fill="#ffffff">Ministry of Science, Tech &amp;</text>
+                <text x="64" y="208" font-size="14.5" font-weight="700" fill="#ffffff">Innovation (MCTI)</text>
+                <text x="64" y="230" font-size="13.5" fill="#FFF8F3">Co-governs PCVR · Urban climate</text>
+                <text x="64" y="248" font-size="13.5" fill="#FFF8F3">innovation</text>
+
+                <!-- Ministry 4: Ministry of Finance (x=362..662, y=166..258) -->
+                <rect x="362" y="166" width="300" height="92" fill="#E68033"/>
+                <text x="376" y="194" font-size="14.5" font-weight="700" fill="#ffffff">Ministry of Finance</text>
+                <text x="376" y="219" font-size="13.5" fill="#FFF8F3">Leads BIP</text>
+
+                <!-- Arrow: Federal Ministries <-> Government-Led Multilevel Coordination Mechanisms -->
+                <line x1="682" y1="118" x2="788" y2="118" stroke="#365399" stroke-width="1.5" marker-start="url(#arrow-blue)" marker-end="url(#arrow-blue)"/>
+                <text x="735" y="107" font-size="12.5" font-weight="500" fill="#2A3342" text-anchor="middle">Federal policy</text>
+                <text x="735" y="136" font-size="12.5" font-weight="500" fill="#2A3342" text-anchor="middle">coordination</text>
+
+                <!-- Right Outer Container: Government-Led Multilevel Coordination Mechanisms (x=794..1396, y=28..214) -->
+                <rect x="794" y="28" width="602" height="186" fill="#EFF6F3" stroke="#32836E" stroke-width="2"/>
+                <text x="808" y="51" font-size="13.5" font-weight="700" fill="#32836E" letter-spacing="0.5">GOVERNMENT-LED MULTILEVEL COORDINATION MECHANISMS</text>
+
+                <!-- Mechanism 1: CIM & Interfederative Chamber (x=808..1062, y=62..200) — White Box with Blue Outline -->
+                <rect x="808" y="62" width="254" height="138" fill="#ffffff" stroke="#3A6E8C" stroke-width="1.6"/>
+                <text x="935" y="90" font-size="15" font-weight="700" fill="#285975" text-anchor="middle">CIM &amp; Interfederative</text>
+                <text x="935" y="110" font-size="15" font-weight="700" fill="#285975" text-anchor="middle">Chamber</text>
+                <text x="935" y="136" font-size="13.5" fill="#374151" text-anchor="middle">Federal climate policy</text>
+                <text x="935" y="155" font-size="13.5" fill="#374151" text-anchor="middle">coordination and state and</text>
+                <text x="935" y="174" font-size="13.5" fill="#374151" text-anchor="middle">municipal participation</text>
+
+                <!-- Mechanism 2: Green & Resilient Cities (PCVR) (x=1074..1382, y=62..200) — Solid Purple (#8E3563) -->
+                <rect x="1074" y="62" width="308" height="138" fill="#8E3563"/>
+                <text x="1228" y="84" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Green &amp; Resilient Cities (PCVR)</text>
+                <text x="1228" y="105" font-size="13.2" fill="#F9EEF3" text-anchor="middle">Federal programme for urban climate action</text>
+                <text x="1228" y="126" font-size="13" font-weight="600" fill="#FFD9EC" text-anchor="middle">Jointly governed by MMA, Ministry of Cities</text>
+                <text x="1228" y="143" font-size="13" font-weight="600" fill="#FFD9EC" text-anchor="middle">&amp; MCTI</text>
+                <text x="1228" y="164" font-size="13" fill="#FFF8F3" text-anchor="middle">Financing for eligible projects through</text>
+                <text x="1228" y="181" font-size="13" fill="#FFF8F3" text-anchor="middle">Fundo Clima &amp; Pró-Cidades</text>
+
+                <!-- Separate Partner-Led Coordination Initiative: Immediately below the green container, outside its border -->
+                <rect x="794" y="228" width="500" height="82" fill="#ffffff" stroke="#3A6E8C" stroke-width="1.6"/>
+                <text x="1044" y="252" font-size="15" font-weight="700" fill="#285975" text-anchor="middle">Brazil CHAMP Finance Working Group</text>
+                <text x="1044" y="274" font-size="13.5" fill="#374151" text-anchor="middle">Partner coordination to strengthen municipal climate finance</text>
+                <text x="1044" y="295" font-size="13" fill="#4B5563" text-anchor="middle">World Bank · GIZ · WRI Brasil · C40/GCoM · IDFC · CCFLA</text>
+
+
+                <!-- ========================================================================= -->
+                <!-- UPPER-MIDDLE BAND: NATIONAL CLIMATE COMMITMENTS & POLITICAL ALIGNMENT     -->
+                <!-- (y=298..446)                                                              -->
+                <!-- ========================================================================= -->
+
+                <!-- Upper Arrow Segment: National Commitments Box -> Federal Ministries (x=356, y=272..298) -->
+                <line x1="356" y1="278" x2="356" y2="298" stroke="#365399" stroke-width="1.5" marker-start="url(#arrow-blue)"/>
+
+                <!-- Shared Section: National Climate Commitments and Political Alignment (x=36..676, y=298..446) -->
+                <rect x="36" y="298" width="640" height="148" fill="#F4F7FA" stroke="#3A6E8C" stroke-width="1.8"/>
+                <text x="50" y="321" font-size="13" font-weight="700" fill="#285975" letter-spacing="0.4">NATIONAL CLIMATE COMMITMENTS AND POLITICAL ALIGNMENT</text>
+
+                <!-- 1. Brazil's 2024 NDC (x=50..246, y=332..432) -->
+                <rect x="50" y="332" width="196" height="100" fill="#ffffff" stroke="#3A6E8C" stroke-width="1.5"/>
+                <text x="148" y="357" font-size="14.5" font-weight="700" fill="#285975" text-anchor="middle">Brazil’s 2024 NDC</text>
+                <text x="148" y="380" font-size="13.2" fill="#374151" text-anchor="middle">National commitments</text>
+                <text x="148" y="398" font-size="13.2" fill="#374151" text-anchor="middle">recognising subnational</text>
+                <text x="148" y="416" font-size="13.2" fill="#374151" text-anchor="middle">role</text>
+
+                <!-- 2. Commitment to Climate Federalism (2024) (x=258..454, y=332..432) -->
+                <rect x="258" y="332" width="196" height="100" fill="#ffffff" stroke="#3A6E8C" stroke-width="1.5"/>
+                <text x="356" y="353" font-size="14" font-weight="700" fill="#285975" text-anchor="middle">Commitment to Climate</text>
+                <text x="356" y="370" font-size="14" font-weight="700" fill="#285975" text-anchor="middle">Federalism (2024)</text>
+                <text x="356" y="391" font-size="13.2" fill="#374151" text-anchor="middle">Shared commitment</text>
+                <text x="356" y="408" font-size="13.2" fill="#374151" text-anchor="middle">across federal, state &amp;</text>
+                <text x="356" y="425" font-size="13.2" fill="#374151" text-anchor="middle">municipal tiers</text>
+
+                <!-- 3. Belém Declaration (2025) (x=466..662, y=332..432) -->
+                <rect x="466" y="332" width="196" height="100" fill="#ffffff" stroke="#3A6E8C" stroke-width="1.5"/>
+                <text x="564" y="353" font-size="14" font-weight="700" fill="#285975" text-anchor="middle">Belém Declaration</text>
+                <text x="564" y="370" font-size="14" font-weight="700" fill="#285975" text-anchor="middle">(2025)</text>
+                <text x="564" y="391" font-size="13" fill="#374151" text-anchor="middle">Voluntary national–</text>
+                <text x="564" y="408" font-size="13" fill="#374151" text-anchor="middle">subnational commitment</text>
+                <text x="564" y="425" font-size="13" fill="#374151" text-anchor="middle">on sustainable procurement</text>
+
+                <!-- Lower Arrow Segment: National Commitments Box -> States & Municipalities (x=356, y=446..472) -->
+                <line x1="356" y1="446" x2="356" y2="472" stroke="#365399" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+                <!-- Arrow: Government-Led Multilevel Coordination Mechanisms <-> States and Municipalities (x=1342, y=214..472) -->
+                <line x1="1342" y1="220" x2="1342" y2="472" stroke="#365399" stroke-width="1.5" marker-start="url(#arrow-blue)" marker-end="url(#arrow-blue)"/>
+                <rect x="1246" y="333" width="164" height="44" fill="#ffffff"/>
+                <text x="1330" y="352" font-size="12.5" font-weight="500" fill="#2A3342" text-anchor="middle">Subnational participation</text>
+                <text x="1330" y="370" font-size="12.5" font-weight="500" fill="#2A3342" text-anchor="middle">&amp; urban climate alignment</text>
+
+
+                <!-- ========================================================================= -->
+                <!-- MIDDLE LAYER: STATES AND MUNICIPALITIES (y=478..542)                      -->
+                <!-- ========================================================================= -->
+
+                <rect x="36" y="478" width="1360" height="64" fill="#E68033" stroke="#CF6C22" stroke-width="1.5"/>
+                <text x="716" y="505" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">States and Municipalities</text>
+                <text x="716" y="528" font-size="14.5" font-weight="500" fill="#FFF8F3" text-anchor="middle">Identify local climate and infrastructure investment needs, develop and prepare projects, and implement investments</text>
+
+
+                <!-- ========================================================================= -->
+                <!-- LOWER-LEFT SECTION: ESTABLISHED INVESTMENT PROGRAMMES & FINANCING         -->
+                <!-- (x=36..676, y=596..1038)                                                  -->
+                <!-- ========================================================================= -->
+
+                <!-- Overarching Arrow: States & Municipalities -> Boundary of Established Investment Programmes Container -->
+                <line x1="356" y1="542" x2="356" y2="590" stroke="#365399" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+                <rect x="170" y="555" width="372" height="22" fill="#ffffff"/>
+                <text x="356" y="571" font-size="12.5" font-weight="500" fill="#2A3342" text-anchor="middle">Access to financing &amp; infrastructure investment support</text>
+
+                <!-- Left Group Container (x=36..676, y=596..1038) -->
+                <rect x="36" y="596" width="640" height="442" fill="#F9FBFD" stroke="#3A6E8C" stroke-width="2"/>
+                <text x="50" y="620" font-size="13" font-weight="700" fill="#285975" letter-spacing="0.4">ESTABLISHED INVESTMENT PROGRAMMES &amp; FINANCING MECHANISMS</text>
+
+                <!-- 2x2 Grid of Four Purple Programme Boxes -->
+                <!-- 1. Novo PAC (x=50..348, y=634..752) -->
+                <rect x="50" y="634" width="298" height="118" fill="#8E3563"/>
+                <text x="199" y="660" font-size="15.5" font-weight="700" fill="#ffffff" text-anchor="middle">Novo PAC</text>
+                <text x="199" y="684" font-size="13.5" fill="#F9EEF3" text-anchor="middle">Federal infrastructure investment</text>
+                <text x="199" y="703" font-size="13.5" fill="#F9EEF3" text-anchor="middle">programme · Casa Civil (coordination) ·</text>
+                <text x="199" y="722" font-size="13.5" fill="#F9EEF3" text-anchor="middle">Ministry of Cities (urban investments)</text>
+
+                <!-- 2. Pró-Cidades (x=362..662, y=634..752) -->
+                <rect x="362" y="634" width="300" height="118" fill="#8E3563"/>
+                <text x="512" y="665" font-size="15.5" font-weight="700" fill="#ffffff" text-anchor="middle">Pró-Cidades</text>
+                <text x="512" y="692" font-size="13.5" fill="#F9EEF3" text-anchor="middle">Urban development credit</text>
+                <text x="512" y="712" font-size="13.5" fill="#F9EEF3" text-anchor="middle">programme · Ministry of Cities</text>
+
+                <!-- 3. Fundo Clima (x=50..348, y=764..882) -->
+                <rect x="50" y="764" width="298" height="118" fill="#8E3563"/>
+                <text x="199" y="795" font-size="15.5" font-weight="700" fill="#ffffff" text-anchor="middle">Fundo Clima</text>
+                <text x="199" y="822" font-size="13.5" fill="#F9EEF3" text-anchor="middle">National climate financing fund ·</text>
+                <text x="199" y="842" font-size="13.5" fill="#F9EEF3" text-anchor="middle">MMA (oversight) · BNDES (loans)</text>
+
+                <!-- 4. FIRECE (x=362..662, y=764..882) -->
+                <rect x="362" y="764" width="300" height="118" fill="#8E3563"/>
+                <text x="512" y="788" font-size="15.5" font-weight="700" fill="#ffffff" text-anchor="middle">FIRECE</text>
+                <text x="512" y="810" font-size="13.2" fill="#F9EEF3" text-anchor="middle">Climate recovery &amp; adaptation</text>
+                <text x="512" y="829" font-size="13.2" fill="#F9EEF3" text-anchor="middle">infrastructure fund · Casa Civil</text>
+                <text x="512" y="848" font-size="13.2" fill="#F9EEF3" text-anchor="middle">(coordination) · Ministry of Cities</text>
+                <text x="512" y="867" font-size="13.2" fill="#F9EEF3" text-anchor="middle">(governance) · CAIXA (management)</text>
+
+                <!-- Brazil Investment Platform (BIP) — Solid Purple Box as in Reference SVG (x=104..608, y=904..1018) -->
+                <rect x="104" y="904" width="504" height="114" fill="#8E3563"/>
+                <text x="356" y="935" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Brazil Investment Platform (BIP)</text>
+                <text x="356" y="962" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">National investment coordination platform · Mitigation-focused</text>
+                <text x="356" y="986" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Ministry of Finance · BNDES Secretariat</text>
+
+
+                <!-- ========================================================================= -->
+                <!-- LOWER-RIGHT SECTION: CLIMATE INVESTMENT PIPELINES, PROJECT PREPARATION    -->
+                <!-- & CAPACITY BUILDING (x=698..1396, y=596..1038)                            -->
+                <!-- ========================================================================= -->
+
+                <!-- Right Group Container (x=698..1396, y=596..1038) -->
+                <rect x="698" y="596" width="698" height="442" fill="#F9FBFD" stroke="#3A6E8C" stroke-width="2"/>
+                <text x="1380" y="619" font-size="13" font-weight="700" fill="#285975" letter-spacing="0.4" text-anchor="end">CLIMATE INVESTMENT PIPELINES, PROJECT PREPARATION</text>
+                <text x="1380" y="637" font-size="13" font-weight="700" fill="#285975" letter-spacing="0.4" text-anchor="end">&amp; CAPACITY BUILDING</text>
+
+                <!-- Arrow: States & Municipalities -> PCVR Project Bank (x=804, y=542..674) -->
+                <line x1="804" y1="542" x2="804" y2="674" stroke="#365399" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+                <rect x="714" y="555" width="180" height="22" fill="#ffffff"/>
+                <text x="804" y="571" font-size="12.5" font-weight="500" fill="#2A3342" text-anchor="middle">Submit climate proposals</text>
+
+                <!-- Short Arrow: States & Municipalities <-> Capacity-Support Area (x=1182, y=542..596) -->
+                <line x1="1182" y1="596" x2="1182" y2="548" stroke="#365399" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+                <rect x="1038" y="555" width="288" height="22" fill="#ffffff"/>
+                <text x="1182" y="571" font-size="12.5" font-weight="500" fill="#2A3342" text-anchor="middle">Technical assistance &amp; capacity building</text>
+
+                <!-- A. Standalone Box: PCVR Project Bank (x=712..894, y=678..808) -->
+                <rect x="712" y="678" width="182" height="130" fill="#ffffff" stroke="#3A6E8C" stroke-width="1.6"/>
+                <text x="803" y="703" font-size="14.5" font-weight="700" fill="#285975" text-anchor="middle">PCVR Project</text>
+                <text x="803" y="721" font-size="14.5" font-weight="700" fill="#285975" text-anchor="middle">Bank</text>
+                <text x="803" y="742" font-size="13" font-weight="600" fill="#32836E" text-anchor="middle">Component of PCVR</text>
+                <text x="803" y="763" font-size="12.8" fill="#374151" text-anchor="middle">Maps local climate project</text>
+                <text x="803" y="780" font-size="12.8" fill="#374151" text-anchor="middle">proposals and preparation</text>
+                <text x="803" y="797" font-size="12.8" fill="#374151" text-anchor="middle">needs</text>
+
+                <!-- B. Shared Container: Partner-Led Project Preparation Support (x=950..1380, y=650..908) -->
+                <rect x="950" y="650" width="430" height="258" fill="#F1F6FA" stroke="#3A6E8C" stroke-width="1.4"/>
+                <text x="1165" y="672" font-size="12" font-weight="700" fill="#285975" letter-spacing="0.3" text-anchor="middle">PARTNER-LED PROJECT PREPARATION SUPPORT</text>
+
+                <!-- Top Row Inside Partner-Led Container: 2 Boxes -->
+                <!-- 1. Brazil Mutirão (x=962..1158, y=684..784) -->
+                <rect x="962" y="684" width="196" height="100" fill="#ffffff" stroke="#3A6E8C" stroke-width="1.4"/>
+                <text x="1060" y="707" font-size="14.5" font-weight="700" fill="#285975" text-anchor="middle">Brazil Mutirão</text>
+                <text x="1060" y="727" font-size="13" font-weight="600" fill="#32836E" text-anchor="middle">C40 / GCoM</text>
+                <text x="1060" y="748" font-size="13" fill="#374151" text-anchor="middle">Climate budgeting &amp;</text>
+                <text x="1060" y="766" font-size="13" fill="#374151" text-anchor="middle">project preparation</text>
+
+                <!-- 2. C40 Cities Finance Facility (CFF) (x=1170..1368, y=684..784) -->
+                <rect x="1170" y="684" width="198" height="100" fill="#ffffff" stroke="#3A6E8C" stroke-width="1.4"/>
+                <text x="1269" y="704" font-size="14" font-weight="700" fill="#285975" text-anchor="middle">C40 Cities Finance</text>
+                <text x="1269" y="721" font-size="14" font-weight="700" fill="#285975" text-anchor="middle">Facility (CFF)</text>
+                <text x="1269" y="740" font-size="13" font-weight="600" fill="#32836E" text-anchor="middle">C40 / GIZ</text>
+                <text x="1269" y="759" font-size="13" fill="#374151" text-anchor="middle">Infrastructure project</text>
+                <text x="1269" y="776" font-size="13" fill="#374151" text-anchor="middle">preparation</text>
+
+                <!-- Bottom Row Inside Partner-Led Container: Centered ICLEI TAP Brasil Box (x=1066..1264, y=796..894) -->
+                <rect x="1066" y="796" width="198" height="98" fill="#ffffff" stroke="#3A6E8C" stroke-width="1.4"/>
+                <text x="1165" y="819" font-size="14.5" font-weight="700" fill="#285975" text-anchor="middle">ICLEI TAP Brasil</text>
+                <text x="1165" y="839" font-size="13" font-weight="600" fill="#32836E" text-anchor="middle">ICLEI / CAF</text>
+                <text x="1165" y="860" font-size="13" fill="#374151" text-anchor="middle">Project development &amp;</text>
+                <text x="1165" y="878" font-size="13" fill="#374151" text-anchor="middle">mentoring</text>
+
+                <!-- C. Institutional Capacity Building (Aligned with Partner-Led Container: x=950..1380, y=922..1018) -->
+                <rect x="950" y="922" width="430" height="96" fill="#EFF6F3" stroke="#32836E" stroke-width="1.6"/>
+                <text x="1165" y="948" font-size="15" font-weight="700" fill="#285975" text-anchor="middle">Institutional Capacity Building</text>
+                <text x="1165" y="973" font-size="13.5" fill="#374151" text-anchor="middle">AdaptaCidades · Capacidades · Projeto AdaptAção</text>
+                <text x="1165" y="995" font-size="13.5" fill="#374151" text-anchor="middle">UNEP/IKI Water-sensitive Urban Planning</text>
+
+                <!-- Dashed Connector: PCVR Project Bank <-> Partner-Led Project Preparation Support (x=894..950) -->
+                <line x1="900" y1="742" x2="944" y2="742" stroke="#365399" stroke-width="1.5" stroke-dasharray="4,3" marker-start="url(#arrow-blue)" marker-end="url(#arrow-blue)"/>
+                <!-- Thin Pointer Line from the dashed arrow down to the label -->
+                <line x1="922" y1="742" x2="922" y2="812" stroke="#365399" stroke-width="1"/>
+                <text x="892" y="828" font-size="11.5" font-weight="500" fill="#2A3342" text-anchor="middle">Potential project</text>
+                <text x="892" y="844" font-size="11.5" font-weight="500" fill="#2A3342" text-anchor="middle">preparation</text>
+                <text x="892" y="860" font-size="11.5" font-weight="500" fill="#2A3342" text-anchor="middle">linkage</text>
+
+
+                <!-- ========================================================================= -->
+                <!-- CROSS-CONTAINER CONNECTIONS (BIP & PCVR LOOP)                             -->
+                <!-- ========================================================================= -->
+
+                <!-- Potential Connection: PCVR Project Bank (bottom-left) -> Brazil Investment Platform (BIP) (right edge) -->
+                <polyline points="756,808 756,961 614,961" fill="none" stroke="#D95F52" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow-coral)"/>
+                <text x="748" y="982" font-size="11.5" font-weight="500" fill="#2A3342" text-anchor="middle">Potential linkage</text>
+                <text x="748" y="997" font-size="11.5" font-weight="500" fill="#2A3342" text-anchor="middle">for eligible</text>
+                <text x="748" y="1012" font-size="11.5" font-weight="500" fill="#2A3342" text-anchor="middle">projects</text>
+
+                <!-- Solid Blue Arrow: Green & Resilient Cities (PCVR) -> PCVR Project Bank -->
+                <!-- Routed cleanly at y=1068 (30px below the lower containers and 42px above the legend divider) -->
+                <path d="M 1382,126 L 1418,126 L 1418,1068 L 832,1068 L 832,814" fill="none" stroke="#365399" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+
+                <!-- ========================================================================= -->
+                <!-- EDITORIAL LEGEND & EXPLANATORY FOOTNOTE (WITH AMPLE BOTTOM PADDING)       -->
+                <!-- ========================================================================= -->
+
+                <line x1="36" y1="1110" x2="1396" y2="1110" stroke="#CBD5E1" stroke-width="1.2"/>
+
+                <g transform="translate(36, 1128)">
+                    <!-- Col 1: 3 Stacked Box Swatches (matching Reference SVG) -->
+                    <rect x="0" y="0" width="16" height="16" fill="#8E3563"/>
+                    <text x="26" y="13" font-size="13" font-weight="500" fill="#2A3342">National programs and platforms</text>
+
+                    <rect x="0" y="28" width="16" height="16" fill="#ffffff" stroke="#3A6E8C" stroke-width="1.8"/>
+                    <text x="26" y="41" font-size="13" font-weight="500" fill="#2A3342">Coordination &amp; Pipeline Initiatives</text>
+
+                    <rect x="0" y="56" width="16" height="16" fill="#E68033"/>
+                    <text x="26" y="69" font-size="13" font-weight="500" fill="#2A3342">Government Stakeholders</text>
+
+                    <!-- Col 2: Established Relationships (Solid Arrows) -->
+                    <line x1="470" y1="8" x2="534" y2="8" stroke="#365399" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+                    <text x="546" y="13" font-size="13" font-weight="500" fill="#2A3342">Established Coordination /</text>
+                    <text x="546" y="29" font-size="13" font-weight="500" fill="#2A3342">Implementation Relationship</text>
+
+                    <line x1="470" y1="64" x2="534" y2="64" stroke="#D95F52" stroke-width="1.5" marker-end="url(#arrow-coral)"/>
+                    <text x="546" y="69" font-size="13" font-weight="500" fill="#2A3342">Established Finance relationship</text>
+
+                    <!-- Col 3: Emerging / Potential Linkages (Dashed Arrows) -->
+                    <line x1="870" y1="8" x2="934" y2="8" stroke="#D95F52" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow-coral)"/>
+                    <text x="946" y="13" font-size="13" font-weight="500" fill="#2A3342">Potential finance-related relationship</text>
+
+                    <line x1="870" y1="64" x2="934" y2="64" stroke="#365399" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow-blue)"/>
+                    <text x="946" y="69" font-size="13" font-weight="500" fill="#2A3342">Potential program relationship</text>
+                </g>
+
+                <!-- Explanatory Footnote with generous bottom padding below (y=1240 inside 1290 height) -->
+                <text x="36" y="1240" font-size="12.5" font-style="italic" fill="#64748B">Illustrative, non-exhaustive mapping of Brazil’s multilevel climate initiatives. Relationships shown do not imply formal integration between all initiatives.</text>
+            </svg>

@@ -90,18 +90,52 @@ function formatAirtableData(actionsRecords, pathwaysRecords, guidanceRecords, ex
         const linkedAction = p.fields['Belongs to Action'];
         return linkedAction && linkedAction.includes(a.id);
       })
-      .sort((x, y) => (Number(x.fields['Order']) || 99) - (Number(y.fields['Order']) || 99))
+      .sort((x, y) => {
+        const titleX = sanitizeText(x.fields['Pathway Title'] || x.fields['Title'] || '');
+        const titleY = sanitizeText(y.fields['Pathway Title'] || y.fields['Title'] || '');
+        const matchX = titleX.match(/^(\d+)\.(\d+)/);
+        const matchY = titleY.match(/^(\d+)\.(\d+)/);
+        if (matchX && matchY) {
+          const numX = Number(matchX[1]) * 100 + Number(matchX[2]);
+          const numY = Number(matchY[1]) * 100 + Number(matchY[2]);
+          if (numX !== numY) return numX - numY;
+        }
+        return (Number(x.fields['Order']) || 99) - (Number(y.fields['Order']) || 99);
+      })
       .map((p) => {
         const pathwayTitle = sanitizeText(p.fields['Pathway Title'] || 'Untitled Pathway');
         const pathwayDesc = sanitizeText(p.fields['Overview'] || '');
         const whatItIs = sanitizeText(p.fields['What it is'] || '');
         const whyItIsNeeded = sanitizeText(p.fields['Why it is needed'] || '');
         const orderNum = Number(p.fields['Order']) || 0;
+        const potentialNationalLead = Array.isArray(p.fields['Potential National Lead'])
+          ? p.fields['Potential National Lead'].map((l) => sanitizeText(l))
+          : p.fields['Potential National Lead']
+          ? [sanitizeText(p.fields['Potential National Lead'])]
+          : [];
         const keyActors = (p.fields['Key Actors'] || []).map((act) => sanitizeText(act));
-        const transferability = (p.fields['Transferability Considerations'] || '')
-          .split(/\r?\n/)
-          .map((s) => sanitizeText(s.replace(/^(?:[-*+•—–·◦⁃]|\d+\.)\s*/, '')))
-          .filter(Boolean);
+        const rawTransferability = (
+          p.fields['Adapting this pathway to your context'] ||
+          p.fields['Adapting this pathway to your context '] ||
+          p.fields['Transferability Considerations'] ||
+          p.fields['Transferability'] ||
+          ''
+        ).trim();
+        let transferabilityTitle = 'Adapting this pathway to your context';
+        let transferability = [];
+        if (rawTransferability) {
+          const lines = rawTransferability.split(/\r?\n/).map((s) => s.trim()).filter(Boolean);
+          for (const line of lines) {
+            const isBullet = /^(?:[-*+•—–·◦⁃]|\d+[\.\)])\s*/.test(line);
+            if (isBullet) {
+              transferability.push(sanitizeText(line.replace(/^(?:[-*+•—–·◦⁃]|\d+[\.\)])\s*/, '')));
+            } else if (/^(?:adapting|transferability|actions to enable|how to enable)/i.test(line)) {
+              transferabilityTitle = sanitizeText(line.replace(/[:\-–—\s]+$/, ''));
+            } else {
+              transferability.push(sanitizeText(line));
+            }
+          }
+        }
         const enablingConditions = (p.fields['Enabling Conditions'] || '')
           .split(/\r?\n/)
           .map((s) => sanitizeText(s.replace(/^(?:[-*+•—–·◦⁃]|\d+\.)\s*/, '')))
@@ -116,9 +150,24 @@ function formatAirtableData(actionsRecords, pathwaysRecords, guidanceRecords, ex
           .map((g) => {
             const rawTitle = sanitizeText(g.fields['Step Title'] || '');
             const rawContent = sanitizeText(g.fields['Detailed Content'] || '');
+            const relatedPathways = (g.fields['Related Pathways'] || []).map((pId) => {
+              const target = pathwaysRecords.find((pr) => pr.id === pId);
+              if (!target) return null;
+              const pTitle = sanitizeText(target.fields['Pathway Title'] || '');
+              const m = pTitle.match(/(\d+)\.(\d+)/);
+              return {
+                id: pId,
+                title: pTitle,
+                actionId: m ? Number(m[1]) : 0,
+                pathwayIndex: m ? Number(m[2]) - 1 : 0,
+                number: m ? `${m[1]}.${m[2]}` : '',
+              };
+            }).filter(Boolean);
+
             return {
               title: rawTitle || 'Untitled Step',
               content: rawContent || '',
+              relatedPathways: relatedPathways.length > 0 ? relatedPathways : undefined,
             };
           });
 
@@ -174,7 +223,8 @@ function formatAirtableData(actionsRecords, pathwaysRecords, guidanceRecords, ex
               order,
               subExamples: mySubExamples.length > 0 ? mySubExamples : undefined,
             };
-          });
+          })
+          .sort((a, b) => (a.order || 99) - (b.order || 99));
 
         const myConceptBoxes = conceptBoxRecords
           .filter((cb) => {
@@ -212,7 +262,9 @@ function formatAirtableData(actionsRecords, pathwaysRecords, guidanceRecords, ex
           overview: pathwayDesc,
           whatItIs,
           whyItIsNeeded,
+          potentialNationalLead: potentialNationalLead.length > 0 ? potentialNationalLead : undefined,
           keyActors,
+          transferabilityTitle,
           transferability,
           enablingConditions,
           order: orderNum,
@@ -317,7 +369,7 @@ function formatHomePageData(homeRecords = []) {
   return result;
 }
 
-function formatCountryJourneysData(countryRecords = [], sectionRecords = [], actionRecords = []) {
+function formatCountryJourneysData(countryRecords = [], sectionRecords = [], actionRecords = [], summaryTableRecords = []) {
   // If no records from airtable, we return null to let defaultCountryJourneys be used
   if (!countryRecords || countryRecords.length === 0) return null;
 
@@ -329,14 +381,17 @@ function formatCountryJourneysData(countryRecords = [], sectionRecords = [], act
 
   return sortedCountryRecords.map((cRec) => {
     const f = cRec.fields || {};
-    const published = f["Published"] === true || f["Show in Toolkit"] === true;
-    if (!published) return null;
+    const statusRaw = String(f["Status"] || "").trim();
+    const statusLower = statusRaw.toLowerCase();
+    const isExplicitlyUnpublished = ["draft", "unpublished", "hidden", "archived"].includes(statusLower) || f["Published"] === false;
+    const isAvailable = statusLower === "available" || (f["Published"] === true && !isExplicitlyUnpublished);
+    if (!isAvailable) return null;
 
     const countryId = String(f["Country ID"] || f["Slug"] || f["Country"] || "").toLowerCase().trim();
     const countryName = sanitizeText(f["Country Name"] || f["Country"] || countryId.toUpperCase());
     const flag = sanitizeText(f["Flag Emoji"] || f["Flag"] || "🌍");
-    const status = sanitizeText(f["Status"] || "Available");
-    const isReady = f["Is Ready"] !== undefined ? Boolean(f["Is Ready"]) : (status === "Available");
+    const status = statusRaw || "Available";
+    const isReady = f["Is Ready"] !== undefined ? Boolean(f["Is Ready"]) : (status.toLowerCase() === "available");
     const order = Number(f["Order"]) || 99;
     const tagline = sanitizeText(f["Tagline"] || "");
     const summary = sanitizeText(f["Summary"] || "");
@@ -366,7 +421,11 @@ function formatCountryJourneysData(countryRecords = [], sectionRecords = [], act
     const themeColor = sanitizeText(f["Theme Color"] || "#3c4799");
 
     let diagramImageUrl = "";
-    if (Array.isArray(f["Diagram Attachment"]) && f["Diagram Attachment"].length > 0) {
+    if (countryId === 'sweden') {
+      diagramImageUrl = "/sweden-model-architecture.svg";
+    } else if (countryId === 'brazil') {
+      diagramImageUrl = "/brazil-model-architecture.svg";
+    } else if (Array.isArray(f["Diagram Attachment"]) && f["Diagram Attachment"].length > 0) {
       diagramImageUrl = f["Diagram Attachment"][0].url;
     } else if (Array.isArray(f["Diagram Image Attachment"]) && f["Diagram Image Attachment"].length > 0) {
       diagramImageUrl = f["Diagram Image Attachment"][0].url;
@@ -374,10 +433,6 @@ function formatCountryJourneysData(countryRecords = [], sectionRecords = [], act
       diagramImageUrl = f["Diagram Image"][0].url;
     } else if (f["Diagram Image URL"] || f["Diagram Image"]) {
       diagramImageUrl = sanitizeText(f["Diagram Image URL"] || f["Diagram Image"] || "");
-    }
-    // Hardcoded fallback for sweden
-    if (!diagramImageUrl && countryId === 'sweden') {
-      diagramImageUrl = "/sweden-model-architecture.png";
     }
 
     // Process Sections & Premises
@@ -459,9 +514,16 @@ function formatCountryJourneysData(countryRecords = [], sectionRecords = [], act
           };
         }
 
+        const SHORT_ACTION_TITLES = {
+          1: "Commitments and coordination",
+          2: "Enabling environments",
+          3: "Portfolios and pipelines",
+          4: "Finance mobilization",
+          5: "Capacities and networks",
+        };
         return {
           actionNumber,
-          actionThemeTitle: sanitizeText(af["Action Theme Tag"] || af["Theme"] || ""),
+          actionThemeTitle: SHORT_ACTION_TITLES[actionNumber] || sanitizeText(af["Action Theme Tag"] || af["Theme"] || ""),
           title: sanitizeText(af["Title"] || af["Action Title"] || `Action ${actionNumber}`),
           paragraphs,
           caseStudy,
@@ -470,9 +532,34 @@ function formatCountryJourneysData(countryRecords = [], sectionRecords = [], act
       });
     }
 
+    // Process Summary Table rows
+    const linkedSummaryRows = (summaryTableRecords || []).filter((st) => {
+      const belongs = st.fields["Belongs to Country"] || st.fields["Country"] || st.fields["Country ID"];
+      if (Array.isArray(belongs)) return belongs.includes(cRec.id) || belongs.includes(countryId);
+      return belongs === cRec.id || String(belongs).toLowerCase().trim() === countryId;
+    }).sort((a, b) => (Number(a.fields["Order"]) || 0) - (Number(b.fields["Order"]) || 0));
+
+    const summaryTableRows = linkedSummaryRows.map((stRec) => {
+      const stf = stRec.fields || {};
+      return {
+        actionGroup: sanitizeText(stf["Action Group"] || stf["Action"] || ""),
+        pathway: sanitizeText(stf["Pathway"] || stf["Implementation Pathway"] || ""),
+        programmes: sanitizeText(stf["Programmes and Initiatives"] || stf["Programmes"] || stf["Initiatives"] || ""),
+        order: Number(stf["Order"]) || 0,
+      };
+    });
+
+    let furtherResourcesLinks = undefined;
+    if (f["Further Resources Links"] !== undefined) {
+      const rawLinks = String(f["Further Resources Links"]).split(/\r?\n/).map(s => sanitizeText(s.replace(/^[•\-\*]\s*/, ''))).filter(Boolean);
+      furtherResourcesLinks = rawLinks.length > 0 ? rawLinks : undefined;
+    }
+
     return {
       order,
+      published: true,
       countryId,
+      id: countryId,
       countryName,
       flag,
       status,
@@ -487,20 +574,28 @@ function formatCountryJourneysData(countryRecords = [], sectionRecords = [], act
       headerDescription: sanitizeText(f["Header Description"] || summary),
       tabATitle: sanitizeText(f["Tab A Title"] || "The Context"),
       tabASubtitle: sanitizeText(f["Tab A Subtitle"] || "An Evolving Mission-Oriented Approach"),
-      premisesHeading: sanitizeText(f["Premises Heading"] || `Central Premises of ${countryName}’s Journey`),
-      premisesIntro: sanitizeText(f["Premises Intro"] || ""),
+      premisesHeading: sanitizeText(f["Premises Heading"] !== undefined ? f["Premises Heading"] : ""),
+      premisesIntro: sanitizeText(f["Premises Intro"] !== undefined ? f["Premises Intro"] : ""),
       premises,
       contextSections,
       tabBTitle: sanitizeText(f["Tab B Title"] || "The Multilevel Model"),
-      tabBSubtitle: sanitizeText(f["Tab B Subtitle"] || "Architecture Diagram & 6 Multilevel Governance Actions"),
+      tabBSubtitle: sanitizeText(f["Tab B Subtitle"] || "Architecture Diagram & Multilevel Governance Actions"),
       modelHeading: sanitizeText(f["Model Heading"] || `${countryName}’s Multilevel Model`),
       modelOverview: sanitizeText(f["Model Overview"] || ""),
       modelDiagramNote: sanitizeText(f["Model Diagram Note"] || "Click on the image or the Fullscreen button to zoom and pan."),
       diagramImageUrl,
       diagramImageAlt: sanitizeText(f["Diagram Image Alt"] || `${countryName} Architecture Diagram`),
-      actionsHeading: sanitizeText(f["Actions Heading"] || `${countryName}'s Journey Across the 6 Action Pathways`),
+      summaryTableTitle: sanitizeText(f["Summary Table Title"] || ""),
+      summaryTableColumn1: sanitizeText(f["Summary Table Column 1"] || "Implementation Pathway"),
+      summaryTableColumn2: sanitizeText(f["Summary Table Column 2"] || `${countryName} Programmes and Initiatives`),
+      summaryTableNote: sanitizeText(f["Summary Table Note"] || "This table provides a selective, non-exhaustive mapping of country experiences against the Toolkit’s pathways."),
+      summaryTableRows: summaryTableRows.length > 0 ? summaryTableRows : undefined,
+      actionsHeading: sanitizeText(f["Actions Heading"] || `${countryName}'s Journey Across the 5 Actions`),
       actionsSubtitle: sanitizeText(f["Actions Subtitle"] || ""),
       actions,
+      furtherResourcesHeading: sanitizeText(f["Further Resources Heading"] || ""),
+      furtherResourcesIntro: sanitizeText(f["Further Resources Intro"] || ""),
+      furtherResourcesLinks,
     };
   }).filter(Boolean);
 }
@@ -520,24 +615,26 @@ async function main() {
         homeRecords,
         countryRecords,
         sectionRecords,
-        actionRecords
+        actionRecords,
+        summaryTableRecords
       ] = await Promise.all([
         fetchTable('Actions', baseId, pat),
         fetchTable('Pathways', baseId, pat),
         fetchTable('Implementation Guidance', baseId, pat),
         fetchTableSafely(['Key Resources', 'Illustrative Examples', 'Examples'], baseId, pat),
-        fetchTable('Sub-Examples', baseId, pat),
+        fetchTableSafely(['Sub-Examples'], baseId, pat),
         fetchTableSafely(['Concept & Explainer Boxes', 'Concept Boxes', 'Explainer Boxes'], baseId, pat),
         fetchTableSafely(['Additional Resources', 'Further Resources', 'Resources'], baseId, pat),
         fetchTableSafely(['Home Page', 'Landing Page', 'Home Page Content', 'Home Content'], baseId, pat),
         fetchTableSafely(['Country Journeys', 'Country Deep Dives', 'Countries'], baseId, pat),
         fetchTableSafely(['Country Sections', 'Country Context Sections', 'Journey Sections'], baseId, pat),
         fetchTableSafely(['Country Actions', 'Country Journey Actions', 'Journey Actions'], baseId, pat),
+        fetchTableSafely(['Country Summary Tables', 'Country Journey Summary Tables', 'Summary Tables'], baseId, pat),
       ]);
 
       const formatted = formatAirtableData(actions, pathways, guidance, examples, subExamples, conceptBoxes, resources);
       const homePage = formatHomePageData(homeRecords);
-      const countryJourneys = formatCountryJourneysData(countryRecords, sectionRecords, actionRecords);
+      const countryJourneys = formatCountryJourneysData(countryRecords, sectionRecords, actionRecords, summaryTableRecords);
 
       const output = {
         success: true,

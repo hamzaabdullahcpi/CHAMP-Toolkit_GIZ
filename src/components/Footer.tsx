@@ -1,9 +1,10 @@
 import { ArrowUpRight } from 'lucide-react';
 import { HomePagePartnership, defaultHomePageContent } from '../services/airtableService';
+import { openCookiePreferences } from '../utils/googleAnalytics';
 
-const CHAMP_URL = "https://www.cop28.com/en/cop28-uae-coalition-for-high-ambition-multilevel-partnerships-for-climate-action";
-const PRIVACY_URL = "https://www.climatepolicyinitiative.org/privacy-notice/";
-const TERMS_URL = "https://www.climatepolicyinitiative.org/terms-of-use/";
+const CHAMP_URL = "https://champ-climate.org";
+export const PRIVACY_URL = "https://www.climatepolicyinitiative.org/privacy-notice/";
+export const TERMS_URL = "https://www.climatepolicyinitiative.org/terms-of-use/";
 
 // Airtable sometimes holds a website address in a logo field; only use it if it points at an image.
 export const logoOrDefault = (url: string | undefined, fallback: string) =>
@@ -87,7 +88,8 @@ export default function Footer({ partnership = defaultHomePageContent.partnershi
             © {new Date().getFullYear()} Climate Policy Initiative. All rights reserved.{' '}
             <a href={PRIVACY_URL} target="_blank" rel="noopener noreferrer" className="text-ink hover:text-accent underline underline-offset-2">Privacy Notice</a>
             {' '}and{' '}
-            <a href={TERMS_URL} target="_blank" rel="noopener noreferrer" className="text-ink hover:text-accent underline underline-offset-2">Terms of Use</a>.
+            <a href={TERMS_URL} target="_blank" rel="noopener noreferrer" className="text-ink hover:text-accent underline underline-offset-2">Terms of Use</a>.{' '}
+            <button type="button" onClick={openCookiePreferences} className="text-ink hover:text-accent underline underline-offset-2 cursor-pointer">Cookie preferences</button>
           </p>
         </div>
       </div>

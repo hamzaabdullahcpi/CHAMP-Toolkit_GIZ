@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="viableCitiesSvg" xmlns="http://www.w3.org/2000/svg" viewBox="14 4 1097 968" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" font-family="'Proxima Nova', 'ProximaNova-Regular', 'Helvetica Neue', Arial, sans-serif" style="display:block; width:100%; height:100%; font-family:'Proxima Nova', 'ProximaNova-Regular', 'Helvetica Neue', Arial, sans-serif;">
+                <defs>
+                    <style type="text/css">
+                        @import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
+                        svg, text, tspan {
+                            font-family: 'Proxima Nova', 'ProximaNova-Regular', 'Helvetica Neue', Arial, sans-serif;
+                        }
+                        .fn-reg { font-family: 'Proxima Nova', 'ProximaNova-Regular', 'Helvetica Neue', Arial, sans-serif; font-weight: 400; }
+                        .fn-med { font-family: 'Proxima Nova', 'ProximaNova-Medium', 'ProximaNova-Regular', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; }
+                        .fn-semi { font-family: 'Proxima Nova', 'ProximaNova-Semibold', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; }
+                        .fn-bold { font-family: 'Proxima Nova', 'ProximaNova-Bold', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; }
+                        .legend-item { cursor: pointer; }
+                        .junction-node { opacity: 0; transition: opacity 0.25s ease; }
+                        .editorial-mode .junction-node { opacity: 1; }
+                        .editorial-mode .card-elevated { filter: url(#editorial-shadow); }
+                        .editorial-mode .container-elevated { filter: url(#container-shadow); }
+                    </style>
+
+                    <!-- Subtle Elevation Shadows for Editorial Mode -->
+                    <filter id="editorial-shadow" x="-6%" y="-6%" width="112%" height="116%">
+                        <feDropShadow dx="0" dy="2.5" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.08"></feDropShadow>
+                    </filter>
+                    <filter id="container-shadow" x="-4%" y="-4%" width="108%" height="110%">
+                        <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.05"></feDropShadow>
+                    </filter>
+
+                    <!-- Royal Blue Arrowheads (#2B4C8C) -->
+                    <marker id="arrow-blue-end" viewBox="0 0 10 10" refX="8.2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M 0.5 1.3 L 9.2 5 L 0.5 8.7 L 2.3 5 Z" fill="#2B4C8C"></path>
+                    </marker>
+                    <marker id="arrow-blue-start" viewBox="0 0 10 10" refX="1.8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M 9.5 1.3 L 0.8 5 L 9.5 8.7 L 7.7 5 Z" fill="#2B4C8C"></path>
+                    </marker>
+
+                    <!-- Coral Red Arrowheads (#D96253) -->
+                    <marker id="arrow-coral-end" viewBox="0 0 10 10" refX="8.2" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M 0.5 1.3 L 9.2 5 L 0.5 8.7 L 2.3 5 Z" fill="#D96253"></path>
+                    </marker>
+                </defs>
+
+                <g id="svgRootGroup">
+                    <!-- Clean White Canvas Background (Tightly trimmed with 24px margin on all sides) -->
+                    <rect id="svgBgRect" x="14" y="4" width="1097" height="968" fill="#FFFFFF"></rect>
+
+                    <!-- ========================================================= -->
+                    <!-- 1. LARGE CONTAINERS                                       -->
+                    <!-- ========================================================= -->
+
+                    <!-- VIABLE CITIES - Sweden's Country Platform (Green Boundary Box) -->
+                    <g data-group="platform">
+                        <rect id="boxPlatform" x="135" y="196" width="548" height="642" rx="0" fill="none" stroke="#3B836B" stroke-width="2.4"></rect>
+                        <text x="155" y="730" fill="#3B836B" class="fn-bold" font-weight="700" font-size="25" letter-spacing="0.4">VIABLE CITIES</text>
+                        <text x="155" y="753" fill="#3B836B" class="fn-semi" font-weight="600" font-size="14.5">Sweden's Country Platform</text>
+                        <text x="155" y="782" fill="#707070" class="fn-reg" font-weight="400" font-size="11.5">Green boundary represents coordination and</text>
+                        <text x="155" y="798" fill="#707070" class="fn-reg" font-weight="400" font-size="11.5">support through Viable Cities - local organisations</text>
+                        <text x="155" y="814" fill="#707070" class="fn-reg" font-weight="400" font-size="11.5">retain their mandates, assets, budgets and decisions.</text>
+                    </g>
+
+                    <!-- Viability Fund for Cities (Right Container) -->
+                    <g data-group="emerging">
+                        <rect id="boxViabilityOuter" x="815" y="198" width="272" height="416" rx="0" fill="#FFFFFF" stroke="#3A6E89" stroke-width="2.8" class="container-elevated"></rect>
+                        <text x="951" y="230" text-anchor="middle" fill="#3A6E89" class="fn-semi" font-weight="600" font-size="18.5">Viability Fund for Cities</text>
+                        <text x="951" y="256" text-anchor="middle" fill="#3D3D3D" class="fn-reg" font-weight="400" font-size="11.5">Emerging cross-country platform aligning</text>
+                        <text x="951" y="272" text-anchor="middle" fill="#3D3D3D" class="fn-reg" font-weight="400" font-size="11.5">implementation actors, facilitating co-financing</text>
+                        <text x="951" y="288" text-anchor="middle" fill="#3D3D3D" class="fn-reg" font-weight="400" font-size="11.5">partnerships and aggregating demand</text>
+                        <text x="951" y="304" text-anchor="middle" fill="#3D3D3D" class="fn-reg" font-weight="400" font-size="11.5">for urban climate transitions.</text>
+                    </g>
+
+                    <!-- ========================================================= -->
+                    <!-- 2. TOP & BOTTOM STAKEHOLDERS & KOMMUNINVEST               -->
+                    <!-- ========================================================= -->
+
+                    <g data-group="stakeholders">
+                        <!-- National Government and Agencies -->
+                        <rect x="38" y="28" width="132" height="82" rx="0" fill="#E97F33" stroke="none" class="card-elevated roundable-sm"></rect>
+                        <text x="104" y="55" text-anchor="middle" fill="#FFFFFF" class="fn-med" font-weight="500" font-size="13.5">National</text>
+                        <text x="104" y="73" text-anchor="middle" fill="#FFFFFF" class="fn-med" font-weight="500" font-size="13.5">Government and</text>
+                        <text x="104" y="91" text-anchor="middle" fill="#FFFFFF" class="fn-med" font-weight="500" font-size="13.5">Agencies</text>
+
+                        <!-- Municipalities -->
+                        <rect x="180" y="28" width="132" height="82" rx="0" fill="#E97F33" stroke="none" class="card-elevated roundable-sm"></rect>
+                        <text x="246" y="74" text-anchor="middle" fill="#FFFFFF" class="fn-med" font-weight="500" font-size="14">Municipalities</text>
+
+                        <!-- Public, philanthropic and private funders -->
+                        <rect x="871" y="28" width="146" height="82" rx="0" fill="#E97F33" stroke="none" class="card-elevated roundable-sm"></rect>
+                        <text x="944" y="64" text-anchor="middle" fill="#FFFFFF" class="fn-med" font-weight="500" font-size="13.5">Public, philanthropic</text>
+                        <text x="944" y="82" text-anchor="middle" fill="#FFFFFF" class="fn-med" font-weight="500" font-size="13.5">and private funders</text>
+
+                        <!-- Global Knowledge partners -->
+                        <rect x="891" y="648" width="196" height="137" rx="0" fill="#E97F33" stroke="none" class="card-elevated roundable-sm"></rect>
+                        <text id="gkpTitle" x="989" y="683" text-anchor="middle" fill="#FFFFFF" class="fn-semi" font-weight="600" font-size="13.5">Global Knowledge partners</text>
+                        <text x="989" y="702" text-anchor="middle" fill="#FFFFFF" class="fn-reg" font-weight="400" font-size="13">including WEF’s First Mover</text>
+                        <text x="989" y="720" text-anchor="middle" fill="#FFFFFF" class="fn-reg" font-weight="400" font-size="13">Cities and World Bank</text>
+                        <text x="989" y="738" text-anchor="middle" fill="#FFFFFF" class="fn-reg" font-weight="400" font-size="13">/GEF’s Global Platform</text>
+                        <text x="989" y="756" text-anchor="middle" fill="#FFFFFF" class="fn-reg" font-weight="400" font-size="13">for Sustainable Cities</text>
+                    </g>
+
+                    <!-- KommunInvest -->
+                    <g data-group="established">
+                        <rect x="424" y="28" width="166" height="82" rx="0" fill="#8E3A64" stroke="none" class="card-elevated roundable-sm"></rect>
+                        <text x="507" y="75" text-anchor="middle" fill="#FFFFFF" class="fn-bold" font-weight="700" font-size="19">KommunInvest</text>
+                    </g>
+
+                    <!-- ========================================================= -->
+                    <!-- 3. INNER BOXES OF VIABLE CITIES PLATFORM                  -->
+                    <!-- ========================================================= -->
+
+                    <g data-group="established">
+                        <!-- Climate City Contracts -->
+                        <rect x="206" y="226" width="183" height="77" rx="0" fill="#8E3A64" stroke="none" class="card-elevated roundable-sm"></rect>
+                        <text x="297.5" y="260" text-anchor="middle" fill="#FFFFFF" class="fn-bold" font-weight="700" font-size="19">Climate City</text>
+                        <text x="297.5" y="283" text-anchor="middle" fill="#FFFFFF" class="fn-bold" font-weight="700" font-size="19">Contracts</text>
+
+                        <!-- System Demonstrators -->
+                        <rect x="454" y="226" width="208" height="121" rx="0" fill="#8E3A64" stroke="none" class="card-elevated roundable-sm"></rect>
+                        <text x="558" y="261" text-anchor="middle" fill="#FFFFFF" class="fn-bold" font-weight="700" font-size="19">System</text>
+                        <text x="558" y="284" text-anchor="middle" fill="#FFFFFF" class="fn-bold" font-weight="700" font-size="19">Demonstrators</text>
+                        <text x="558" y="310" text-anchor="middle" fill="#F4E6EE" class="fn-reg" font-weight="400" font-size="13">Collaborative implementation</text>
+                        <text x="558" y="328" text-anchor="middle" fill="#F4E6EE" class="fn-reg" font-weight="400" font-size="13">environments</text>
+                    </g>
+
+                    <!-- Local Investment Structures (LCIS Main Box) -->
+                    <g data-group="emerging">
+                        <rect id="boxLcisOuter" x="229" y="428" width="433" height="268" rx="0" fill="#FFFFFF" stroke="#3A6E89" stroke-width="2.8" class="card-elevated"></rect>
+                        <text x="445.5" y="462" text-anchor="middle" fill="#3A6E89" class="fn-semi" font-weight="600" font-size="18.5">Local Investment Structures</text>
+                        <text x="445.5" y="484" text-anchor="middle" fill="#3D3D3D" class="fn-reg" font-weight="400" font-size="13">Locally anchored governance &amp; investment structures</text>
+
+                        <!-- Horizontal connector line between the two inner boxes -->
+                        <line x1="434" y1="569" x2="457" y2="569" stroke="#3A6E89" stroke-width="1.5"></line>
+
+                        <!-- Left Inner Box: Local Governance Function -->
+                        <rect x="243" y="506" width="191" height="126" rx="0" fill="#FFFFFF" stroke="#3A6E89" stroke-width="1.5" class="roundable-xs"></rect>
+                        <text x="338.5" y="530" text-anchor="middle" fill="#3A6E89" class="fn-semi" font-family="'Proxima Nova', 'ProximaNova-Semibold', sans-serif" font-weight="600" font-size="13.5">Local Governance</text>
+                        <text x="338.5" y="548" text-anchor="middle" fill="#3A6E89" class="fn-semi" font-family="'Proxima Nova', 'ProximaNova-Semibold', sans-serif" font-weight="600" font-size="13.5">Function</text>
+                        <text x="338.5" y="574" text-anchor="middle" fill="#3D3D3D" class="fn-reg" font-family="'Proxima Nova', 'ProximaNova-Regular', sans-serif" font-weight="400" font-size="12">Local mandate &amp; ownership</text>
+                        <text x="338.5" y="591" text-anchor="middle" fill="#3D3D3D" class="fn-reg" font-family="'Proxima Nova', 'ProximaNova-Regular', sans-serif" font-weight="400" font-size="12">Portfolio governance</text>
+                        <text x="338.5" y="608" text-anchor="middle" fill="#3D3D3D" class="fn-reg" font-family="'Proxima Nova', 'ProximaNova-Regular', sans-serif" font-weight="400" font-size="12">Monitoring &amp; learning</text>
+
+                        <!-- Right Inner Box: Local Investment Function -->
+                        <rect x="457" y="506" width="191" height="126" rx="0" fill="#FFFFFF" stroke="#3A6E89" stroke-width="1.5" class="roundable-xs"></rect>
+                        <text x="552.5" y="530" text-anchor="middle" fill="#3A6E89" class="fn-semi" font-family="'Proxima Nova', 'ProximaNova-Semibold', sans-serif" font-weight="600" font-size="13.5">Local Investment</text>
+                        <text x="552.5" y="548" text-anchor="middle" fill="#3A6E89" class="fn-semi" font-family="'Proxima Nova', 'ProximaNova-Semibold', sans-serif" font-weight="600" font-size="13.5">Function</text>
+                        <text x="552.5" y="574" text-anchor="middle" fill="#3D3D3D" class="fn-reg" font-family="'Proxima Nova', 'ProximaNova-Regular', sans-serif" font-weight="400" font-size="12">Project preparation</text>
+                        <text x="552.5" y="591" text-anchor="middle" fill="#3D3D3D" class="fn-reg" font-family="'Proxima Nova', 'ProximaNova-Regular', sans-serif" font-weight="400" font-size="12">Financial Structuring</text>
+                        <text x="552.5" y="608" text-anchor="middle" fill="#3D3D3D" class="fn-reg" font-family="'Proxima Nova', 'ProximaNova-Regular', sans-serif" font-weight="400" font-size="12">Matching projects with capital</text>
+
+                        <!-- Junction dots for Editorial Mode -->
+                        
+                        
+
+                        <!-- Bottom Caption inside LCIS -->
+                        <text x="445.5" y="658" text-anchor="middle" fill="#333333" class="fn-med" font-weight="500" font-size="13">Shared functions — Adaptable local form</text>
+                        <text x="445.5" y="677" text-anchor="middle" fill="#707070" class="fn-reg" font-weight="400" font-size="12">Balance sheet  •  Fund/trust  •  SPV  •  Delegated manager</text>
+
+                        <!-- Aggregated Purchasing Power and Market Shaping -->
+                        <rect x="469" y="714" width="192" height="110" rx="0" fill="#FFFFFF" stroke="#3A6E89" stroke-width="1.65" class="card-elevated roundable-sm"></rect>
+                        <text x="565" y="736" text-anchor="middle" fill="#3A6E89" class="fn-semi" font-weight="600" font-size="13.5">Aggregated Purchasing</text>
+                        <text x="565" y="754" text-anchor="middle" fill="#3A6E89" class="fn-semi" font-weight="600" font-size="13.5">Power and Market Shaping</text>
+                        <text x="565" y="775" text-anchor="middle" fill="#3D3D3D" class="fn-reg" font-weight="400" font-size="12">Intra-city aggregated</text>
+                        <text x="565" y="791" text-anchor="middle" fill="#3D3D3D" class="fn-reg" font-weight="400" font-size="12">purchasing;</text>
+                        <text x="565" y="807" text-anchor="middle" fill="#3D3D3D" class="fn-reg" font-weight="400" font-size="12">market engagement</text>
+                    </g>
+
+                    <!-- ========================================================= -->
+                    <!-- 4. INNER BOXES OF VIABILITY FUND FOR CITIES               -->
+                    <!-- ========================================================= -->
+
+                    <g data-group="emerging">
+                        <!-- Vertical structural connector line linking the 3 sub-boxes -->
+                        <line x1="951" y1="395" x2="951" y2="516" stroke="#3A6E89" stroke-width="1.5"></line>
+
+                        <!-- Sub-box 1: ALIGN -->
+                        <rect x="836" y="321" width="230" height="74" rx="0" fill="#FFFFFF" stroke="#3A6E89" stroke-width="1.5" class="roundable-xs"></rect>
+                        <text x="951" y="353" text-anchor="middle" fill="#3A6E89" class="fn-semi" font-weight="600" font-size="13.5">ALIGN – System Demonstrators</text>
+                        <text x="951" y="372" text-anchor="middle" fill="#3A6E89" class="fn-semi" font-weight="600" font-size="13.5">&amp; transition portfolios</text>
+
+                        <!-- Sub-box 2: CO-FINANCE -->
+                        <rect x="830" y="419" width="230" height="74" rx="0" fill="#FFFFFF" stroke="#3A6E89" stroke-width="1.5" class="roundable-xs"></rect>
+                        <text x="945" y="451" text-anchor="middle" fill="#3A6E89" class="fn-semi" font-weight="600" font-size="13.5">CO-FINANCE – Local</text>
+                        <text x="945" y="470" text-anchor="middle" fill="#3A6E89" class="fn-semi" font-weight="600" font-size="13.5">Investment Structures</text>
+
+                        <!-- Sub-box 3: DEMAND -->
+                        <rect x="836" y="516" width="230" height="74" rx="0" fill="#FFFFFF" stroke="#3A6E89" stroke-width="1.5" class="roundable-xs"></rect>
+                        <text x="951" y="548" text-anchor="middle" fill="#3A6E89" class="fn-semi" font-weight="600" font-size="13.5">DEMAND – Aggregated</text>
+                        <text x="951" y="567" text-anchor="middle" fill="#3A6E89" class="fn-semi" font-weight="600" font-size="13.5">purchasing power</text>
+
+                        <!-- Subtle junction dots in Editorial mode -->
+                        
+                        
+                        
+                        
+                    </g>
+
+                    <!-- ========================================================= -->
+                    <!-- 5. ARROWS, LINES & CONNECTOR LABELS                       -->
+                    <!-- ========================================================= -->
+
+                    <!-- A. KommunInvest -> Municipalities (Solid Coral: Direct long-term lending) -->
+                    <g data-group="rel-finance-existing">
+                        <line x1="424" y1="93" x2="315" y2="93" fill="none" stroke="#D96253" stroke-width="1.5" marker-end="url(#arrow-coral-end)"></line>
+                        <text x="369" y="50" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">Direct</text>
+                        <text x="369" y="67" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">long-term</text>
+                        <text x="369" y="83" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">lending</text>
+                    </g>
+
+                    <!-- B. Established governance relationships (Solid Royal Blue Arrows) -->
+                    <g data-group="rel-governance">
+                        <!-- 1. National Government and Agencies -> Climate City Contracts -->
+                        <path id="pathNatGovCCC" d="M 106 110 L 106 268 L 202 268" fill="none" stroke="#2B4C8C" stroke-width="1.5" marker-end="url(#arrow-blue-end)"></path>
+
+                        <!-- 2. Municipalities -> Climate City Contracts -->
+                        <line x1="261" y1="110" x2="261" y2="222" fill="none" stroke="#2B4C8C" stroke-width="1.5" marker-end="url(#arrow-blue-end)"></line>
+
+                        <!-- 3. Climate City Contracts <-> System Demonstrators -->
+                        <line x1="393" y1="268" x2="450" y2="268" fill="none" stroke="#2B4C8C" stroke-width="1.5" marker-start="url(#arrow-blue-start)" marker-end="url(#arrow-blue-end)"></line>
+                    </g>
+
+                    <!-- C to M: Emerging/proposed programme relationships (Dashed Royal Blue Arrows) -->
+                    <g data-group="rel-program">
+                        <!-- C. KommunInvest <-> Local Investment Structures -->
+                        <path d="M 439 114 L 439 144 M 439 182 L 439 424" fill="none" stroke="#2B4C8C" stroke-width="1.5" stroke-dasharray="6.5 6.5" marker-start="url(#arrow-blue-start)" marker-end="url(#arrow-blue-end)"></path>
+                        <text x="439" y="159" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">Potential coordination interface</text>
+                        <text x="439" y="176" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">via Viable Cities</text>
+
+                        <!-- D. National Government -> Local Investment Structures Left Side -->
+                        <path id="pathRegulate" d="M 72 110 L 72 285 M 72 345 L 72 547 L 224 547" fill="none" stroke="#2B4C8C" stroke-width="1.5" stroke-dasharray="6.5 6.5" marker-end="url(#arrow-blue-end)"></path>
+                        <text x="38" y="303" text-anchor="start" fill="#333333" class="fn-reg" font-size="13">Regulate,</text>
+                        <text x="38" y="320" text-anchor="start" fill="#333333" class="fn-reg" font-size="13">fund and</text>
+                        <text x="38" y="337" text-anchor="start" fill="#333333" class="fn-reg" font-size="13">scale</text>
+
+                        <!-- E. Climate City Contracts -> Local Investment Structures -->
+                        <path d="M 297.5 303 L 297.5 315 M 297.5 356 L 297.5 424" fill="none" stroke="#2B4C8C" stroke-width="1.5" stroke-dasharray="6.5 6.5" marker-end="url(#arrow-blue-end)"></path>
+                        <text x="297.5" y="332" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">Transition priorities and</text>
+                        <text x="297.5" y="349" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">investment needs</text>
+
+                        <!-- F. System Demonstrators -> Local Investment Structures -->
+                        <path d="M 558 347 L 558 362 M 558 402 L 558 424" fill="none" stroke="#2B4C8C" stroke-width="1.5" stroke-dasharray="6.5 6.5" marker-end="url(#arrow-blue-end)"></path>
+                        <text x="558" y="379" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">Evidence informing</text>
+                        <text x="558" y="396" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">investment preparation</text>
+
+                        <!-- G. System Demonstrators -> Aggregated Purchasing Power -->
+                        <path id="pathEvidencePurchasing" d="M 662 321 L 700 321 L 700 724 L 665 724" fill="none" stroke="#2B4C8C" stroke-width="1.5" stroke-dasharray="6.5 6.5" marker-end="url(#arrow-blue-end)"></path>
+                        <text x="709" y="608" text-anchor="start" fill="#333333" class="fn-reg" font-size="13">Evidence</text>
+                        <text x="709" y="626" text-anchor="start" fill="#333333" class="fn-reg" font-size="13">informing</text>
+                        <text x="709" y="644" text-anchor="start" fill="#333333" class="fn-reg" font-size="13">purchasing</text>
+                        <text x="709" y="662" text-anchor="start" fill="#333333" class="fn-reg" font-size="13">decisions</text>
+
+                        <!-- H. Public, philanthropic and private funders -> Viability Fund for Cities -->
+                        <path d="M 944 110 L 944 133 M 944 174 L 944 194" fill="none" stroke="#2B4C8C" stroke-width="1.5" stroke-dasharray="6.5 6.5" marker-end="url(#arrow-blue-end)"></path>
+                        <text x="944" y="149" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">Potential partnerships across</text>
+                        <text x="944" y="167" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">ALIGN, CO-FINANCE and DEMAND</text>
+
+                        <!-- I. System Demonstrators <-> ALIGN sub-box -->
+                        <path id="pathAlignStepped" d="M 666 244 L 755 244 L 755 256 M 755 314 L 755 342 L 832 342" fill="none" stroke="#2B4C8C" stroke-width="1.5" stroke-dasharray="6.5 6.5" marker-start="url(#arrow-blue-start)" marker-end="url(#arrow-blue-end)"></path>
+                        <text x="755" y="273" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">Align</text>
+                        <text x="755" y="289" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">implementation</text>
+                        <text x="755" y="305" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">actors</text>
+
+                        <!-- J. CO-FINANCE sub-box -> Local Investment Structures -->
+                        <line id="pathCofinanceStepped" x1="830" y1="453" x2="666" y2="453" fill="none" stroke="#2B4C8C" stroke-width="1.5" stroke-dasharray="6.5 6.5" marker-end="url(#arrow-blue-end)"></line>
+                        <text x="758" y="472" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">Coordinate</text>
+                        <text x="758" y="490" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">co-financing</text>
+                        <text x="758" y="508" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">(via mandated</text>
+                        <text x="758" y="526" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">intermediaries)</text>
+
+                        <!-- K. Aggregated Purchasing Power <-> DEMAND sub-box -->
+                        <path id="pathAggregateDemand" d="M 665 772 L 864 772 L 864 594" fill="none" stroke="#2B4C8C" stroke-width="1.5" stroke-dasharray="6.5 6.5" marker-start="url(#arrow-blue-start)" marker-end="url(#arrow-blue-end)"></path>
+                        <text x="786" y="743" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">Aggregate demand &amp;</text>
+                        <text x="786" y="761" text-anchor="middle" fill="#333333" class="fn-reg" font-size="13">engage suppliers</text>
+
+                        <!-- L. Global Knowledge partners -> Viability Fund for Cities -->
+                        <line x1="992" y1="648" x2="992" y2="618" fill="none" stroke="#2B4C8C" stroke-width="1.5" stroke-dasharray="6.5 6.5" marker-end="url(#arrow-blue-end)"></line>
+
+                        <!-- M. Global Knowledge partners -> Viable Cities Platform -->
+                        <path id="pathGkpPlatform" d="M 992 785 L 992 828 L 687 828" fill="none" stroke="#2B4C8C" stroke-width="1.5" stroke-dasharray="6.5 6.5" marker-end="url(#arrow-blue-end)"></path>
+                    </g>
+
+                    <!-- ========================================================= -->
+                    <!-- 6. BOTTOM LEGEND                                          -->
+                    <!-- ========================================================= -->
+                    <g transform="translate(0, 6)">
+                        <!-- Column 1: Program Swatches -->
+                        <g class="legend-item">
+                            
+                            <rect x="144" y="859" width="20" height="20" rx="0" fill="#FFFFFF" stroke="#3A6E89" stroke-width="1.65" class="roundable-xs"></rect>
+                            <text x="178" y="874" fill="#333333" class="fn-reg" font-size="13.5">Emerging Programs</text>
+                        </g>
+
+                        <g class="legend-item">
+                            
+                            <rect x="144" y="900" width="20" height="20" rx="0" fill="#8E3A64" stroke="none" class="roundable-xs"></rect>
+                            <text x="178" y="915" fill="#333333" class="fn-reg" font-size="13.5">Established Programs</text>
+                        </g>
+
+                        <!-- Column 2: Stakeholders & Country Platform -->
+                        <g class="legend-item">
+                            
+                            <rect x="360" y="859" width="20" height="20" rx="0" fill="#E97F33" stroke="none" class="roundable-xs"></rect>
+                            <text x="394" y="874" fill="#333333" class="fn-reg" font-size="13.5">Stakeholders</text>
+                        </g>
+
+                        <g class="legend-item">
+                            
+                            <rect x="360" y="900" width="20" height="20" rx="0" fill="none" stroke="#3B836B" stroke-width="2.4" class="roundable-xs"></rect>
+                            <text x="394" y="915" fill="#333333" class="fn-reg" font-size="13.5">Viable Cities - Country Platform</text>
+                        </g>
+
+                        <!-- Column 3: Relationship Arrows -->
+                        <g class="legend-item">
+                            
+                            <line x1="615" y1="869" x2="688" y2="869" fill="none" stroke="#2B4C8C" stroke-width="1.5" marker-end="url(#arrow-blue-end)"></line>
+                            <text x="704" y="874" fill="#333333" class="fn-reg" font-size="13.5">Established governance relationships</text>
+                        </g>
+
+                        <g class="legend-item">
+                            
+                            <line x1="615" y1="903" x2="688" y2="903" fill="none" stroke="#2B4C8C" stroke-width="1.5" stroke-dasharray="6.5 6.5" marker-end="url(#arrow-blue-end)"></line>
+                            <text x="704" y="908" fill="#333333" class="fn-reg" font-size="13.5">Emerging/proposed programme relationship</text>
+                        </g>
+
+                        <g class="legend-item">
+                            
+                            <line x1="615" y1="937" x2="688" y2="937" fill="none" stroke="#D96253" stroke-width="1.5" marker-end="url(#arrow-coral-end)"></line>
+                            <text x="704" y="942" fill="#333333" class="fn-reg" font-size="13.5">Existing finance relationship</text>
+                        </g>
+                    </g>
+                </g>
+            </svg>

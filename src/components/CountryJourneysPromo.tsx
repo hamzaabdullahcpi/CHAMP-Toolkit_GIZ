@@ -13,13 +13,10 @@ export default function CountryJourneysPromo({ imageUrl, imageAlt = "", onExplor
       <div className="px-6 md:px-12 lg:px-16 max-w-7xl mx-auto py-14 md:py-20">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div className="flex flex-col items-start">
-            <span className="text-xs font-semibold uppercase tracking-[0.15em] text-surface mb-8 md:mb-12">
-              Case study
-            </span>
             <h2 className="title-h2 text-surface mb-5">Country journeys</h2>
             <p className="body-text text-surface mb-10">
-              The Toolkit supports CHAMP by enabling countries to deliver national climate commitments at the city
-              level, where emissions and risks are concentrated.
+              Real-world examples of how countries are mobilizing finance and delivering climate action across levels of
+              government.
             </p>
             <button
               type="button"

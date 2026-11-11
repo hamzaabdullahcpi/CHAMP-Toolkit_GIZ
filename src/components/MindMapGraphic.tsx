@@ -6,28 +6,40 @@ import { ACTION_MENU_TITLES, toSentenceCase } from "../data/actionMenuTitles";
 import { getActionTheme, actionAccentStyle } from '../utils/actionThemes';
 import { ExampleModal } from './StepView';
 
-const LEAD_ACTORS = [
-  'Finance Ministry',
-  'Planning Ministry',
-  'Climate Ministry',
-  'Urban / Local Government Ministry',
-  'Industry Ministry',
-  'Procurement Authority'
+// Filter options. Key actor names in Airtable vary ("Relevant Sector Ministries",
+// Filter options matching standardized actors from CHAMP_Toolkit_Pathway_Actors.xlsx.
+const ACTOR_FILTERS: { label: string; pattern: RegExp }[] = [
+  { label: 'Finance Ministry', pattern: /finance ministry|ministry of finance/i },
+  { label: 'Planning Ministry', pattern: /planning ministry|ministry of planning/i },
+  { label: 'Climate / Environment Ministry', pattern: /(climate|environment)[^,]*ministr|ministry of (climate|environment)/i },
+  { label: 'Urban Development Ministry', pattern: /urban (development|\/ local government) ministry|ministry of (urban|local government)/i },
+  { label: 'Sector Ministries', pattern: /sector(al)? ministr|foreign affairs/i },
+  { label: 'National Development Banks', pattern: /national development bank/i },
+  { label: 'National Agencies & Regulators', pattern: /national (infrastructure|regulator|procurement|investment|climate fund|funds)|regulatory authorit|infrastructure agenc|utilities/i },
+  { label: 'City & Subnational Governments', pattern: /city (and|\/) subnational|subnational government|^municipal/i },
+  { label: 'City Networks', pattern: /network|coalition/i },
+  { label: 'MDBs & DFIs', pattern: /mdbs?|dfis?|multilateral development|bilateral|international organization/i },
+  { label: 'Technical Assistance Providers', pattern: /technical assistance|project preparation facilit|implementation partner/i },
+  { label: 'Private Sector & Investors', pattern: /private (sector|investor)|commercial bank|institutional investor|insurer|guarantee|business|solution provider|lender/i },
+  { label: 'Civil Society, Academia & Philanthropy', pattern: /civil society|universit|research institution|training institution|academia|community|philanthrop/i },
 ];
 
-// Helper to match lead actors flexibly
-function matchesActor(lead: string, filterActor: string): boolean {
-  const a = (lead || '').trim().toLowerCase();
-  const b = (filterActor || '').trim().toLowerCase();
-  if (!a || !b) return false;
-  if (a === b) return true;
-  if (b.includes('climate') && a.includes('climate')) return true;
-  if (b.includes('planning') && a.includes('planning')) return true;
-  if (b.includes('finance') && a.includes('finance')) return true;
-  if (b.includes('urban') && a.includes('urban')) return true;
-  if (b.includes('industry') && a.includes('industry')) return true;
-  if (b.includes('procurement') && a.includes('procurement')) return true;
-  return false;
+// Does an actor name from a pathway fall under a filter option?
+function matchesActor(actor: string, filterLabel: string): boolean {
+  const filter = ACTOR_FILTERS.find((f) => f.label === filterLabel);
+  return Boolean(filter && filter.pattern.test((actor || '').trim().toLowerCase()));
+}
+
+// All actors listed for a pathway (key actors, plus any potential national lead)
+function getPathwayActors(pathway: any): string[] {
+  const leads = Array.isArray(pathway?.potentialNationalLead) ? pathway.potentialNationalLead : [];
+  const keyActors = Array.isArray(pathway?.keyActors) ? pathway.keyActors : [];
+  return [...leads, ...keyActors].filter(Boolean);
+}
+
+// Actors of a pathway that match the current filter selection
+function getMatchingActors(pathway: any, selectedActors: string[]): string[] {
+  return getPathwayActors(pathway).filter((actor) => selectedActors.some((sel) => matchesActor(actor, sel)));
 }
 
 export default function MindMapGraphic({ 
@@ -60,7 +72,7 @@ export default function MindMapGraphic({
   // Example/tool opened in a popup on this page (rather than navigating to the action page)
   const [selectedExample, setSelectedExample] = useState<any | null>(null);
 
-  // Toggle single lead actor in selected list
+  // Toggle single actor in selected list
   const handleToggleActor = (actor: string) => {
     setSelectedActors((prev) => {
       if (prev.includes(actor)) {
@@ -75,7 +87,7 @@ export default function MindMapGraphic({
     setSelectedActors([]);
   };
 
-  // Filter actions and pathways based on selected lead actors
+  // Filter actions and pathways based on selected actors
   const filteredActions = useMemo(() => {
     if (selectedActors.length === 0) {
       return actions.map((action) => ({
@@ -91,10 +103,7 @@ export default function MindMapGraphic({
       .map((action) => {
         const matching = (action.pathways || [])
           .map((p: any, idx: number) => ({ ...p, originalIndex: idx }))
-          .filter((p: any) => {
-            const leads: string[] = Array.isArray(p.potentialNationalLead) ? p.potentialNationalLead : [];
-            return selectedActors.some((sel) => leads.some((lead) => matchesActor(lead, sel)));
-          });
+          .filter((p: any) => getMatchingActors(p, selectedActors).length > 0);
         return {
           ...action,
           displayPathways: matching
@@ -158,15 +167,20 @@ export default function MindMapGraphic({
 
       {/* Mind Map Canvas Container */}
       <div className="w-full max-w-6xl mx-auto flex flex-col items-center overflow-x-auto pb-4 custom-scrollbar">
-        {/* Actor filter: every lead actor as a clickable tag, styled like the actor tags on action pages */}
+        {/* Actor filter: one tag per actor group; a pathway shows if any of its key actors is in a selected group */}
         {showFilter && (
           <div className="w-full max-w-6xl flex flex-col items-start gap-1.5 mb-4 px-1">
-            <span className="text-[11px] font-bold text-ink-muted uppercase tracking-wider">
-              Filter by actor
-            </span>
+            <div>
+              <span className="block text-[11px] font-bold text-ink-muted uppercase tracking-wider">
+                Filter by actor
+              </span>
+              <p className="text-xs text-ink-muted mt-0.5">
+                Select an actor category to show its relevant Pathways.
+              </p>
+            </div>
             <div className="flex flex-wrap items-center gap-1.5">
               {/* "All" is selected when no actor is picked; clicking it clears the filter */}
-              {[null, ...LEAD_ACTORS].map((actor) => {
+              {[null, ...ACTOR_FILTERS.map((f) => f.label)].map((actor) => {
                 const isSelected = actor === null ? selectedActors.length === 0 : selectedActors.includes(actor);
                 return (
                   <button
@@ -210,7 +224,7 @@ export default function MindMapGraphic({
               No pathways match the selected actor{selectedActors.length > 1 ? 's' : ''}
             </h4>
             <p className="text-xs text-ink-muted mb-4">
-              Action 4 is currently populated with full actor targeting. Other actions will be populated soon.
+              Try another actor, or show all actions.
             </p>
             <button
               onClick={handleClearAll}
@@ -250,7 +264,7 @@ export default function MindMapGraphic({
                   /* Each card takes its action's colour: number, buttons, thick top border and hover outline.
                      Only the top has a border (side borders would mitre its ends); the outline is an inset ring. */
                   style={actionAccentStyle(action.id)}
-                  className={`cursor-pointer flex flex-col justify-between p-4 border-t-[6px] border-accent shadow-2xs hover:ring-1 hover:ring-inset hover:ring-accent bg-surface ${layout === 'vertical' ? 'min-h-[175px]' : ''} overflow-hidden w-full relative rounded-none select-none ${
+                  className={`cursor-pointer flex flex-col justify-between p-3.5 xl:p-4 border-t-[6px] border-accent shadow-2xs hover:ring-1 hover:ring-inset hover:ring-accent bg-surface ${layout === 'vertical' ? 'min-h-[175px]' : ''} overflow-hidden w-full relative rounded-none select-none ${
                     isSelected ? 'ring-1 ring-inset ring-accent' : ''
                   }`}
                 >
@@ -289,7 +303,7 @@ export default function MindMapGraphic({
                         )}
                       </div>
 
-                      <h4 className={`${layout === 'vertical' ? 'body-text' : 'body-text-md'} font-bold leading-snug mb-1`}>
+                      <h4 className="text-[17px] xl:text-[19px] 2xl:text-[21px] font-bold leading-snug mb-1">
                         {ACTION_MENU_TITLES[action.id] ?? action.title}
                       </h4>
                       <p className={`body-text-sm text-ink-muted leading-snug ${layout === 'vertical' ? 'mb-3' : ''}`}>
@@ -378,23 +392,16 @@ export default function MindMapGraphic({
                           </button>
                         </div>
 
-                        {selectedActors.length > 0 && pathway.potentialNationalLead && pathway.potentialNationalLead.length > 0 && (
+                        {selectedActors.length > 0 && (
                           <div className="flex flex-wrap gap-1">
-                            {pathway.potentialNationalLead.map((lead: string, lIdx: number) => {
-                              const isLeadSelected = selectedActors.some((sel) => matchesActor(lead, sel));
-                              return (
-                                <span
-                                  key={lIdx}
-                                  className={`px-1.5 py-0.5 text-[10px] rounded-none ${
-                                    isLeadSelected
-                                      ? 'bg-accent/15 text-accent font-semibold border border-accent/30'
-                                      : 'bg-surface border border-line text-ink-muted'
-                                  }`}
-                                >
-                                  {lead}
-                                </span>
-                              );
-                            })}
+                            {getMatchingActors(pathway, selectedActors).map((actor: string, aIdx: number) => (
+                              <span
+                                key={aIdx}
+                                className="px-1.5 py-0.5 text-[10px] rounded-none bg-accent/15 text-accent font-semibold border border-accent/30"
+                              >
+                                {actor}
+                              </span>
+                            ))}
                           </div>
                         )}
 
@@ -614,26 +621,17 @@ export default function MindMapGraphic({
                           </button>
                         </div>
 
-                        {/* Lead Badge only if filtered */}
-                        {selectedActors.length > 0 && pathway.potentialNationalLead && pathway.potentialNationalLead.length > 0 && (
+                        {/* Matching actor badges, only when filtered */}
+                        {selectedActors.length > 0 && (
                           <div className="flex flex-wrap gap-1 mt-0.5">
-                            {pathway.potentialNationalLead.map((lead: string, lIdx: number) => {
-                              const isLeadSelected = selectedActors.some(
-                                (sel) => matchesActor(lead, sel)
-                              );
-                              return (
-                                <span 
-                                  key={lIdx} 
-                                  className={`px-1.5 py-0.2 text-[9px] rounded-none ${
-                                    isLeadSelected
-                                      ? 'bg-accent/15 text-accent font-semibold border border-accent/30'
-                                      : 'bg-surface border border-line text-ink-muted'
-                                  }`}
-                                >
-                                  {lead}
-                                </span>
-                              );
-                            })}
+                            {getMatchingActors(pathway, selectedActors).map((actor: string, aIdx: number) => (
+                              <span
+                                key={aIdx}
+                                className="px-1.5 py-0.2 text-[9px] rounded-none bg-accent/15 text-accent font-semibold border border-accent/30"
+                              >
+                                {actor}
+                              </span>
+                            ))}
                           </div>
                         )}
 

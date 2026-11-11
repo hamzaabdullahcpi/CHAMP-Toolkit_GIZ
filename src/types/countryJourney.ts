@@ -22,10 +22,18 @@ export interface CountryActionData {
   enabledSummary: string;
 }
 
+export interface CountrySummaryTableRow {
+  actionGroup: string;
+  pathway: string;
+  programmes: string;
+  order?: number;
+}
+
 export interface CountryJourneyData {
   order?: number;
   published?: boolean;
   countryId: string; // e.g. 'sweden', 'brazil', 'morocco'
+  id?: string;
   countryName: string;
   flag: string;
   status: string; // 'Available' | 'Coming Soon'
@@ -58,7 +66,19 @@ export interface CountryJourneyData {
   diagramImageUrl?: string; // If empty or not provided, falls back to hardcoded image
   diagramImageAlt?: string;
 
+  // Summary Table (in Part B after diagram and before 5 Actions)
+  summaryTableTitle?: string;
+  summaryTableColumn1?: string;
+  summaryTableColumn2?: string;
+  summaryTableNote?: string;
+  summaryTableRows?: CountrySummaryTableRow[];
+
   actionsHeading: string;
   actionsSubtitle?: string;
   actions: CountryActionData[];
+
+  // Further Resources (optional, at bottom of Part B)
+  furtherResourcesHeading?: string;
+  furtherResourcesIntro?: string;
+  furtherResourcesLinks?: string[];
 }

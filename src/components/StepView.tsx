@@ -4,6 +4,7 @@ import { ArrowLeft, ChevronDown, ChevronUp, X, CheckCircle2, Lightbulb, Maximize
 import { getActionTheme, actionAccentStyle, ActionTheme } from '../utils/actionThemes';
 import { ACTION_MENU_TITLES, toSentenceCase } from '../data/actionMenuTitles';
 import { enhanceAction5Examples, getAction5Connection } from '../data/action5ResourceConnections';
+import { getExampleImage } from '../data/exampleImages';
 
 function CollapsibleList({ 
   title, 
@@ -99,10 +100,8 @@ function PathwayActorMapping({
     return (
       <span
         key={actor}
-        className={`relative inline-flex items-center gap-1.5 px-2.5 py-1 text-[12px] rounded-none transition-colors select-none ${
-          isLead
-            ? "font-medium text-ink bg-accent/15"
-            : "font-normal text-ink bg-ink-muted/10"
+        className={`relative inline-flex items-center gap-1 body-text-sm ${
+          isLead ? "font-bold text-ink" : "font-medium text-ink"
         }`}
       >
         <span>{actor}</span>
@@ -138,15 +137,21 @@ function PathwayActorMapping({
     );
   };
 
+  // Plain text list separated by dots, so actors don't read as clickable chips
+  const withSeparators = (chips: React.ReactNode[]) =>
+    chips.flatMap((chip, i) =>
+      i === 0 ? [chip] : [<span key={`sep-${i}`} aria-hidden="true" className="w-1 h-1 rounded-full bg-ink-muted shrink-0" />, chip]
+    );
+
   return (
-    <div className="pt-5 pb-1 border-t border-line space-y-5">
+    <div className="pt-5 pb-1 border-t border-line space-y-4">
       {leads.length > 0 && (
         <div className="space-y-1.5">
           <h5 className="text-[11px] font-bold text-ink-muted uppercase tracking-wider">
             Potential national lead
           </h5>
-          <div className="flex flex-wrap items-center gap-1.5">
-            {leads.map((lead) => renderChip(lead, true))}
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+            {withSeparators(leads.map((lead) => renderChip(lead, true)))}
           </div>
         </div>
       )}
@@ -156,8 +161,8 @@ function PathwayActorMapping({
           <h5 className="text-[11px] font-bold text-ink-muted uppercase tracking-wider">
             Key actors
           </h5>
-          <div className="flex flex-wrap items-center gap-1.5">
-            {filteredActors.map((actor) => renderChip(actor, false))}
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+            {withSeparators(filteredActors.map((actor) => renderChip(actor, false)))}
           </div>
         </div>
       )}
@@ -221,11 +226,78 @@ function ExpandableText({ title, content, theme }: { title: string, content: str
   );
 }
 
-function renderFormattedInline(inlineStr: string): React.ReactNode {
+function renderFormattedInline(
+  inlineStr: string,
+  onNavigateToPathway?: (actionId: number, pathwayIdx: number) => void
+): React.ReactNode {
   if (!inlineStr || typeof inlineStr !== 'string') return null;
 
   // Replace internal Airtable link markdown [Text](https://airtable.com/...) with just Text
   const sanitized = inlineStr.replace(/\[([^\]]+)\]\(https:\/\/airtable\.com[^)]*\)/g, '$1');
+
+  // If onNavigateToPathway is provided, handle "(see Pathways? ...)" patterns
+  const pathwayRefRegex = /\s*\((?:see\s+)?Pathways?\s+([^)]+)\)\.?/gi;
+
+  if (onNavigateToPathway && pathwayRefRegex.test(sanitized)) {
+    pathwayRefRegex.lastIndex = 0;
+    const segments: React.ReactNode[] = [];
+    let curIdx = 0;
+    let pMatch: RegExpExecArray | null;
+
+    while ((pMatch = pathwayRefRegex.exec(sanitized)) !== null) {
+      const rawRefs = pMatch[1];
+      const numMatches = Array.from(rawRefs.matchAll(/\b(\d+)\.(\d+)\b/g));
+
+      if (numMatches.length === 0) {
+        continue;
+      }
+
+      if (pMatch.index > curIdx) {
+        const textBefore = sanitized.substring(curIdx, pMatch.index);
+        const trimmedBefore = textBefore.trimEnd();
+        const cleanBefore = /[.!?]$/.test(trimmedBefore)
+          ? trimmedBefore
+          : trimmedBefore.replace(/[,;:\s]+$/, '') + '.';
+        segments.push(renderFormattedInline(cleanBefore, onNavigateToPathway));
+        segments.push(' ');
+      }
+
+      segments.push(
+        <span key={`pway-group-${pMatch.index}`} className="inline-flex flex-wrap items-center gap-1 align-baseline">
+          <span className="text-ink-muted text-xs font-semibold mr-0.5">See</span>
+          {numMatches.map((nm, nIdx) => {
+            const actNum = parseInt(nm[1], 10);
+            const pIdx = parseInt(nm[2], 10) - 1;
+            const label = `Pathway ${nm[1]}.${nm[2]}`;
+            return (
+              <button
+                key={`pway-btn-${nIdx}`}
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onNavigateToPathway(actNum, pIdx);
+                }}
+                className="inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10.5px] font-semibold text-accent bg-accent/10 hover:bg-accent hover:text-white border border-accent/30 hover:border-accent rounded-xs transition-all cursor-pointer shadow-2xs group align-baseline whitespace-nowrap shrink-0"
+                title={`Navigate to ${label}`}
+              >
+                <span>{label}</span>
+                <ArrowUpRight size={10} className="stroke-[2.2] ml-0.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </button>
+            );
+          })}
+        </span>
+      );
+      curIdx = pathwayRefRegex.lastIndex;
+    }
+    if (curIdx < sanitized.length) {
+      const remaining = sanitized.substring(curIdx).trimStart();
+      if (remaining) {
+        segments.push(' ');
+        segments.push(renderFormattedInline(remaining, onNavigateToPathway));
+      }
+    }
+    return segments;
+  }
 
   // Tokenize markdown links: [Text](url) and bold **bold**
   const linkRegex = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
@@ -517,11 +589,15 @@ function ConceptBoxCard({ box, theme }: { box: any, theme?: ActionTheme }) {
 function SmartClampedStep({ 
   title, 
   content, 
-  isPreamble 
+  isPreamble,
+  relatedPathways,
+  onNavigateToPathway
 }: { 
   title?: string; 
   content?: string; 
   isPreamble?: boolean;
+  relatedPathways?: any[];
+  onNavigateToPathway?: (actionId: number, pathwayIdx: number) => void;
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const cleanTitle = (title || '').trim().replace(/^\*\*+|\*\*+$/g, '').trim().replace(/[:.]\s*$/, '');
@@ -529,7 +605,7 @@ function SmartClampedStep({
 
   // If no content, just render title (or vice versa)
   const fullText = cleanTitle && rawContent ? `${cleanTitle}: ${rawContent}` : (cleanTitle || rawContent);
-  const THRESHOLD = 220;
+  const THRESHOLD = 240;
   const isLong = Boolean(rawContent && rawContent.length > THRESHOLD);
 
   if (!fullText) return null;
@@ -537,7 +613,7 @@ function SmartClampedStep({
   if (isPreamble || !cleanTitle) {
     return (
       <p className="body-text-md leading-relaxed text-ink/90">
-        {renderFormattedInline(fullText)}
+        {renderFormattedInline(fullText, onNavigateToPathway)}
       </p>
     );
   }
@@ -552,44 +628,72 @@ function SmartClampedStep({
 
   const truncated = isLong ? getTruncatedContent(rawContent, THRESHOLD) : rawContent;
 
+  const hasInlineRef = /\((?:see\s+)?Pathways?\s+([^)]+)\)/i.test(rawContent);
+
   return (
-    <p className="body-text-md leading-relaxed text-ink/90">
-      {cleanTitle && (
-        <strong className="font-semibold text-ink">
-          {cleanTitle}
-          {rawContent ? ': ' : ''}
-        </strong>
-      )}
-      {!isLong || isExpanded ? (
-        <>
-          <span>{renderFormattedInline(rawContent)}</span>
-          {isLong && (
-            <button
-              type="button"
-              onClick={() => setIsExpanded(false)}
-              className="inline-flex items-center justify-center ml-1.5 p-0.5 rounded text-accent/75 hover:text-accent hover:bg-accent/10 align-middle transition-colors cursor-pointer focus:outline-none"
-              title="Collapse guidance"
-              aria-label="Collapse guidance"
-            >
-              <ChevronUp size={14} className="stroke-[2.5]" />
-            </button>
+    <div>
+      <p className="body-text-md font-semibold leading-snug text-ink">
+        {cleanTitle}
+      </p>
+      {rawContent && (
+        <p className="body-text-sm leading-snug text-ink/80 mt-1">
+          {!isLong || isExpanded ? (
+            <>
+              <span>{renderFormattedInline(rawContent, onNavigateToPathway)}</span>
+              {isLong && (
+                <button
+                  type="button"
+                  onClick={() => setIsExpanded(false)}
+                  className="inline-flex items-center justify-center ml-1.5 p-0.5 rounded text-accent/75 hover:text-accent hover:bg-accent/10 align-middle transition-colors cursor-pointer focus:outline-none"
+                  title="Collapse guidance"
+                  aria-label="Collapse guidance"
+                >
+                  <ChevronUp size={14} className="stroke-[2.5]" />
+                </button>
+              )}
+            </>
+          ) : (
+            <>
+              <span>{renderFormattedInline(truncated, onNavigateToPathway)}...</span>
+              <button
+                type="button"
+                onClick={() => setIsExpanded(true)}
+                className="inline-flex items-center justify-center ml-1.5 p-0.5 rounded text-accent/75 hover:text-accent hover:bg-accent/10 align-middle transition-colors cursor-pointer focus:outline-none"
+                title="Expand guidance"
+                aria-label="Expand guidance"
+              >
+                <ChevronDown size={14} className="stroke-[2.5]" />
+              </button>
+            </>
           )}
-        </>
-      ) : (
-        <>
-          <span>{renderFormattedInline(truncated)}...</span>
-          <button
-            type="button"
-            onClick={() => setIsExpanded(true)}
-            className="inline-flex items-center justify-center ml-1.5 p-0.5 rounded text-accent/75 hover:text-accent hover:bg-accent/10 align-middle transition-colors cursor-pointer focus:outline-none"
-            title="Expand guidance"
-            aria-label="Expand guidance"
-          >
-            <ChevronDown size={14} className="stroke-[2.5]" />
-          </button>
-        </>
+        </p>
       )}
-    </p>
+
+      {/* Linked pathways from Airtable (if not already rendered inline in content) */}
+      {relatedPathways && relatedPathways.length > 0 && !hasInlineRef && (
+        <div className="mt-1.5 flex flex-wrap items-center gap-1">
+          <span className="text-ink-muted text-xs font-semibold mr-0.5">See</span>
+          {relatedPathways.map((rp: any, idx: number) => {
+            const label = `Pathway ${rp.number || `${rp.actionId}.${rp.pathwayIndex + 1}`}`;
+            return (
+              <button
+                key={`rp-${idx}`}
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onNavigateToPathway?.(rp.actionId, rp.pathwayIndex);
+                }}
+                className="inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10.5px] font-semibold text-accent bg-accent/10 hover:bg-accent hover:text-white border border-accent/30 hover:border-accent rounded-xs transition-all cursor-pointer shadow-2xs group align-baseline whitespace-nowrap shrink-0"
+                title={`Navigate to ${label}`}
+              >
+                <span>{label}</span>
+                <ArrowUpRight size={10} className="stroke-[2.2] ml-0.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </button>
+            );
+          })}
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -622,7 +726,15 @@ function getCleanStep(title?: string, content?: string) {
   return { title: cleanTitle, content: c };
 }
 
-function GuidanceList({ items, theme }: { items: any[], theme?: ActionTheme }) {
+function GuidanceList({ 
+  items, 
+  theme,
+  onNavigateToPathway
+}: { 
+  items: any[], 
+  theme?: ActionTheme,
+  onNavigateToPathway?: (actionId: number, pathwayIdx: number) => void;
+}) {
   if (!items || !Array.isArray(items) || items.length === 0) return null;
 
   const firstItem = items[0] || {};
@@ -660,25 +772,30 @@ function GuidanceList({ items, theme }: { items: any[], theme?: ActionTheme }) {
     <div className="space-y-6">
       {preambleItem && (
         <div className="pb-1">
-          <SmartClampedStep title={preambleItem.title} content={preambleItem.content} isPreamble={true} />
+          <SmartClampedStep title={preambleItem.title} content={preambleItem.content} isPreamble={true} onNavigateToPathway={onNavigateToPathway} />
         </div>
       )}
       
-      <div className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {cleanPoints.map((item, idx) => {
           const { title, content } = getCleanStep(item.title, item.content);
           if (!title && !content) return null;
 
           return (
-            <div 
-              key={idx} 
-              className="flex gap-4 items-center p-4 md:p-5 rounded-none bg-grey-light"
+            <div
+              key={idx}
+              className="flex gap-3 items-baseline px-4 py-3.5 md:px-5 bg-grey-light"
             >
-              <div className="w-8 shrink-0 font-display text-[28px] font-bold leading-none text-accent">
+              <div className="w-5 shrink-0 font-display text-[18px] font-bold leading-none text-accent">
                 {idx + 1}
               </div>
               <div className="flex-1 min-w-0">
-                <SmartClampedStep title={title} content={content} />
+                <SmartClampedStep 
+                  title={title} 
+                  content={content} 
+                  relatedPathways={item.relatedPathways}
+                  onNavigateToPathway={onNavigateToPathway} 
+                />
               </div>
             </div>
           );
@@ -701,7 +818,8 @@ function PathwayCard({
   onSelectExample,
   theme,
   actionId,
-  onNavigateToCountry
+  onNavigateToCountry,
+  onNavigateToPathway
 }: { 
   pathway: any; 
   onSelectExample: (ex: any) => void;
@@ -709,12 +827,12 @@ function PathwayCard({
   theme?: ActionTheme;
   actionId?: number;
   onNavigateToCountry?: (countryId: string, actionId?: number) => void;
+  onNavigateToPathway?: (actionId: number, pathwayIdx: number) => void;
 }) {
   if (!pathway) return null;
 
-  const isAction5 = Number(actionId) === 5;
   const rawExamples = pathway.illustrativeExamples || [];
-  const enhancedExamples = isAction5 ? enhanceAction5Examples(pathway.title, rawExamples) : rawExamples;
+  const enhancedExamples = rawExamples;
   const displayExamples = [...enhancedExamples].sort((a: any, b: any) => {
     const orderA = typeof a.order === 'number' && !isNaN(a.order) ? a.order : 9999;
     const orderB = typeof b.order === 'number' && !isNaN(b.order) ? b.order : 9999;
@@ -736,17 +854,20 @@ function PathwayCard({
   const overviewText = pathway.overview || '';
 
   const renderResourceCard = (example: any, i: number) => {
-    const isTool = String(example.type || '').toLowerCase().includes('tool') ||
-      /tool|toolkit|calculator|matrix|framework|simulator|portal|index|model|guide/i.test(example.title || '') ||
+    const isExplicitPeer = String(example.type || '').toLowerCase().includes('peer') || 
+      String(example.type || '').toLowerCase().includes('example') ||
+      String(example.type || '').toLowerCase().includes('case');
+    const isExplicitTool = String(example.type || '').toLowerCase().includes('tool') ||
       Boolean(example.isTool);
+    const isTool = isExplicitPeer ? false : (isExplicitTool || /\b(?:tool|toolkit|calculator)\b/i.test(example.title || ''));
     const connInfo = getAction5Connection(example.title, example.type);
     const directConn = example.connectionLine || (connInfo ? `${connInfo.prefix} ${connInfo.text}` : '');
     
-    const connPrefix = isTool ? 'Why use this:' : 'What you can learn:';
+    const connPrefix = isTool ? 'Why use this tool:' : 'Key takeaway:';
     let connBody = '';
     if (directConn) {
       // Strip any existing prefix variants to prevent duplication
-      connBody = directConn.replace(/^(?:what you can learn|why see this|why use this tool|why use this|when to use this)\s*[:\-]\s*/gi, '').trim();
+      connBody = directConn.replace(/^(?:key\s+takeaways?|what\s+you\s+can\s+learn|why\s+see\s+this|why\s+use\s+this\s+tool|why\s+use\s+this\s+resource|why\s+use\s+this|when\s+to\s+use\s+this)\s*[:\-]\s*/gi, '').trim();
     }
     
     // If empty, clean contextual fallback
@@ -756,6 +877,7 @@ function PathwayCard({
         : 'See how national and subnational governments put this implementation pathway into practice.';
     }
     const finalConnLine = `${connPrefix} ${connBody}`;
+    const image = getExampleImage(example.title);
 
     return (
       <button 
@@ -764,50 +886,55 @@ function PathwayCard({
         onClick={() => onSelectExample({
           ...example,
           connectionLine: finalConnLine,
-          isTool
+          isTool,
+          image
         })}
-        className="group p-4 sm:p-5 bg-grey-light hover:bg-surface transition-colors border border-transparent hover:border-accent text-left h-full flex flex-col focus:outline-none relative overflow-hidden rounded-none cursor-pointer"
+        className={`group bg-surface hover:bg-accent/5 border border-accent hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 text-left w-full flex flex-col ${image ? 'sm:flex-row' : ''} focus:outline-none focus-visible:ring-2 focus-visible:ring-accent relative overflow-hidden rounded-none cursor-pointer`}
       >
-
-        {/* Tag Badge: Tool vs Peer Learning Example / Illustrative Example */}
-        <div className="flex items-center justify-between gap-2 mb-2">
-          <span className="text-[10px] font-bold uppercase tracking-wider text-accent">
-            {isTool ? 'Tool' : (example.type || 'Peer Learning Example')}
-          </span>
-
-          <Maximize2 size={16} className="shrink-0 text-ink-muted" />
-        </div>
-
-        <h5 
-          className="body-text-md font-bold leading-snug mb-1.5"
-        >
-          {example.title}
-        </h5>
-
-        <p className="body-text-md text-ink-muted leading-relaxed line-clamp-2 pt-1">
-          {example.excerpt}
-        </p>
-
-        {example.subExamples && example.subExamples.length > 0 && (
-          <div className="mt-2 pt-1.5 border-t border-line/60 flex items-center gap-1.5 text-[10.5px] font-medium text-ink-muted">
-            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: theme?.hex || 'var(--color-accent)' }} />
-            <span>Includes {example.subExamples.length} {example.subExamples.length === 1 ? 'case study' : 'case studies'}</span>
+        {image && (
+          <div className="relative h-48 sm:h-auto sm:w-[38%] md:w-[40%] shrink-0 overflow-hidden bg-grey-light">
+            <img
+              src={image.src}
+              alt={image.alt}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
           </div>
         )}
 
-        {/* Connection line ("Why see this"), pinned to the bottom of the card */}
-        <div 
-          className="mt-auto pt-3"
-        >
-          <div
-            className="body-text-sm leading-snug py-1.5 px-3 border-l-2 border-accent"
+        <div className="p-5 sm:p-6 flex-1 min-w-0 flex flex-col justify-start">
+          {/* Tag Badge: Tool vs Peer Learning Example */}
+          <div className="flex items-center justify-between gap-2 mb-2">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-accent">
+              {isTool ? 'Tool' : 'Peer Learning Example'}
+            </span>
+
+            <Maximize2 size={16} className="shrink-0 text-ink-muted group-hover:text-accent transition-colors" />
+          </div>
+
+          <h5 
+            className="shrink-0 body-text-md text-[17px] sm:text-[19px] font-bold leading-snug mb-2 group-hover:text-accent transition-colors text-ink"
           >
-            <span className="font-semibold text-ink">
-              {connPrefix}{' '}
-            </span>
-            <span className="text-ink-muted">
-              {connBody}
-            </span>
+            {example.title}
+          </h5>
+
+          {example.subExamples && example.subExamples.length > 0 && (
+            <div className="mb-2 pb-1.5 border-b border-line/60 flex items-center gap-1.5 text-[11px] font-medium text-ink-muted">
+              <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: theme?.hex || 'var(--color-accent)' }} />
+              <span>Includes {example.subExamples.length} {example.subExamples.length === 1 ? 'case study' : 'case studies'}</span>
+            </div>
+          )}
+
+          {/* Connection line ("Why see this" / "What you can learn:"), directly below the title */}
+          <div className="pt-1">
+            <div className="body-text-sm text-[13.5px] sm:text-[14px] leading-relaxed py-1 pl-3 border-l-2 border-accent">
+              <span className="font-semibold text-ink">
+                {connPrefix}{' '}
+              </span>
+              <span className="text-ink-muted">
+                {connBody}
+              </span>
+            </div>
           </div>
         </div>
       </button>
@@ -850,14 +977,18 @@ function PathwayCard({
           theme={theme}
         />
 
-        {/* 2. Implementation Guidance for National Governments */}
+        {/* 2. Implementation Guidance for National Lead Actors */}
         {pathway.implementationGuidance && pathway.implementationGuidance.length > 0 && (
           <div className="pt-8 border-t border-line space-y-5">
             <h4 className="body-text font-bold">
-              Implementation guidance for national governments
+              Implementation guidance for national lead actors
             </h4>
 
-            <GuidanceList items={pathway.implementationGuidance} theme={theme} />
+            <GuidanceList 
+              items={pathway.implementationGuidance} 
+              theme={theme} 
+              onNavigateToPathway={onNavigateToPathway} 
+            />
 
             {guidanceConceptBoxes.length > 0 && (
               <div className="pt-2 space-y-3">
@@ -869,7 +1000,20 @@ function PathwayCard({
           </div>
         )}
 
-        {/* 3. Peer Learning / Illustrative Examples and Tools */}
+        {/* 3. Adapting this pathway to your context (comes right after Implementation Guidance) */}
+        {pathway.transferability && pathway.transferability.length > 0 && (
+          <div className="pt-8 border-t border-line space-y-3">
+            <CollapsibleList 
+              title={pathway.transferabilityTitle || "Adapting this pathway to your context"} 
+              items={pathway.transferability} 
+              preamble={pathway.transferabilityPreamble}
+              theme={theme} 
+              defaultOpen={false} 
+            />
+          </div>
+        )}
+
+        {/* 4. Peer Learning Examples and Tools (Stacked Vertically) */}
         {((displayExamples && displayExamples.length > 0) || exampleConceptBoxes.length > 0) && (() => {
           const hasPeerLearning = displayExamples.some((ex: any) => 
             String(ex.type || '').toLowerCase().includes('peer learning')
@@ -887,7 +1031,7 @@ function PathwayCard({
               </div>
 
               {displayExamples && displayExamples.length > 0 && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+                <div className="space-y-4">
                   {displayExamples.map((example: any, i: number) => renderResourceCard(example, i))}
                 </div>
               )}
@@ -902,19 +1046,6 @@ function PathwayCard({
             </div>
           );
         })()}
-
-        {/* 4. Transferability Considerations */}
-        {pathway.transferability && pathway.transferability.length > 0 && (
-          <div className="pt-8 border-t border-line space-y-3">
-            <CollapsibleList 
-              title={pathway.transferabilityTitle || "Transferability Considerations"} 
-              items={pathway.transferability} 
-              preamble={pathway.transferabilityPreamble}
-              theme={theme} 
-              defaultOpen={false} 
-            />
-          </div>
-        )}
       </div>
     </div>
   );
@@ -923,6 +1054,15 @@ function PathwayCard({
 
 // Popup showing a peer learning example or tool in full. Used on action pages and the Actions overview.
 export function ExampleModal({ example, theme, onClose }: { example: any | null, theme: ActionTheme, onClose: () => void }) {
+  const modalImage = example ? (example.image || getExampleImage(example.title)) : null;
+
+  const isExplicitPeer = String(example?.type || '').toLowerCase().includes('peer') || 
+    String(example?.type || '').toLowerCase().includes('example') ||
+    String(example?.type || '').toLowerCase().includes('case');
+  const isExplicitTool = String(example?.type || '').toLowerCase().includes('tool') ||
+    Boolean(example?.isTool);
+  const isTool = isExplicitPeer ? false : (isExplicitTool || /\b(?:tool|toolkit|calculator)\b/i.test(example?.title || ''));
+
   // Close on Escape
   useEffect(() => {
     if (!example) return;
@@ -957,9 +1097,7 @@ export function ExampleModal({ example, theme, onClose }: { example: any | null,
             <div className="px-6 pt-6 md:px-10 md:pt-8 flex items-start justify-between gap-6 shrink-0">
               <div className="flex-1">
                 <span className="block mb-2 text-[10px] font-bold uppercase tracking-wider text-accent">
-                  {example.isTool || String(example.type || '').toLowerCase().includes('tool')
-                    ? 'Tool'
-                    : (example.type || 'Peer Learning Example')}
+                  {isTool ? 'Tool' : 'Peer Learning Example'}
                 </span>
                 <h3 className="body-text font-bold leading-snug">
                   {example.title}
@@ -976,9 +1114,56 @@ export function ExampleModal({ example, theme, onClose }: { example: any | null,
 
             {/* Modal Content */}
             <div className="px-6 pb-6 pt-4 md:px-10 md:pb-10 md:pt-5 overflow-y-auto custom-scrollbar">
+              {/* Key takeaways / Why use this tool - placed at TOP */}
+              {(() => {
+                const connInfo = getAction5Connection(example.title, example.type);
+                const fullConn = example.connectionLine || (connInfo ? `${connInfo.prefix} ${connInfo.text}` : '');
+                const prefix = isTool ? 'Why use this tool:' : 'Key takeaway:';
+                let body = '';
+                if (fullConn) {
+                  body = fullConn.replace(/^(?:key\s+takeaways?|what\s+you\s+can\s+learn|why\s+see\s+this|why\s+use\s+this\s+tool|why\s+use\s+this\s+resource|why\s+use\s+this|when\s+to\s+use\s+this)\s*[:\-]\s*/gi, '').trim();
+                }
+                
+                if (!body) {
+                  body = isTool
+                    ? 'Identify suitable tools, diagnostic checklists and frameworks to support this pathway.'
+                    : 'See how national and subnational governments put this implementation pathway into practice.';
+                }
+
+                return (
+                  <div 
+                    className="mb-6 py-2.5 px-4 border-l-2 border-accent bg-accent/5 body-text-sm leading-relaxed"
+                  >
+                    <span className="font-bold text-ink">
+                      {prefix}{' '}
+                    </span>
+                    <span className="text-ink-muted">
+                      {body}
+                    </span>
+                  </div>
+                );
+              })()}
+
+              {modalImage && (
+                <figure className="mb-6">
+                  <img
+                    src={modalImage.src}
+                    alt={modalImage.alt}
+                    className="w-full h-48 md:h-64 object-cover"
+                  />
+                  <figcaption className="mt-1.5 text-[11px] text-ink-muted">
+                    {modalImage.alt}. Photo:{' '}
+                    <a href={modalImage.creditUrl} target="_blank" rel="noreferrer" className="underline hover:text-ink">
+                      {modalImage.credit}
+                    </a>
+                  </figcaption>
+                </figure>
+              )}
+
               <div className="mb-6">
                 <RichTextRenderer text={example.fullText || example.content || example.excerpt} textClass="body-text-md leading-relaxed" />
               </div>
+
               {example.link && (
                 <div className="mb-6">
                   <a 
@@ -995,7 +1180,7 @@ export function ExampleModal({ example, theme, onClose }: { example: any | null,
                       e.currentTarget.style.color = '';
                     }}
                   >
-                    Know More
+                    Learn more
                     <ArrowUpRight size={14} />
                   </a>
                 </div>
@@ -1016,39 +1201,6 @@ export function ExampleModal({ example, theme, onClose }: { example: any | null,
                   ))}
                 </div>
               )}
-
-              {/* Connection Line ("Why see this"), at the bottom like on the card */}
-              {(() => {
-                const connInfo = getAction5Connection(example.title, example.type);
-                const fullConn = example.connectionLine || (connInfo ? `${connInfo.prefix} ${connInfo.text}` : '');
-                const isTool = String(example.type || '').toLowerCase().includes('tool') || 
-                  /tool|toolkit|calculator|matrix|framework|simulator|portal|index|model|guide/i.test(example.title || '') ||
-                  Boolean(example.isTool);
-                const prefix = isTool ? 'Why use this:' : 'What you can learn:';
-                let body = '';
-                if (fullConn) {
-                  body = fullConn.replace(/^(?:what you can learn|why see this|why use this tool|why use this|when to use this)\s*[:\-]\s*/gi, '').trim();
-                }
-                
-                if (!body) {
-                  body = isTool
-                    ? 'Identify suitable tools, diagnostic checklists and frameworks to support this pathway.'
-                    : 'See how national and subnational governments put this implementation pathway into practice.';
-                }
-
-                return (
-                  <div 
-                    className="mt-8 py-1.5 px-4 border-l-2 border-accent body-text-sm leading-relaxed"
-                  >
-                    <span className="font-semibold text-ink">
-                      {prefix}{' '}
-                    </span>
-                    <span className="text-ink-muted">
-                      {body}
-                    </span>
-                  </div>
-                );
-              })()}
             </div>
           </motion.div>
         </motion.div>
@@ -1067,7 +1219,8 @@ export function StepView({
   initialDeepLink,
   onClearDeepLink,
   onNavigateToCountry,
-  onOpenRoadmap
+  onOpenRoadmap,
+  onNavigateToStep
 }: { 
   step: any; 
   onBack?: () => void;
@@ -1079,6 +1232,7 @@ export function StepView({
   onClearDeepLink?: () => void;
   onNavigateToCountry?: (countryId: string, actionId?: number) => void;
   onOpenRoadmap?: (componentId?: string) => void;
+  onNavigateToStep?: (actionId: number, pathwayIndex?: number) => void;
 }) {
   const [isSystemsLogicOpen, setIsSystemsLogicOpen] = useState(false);
   const systemsLogicRef = useRef<HTMLDivElement>(null);
@@ -1129,6 +1283,15 @@ export function StepView({
     onClearDeepLink?.();
   };
 
+  const handleNavigateToPathway = (targetActionId: number, targetPathwayIndex: number) => {
+    if (Number(step?.id) === targetActionId) {
+      setActivePathwayIndex(targetPathwayIndex);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (onNavigateToStep) {
+      onNavigateToStep(targetActionId, targetPathwayIndex);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   if (!step) return null;
 
@@ -1230,9 +1393,6 @@ export function StepView({
                       : 'bg-surface border-transparent text-ink hover:text-accent'
                   }`}
                 >
-                  <span className="block text-[11px] font-bold uppercase tracking-wider mb-1">
-                    Pathway {idx + 1}
-                  </span>
                   <span className="block body-text-md font-bold leading-snug text-inherit">
                     {p.title || p.name}
                   </span>
@@ -1263,6 +1423,7 @@ export function StepView({
                   theme={actionTheme}
                   actionId={Number(step.id)}
                   onNavigateToCountry={onNavigateToCountry}
+                  onNavigateToPathway={handleNavigateToPathway}
                 />
               </motion.div>
             </AnimatePresence>

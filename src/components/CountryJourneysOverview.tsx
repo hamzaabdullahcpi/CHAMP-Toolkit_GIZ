@@ -23,8 +23,12 @@ export default function CountryJourneysOverview({
   onNavigateToCoreAction,
   heroImage
 }: CountryJourneysOverviewProps) {
-  // Sort country journeys by order ascending (Sweden first, then Brazil, Morocco, etc.)
-  const sortedJourneys = [...countryJourneys].sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
+  // Strictly filter only published countries (exclude unpublished, draft, hidden)
+  const publishedJourneys = countryJourneys.filter(j => 
+    j.published !== false && 
+    !["draft", "unpublished", "hidden", "archived"].includes(String(j.status || "").toLowerCase().trim())
+  );
+  const sortedJourneys = [...publishedJourneys].sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -78,6 +82,32 @@ export default function CountryJourneysOverview({
     }
   };
 
+function renderSubmitText(text?: string, email?: string) {
+  if (!text) return null;
+  const targetEmail = email || 'ccflasecretariat@cpiglobal.org';
+  if (text.includes(targetEmail)) {
+    const parts = text.split(targetEmail);
+    return (
+      <>
+        {parts.map((part, i) => (
+          <React.Fragment key={i}>
+            {part}
+            {i < parts.length - 1 && (
+              <a
+                href={`mailto:${targetEmail}`}
+                className="text-accent underline font-medium hover:text-accent/80"
+              >
+                {targetEmail}
+              </a>
+            )}
+          </React.Fragment>
+        ))}
+      </>
+    );
+  }
+  return text;
+}
+
   return (
     <div className="w-full pb-32">
       {/* Header: intro text on the left, photo on the right */}
@@ -86,26 +116,34 @@ export default function CountryJourneysOverview({
         imageUrl={heroImage}
         imageAlt="City skyline"
       >
-        {/* Header keeps a single short intro, matching the Actions page header */}
-        {overviewContent.introP1 && (
-          <p className="body-text-md text-ink-muted">{overviewContent.introP1}</p>
-        )}
+        <p className="body-text-md text-ink-muted">
+          {overviewContent.introP1 || defaultCountryJourneysOverviewContent.introP1}
+        </p>
       </SplitHero>
 
       <div className="px-6 md:px-12 lg:px-16 pt-12 max-w-7xl mx-auto">
       <div className="max-w-6xl mx-auto">
-      {(overviewContent.introP2 || overviewContent.focusNote) && (
-        <div className="body-text-md space-y-4 leading-relaxed max-w-4xl mb-12">
-          {overviewContent.introP2 && (
-            <p>{overviewContent.introP2}</p>
-          )}
-          {overviewContent.focusNote && (
-            <p className="body-text-md text-ink-muted border-l-2 border-accent pl-4 py-1">
-              {overviewContent.focusNote}
-            </p>
-          )}
+      {/* Submit a Country Journey callout */}
+      <div className="bg-paper border border-line p-6 md:p-8 mb-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="space-y-2 max-w-3xl">
+          <h3 className="body-text-md font-bold text-ink">
+            {overviewContent.submitTitle || defaultCountryJourneysOverviewContent.submitTitle || "Submit a Country Journey"}
+          </h3>
+          <p className="body-text-sm leading-relaxed text-ink/80">
+            {renderSubmitText(
+              overviewContent.submitText || defaultCountryJourneysOverviewContent.submitText,
+              overviewContent.submitEmail || defaultCountryJourneysOverviewContent.submitEmail
+            )}
+          </p>
         </div>
-      )}
+        <a
+          href={`mailto:${overviewContent.submitEmail || defaultCountryJourneysOverviewContent.submitEmail || 'ccflasecretariat@cpiglobal.org'}`}
+          className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white text-xs font-bold uppercase tracking-wider hover:bg-accent/90 transition-colors whitespace-nowrap shrink-0"
+        >
+          {overviewContent.submitButtonLabel || defaultCountryJourneysOverviewContent.submitButtonLabel || "Contact Secretariat"}
+          <ArrowRight size={14} />
+        </a>
+      </div>
 
       {/* Featured Country Journeys Header & Controls */}
       <div className="mb-14">
@@ -294,13 +332,6 @@ function CountryCard({ journey: j, onSelectCountry }: CountryCardProps) {
             }`} 
           />
         )}
-        <div className={`absolute inset-0 ${isReady ? 'bg-gradient-to-t from-slate-950/85 via-slate-950/25 to-transparent' : 'bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent'}`} />
-        
-        <div className="absolute top-3 left-3.5 flex items-center gap-1.5">
-          <span className="text-white font-heading font-semibold text-base sm:text-lg drop-shadow-md tracking-tight">
-            {j.countryName}
-          </span>
-        </div>
 
         {isComingSoon && (
           <div className="absolute top-3 right-3">

@@ -19,12 +19,11 @@ interface ActionMeta {
 }
 
 const ACTION_METAS: Record<number, ActionMeta> = {
-  1: { id: 1, title: "Shared Commitments", subtitle: "Political alignment & collective ownership" },
-  2: { id: 2, title: "Enabling Environments", subtitle: "Policy, legal & regulatory frameworks" },
-  3: { id: 3, title: "Governance and Coordination", subtitle: "Coordination structures & vertical integration" },
-  4: { id: 4, title: "Investment Planning", subtitle: "Project pipelines & capital strategies" },
-  5: { id: 5, title: "Finance and Implementation", subtitle: "Diversified public & private instruments" },
-  6: { id: 6, title: "Learning and Scale", subtitle: "Monitoring, iteration & continuous scaling" },
+  1: { id: 1, title: "Commitments and coordination", subtitle: "Political alignment & collective ownership" },
+  2: { id: 2, title: "Enabling environments", subtitle: "Policy, legal & regulatory frameworks" },
+  3: { id: 3, title: "Portfolios and pipelines", subtitle: "Project pipelines & capital strategies" },
+  4: { id: 4, title: "Finance mobilization", subtitle: "Diversified public & private instruments" },
+  5: { id: 5, title: "Capacities and networks", subtitle: "Strengthening capacities, peer networks & scaling" },
 };
 
 export default function ChampRoadmapModal({
@@ -52,7 +51,11 @@ export default function ChampRoadmapModal({
     onNavigateToAction(actionId);
   };
 
-  const pillars = (roadmapPillars && roadmapPillars.length > 0) ? roadmapPillars : defaultChampRoadmapData;
+  const rawPillars = (roadmapPillars && roadmapPillars.length > 0) ? roadmapPillars : defaultChampRoadmapData;
+  const pillars = rawPillars.map(p => ({
+    ...p,
+    activities: [...(p.activities || [])].sort((a, b) => (parseFloat(a.code) || 0) - (parseFloat(b.code) || 0))
+  }));
   const pillar3 = pillars.find(p => p.number === 3) || defaultChampRoadmapData[2];
 
   return (

@@ -59,7 +59,7 @@ export default function IntroPage({ onNext }: IntroPageProps) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-surface border border-line text-ink hover:bg-paper hover:border-ink transition-colors px-6 py-3 text-[13px] font-bold uppercase tracking-wider"
               >
-                Know more about CHAMP and MLG
+                Learn more about CHAMP and MLG
                 <ArrowUpRight size={16} className="text-ink-muted shrink-0" />
               </a>
             </div>

@@ -1,18 +1,30 @@
 import { useState, useEffect, useRef } from "react";
 import { resolveAssetUrl, defaultHeroImage } from "./utils/assetUtils";
 import countryJourneysHeroImage from "./assets/country-journeys-hero.jpg";
+
+// Actions overview hero: aerial view of East Queen Anne, Seattle, by Zoshua Colah on Unsplash
+// (https://unsplash.com/photos/an-aerial-view-of-a-city-and-the-ocean-5-PoUD4U-Y0)
+// Vertical crop of each country page banner (default is the photo's centre)
+const COUNTRY_BANNER_POSITION: Record<string, string> = {
+  brazil: 'center 25%',
+  sweden: 'center 62%',
+};
+
+const actionsHeroImage = "https://images.unsplash.com/photo-1707960950187-e1d01b1e2096?w=1600&q=80&auto=format&fit=crop";
 import Sidebar from "./components/Sidebar";
 import LandingPage from "./components/LandingPage";
 import ActionsOverview from "./components/ActionsOverview";
 import Breadcrumb, { BreadcrumbItem } from "./components/Breadcrumb";
 import Footer from "./components/Footer";
+import CookieConsent from "./components/CookieConsent";
 import { ACTION_MENU_TITLES } from "./data/actionMenuTitles";
 import StepView from "./components/StepView";
 import CountryJourneysOverview from "./components/CountryJourneysOverview";
 import CountryJourney from "./components/CountryJourney";
 import ChampRoadmapModal from "./components/ChampRoadmapModal";
-import ChatGptMcpModal from "./components/ChatGptMcpModal";
 import ErrorBoundary from "./components/ErrorBoundary";
+import SearchDialog from "./components/SearchDialog";
+import { SearchTarget } from "./utils/searchIndex";
 import { actionsData } from "./data/content";
 import { defaultCountryJourneys } from "./data/countryJourneysData";
 import { CountryJourneyData } from "./types/countryJourney";
@@ -25,16 +37,42 @@ import {
 } from "./services/airtableService";
 import { RoadmapPillar, defaultChampRoadmapData } from "./data/champRoadmapData";
 import { ChampPledge, defaultChampPledgesData } from "./data/champPledgesData";
-import { Menu } from "lucide-react";
+import { Menu, Search } from "lucide-react";
+
+// The current page is kept in the address as ?page=<action number | actions | journeys | country id>,
+// so links (e.g. "See related toolkit guidance" in a new tab) and page refreshes land on the right page.
+function getPageFromUrl(): number | string {
+  try {
+    const page = new URLSearchParams(window.location.search).get("page");
+    if (!page) return 0;
+    if (/^\d+$/.test(page)) return Number(page);
+    return /^[a-z-]+$/.test(page) ? page : 0;
+  } catch {
+    return 0;
+  }
+}
 
 export default function App() {
-  const [currentStep, setCurrentStep] = useState<number | string>(0);
+  const [currentStep, setCurrentStep] = useState<number | string>(getPageFromUrl);
   const [deepLinkTarget, setDeepLinkTarget] = useState<any>(null);
   const [countryJourneyTarget, setCountryJourneyTarget] = useState<{ countryId: string; actionId?: number } | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isRoadmapOpen, setIsRoadmapOpen] = useState(false);
-  const [isAiAssistantOpen, setIsAiAssistantOpen] = useState(false);
   const [roadmapComponentId, setRoadmapComponentId] = useState<string | undefined>(undefined);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchInitialQuery, setSearchInitialQuery] = useState("");
+  const openSearch = (query = "") => { setSearchInitialQuery(query); setIsSearchOpen(true); };
+
+  // Ctrl/⌘+K or "/" opens search from anywhere
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const typing = e.target instanceof HTMLElement && (e.target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName));
+      if ((e.key === "k" || e.key === "K") && (e.metaKey || e.ctrlKey)) { e.preventDefault(); openSearch(); }
+      else if (e.key === "/" && !typing) { e.preventDefault(); openSearch(); }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   const handleOpenRoadmap = (componentId?: string) => {
     setRoadmapComponentId(componentId);
@@ -42,42 +80,42 @@ export default function App() {
   };
   const [liveActionsData, setLiveActionsData] = useState<any[]>(() => {
     try {
-      const saved = localStorage.getItem("champ_actions_cache_v6");
+      const saved = localStorage.getItem("champ_actions_cache_v8");
       if (saved) return JSON.parse(saved);
     } catch (e) {}
     return actionsData;
   });
   const [liveHomePageData, setLiveHomePageData] = useState<HomePageContent>(() => {
     try {
-      const saved = localStorage.getItem("champ_home_page_cache_v4");
+      const saved = localStorage.getItem("champ_home_page_cache_v7");
       if (saved) return JSON.parse(saved);
     } catch (e) {}
     return defaultHomePageContent;
   });
   const [liveCountryJourneys, setLiveCountryJourneys] = useState<CountryJourneyData[]>(() => {
     try {
-      const saved = localStorage.getItem("champ_country_journeys_cache_v4");
+      const saved = localStorage.getItem("champ_country_journeys_cache_v11");
       if (saved) return JSON.parse(saved);
     } catch (e) {}
     return defaultCountryJourneys;
   });
   const [liveCountryJourneysOverview, setLiveCountryJourneysOverview] = useState<CountryJourneysOverviewContent>(() => {
     try {
-      const saved = localStorage.getItem("champ_country_journeys_overview_cache_v4");
+      const saved = localStorage.getItem("champ_country_journeys_overview_cache_v10");
       if (saved) return JSON.parse(saved);
     } catch (e) {}
     return defaultCountryJourneysOverviewContent;
   });
   const [liveRoadmapPillars, setLiveRoadmapPillars] = useState<RoadmapPillar[]>(() => {
     try {
-      const saved = localStorage.getItem("champ_roadmap_cache_v4");
+      const saved = localStorage.getItem("champ_roadmap_cache_v8");
       if (saved) return JSON.parse(saved);
     } catch (e) {}
     return defaultChampRoadmapData;
   });
   const [liveChampPledges, setLiveChampPledges] = useState<ChampPledge[]>(() => {
     try {
-      const saved = localStorage.getItem("champ_pledges_cache_v4");
+      const saved = localStorage.getItem("champ_pledges_cache_v7");
       if (saved) return JSON.parse(saved);
     } catch (e) {}
     return defaultChampPledgesData;
@@ -87,33 +125,33 @@ export default function App() {
 
   useEffect(() => {
     let isMounted = true;
-    const loadContent = async () => {
+    const loadContent = async (force = false) => {
       try {
-        const { actions, homePage, countryJourneys, countryJourneysOverview, roadmapPillars, champPledges } = await fetchAirtableAllContent();
+        const { actions, homePage, countryJourneys, countryJourneysOverview, roadmapPillars, champPledges } = await fetchAirtableAllContent(force);
         if (isMounted) {
           if (actions && actions.length > 0) {
             setLiveActionsData(actions);
-            try { localStorage.setItem("champ_actions_cache_v6", JSON.stringify(actions)); } catch (e) {}
+            try { localStorage.setItem("champ_actions_cache_v8", JSON.stringify(actions)); } catch (e) {}
           }
           if (homePage) {
             setLiveHomePageData(homePage);
-            try { localStorage.setItem("champ_home_page_cache_v4", JSON.stringify(homePage)); } catch (e) {}
+            try { localStorage.setItem("champ_home_page_cache_v7", JSON.stringify(homePage)); } catch (e) {}
           }
           if (countryJourneys) {
             setLiveCountryJourneys(countryJourneys);
-            try { localStorage.setItem("champ_country_journeys_cache", JSON.stringify(countryJourneys)); } catch (e) {}
+            try { localStorage.setItem("champ_country_journeys_cache_v11", JSON.stringify(countryJourneys)); } catch (e) {}
           }
           if (countryJourneysOverview) {
             setLiveCountryJourneysOverview(countryJourneysOverview);
-            try { localStorage.setItem("champ_country_journeys_overview_cache", JSON.stringify(countryJourneysOverview)); } catch (e) {}
+            try { localStorage.setItem("champ_country_journeys_overview_cache_v10", JSON.stringify(countryJourneysOverview)); } catch (e) {}
           }
           if (roadmapPillars && roadmapPillars.length > 0) {
             setLiveRoadmapPillars(roadmapPillars);
-            try { localStorage.setItem("champ_roadmap_cache", JSON.stringify(roadmapPillars)); } catch (e) {}
+            try { localStorage.setItem("champ_roadmap_cache_v8", JSON.stringify(roadmapPillars)); } catch (e) {}
           }
           if (champPledges && champPledges.length > 0) {
             setLiveChampPledges(champPledges);
-            try { localStorage.setItem("champ_pledges_cache", JSON.stringify(champPledges)); } catch (e) {}
+            try { localStorage.setItem("champ_pledges_cache_v7", JSON.stringify(champPledges)); } catch (e) {}
           }
         }
       } catch (err) {
@@ -125,8 +163,17 @@ export default function App() {
       }
     };
     loadContent();
+    const refreshContent = () => {
+      if (document.visibilityState === 'visible') void loadContent(true);
+    };
+    const refreshTimer = window.setInterval(refreshContent, 60_000);
+    document.addEventListener('visibilitychange', refreshContent);
+    window.addEventListener('focus', refreshContent);
     return () => {
       isMounted = false;
+      window.clearInterval(refreshTimer);
+      document.removeEventListener('visibilitychange', refreshContent);
+      window.removeEventListener('focus', refreshContent);
     };
   }, []);
 
@@ -139,6 +186,13 @@ export default function App() {
     window.scrollTo({ top: 0 });
   }, [currentStep, countryJourneyTarget]);
 
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    if (currentStep === 0) url.searchParams.delete("page");
+    else url.searchParams.set("page", String(currentStep));
+    window.history.replaceState(null, "", url);
+  }, [currentStep]);
+
   // Check if currentStep matches a country journey
   const matchedCountry = typeof currentStep === 'string' 
     ? liveCountryJourneys.find(c => c.countryId === currentStep.toLowerCase()) 
@@ -149,6 +203,20 @@ export default function App() {
 
   // Breadcrumb trail for pages below a section (an action, a country), plus the
   // width that lines it up with that page's own content.
+  const handleSearchSelect = (target: SearchTarget) => {
+    if (target.kind === 'page') {
+      setDeepLinkTarget(null); setCountryJourneyTarget(null); setCurrentStep(target.page);
+    } else if (target.kind === 'action') {
+      setCountryJourneyTarget(null);
+      setDeepLinkTarget(target.pathwayIndex !== undefined ? { pathwayIndex: target.pathwayIndex, example: target.example } : null);
+      setCurrentStep(target.actionId);
+    } else {
+      setDeepLinkTarget(null);
+      setCountryJourneyTarget(target.actionId !== undefined ? { countryId: target.countryId, actionId: target.actionId } : null);
+      setCurrentStep(target.countryId);
+    }
+  };
+
   const goTo = (step: number | string) => () => { setDeepLinkTarget(null); setCountryJourneyTarget(null); setCurrentStep(step); };
   const actionsCrumb: BreadcrumbItem = { label: 'Actions', onClick: goTo('actions') };
   const journeysCrumb: BreadcrumbItem = { label: 'Country Journeys', onClick: goTo('journeys') };
@@ -165,6 +233,7 @@ export default function App() {
         isOpen={isSidebarOpen} 
         toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
         countryJourneys={liveCountryJourneys}
+        onOpenSearch={openSearch}
       />
       
       <main 
@@ -181,6 +250,27 @@ export default function App() {
           >
             <Menu size={20} className="stroke-[1.5]" />
           </button>
+        )}
+        {!isSidebarOpen && (
+          <button
+            onClick={() => openSearch()}
+            className="fixed top-6 left-[4.75rem] z-50 p-2.5 bg-surface shadow-sm border border-line text-ink hover:text-accent hover:bg-paper transition-colors rounded-none cursor-pointer"
+            aria-label="Search the toolkit"
+          >
+            <Search size={20} className="stroke-[1.5]" />
+          </button>
+        )}
+
+        {/* Country journey pages open with their card photo as a full-width, cropped banner */}
+        {matchedCountry?.cardImage && (
+          <div className="w-full h-48 md:h-64 lg:h-80 overflow-hidden bg-paper-strong">
+            <img
+              src={resolveAssetUrl(matchedCountry.cardImage, '').replace(/([?&])w=\d+/, '$1w=2880')}
+              alt={matchedCountry.countryName}
+              className="w-full h-full object-cover"
+              style={{ objectPosition: COUNTRY_BANNER_POSITION[matchedCountry.countryId] ?? 'center' }}
+            />
+          </div>
         )}
 
         {/* Homepage and the two overview pages have full-bleed headers; other pages sit in a padded column */}
@@ -212,7 +302,7 @@ export default function App() {
             ) : currentStep === 'actions' ? (
               <ActionsOverview
                 actionsData={liveActionsData}
-                heroImage={resolveAssetUrl(liveHomePageData?.hero?.imageUrl, defaultHeroImage)}
+                heroImage={actionsHeroImage}
                 onNavigateToStep={(id, pathwayIdx, example) => {
                     setCurrentStep(id);
                     if (pathwayIdx !== undefined) setDeepLinkTarget({ pathwayIndex: pathwayIdx, example });
@@ -246,6 +336,10 @@ export default function App() {
                 step={liveActionsData.find(s => Number(s.id) === Number(currentStep)) || liveActionsData[0]} 
                 initialDeepLink={deepLinkTarget}
                 onClearDeepLink={() => setDeepLinkTarget(null)}
+                onNavigateToStep={(actionId, pathwayIdx) => {
+                  setDeepLinkTarget(pathwayIdx !== undefined ? { pathwayIndex: pathwayIdx } : null);
+                  setCurrentStep(actionId);
+                }}
                 onNext={typeof currentStep === 'number' && currentStep < 5 ? () => { setDeepLinkTarget(null); setCurrentStep(currentStep + 1); } : undefined}
                 onPrev={() => { 
                   setDeepLinkTarget(null); 
@@ -270,6 +364,17 @@ export default function App() {
         <Footer partnership={liveHomePageData?.partnership} onNavigate={(step) => goTo(step)()} />
       </main>
 
+      <CookieConsent />
+
+      <SearchDialog
+        isOpen={isSearchOpen}
+        initialQuery={searchInitialQuery}
+        onClose={() => setIsSearchOpen(false)}
+        actionsData={liveActionsData}
+        countryJourneys={liveCountryJourneys}
+        onSelect={handleSearchSelect}
+      />
+
       {/* CHAMP Implementation Roadmap Explainer Modal */}
       <ChampRoadmapModal 
         isOpen={isRoadmapOpen}
@@ -284,11 +389,6 @@ export default function App() {
         roadmapPillars={liveRoadmapPillars}
       />
 
-      {/* CHAMP ChatGPT MCP Assistant Modal */}
-      <ChatGptMcpModal 
-        isOpen={isAiAssistantOpen}
-        onClose={() => setIsAiAssistantOpen(false)}
-      />
     </div>
   );
 }
